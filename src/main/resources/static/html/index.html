@@ -369,6 +369,7 @@
                 >
                   <div
                     class="hover rounded-circle d-flex flex-column align-items-center justify-content-center"
+                    id="home1"
                     style="
                       width: 200px;
                       height: 200px;
@@ -406,6 +407,7 @@
                       height: 200px;
                       background-color: rgb(247, 247, 247);
                     "
+                    id="home2"
                   >
                     <div>
                       <img
@@ -434,6 +436,7 @@
                       height: 200px;
                       background-color: rgb(247, 247, 247);
                     "
+                    id="home3"
                   >
                     <div>
                       <img
@@ -902,6 +905,22 @@
         });
         $(".dropdown-submenu04").on("mouseover", function (e) {
           $(this).next("div").toggle();
+        });
+      });
+    </script>
+
+    <script>
+      $(function () {
+        $("#home1, #home2, #home3").mouseover(function () {
+          $(this).css({
+            background: "white",
+          });
+        });
+
+        $("#home1, #home2, #home3").mouseout(function () {
+          $(this).css({
+            background: "rgb(247, 247, 247)",
+          });
         });
       });
     </script>

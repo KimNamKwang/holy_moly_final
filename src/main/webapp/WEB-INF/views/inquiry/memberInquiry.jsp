@@ -1,0 +1,255 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고객문의 작성</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <style>
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: 1px solid rgb(55, 210, 67);
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
+    <jsp:include page="../navbar.jsp" />
+
+    <div class="container text-center">
+      <div class="fs-1 fw-bold p-5">고객센터</div>
+      <ul class="d-flex justify-content-center list-unstyled">
+        <li class="fs-3 fw-bold pe-5" style="opacity: 0.5">
+          <a
+            href="${pageContext.request.contextPath}/faq/faqList"
+            id="how_to_use"
+            class="text-decoration-none text-dark"
+          >
+            FAQ
+          </a>
+        </li>
+        <li class="fs-3 fw-bold ps-5" id="pee_notice">
+          <a href="./Inquiry" class="text-decoration-none text-dark">
+            1:1문의
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="container-fluid pb-5"
+      style="background-color: rgb(249, 249, 249)"
+    >
+      <form
+        action="./inquiryList"
+        onsubmit="alertFunction()"
+        id="modalToggle"
+      >
+        <div class="d-flex row justify-content-center">
+          <div style="width: 710px">
+            <div
+              class="border p-4 mt-5"
+              style="border-radius: 20px; background-color: white"
+            >
+              <table class="table align-middle table-borderless text-start">
+                <tr>
+                  <th style="vertical-align: top">이름</th>
+                  <td>
+                    <input
+                      type="text"
+                      class="w-100 border border-secondary border-opacity-25 p-3"
+                      style="border-radius: 10px"
+                      name="userName"
+                      id="userName"
+                      value="홍길동"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th style="vertical-align: top">이메일 주소</th>
+                  <td>
+                    <input
+                      type="email"
+                      class="w-100 border border-secondary border-opacity-25 p-3"
+                      style="border-radius: 10px"
+                      name="userEmail"
+                      id="userEmail"
+                      value="honghong@naver.com"
+                      required
+                    />
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="text-nowrap" style="vertical-align: top">
+                    전화번호
+                  </th>
+                  <td>
+                    <input
+                      type="number"
+                      class="w-100 border border-secondary border-opacity-25 p-3"
+                      style="border-radius: 10px"
+                      name="userPhoneNumber"
+                      id="userPhoneNumber"
+                      value="01011112222"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>문의 유형</th>
+                  <td>
+                    <select
+                      class="w-100 border border-secondary border-opacity-25 p-3 text-center fw-bold"
+                      style="border-radius: 10px"
+                      name=""
+                      id=""
+                      required
+                    >
+                      <option value="" selected disabled>문의 유형</option>
+                      <option value="">배송문의</option>
+                      <option value="">등급문의</option>
+                      <option value="">사고보상처리</option>
+                      <option value="">기타/서비스불만</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-nowrap" style="vertical-align: top">
+                    운송장 번호 (선택)
+                  </th>
+                  <td>
+                    <div class="pb-1">
+                      <input
+                        type="text"
+                        class="w-100 border border-secondary border-opacity-25 p-3"
+                        style="border-radius: 10px"
+                        name="inquiryTitle"
+                        id="inquiryTitle"
+                        placeholder="운송장 번호"
+                      />
+                    </div>
+                    <sup class="text-secondary"
+                      >*필수입력사항은 아닙니다. 다만 입력 시 답변에 도움이
+                      됩니다.</sup
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th style="vertical-align: top">제목</th>
+                  <td>
+                    <input
+                      type="text"
+                      class="w-100 border border-secondary border-opacity-25 p-3"
+                      style="border-radius: 10px"
+                      name="inquiryTitle"
+                      id="inquiryTitle"
+                      placeholder="제목"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th style="vertical-align: top">내용</th>
+                  <td>
+                    <textarea
+                      class="w-100 border border-secondary border-opacity-25 p-3"
+                      style="resize: none; height: 200px; border-radius: 10px"
+                      name="inquiryComment"
+                      id="inquiryComment"
+                      placeholder="내용"
+                      required
+                    ></textarea>
+                  </td>
+                </tr>
+              </table>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name=""
+                id="agree"
+                required
+              />
+              <label for="agree" class="form-check-label"
+                >개인정보 수집 및 활용 동의 (필수)</label
+              >
+            </div>
+            <div class="row">
+              <div class="col mt-3">
+                <a
+                  href="./Inquiry"
+                  class="btn btn-sm btn-secondary"
+                  style="border-radius: 50px"
+                  >BACK</a
+                >
+              </div>
+              <div class="col text-end mt-3">
+                <button
+                  class="btn text-light fw-bold"
+                  style="background-color: rgb(55, 210, 67)"
+                >
+                  > >
+                </button>
+              </div>
+              <!-- 모달창 -->
+              <div class="modal fade" id="submitModal">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content pt-5 pb-5">
+                    <div class="modal-title text-center">
+                      <div class="pb-4 fw-bold">1:1문의가 등록되었습니다.</div>
+                      <button
+                        class="btn"
+                        data-bs-dismiss="modal"
+                        style="
+                          background-color: rgb(55, 210, 67);
+                          color: white;
+                          width: 8rem;
+                        "
+                      >
+                        확인
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 모달창 마지막 -->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <jsp:include page="../footer.jsp" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function alertFunction() {
+        alert("1:1 문의가 등록되었습니다.");
+      }
+    </script>
+  </body>
+</html>
