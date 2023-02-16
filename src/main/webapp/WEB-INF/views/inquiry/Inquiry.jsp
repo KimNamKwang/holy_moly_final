@@ -34,7 +34,7 @@
       <ul class="d-flex justify-content-center list-unstyled">
         <li class="fs-3 fw-bold pe-5" style="opacity: 0.5">
           <a
-            href="${pageContext.request.contextPath}/faq/faqList"
+            href="/faq/faqList"
             id="how_to_use"
             class="text-decoration-none text-dark"
           >
@@ -42,7 +42,7 @@
           </a>
         </li>
         <li class="fs-3 fw-bold ps-5" id="pee_notice">
-          <a href="./Inquiry" class="text-decoration-none text-dark">
+          <a href="/inquiry/Inquiry" class="text-decoration-none text-dark">
             1:1문의
           </a>
         </li>
@@ -69,7 +69,7 @@
             <div class="row">
               <div class="col">
                 <a
-                  href="./inquiryList"
+                  href="/inquiry/inquiryList"
                   class="btn fw-bold"
                   style="
                     background-color: rgb(242, 255, 216);
@@ -83,7 +83,7 @@
               </div>
               <div class="col">
                 <a
-                  href="./memberInquiry"
+                  href="/inquiry/memberInquiry"
                   class="btn text-light fw-bold"
                   style="
                     background-color: rgb(55, 210, 67);
