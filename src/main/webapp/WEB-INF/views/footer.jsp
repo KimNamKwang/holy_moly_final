@@ -10,14 +10,14 @@
       <div class="container-fluid">
         <div style="font-size: 1.2rem">
           <ul
-            class="d-flex justify-content-end list-unstyled pt-4 mt-5"
+            class="d-flex justify-content-end list-unstyled pt-4"
             style="height: 70px"
           >
             <li>
               <a
                 class="text-decoration-none me-3 pe-3 border-end border-2"
                 style="color: rgb(89, 89, 89)"
-                href="${pageContext.request.contextPath}/company/company_introduction"
+                href="/company/company_introduction"
                 >회사소개</a
               >
             </li>
@@ -25,7 +25,7 @@
               <a
                 class="text-decoration-none me-3 pe-3 border-end border-2"
                 style="color: rgb(89, 89, 89)"
-                href="${pageContext.request.contextPath}/terms/terms"
+                href="/terms/terms"
                 >이용약관</a
               >
             </li>
@@ -33,7 +33,7 @@
               <a
                 class="text-decoration-none me-3 pe-3 border-end border-2"
                 style="color: rgb(89, 89, 89)"
-                href="${pageContext.request.contextPath}/terms/termsPrivacy"
+                href="/terms/termsPrivacy"
                 >개인정보처리방침</a
               >
             </li>
@@ -42,7 +42,7 @@
               <a
                 class="text-decoration-none me-3 pe-3"
                 style="color: rgb(89, 89, 89)"
-                href="${pageContext.request.contextPath}/inquery/Inquiry.html"
+                href="/customer/inquiry"
                 >고객센터</a
               >
             </li>

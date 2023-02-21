@@ -25,6 +25,11 @@
         outline: 1px solid rgb(55, 210, 67);
       }
     </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
@@ -35,7 +40,7 @@
       <ul class="d-flex justify-content-center list-unstyled">
         <li class="fs-3 fw-bold pe-5" style="opacity: 0.5">
           <a
-            href="${pageContext.request.contextPath}/faq/faqList"
+            href="/customer/faqList"
             id="how_to_use"
             class="text-decoration-none text-dark"
           >
@@ -43,7 +48,7 @@
           </a>
         </li>
         <li class="fs-3 fw-bold ps-5" id="pee_notice">
-          <a href="./Inquiry" class="text-decoration-none text-dark">
+          <a href="/customer/inquiry" class="text-decoration-none text-dark">
             1:1문의
           </a>
         </li>
@@ -73,7 +78,10 @@
               <tbody>
                 <tr>
                   <td style="border-bottom: none; width: 100%">
-                    <a href="./inquiryView" style="text-decoration: none">
+                    <a
+                      href="/customer/inquiryView"
+                      style="text-decoration: none"
+                    >
                       <div class="row">
                         <div class="col text-start">
                           <div

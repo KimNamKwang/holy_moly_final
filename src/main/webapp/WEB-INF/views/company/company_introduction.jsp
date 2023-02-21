@@ -40,9 +40,9 @@
         <div class="d-flex">
           <div class="border rounded-4 p-4" style="width: 50rem">
             <div class="d-flex align-items-center">
-              <div><img src="./images/로고(투명).png" width="150" /></div>
+              <div><img src="/images/로고(투명).png" width="150" /></div>
               <div class="align-items-center">
-                <div class="fs-4 fw-bold">(주)HOLMOLTEK</div>
+                <div class="fs-4 fw-bold">(주)포스트네트웍스</div>
                 <div>6개월 차 업체 • 택배 배송</div>
               </div>
             </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div>
                   <p class="fw-bold mb-0">
-                    HOLMOLTEK은 방문 택배에 특화된 회사로 새롭게 출발하였습니다.
+                    POST는 방문 택배에 특화된 회사로 새롭게 출발하였습니다.
                   </p>
                   끊임없이 변화 발전하여 고객사와 소비자 여러분의 든든한
                   조력자가<br />
@@ -68,13 +68,13 @@
               </div>
               <div class="d-flex">
                 <div>
-                  <img src="./images/트럭 이미지.png" width="200" alt="" />
+                  <img src="/images/트럭 이미지.png" width="200" alt="" />
                 </div>
                 <div>
-                  <img src="./images/다량택배.png" width="200" alt="" />
+                  <img src="/images/다량택배.png" width="200" alt="" />
                 </div>
                 <div>
-                  <img src="./images/고객센터.png" width="200" alt="" />
+                  <img src="/images/고객센터.png" width="200" alt="" />
                 </div>
               </div>
             </div>
@@ -90,21 +90,21 @@
                       </span>
                       설립년도
                     </td>
-                    <td>2023</td>
+                    <td class="text-nowrap">2023</td>
                   </tr>
                   <tr style="height: 4rem">
                     <td class="text-nowrap">
                       <span class="material-icons align-middle"> person </span>
                       대표자
                     </td>
-                    <td>김남광</td>
+                    <td class="text-nowrap">김남광</td>
                   </tr>
                   <tr style="height: 4rem">
                     <td class="text-nowrap">
                       <span class="material-icons align-middle"> group </span>
                       회사규모
                     </td>
-                    <td>직원 4명</td>
+                    <td class="text-nowrap">직원 4명</td>
                   </tr>
                   <tr style="height: 4rem">
                     <td class="text-nowrap">
@@ -113,7 +113,9 @@
                       </span>
                       회사주소
                     </td>
-                    <td>서울특별시 광진구 광나루로56길,85 <br />24층 1-13</td>
+                    <td class="text-nowrap">
+                      서울특별시 광진구 광나루로56길,85 <br />24층 1-13
+                    </td>
                   </tr>
                   <tr style="height: 4rem">
                     <td class="text-nowrap">
@@ -122,7 +124,7 @@
                       </span>
                       업종
                     </td>
-                    <td>화물운송주선사업</td>
+                    <td class="text-nowrap">화물운송주선사업</td>
                   </tr>
                 </tbody>
               </table>
@@ -132,7 +134,6 @@
       </div>
     </main>
     <jsp:include page="../footer.jsp" />
-    <script src="./js/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

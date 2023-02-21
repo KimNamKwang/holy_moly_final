@@ -1,0 +1,425 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>약관동의</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9홀몰G65"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/join.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
+    <jsp:include page="../navbar.jsp" />
+    <div class="container" style="width: 600px">
+      <form action="/common/join_step2">
+        <div
+          class="row mb-5 d-flex align-items-center text-start"
+          style="padding-top: 150px"
+        >
+          <div class="col-3 d-flex align-items-center">
+            <a href="/index" class="navbar-brand">
+              <div
+                style="
+                  font-family: 'Zen Dots', 홀몰rsive;
+                  color: rgb(76, 183, 86);
+                "
+              >
+                <span class="fst-italic fw-bold ms-2 fs-4">POST</span>
+                <span class="material-symbols-outlined fw-bold align-middle">
+                  local_shipping
+                </span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="col-2 text-green text-nowrap fs-5 fw-bold d-flex align-items-center"
+          >
+            회원가입
+          </div>
+          <div class="col">
+            <span
+              style="text-decoration: line-through; color: rgb(55, 210, 67)"
+            >
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+            <span
+              style="text-decoration: line-through; color: rgb(210, 241, 212)"
+            >
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <div
+            class="bg-white border text-start p-4 w-100"
+            style="border-radius: 20px"
+          >
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input me-1"
+                name="agree"
+                id="agree_all"
+                style="zoom: 1.5"
+                onclick="selectAll(this)"
+              />
+              <label
+                for="agree_all"
+                class="form-check-label fw-bold"
+                style="font-size: 1.2rem"
+                >회원 약관에 모두 동의합니다.</label
+              >
+            </div>
+            <div class="text-green fw-bold pb-3">POST 회원약관</div>
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input me-1"
+                name="agree"
+                id="check_evt2"
+                required
+              />
+              <label for="check_evt2" class="form-check-label">
+                <a
+                  href="#modalTermsForUse"
+                  class="text-decoration-none text-dark"
+                  data-bs-toggle="modal"
+                >
+                  [필수] 이용약관 동의
+                </a>
+              </label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input me-1"
+                name="agree"
+                id="check_evt3"
+                required
+              />
+              <label for="check_evt3" class="form-check-label">
+                <a
+                  href="#modalTermsForPersonalInfo"
+                  class="text-decoration-none text-dark"
+                  data-bs-toggle="modal"
+                >
+                  [필수] 개인정보 처리방침
+                </a>
+              </label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input me-1"
+                name="agree"
+                id="check_evt4"
+                required
+              />
+              <label for="check_evt4" class="form-check-label">
+                <a
+                  href="#modalTermsForPersonalInfoSec"
+                  class="text-decoration-none text-dark"
+                  data-bs-toggle="modal"
+                >
+                  [필수] 개인정보 수집∙이용 동의
+                </a>
+              </label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input me-1"
+                name="agree"
+                id="check_evt5"
+              />
+              <label for="check_evt5" class="form-check-label">
+                <a
+                  href="#modalTermsForMarketing"
+                  class="text-decoration-none text-dark"
+                  data-bs-toggle="modal"
+                >
+                  [선택] 마케팅 정보 수신 동의
+                </a>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="text-end mt-3">
+          <button
+            class="btn btn-lg text-light fw-bold"
+            style="background-color: rgb(55, 210, 67)"
+          >
+            >
+          </button>
+        </div>
+      </form>
+
+      <div class="modal fade" id="modalTermsForUse">
+        <div class="modal-dialog">
+          <div class="modal-content ps-3 pe-3">
+            <div class="modal-header">
+              <div class="fs-5 fw-bold">이용약관 동의</div>
+            </div>
+            <div class="modal-body">
+              <div style="overflow: auto; height: 250px; padding: 10px">
+                제1장 총칙 제1조(약관의 적용) 이 약관은 주식회사 홀몰네트웍스가
+                운영하는 인터넷 홈페이지와 모바일 애플리케이션에서 제공하는
+                서비스(이하 "홀몰post서비스"라 한다)를 이용함에 있어
+                홀몰네트웍스가 이용자의 권리, 의무 및 책임사항을 규정함을
+                목적으로 합니다. 제2조 (정의) ① "이용자"란 홀몰네트웍스
+                사이트또는 모바일 애플리케이션에 접속하여 이 약관에 따라
+                홀몰네트웍스가 제공하는 홀몰post서비스를 받는 회원 및 비회원을
+                말합니다. ② “회원”이라 함은 홀몰네트웍스에 개인정보를 제공하여
+                회원등록을 한 자로서, 홀몰네트웍스의 정보를 지속적으로
+                제공받으며, 홀몰네트웍스가 제공하는 홀몰post서비스를 계속적으로
+                이용할 수 있는 자를 말합니다. ③ “사업자회원” 이라 함은
+                사업자등록 을 한 회원으로서 회원 가입 시 또는 가입 후
+                홀몰네트웍스에 사업자등록번호를 제공하여 등록된 회원을 말합니다.
+                ④ “비회원”이라 함은 회원으로 가입하지 않고 홀몰네트웍스가
+                제공하는 홀몰post서비스를 이용하는 자를 말합니다. ⑤
+                “홀몰통합포인트 회원”이라 함은 2021년 1월 11일부터 시행되는
+                “홀몰통합포인트 서비스”에 따라 “홀몰네트웍스”와
+                “㈜홀몰리테일(홀몰멤버십 서비스 이용약관)”의 이용약관,
+                “홀몰네트웍스”의 개인정보 처리방침, 개인정보 수집·이용 동의,
+                개인정보 제3자 제공 동의 등을 동의하는 방법으로, “홀몰통합포인트
+                서비스” 를 정상적으로 이용할 수 있는 권한을 부여 받은 자를
+                말합니다. ⑥ “홀몰통합포인트 서비스”라 함은 “홀몰통합포인트 회원”
+                및 “홀몰네트웍스통합회원”이 “홀몰네트웍스”의 홀몰post서비스 이용
+                시, ㈜홀몰리테일이 제공하는 방법을 통해 “홀몰멤버십 포인트”를
+                사용/적립 할 수 있는 서비스를 의미합니다. ⑦ “홀몰멤버십
+                포인트”라 함은 “㈜홀몰리테일”이 운영하는 멤버십 포인트로, 적립
+                및 결제 시 현금처럼 사용 가능한 포인트(담배, 유가증권,
+                서비스상품 등 일부 상품 제외)를 말하며, “홀몰멤버십 포인트”의
+                구체적인 이용 방법은 “㈜홀몰리테일”의 『홀몰멤버십 서비스
+                이용약관』을 따릅니다. 단, 포켓홀몰등 ㈜홀몰리테일이 제공하는
+                모든 서비스를 이용하기 위하여는 별도로 ㈜홀몰리테일 회원가입이
+                필요합니다. ⑧ “홀몰네트웍스통합회원”이라 함은 2021년 11월
+                1일부터 이루어지는 홀몰네트웍스의 통합회원 정책에 따라
+                홀몰네트웍스가 제공하는 홀몰post서비스 및 홀몰pon서비스 회원으로
+                함께 가입된 회원을 의미합니다. 홀몰네트웍스통합회원이
+                홀몰post서비스를 이용하는 경우 기존과 같이 홀몰통합포인트
+                서비스에 따라 홀몰멤버십 포인트를 사용/적립 할 수 있으며, 다만
+                홀몰pon서비스를 통하여는 홀몰멤버십 포인트를 사용/적립 할 수
+                없습니다. ⑨ 홀몰pon서비스라 합은 홀몰네트웍스가 운영하는 인터넷
+                홈페이지(http://www.홀몰-pon.co.kr)에서 제공하는 서비스를
+                의미하며, 구체적인 내용은『홀몰pon이용약관』을 따릅니다. 제3조
+                (약관의 효력과 개정) ① 이 약관은 이용자에게 공시함으로써
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalTermsForPersonalInfo">
+        <div class="modal-dialog">
+          <div class="modal-content ps-3 pe-3">
+            <div class="modal-header">
+              <div class="fs-5 fw-bold">개인정보처리방침</div>
+            </div>
+            <div class="modal-body">
+              <div style="overflow: auto; height: 250px; padding: 10px">
+                주식회사 홀몰네트웍스(이하 “홀몰네트웍스”라 합니다)는
+                이용자님들의 개인정보를 중요하게 생각하며 아래와 같은
+                개인정보처리방침을 가지고 있습니다. 이 개인정보처리방침은
+                개인정보와 관련한 법령 또는 지침의 변경이 있는 경우 갱신되고,
+                (홀몰네트웍스) 정책의 변화에 따라 달라질 수 있으니 이용자께서는
+                (홀몰네트웍스) 사이트를 방문 시 수시로 확인하여 주시기 바랍니다.
+                1. 개인정보의 수집·이용 목적, 수집 항목 및 방법 가.
+                (홀몰네트웍스)가 개인정보를 수집하는 목적은 이용자의 신분과
+                서비스 이용의사를 확인하여 최적화되고 맞춤화된 서비스를 제공하기
+                위함입니다. (홀몰네트웍스)는 서비스 제공을 원활하게 하기 위해
+                필요한 최소한의 정보만을 수집하고 있습니다. 나. (홀몰네트웍스)는
+                개인정보를 수집, 이용목적 이외에 다른 용도로 이를 이용하거나
+                이용자의 동의 없이 제3자에게 이를 제공하지 않습니다. 다.
+                (홀몰네트웍스)는 아래와 같은 목적을 위하여 개인정보를 수집 및
+                이용하고 있습니다. 1) 개인정보의 수집·이용 목적, 수집 항목
+                [개인정보의 수집·이용 목적, 수집 항목(필수)] 2) 수집방법 가)
+                회원가입 - 인터넷 회원가입, POSTBOX 장비 회원가입, 모바일
+                회원가입 나) 택배서비스(국내택배, 국제특송, 쇼핑몰거래, 홈택배,
+                CU끼리택배) - 인터넷 택배 예약, 택배 접수, 민원응대(CS) 시 다)
+                Pickup 서비스 - Pickup 상품 구매 쇼핑몰 라) 퀵서비스 - 인터넷,
+                유선 퀵서비스 예약 및 접수 마) 이벤트 - 당사 시행/제공 이벤트
+                참여시 바) 법인 고객에 대한 모바일 상품권, 현금영수증, DS광고
+                서비스 계약시 - 정보등록신청서 라. (홀몰네트웍스)는 이용자의
+                개인정보를 수집할 경우 반드시 이용자의 동의를 얻어 수집하며,
+                이용자의 기본적 인권을 침해할 우려가 있는 인종, 출신지, 본적지,
+                사상, 정치적 성향, 범죄기록, 건강상태 등의 정보는 이용자의 동의
+                또는 법령의 규정에 의한 경우 이외에는 수집하지 않습니다. 마.
+                (홀몰네트웍스)는 다음과 같은 방법으로 개인정보를 수집할 수
+                있습니다. - 홈페이지, POSTBOX 장비, 전화, 문의하기, 이벤트
+                응모(카카오 채널 등), 법인 고객의 정보등록신청 2. 개인 정보
+                제3자 제공 가. (홀몰네트웍스)는 정보주체의 별도 동의, 법률의
+                특별한 규정 등 개인정보보호법 제17조에 해당하는 경우 외에는
+                개인정보를 제3자에게 제공하지 않습니다. 다만, 아래의 경우에는
+                예외로 합니다. 1) 이용자가 사전에 동의한 경우 2) 법령의 규정에
+                의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라
+                수사기관의요구가 있는 경우 나. 홀몰네트웍스는 보다 나은 서비스
+                제공을 위하여 아래와 같이 개인정보를 제3자에게 제공하고
+                있습니다.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalTermsForPersonalInfoSec">
+        <div class="modal-dialog">
+          <div class="modal-content ps-3 pe-3">
+            <div class="modal-header">
+              <div class="fs-5 fw-bold">개인정보처리방침</div>
+            </div>
+            <div class="modal-body">
+              <div style="overflow: auto; height: 250px; padding: 10px">
+                주식회사 홀몰네트웍스(이하 “홀몰네트웍스”라 합니다)는
+                이용자님들의 개인정보를 중요하게 생각하며 아래와 같은
+                개인정보처리방침을 가지고 있습니다. 이 개인정보처리방침은
+                개인정보와 관련한 법령 또는 지침의 변경이 있는 경우 갱신되고,
+                (홀몰네트웍스) 정책의 변화에 따라 달라질 수 있으니 이용자께서는
+                (홀몰네트웍스) 사이트를 방문 시 수시로 확인하여 주시기 바랍니다.
+                1. 개인정보의 수집·이용 목적, 수집 항목 및 방법 가.
+                (홀몰네트웍스)가 개인정보를 수집하는 목적은 이용자의 신분과
+                서비스 이용의사를 확인하여 최적화되고 맞춤화된 서비스를 제공하기
+                위함입니다. (홀몰네트웍스)는 서비스 제공을 원활하게 하기 위해
+                필요한 최소한의 정보만을 수집하고 있습니다. 나. (홀몰네트웍스)는
+                개인정보를 수집, 이용목적 이외에 다른 용도로 이를 이용하거나
+                이용자의 동의 없이 제3자에게 이를 제공하지 않습니다. 다.
+                (홀몰네트웍스)는 아래와 같은 목적을 위하여 개인정보를 수집 및
+                이용하고 있습니다. 1) 개인정보의 수집·이용 목적, 수집 항목
+                [개인정보의 수집·이용 목적, 수집 항목(필수)] 2) 수집방법 가)
+                회원가입 - 인터넷 회원가입, POSTBOX 장비 회원가입, 모바일
+                회원가입 나) 택배서비스(국내택배, 국제특송, 쇼핑몰거래, 홈택배,
+                CU끼리택배) - 인터넷 택배 예약, 택배 접수, 민원응대(CS) 시 다)
+                Pickup 서비스 - Pickup 상품 구매 쇼핑몰 라) 퀵서비스 - 인터넷,
+                유선 퀵서비스 예약 및 접수 마) 이벤트 - 당사 시행/제공 이벤트
+                참여시 바) 법인 고객에 대한 모바일 상품권, 현금영수증, DS광고
+                서비스 계약시 - 정보등록신청서 라. (홀몰네트웍스)는 이용자의
+                개인정보를 수집할 경우 반드시 이용자의 동의를 얻어 수집하며,
+                이용자의 기본적 인권을 침해할 우려가 있는 인종, 출신지, 본적지,
+                사상, 정치적 성향, 범죄기록, 건강상태 등의 정보는 이용자의 동의
+                또는 법령의 규정에 의한 경우 이외에는 수집하지 않습니다. 마.
+                (홀몰네트웍스)는 다음과 같은 방법으로 개인정보를 수집할 수
+                있습니다. - 홈페이지, POSTBOX 장비, 전화, 문의하기, 이벤트
+                응모(카카오 채널 등), 법인 고객의 정보등록신청 2. 개인 정보
+                제3자 제공 가. (홀몰네트웍스)는 정보주체의 별도 동의, 법률의
+                특별한 규정 등 개인정보보호법 제17조에 해당하는 경우 외에는
+                개인정보를 제3자에게 제공하지 않습니다. 다만, 아래의 경우에는
+                예외로 합니다. 1) 이용자가 사전에 동의한 경우 2) 법령의 규정에
+                의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라
+                수사기관의요구가 있는 경우 나. 홀몰네트웍스는 보다 나은 서비스
+                제공을 위하여 아래와 같이 개인정보를 제3자에게 제공하고
+                있습니다.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalTermsForMarketing">
+        <div class="modal-dialog">
+          <div class="modal-content ps-3 pe-3">
+            <div class="modal-header">
+              <div class="fs-5 fw-bold">개인정보처리방침</div>
+            </div>
+            <div class="modal-body">
+              <div style="overflow: auto; height: 250px; padding: 10px">
+                주식회사 홀몰네트웍스(이하 “홀몰네트웍스”라 합니다)는
+                이용자님들의 개인정보를 중요하게 생각하며 아래와 같은
+                개인정보처리방침을 가지고 있습니다. 이 개인정보처리방침은
+                개인정보와 관련한 법령 또는 지침의 변경이 있는 경우 갱신되고,
+                (홀몰네트웍스) 정책의 변화에 따라 달라질 수 있으니 이용자께서는
+                (홀몰네트웍스) 사이트를 방문 시 수시로 확인하여 주시기 바랍니다.
+                1. 개인정보의 수집·이용 목적, 수집 항목 및 방법 가.
+                (홀몰네트웍스)가 개인정보를 수집하는 목적은 이용자의 신분과
+                서비스 이용의사를 확인하여 최적화되고 맞춤화된 서비스를 제공하기
+                위함입니다. (홀몰네트웍스)는 서비스 제공을 원활하게 하기 위해
+                필요한 최소한의 정보만을 수집하고 있습니다. 나. (홀몰네트웍스)는
+                개인정보를 수집, 이용목적 이외에 다른 용도로 이를 이용하거나
+                이용자의 동의 없이 제3자에게 이를 제공하지 않습니다. 다.
+                (홀몰네트웍스)는 아래와 같은 목적을 위하여 개인정보를 수집 및
+                이용하고 있습니다. 1) 개인정보의 수집·이용 목적, 수집 항목
+                [개인정보의 수집·이용 목적, 수집 항목(필수)] 2) 수집방법 가)
+                회원가입 - 인터넷 회원가입, POSTBOX 장비 회원가입, 모바일
+                회원가입 나) 택배서비스(국내택배, 국제특송, 쇼핑몰거래, 홈택배,
+                CU끼리택배) - 인터넷 택배 예약, 택배 접수, 민원응대(CS) 시 다)
+                Pickup 서비스 - Pickup 상품 구매 쇼핑몰 라) 퀵서비스 - 인터넷,
+                유선 퀵서비스 예약 및 접수 마) 이벤트 - 당사 시행/제공 이벤트
+                참여시 바) 법인 고객에 대한 모바일 상품권, 현금영수증, DS광고
+                서비스 계약시 - 정보등록신청서 라. (홀몰네트웍스)는 이용자의
+                개인정보를 수집할 경우 반드시 이용자의 동의를 얻어 수집하며,
+                이용자의 기본적 인권을 침해할 우려가 있는 인종, 출신지, 본적지,
+                사상, 정치적 성향, 범죄기록, 건강상태 등의 정보는 이용자의 동의
+                또는 법령의 규정에 의한 경우 이외에는 수집하지 않습니다. 마.
+                (홀몰네트웍스)는 다음과 같은 방법으로 개인정보를 수집할 수
+                있습니다. - 홈페이지, POSTBOX 장비, 전화, 문의하기, 이벤트
+                응모(카카오 채널 등), 법인 고객의 정보등록신청 2. 개인 정보
+                제3자 제공 가. (홀몰네트웍스)는 정보주체의 별도 동의, 법률의
+                특별한 규정 등 개인정보보호법 제17조에 해당하는 경우 외에는
+                개인정보를 제3자에게 제공하지 않습니다. 다만, 아래의 경우에는
+                예외로 합니다. 1) 이용자가 사전에 동의한 경우 2) 법령의 규정에
+                의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라
+                수사기관의요구가 있는 경우 나. 홀몰네트웍스는 보다 나은 서비스
+                제공을 위하여 아래와 같이 개인정보를 제3자에게 제공하고
+                있습니다.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <jsp:include page="../footer.jsp" />
+    <script src="/js/termsForHomes.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

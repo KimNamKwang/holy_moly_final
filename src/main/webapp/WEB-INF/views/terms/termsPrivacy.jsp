@@ -43,7 +43,7 @@
       <div class="container">
         <div class="mb-5">
           <div
-            class="h2 fw-bold text-center mt-4 mb-4"
+            class="h2 fw-bold text-center mt-5 mb-5"
             style="font-family: 'Noto Sans KR', sans-serif"
           >
             약관
@@ -56,22 +56,25 @@
             >
               <li>
                 <a
-                  class="border-bottom border-success p-2 text-secondary"
-                  href="./terms/terms"
+                  class="p-2 text-secondary"
+                  style="border-bottom: 1px solid rgb(55, 210, 67)"
+                  href="/terms/terms"
                   >이용약관</a
                 >
               </li>
               <li>
                 <a
-                  class="border-bottom border-success p-2 text-secondary"
-                  href="./terms/termsPS"
+                  class="p-2 text-secondary"
+                  style="border-bottom: 1px solid rgb(55, 210, 67)"
+                  href="/terms/termsPS"
                   >택배 이용 약관</a
                 >
               </li>
               <li>
                 <a
-                  class="border-bottom border-success p-2 text-secondary"
-                  href="./terms/termsPrivacy"
+                  class="p-2 text-secondary"
+                  style="border-bottom: 1px solid rgb(55, 210, 67)"
+                  href="/terms/termsPrivacy"
                   >개인정보 처리방침</a
                 >
               </li>

@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> --%>
-<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> --%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post</title>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -34,8 +31,8 @@
       rel="stylesheet"
     />
     <script
-      src="https://code.jquery.com/jquery-3.6.3.slim.js"
-      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
     <style>
@@ -77,8 +74,7 @@
   </head>
 
   <body style="height: 1500px">
-    <jsp:include page="./navbar.jsp" />
-
+  <jsp:include page="./navbar.jsp" />
     <!-- main -->
     <div
       class="container d-flex justify-content-center"
@@ -110,7 +106,7 @@
             <div class="row" id="menu_icons_first">
               <div class="col">
                 <a
-                  href="/termsForHome"
+                  href="/home/termsForHome"
                   class="text-dark"
                   style="text-decoration: none"
                 >
@@ -125,7 +121,7 @@
                   >
                     <div>
                       <img
-                        src="./images/홈.png"
+                        src="/images/홈.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -143,7 +139,7 @@
               </div>
               <div class="col">
                 <a
-                  href="/termsForHomeBulk"
+                  href="/home/termsForHomeBulk"
                   class="text-dark"
                   style="text-decoration: none"
                 >
@@ -158,7 +154,7 @@
                   >
                     <div>
                       <img
-                        src="./images/다량택배.png"
+                        src="/images/다량택배.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -187,7 +183,7 @@
                   >
                     <div>
                       <img
-                        src="./images/왕관.png"
+                        src="/images/왕관.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -208,7 +204,7 @@
             <div class="row" id="menu_icons_second" style="display: none">
               <div class="col">
                 <a
-                  href="./guideHome.html"
+                  href="/guide/guideHome"
                   class="text-dark"
                   style="text-decoration: none"
                 >
@@ -222,7 +218,7 @@
                   >
                     <div>
                       <img
-                        src="./images/택배이용안내.png"
+                        src="/images/택배이용안내.png"
                         style="width: 80px; height: 80px"
                         alt=""
                       />
@@ -240,7 +236,7 @@
               </div>
               <div class="col">
                 <a
-                  href="./guidePackaging.html"
+                  href="/guide/guidePackaging"
                   class="text-dark"
                   style="text-decoration: none"
                 >
@@ -254,7 +250,7 @@
                   >
                     <div>
                       <img
-                        src="./images/포장안내.png"
+                        src="/images/포장안내.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -272,7 +268,7 @@
               </div>
               <div class="col">
                 <a
-                  href="./guideImpossible.html"
+                  href="/guide/guideImpossible"
                   class="text-dark"
                   style="text-decoration: none"
                 >
@@ -286,7 +282,7 @@
                   >
                     <div>
                       <img
-                        src="./images/이용불가상품.png"
+                        src="/images/이용불가상품.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -304,7 +300,7 @@
               </div>
               <div class="col">
                 <a
-                  href="./Inquiry.html"
+                  href="/customer/faqList"
                   class="text-dark"
                   style="text-decoration: none"
                 >
@@ -318,7 +314,7 @@
                   >
                     <div>
                       <img
-                        src="./images/고객센터.png"
+                        src="/images/고객센터.png"
                         style="width: 70px; height: 70px"
                         alt=""
                       />
@@ -366,18 +362,18 @@
                 <div class="carousel-inner text-center">
                   <div class="carousel-item active" data-bs-interval="4000">
                     <a
-                      href="./eventView.html"
+                      href="/event/eventView"
                       class="text-decoration-none text-light"
                     >
-                      <img class="h-50" src="./images/캐러셀1.png" alt="dhl" />
+                      <img class="h-50" src="/images/캐러셀1.png" alt="dhl" />
                     </a>
                   </div>
                   <div class="carousel-item" data-bs-interval="4000">
                     <a
-                      href="./eventView.html"
+                      href="/event/eventView"
                       class="text-decoration-none text-light"
                     >
-                      <img class="h-50" src="./images/캐러셀2.png" alt="dock" />
+                      <img class="h-50" src="/images/캐러셀2.png" alt="dock" />
                     </a>
                   </div>
                   <button
@@ -398,13 +394,13 @@
               </div>
             </div>
           </section>
-          <section style="width: 1160px; margin-top: 5rem">
+          <section style="width: 1160px; margin: 5rem 0rem 5rem 0rem">
             <ul class="d-flex list-unstyled justify-content-around text-center">
               <div class="h-75 d-inline-block pt-2">
                 <li class="fs-2 fw-bold">공지사항</li>
                 <div class="text-start">
                   <a
-                    href="./noticeList.html"
+                    href="/cs/noticeList"
                     class="mt-5 btn btn-outline-dark border rounded-pill"
                   >
                     전체보기
@@ -417,7 +413,7 @@
               >
                 <div class="notice1">
                   <a
-                    href="./noticeView.html"
+                    href="/cs/noticeView"
                     class="text-decoration-none text-dark"
                   >
                     <li class="text-start p-3">
@@ -435,7 +431,7 @@
               >
                 <div class="notice2">
                   <a
-                    href="./noticeView.html"
+                    href="/cs/noticeView"
                     class="text-decoration-none text-dark"
                   >
                     <li class="p-3 text-start">
@@ -451,7 +447,7 @@
               >
                 <div class="notice3">
                   <a
-                    href="./noticeView.html"
+                    href="/cs/noticeView"
                     class="text-decoration-none text-dark"
                   >
                     <li class="text-start p-3" style="font-size: 1.1rem">
@@ -475,13 +471,69 @@
               ><span class="navbar-toggler-icon"></span
             ></a>
             <div class="collapse navbar-collapse" id="collapseID">
-              <div class="card" style="width: 13rem">
-                <div class="card-header">홍길동</div>
+              <div
+                class="card"
+                style="
+                  width: 15rem;
+                  border: 2px solid rgb(171, 171, 171);
+                  border-radius: 10px 10px;
+                "
+              >
+                <div class="card-header">
+                  <span class="fw-bold fs-4">홍길동</span
+                  ><span class="fs-4">님</span>
+                  <span style="font-size: 0.9rem">(honggildong)</span>
+                </div>
                 <div class="card-body">
-                  <div>포인트 : 1024P</div>
-                  <div>회원등급 : Family</div>
-                  <div>현재 배송중인 상품 : 없음</div>
-                  <a href="./mypage.html">마이페이지</a>
+                  <div>
+                    <span style="color: rgb(180, 180, 180); font-size: 0.9rem"
+                      >Level</span
+                    >
+                    <span class="fw-bold fs-5" style="color: rgb(123, 76, 211)"
+                      >Family</span
+                    >
+                  </div>
+                  <div
+                    class="pt-3 mt-3"
+                    style="border-top: 1px solid rgb(203, 203, 203)"
+                  >
+                    <div>
+                      <a href="/mypage/myPoint" style="text-decoration: none">
+                        <img src="/images/쿠폰함.png" width="34px" alt="" />
+                        <span
+                          style="color: rgb(144, 146, 148); font-size: 0.9rem"
+                          >포인트</span
+                        >
+                        <span
+                          class="fs-5 fw-bold ps-2"
+                          style="color: rgb(55, 210, 67)"
+                          >1024P</span
+                        >
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href="/customer/inquiryList"
+                        style="text-decoration: none"
+                      >
+                        <img
+                          src="/images/내문의현황.png"
+                          class="ms-1"
+                          width="28px"
+                          alt=""
+                        />
+                        <span
+                          style="color: rgb(144, 146, 148); font-size: 0.9rem"
+                          >내 문의</span
+                        >
+                        <span
+                          class="fs-5 fw-bold ps-2"
+                          style="color: rgb(76, 112, 211)"
+                          >1</span
+                        >
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -492,7 +544,7 @@
     </div>
     <!-- 여기까지 main -->
     <jsp:include page="./footer.jsp" />
-    <script src="./js/index.js"></script>
+    <script src="/js/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
