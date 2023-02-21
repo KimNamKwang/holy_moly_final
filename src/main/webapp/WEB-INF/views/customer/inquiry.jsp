@@ -25,16 +25,22 @@
         color: rgb(55, 210, 67);
       }
     </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
+
     <div class="container text-center">
       <div class="fs-1 fw-bold p-5">고객센터</div>
       <ul class="d-flex justify-content-center list-unstyled">
         <li class="fs-3 fw-bold pe-5" style="opacity: 0.5">
           <a
-            href="/faq/faqList"
+            href="/customer/faqList"
             id="how_to_use"
             class="text-decoration-none text-dark"
           >
@@ -42,7 +48,7 @@
           </a>
         </li>
         <li class="fs-3 fw-bold ps-5" id="pee_notice">
-          <a href="/inquiry/Inquiry" class="text-decoration-none text-dark">
+          <a href="/customer/inquiry" class="text-decoration-none text-dark">
             1:1문의
           </a>
         </li>
@@ -69,7 +75,7 @@
             <div class="row">
               <div class="col">
                 <a
-                  href="/inquiry/inquiryList"
+                  href="/customer/inquiryList"
                   class="btn fw-bold"
                   style="
                     background-color: rgb(242, 255, 216);
@@ -83,7 +89,7 @@
               </div>
               <div class="col">
                 <a
-                  href="/inquiry/memberInquiry"
+                  href="/customer/memberInquiry"
                   class="btn text-light fw-bold"
                   style="
                     background-color: rgb(55, 210, 67);

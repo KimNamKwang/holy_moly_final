@@ -20,6 +20,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body
@@ -70,7 +75,7 @@
           </div>
           <div class="text-start mt-4">
             <a
-              href="./inquiryList"
+              href="/customer/inquiryList"
               class="btn btn-sm"
               style="
                 border-radius: 50px;

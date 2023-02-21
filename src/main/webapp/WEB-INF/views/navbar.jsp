@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 여기부터 navbar -->
     <header class="">
-      <nav class="navbar navbar-dark navbar-expand-sm">
+      <nav class="navbar navbar-dark navbar-expand-sm pb-0">
         <div
           class="container-fluid border-bottom d-flex justify-content-between"
           style="height: 130px"
@@ -28,7 +28,7 @@
             >
               <div class="color">
                 <a
-                  href="./store.html"
+                  href="/company/store"
                   class="nav-link fw-bold text-nowrap"
                   style="font-size: 1.2rem"
                   >점포찾기</a
@@ -38,7 +38,7 @@
             <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
               <div class="color">
                 <a
-                  href="trackShipment.html"
+                  href="/delivery/trackShipment"
                   class="nav-link fw-bold text-nowrap"
                   style="font-size: 1.2rem"
                   >배송조회</a
@@ -48,7 +48,7 @@
             <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
               <div class="color">
                 <a
-                  href="./mypage.html"
+                  href="/mypage/mypage"
                   class="nav-link fw-bold text-nowrap"
                   style="font-size: 1.2rem"
                   >MY</a
@@ -68,13 +68,13 @@
                 >
                   <div class="navbar" id="">
                     <a
-                      href="login.html"
+                      href="/common/login"
                       class="nav-link text-nowrap fw-bold"
                       style="font-size: 1.1rem; color: rgb(171, 171, 171)"
                       >로그인</a
                     >
                     <a
-                      href="join_step1.html"
+                      href="/common/join_step1"
                       class="nav-link text-nowrap fw-bold"
                       style="font-size: 1.1rem; color: rgb(171, 171, 171)"
                       >회원가입</a
@@ -122,13 +122,13 @@
                         style="font-size: 0.8rem"
                       >
                         <a
-                          href="./termsForHome.html"
+                          href="/home/termsForHome"
                           class="text-dark pe-2"
                           style="text-decoration: none"
                           >방문택배접수</a
                         >
                         <a
-                          href="./termsForHomeBulk.html"
+                          href="/home/termsForHomeBulk"
                           class="text-dark pe-2"
                           style="text-decoration: none"
                           >다량접수</a
@@ -182,19 +182,19 @@
                         style="font-size: 0.8rem"
                       >
                         <a
-                          href="./guideHome.html"
+                          href="/guide/guideHome"
                           class="text-dark pe-2"
                           style="text-decoration: none"
                           >택배 이용안내</a
                         >
                         <a
-                          href="./guidePackaging.html"
+                          href="/guide/guidePackaging"
                           class="text-dark pe-2"
                           style="text-decoration: none"
                           >포장안내</a
                         >
                         <a
-                          href="./guideImpossible.html"
+                          href="/guide/guideImpossible"
                           class="text-dark"
                           style="text-decoration: none"
                           >이용불가 상품</a
@@ -204,7 +204,7 @@
                       <div class="pt-3">&nbsp;</div>
 
                       <a
-                        href="./trackShipment.html"
+                        href="/delivery/trackShipment"
                         class="dropdown-item fw-bold"
                         >배송조회</a
                       >
@@ -223,7 +223,7 @@
                         style="font-size: 0.8rem"
                       >
                         <a
-                          href="./gradeBenefit.html"
+                          href="/grade/gradeBenefit"
                           class="text-dark pe-2"
                           style="text-decoration: none"
                           >등급별 혜택</a
@@ -231,20 +231,20 @@
                       </div>
                     </ul>
                     <ul class="col">
-                      <a href="./noticeList.html" class="dropdown-item fw-bold"
+                      <a href="/cs/noticeList" class="dropdown-item fw-bold"
                         >공지사항</a
                       >
                       <div class="pt-3">&nbsp;</div>
-                      <a href="/faq/faqList" class="dropdown-item fw-bold"
+                      <a href="/customer/faqList" class="dropdown-item fw-bold"
                         >고객센터</a
                       >
                       <div class="pt-3">&nbsp;</div>
-                      <a href="./store.html" class="dropdown-item fw-bold"
+                      <a href="/company/store" class="dropdown-item fw-bold"
                         >점포찾기</a
                       >
                       <div class="pt-3">&nbsp;</div>
 
-                      <a href="./eventList.html" class="dropdown-item fw-bold"
+                      <a href="/event/eventList" class="dropdown-item fw-bold"
                         >이벤트</a
                       >
                     </ul>
@@ -256,11 +256,7 @@
         </div>
       </nav>
     </header>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.slim.js"
-      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
-      crossorigin="anonymous"
-    ></script>
+    <!-- 여기까지 navbar -->
     <script>
       $(document).ready(function () {
         $(".dropdown-submenu01").on("mouseover", function (e) {
@@ -277,8 +273,4 @@
         });
       });
     </script>
-
-    
-
-
     <!-- 여기까지 navbar -->

@@ -353,7 +353,9 @@
                     class="form-control form-check-input w-100"
                     type="password"
                     name="userPassword"
+                    id="userPassword"
                     placeholder="PW"
+                    onchange="isSame()"
                     required
                     style="
                       height: 50px;
@@ -370,7 +372,9 @@
                     class="form-control form-check-input w-100"
                     type="password"
                     name="userPasswordCheck"
+                    id="userPasswordCheck"
                     placeholder="PW"
+                    onchange="isSame()"
                     required
                     style="
                       height: 50px;
@@ -379,6 +383,7 @@
                     "
                   />
                 </div>
+                <div id="same"></div>
               </div>
               <div>
                 <div class="form-check-label fw-bold pb-2">휴대폰 번호</div>
@@ -467,6 +472,7 @@
             <button
               class="btn btn-lg text-light fw-bold"
               style="background-color: rgb(55, 210, 67)"
+              id="target_btn"
             >
               >
             </button>
@@ -692,6 +698,31 @@
           $(this).next("div").toggle();
         });
       });
+    </script>
+    <script>
+      function isSame() {
+        if (
+          document.getElementById("userPassword").value != "" &&
+          document.getElementById("userPasswordCheck").value != ""
+        ) {
+          if (
+            document.getElementById("userPassword").value ==
+            document.getElementById("userPasswordCheck").value
+          ) {
+            document.getElementById("same").innerHTML =
+              "비밀번호가 일치합니다.";
+            document.getElementById("same").style.color = "lightgreen";
+            document.getElementById("target_btn").disabled = false;
+            document.getElementById("target_btn").style.opacity = 1;
+          } else {
+            document.getElementById("same").innerHTML =
+              "비밀번호가 일치하지 않습니다.";
+            document.getElementById("same").style.color = "red";
+            document.getElementById("target_btn").disabled = true;
+            document.getElementById("target_btn").style.opacity = 0.25;
+          }
+        }
+      }
     </script>
   </body>
 </html>
