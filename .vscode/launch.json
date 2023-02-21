@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-HolyMolyFinalApplication<holy_moly_final>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.holy_moly_final.holy_moly_final.HolyMolyFinalApplication",
+      "projectName": "holy_moly_final",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
