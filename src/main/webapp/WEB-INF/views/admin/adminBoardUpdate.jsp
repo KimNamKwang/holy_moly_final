@@ -34,7 +34,6 @@
   </head>
 
   <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
-
     <jsp:include page="../navbar.jsp" />
     <main>
       <div
