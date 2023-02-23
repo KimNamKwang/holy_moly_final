@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/admin")
 public class AdminController {
 
-    @RequestMapping(value = "adminBoard", method = RequestMethod.POST)
+    @RequestMapping(value = "adminBoard", method = RequestMethod.GET)
     public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminBoardCreate", method = RequestMethod.POST)
+    @RequestMapping(value = "adminBoardCreate", method = RequestMethod.GET)
     public ModelAndView adminBoardCreate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminBoardUpdate", method = RequestMethod.POST)
+    @RequestMapping(value = "adminBoardUpdate", method = RequestMethod.GET)
     public ModelAndView adminBoardUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -46,7 +46,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminInquiry", method = RequestMethod.POST)
+    @RequestMapping(value = "adminInquiry", method = RequestMethod.GET)
     public ModelAndView adminInquiry(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -54,7 +54,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminUserCreate", method = RequestMethod.POST)
+    @RequestMapping(value = "adminUserCreate", method = RequestMethod.GET)
     public ModelAndView adminUserCreate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -62,7 +62,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminUsers", method = RequestMethod.POST)
+    @RequestMapping(value = "adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -70,7 +70,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminUserUpdate", method = RequestMethod.POST)
+    @RequestMapping(value = "adminUserUpdate", method = RequestMethod.GET)
     public ModelAndView adminUserUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

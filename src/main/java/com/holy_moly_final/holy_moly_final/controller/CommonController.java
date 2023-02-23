@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/common")
 public class CommonController {
 
-    @RequestMapping(value = "/IdResult_fa", method = RequestMethod.POST)
+    @RequestMapping(value = "/IdResult_fa", method = RequestMethod.GET)
     public ModelAndView IdResult_fa(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/IdResult_su", method = RequestMethod.POST)
+    @RequestMapping(value = "/IdResult_su", method = RequestMethod.GET)
     public ModelAndView IdResult_su(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/IdSearch", method = RequestMethod.POST)
+    @RequestMapping(value = "/IdSearch", method = RequestMethod.GET)
     public ModelAndView IdSearch(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -46,7 +46,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/join_step1", method = RequestMethod.POST)
+    @RequestMapping(value = "/join_step1", method = RequestMethod.GET)
     public ModelAndView join_step1(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -54,7 +54,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/join_step2", method = RequestMethod.POST)
+    @RequestMapping(value = "/join_step2", method = RequestMethod.GET)
     public ModelAndView join_step2(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -62,7 +62,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/join_step3", method = RequestMethod.POST)
+    @RequestMapping(value = "/join_step3", method = RequestMethod.GET)
     public ModelAndView join_step3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -70,7 +70,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/join_step4", method = RequestMethod.POST)
+    @RequestMapping(value = "/join_step4", method = RequestMethod.GET)
     public ModelAndView join_step4(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -78,7 +78,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -86,7 +86,7 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/PwSearch", method = RequestMethod.POST)
+    @RequestMapping(value = "/PwSearch", method = RequestMethod.GET)
     public ModelAndView PwSearch(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

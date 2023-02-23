@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/company")
 public class CompanyController {
 
-    @RequestMapping(value = "/company_introduction", method = RequestMethod.POST)
+    @RequestMapping(value = "/company_introduction", method = RequestMethod.GET)
     public ModelAndView company_introduction(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class CompanyController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/store", method = RequestMethod.POST)
+    @RequestMapping(value = "/store", method = RequestMethod.GET)
     public ModelAndView store(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

@@ -86,6 +86,16 @@
                     />
                   </td>
                 </tr>
+                <th>생년월일</th>
+                <td>
+                  <input
+                    type="date"
+                    class="form-control form-control w-50"
+                    name="birth_date"
+                    value="1996-04-11"
+                  />
+                </td>
+              </tr>
                 <tr>
                   <th class="text-nowrap">등급</th>
                   <td>

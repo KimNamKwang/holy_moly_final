@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/event")
 public class EventController {
 
-    @RequestMapping(value = "/eventList", method = RequestMethod.POST)
+    @RequestMapping(value = "/eventList", method = RequestMethod.GET)
     public ModelAndView eventList(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class EventController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/eventView", method = RequestMethod.POST)
+    @RequestMapping(value = "/eventView", method = RequestMethod.GET)
     public ModelAndView eventView(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

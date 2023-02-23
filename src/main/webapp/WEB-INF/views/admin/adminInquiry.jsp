@@ -213,11 +213,11 @@
                           </div>
                         </div>
                         <div>
-                          <div class="mt-2">
+                          <div class="mt-3 pb-3">
                             <ul class="pagination justify-content-center">
                               <li class="page-item">
                                 <a
-                                  class="page-link"
+                                  class="page-link border-0"
                                   style="color: rgb(180, 180, 180)"
                                   href="#"
                                   aria-label="Previous"
@@ -228,11 +228,13 @@
                               </li>
 
                               <li class="page-item">
-                                <a class="page-link text-dark" href="#">1</a>
+                                <a class="page-link text-dark border-0" href="#"
+                                  >1</a
+                                >
                               </li>
                               <li class="page-item">
                                 <a
-                                  class="page-link"
+                                  class="page-link border-0"
                                   style="color: rgb(180, 180, 180)"
                                   href="#"
                                   >2</a
@@ -240,7 +242,7 @@
                               </li>
                               <li class="page-item">
                                 <a
-                                  class="page-link"
+                                  class="page-link border-0"
                                   style="color: rgb(180, 180, 180)"
                                   href="#"
                                   >3</a
@@ -249,7 +251,7 @@
 
                               <li class="page-item">
                                 <a
-                                  class="page-link"
+                                  class="page-link border-0"
                                   style="color: rgb(180, 180, 180)"
                                   href="#"
                                   aria-label="Next"

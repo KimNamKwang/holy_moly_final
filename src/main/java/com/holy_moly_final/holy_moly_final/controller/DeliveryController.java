@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/delivery")
 public class DeliveryController {
 
-    @RequestMapping(value = "/trackShipInquiry_fail", method = RequestMethod.POST)
+    @RequestMapping(value = "/trackShipInquiry_fail", method = RequestMethod.GET)
     public ModelAndView trackShipInquiry_fail(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class DeliveryController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/trackShipInquiry", method = RequestMethod.POST)
+    @RequestMapping(value = "/trackShipInquiry", method = RequestMethod.GET)
     public ModelAndView trackShipInquiry(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class DeliveryController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/trackShipment", method = RequestMethod.POST)
+    @RequestMapping(value = "/trackShipment", method = RequestMethod.GET)
     public ModelAndView trackShipment(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

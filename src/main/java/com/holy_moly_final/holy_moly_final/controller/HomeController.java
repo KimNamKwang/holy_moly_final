@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/home")
 public class HomeController {
 
-    @RequestMapping(value = "/payment_completed", method = RequestMethod.POST)
+    @RequestMapping(value = "/payment_completed", method = RequestMethod.GET)
     public ModelAndView payment_completed(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationForHome", method = RequestMethod.POST)
+    @RequestMapping(value = "/reservationForHome", method = RequestMethod.GET)
     public ModelAndView reservationForHome(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationForHomeBulk", method = RequestMethod.POST)
+    @RequestMapping(value = "/reservationForHomeBulk", method = RequestMethod.GET)
     public ModelAndView reservationForHomeBulk(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -46,7 +46,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationForHomeBulkStep2", method = RequestMethod.POST)
+    @RequestMapping(value = "/reservationForHomeBulkStep2", method = RequestMethod.GET)
     public ModelAndView reservationForHomeBulkStep2(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -54,7 +54,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationForHomeBulkStep3", method = RequestMethod.POST)
+    @RequestMapping(value = "/reservationForHomeBulkStep3", method = RequestMethod.GET)
     public ModelAndView reservationForHomeBulkStep3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -62,7 +62,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationForHomeStep2", method = RequestMethod.POST)
+    @RequestMapping(value = "/reservationForHomeStep2", method = RequestMethod.GET)
     public ModelAndView reservationForHomeStep2(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -70,7 +70,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationForHomeStep3", method = RequestMethod.POST)
+    @RequestMapping(value = "/reservationForHomeStep3", method = RequestMethod.GET)
     public ModelAndView reservationForHomeStep3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -78,7 +78,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/termsForHome", method = RequestMethod.POST)
+    @RequestMapping(value = "/termsForHome", method = RequestMethod.GET)
     public ModelAndView termsForHome(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -86,7 +86,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/termsForHomeBulk", method = RequestMethod.POST)
+    @RequestMapping(value = "/termsForHomeBulk", method = RequestMethod.GET)
     public ModelAndView termsForHomeBulk(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/cs")
 public class CsController {
 
-    @RequestMapping(value = "/noticeList", method = RequestMethod.POST)
+    @RequestMapping(value = "/noticeList", method = RequestMethod.GET)
     public ModelAndView noticeList(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class CsController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/noticeView", method = RequestMethod.POST)
+    @RequestMapping(value = "/noticeView", method = RequestMethod.GET)
     public ModelAndView noticeView(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

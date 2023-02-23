@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/grade")
 public class GradeController {
 
-    @RequestMapping(value = "/gradeBenefit", method = RequestMethod.POST)
+    @RequestMapping(value = "/gradeBenefit", method = RequestMethod.GET)
     public ModelAndView gradeBenefit(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

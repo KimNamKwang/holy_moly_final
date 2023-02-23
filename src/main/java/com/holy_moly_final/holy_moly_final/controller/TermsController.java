@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/terms")
 public class TermsController {
 
-    @RequestMapping(value = "/terms", method = RequestMethod.POST)
+    @RequestMapping(value = "/terms", method = RequestMethod.GET)
     public ModelAndView terms(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class TermsController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/termsPrivacy", method = RequestMethod.POST)
+    @RequestMapping(value = "/termsPrivacy", method = RequestMethod.GET)
     public ModelAndView termsPrivacy(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class TermsController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/termsPS", method = RequestMethod.POST)
+    @RequestMapping(value = "/termsPS", method = RequestMethod.GET)
     public ModelAndView termsPS(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

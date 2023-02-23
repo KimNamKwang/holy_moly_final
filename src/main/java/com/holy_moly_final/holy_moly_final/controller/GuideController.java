@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/guide")
 public class GuideController {
 
-    @RequestMapping(value = "/guideHome", method = RequestMethod.POST)
+    @RequestMapping(value = "/guideHome", method = RequestMethod.GET)
     public ModelAndView guideHome(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class GuideController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/guideImpossible", method = RequestMethod.POST)
+    @RequestMapping(value = "/guideImpossible", method = RequestMethod.GET)
     public ModelAndView guideImpossible(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class GuideController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/guidePackaging", method = RequestMethod.POST)
+    @RequestMapping(value = "/guidePackaging", method = RequestMethod.GET)
     public ModelAndView guidePackaging(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

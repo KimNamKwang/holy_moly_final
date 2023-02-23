@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/customer")
 public class CustomerController {
 
-    @RequestMapping(value = "/faqList", method = RequestMethod.POST)
+    @RequestMapping(value = "/faqList", method = RequestMethod.GET)
     public ModelAndView faqList(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/inquiry", method = RequestMethod.POST)
+    @RequestMapping(value = "/inquiry", method = RequestMethod.GET)
     public ModelAndView inquiry(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/inquiryView", method = RequestMethod.POST)
+    @RequestMapping(value = "/inquiryView", method = RequestMethod.GET)
     public ModelAndView inquiryView(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -46,7 +46,7 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/inquiryList", method = RequestMethod.POST)
+    @RequestMapping(value = "/inquiryList", method = RequestMethod.GET)
     public ModelAndView inquiryList(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -54,7 +54,7 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/memberInquiry", method = RequestMethod.POST)
+    @RequestMapping(value = "/memberInquiry", method = RequestMethod.GET)
     public ModelAndView memberInquiry(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

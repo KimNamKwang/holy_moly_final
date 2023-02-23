@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/mypage")
 public class MypageController {
 
-    @RequestMapping(value = "/mypageMyinfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/mypageMyinfo", method = RequestMethod.GET)
     public ModelAndView myinfo(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -30,7 +30,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/myinfoPass", method = RequestMethod.POST)
+    @RequestMapping(value = "/myinfoPass", method = RequestMethod.GET)
     public ModelAndView myinfoPass(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -38,7 +38,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/mypage", method = RequestMethod.POST)
+    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
     public ModelAndView mypage(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -46,7 +46,7 @@ public class MypageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/myPoint", method = RequestMethod.POST)
+    @RequestMapping(value = "/myPoint", method = RequestMethod.GET)
     public ModelAndView myPoint(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

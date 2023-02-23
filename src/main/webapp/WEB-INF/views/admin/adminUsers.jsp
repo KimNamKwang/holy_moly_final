@@ -82,11 +82,19 @@
                 </tr>
               </tbody>
             </table>
-            <div class="mt-2">
+
+            <div class="text-end pt-2 pb-2">
+              <a
+                href="/admin/adminUserCreate"
+                class="btn btn btn-outline-dark btn-sm"
+                >신규등록</a
+              >
+            </div>
+            <div class="mt-2 pb-3">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
                   <a
-                    class="page-link"
+                    class="page-link border-0"
                     style="color: rgb(180, 180, 180)"
                     href="#"
                     aria-label="Previous"
@@ -97,11 +105,11 @@
                 </li>
 
                 <li class="page-item">
-                  <a class="page-link text-dark" href="#">1</a>
+                  <a class="page-link text-dark border-0" href="#">1</a>
                 </li>
                 <li class="page-item">
                   <a
-                    class="page-link"
+                    class="page-link border-0"
                     style="color: rgb(180, 180, 180)"
                     href="#"
                     >2</a
@@ -109,7 +117,7 @@
                 </li>
                 <li class="page-item">
                   <a
-                    class="page-link"
+                    class="page-link border-0"
                     style="color: rgb(180, 180, 180)"
                     href="#"
                     >3</a
@@ -118,7 +126,7 @@
 
                 <li class="page-item">
                   <a
-                    class="page-link"
+                    class="page-link border-0"
                     style="color: rgb(180, 180, 180)"
                     href="#"
                     aria-label="Next"
@@ -128,13 +136,6 @@
                   </a>
                 </li>
               </ul>
-            </div>
-            <div class="text-end pt-2 pb-2">
-              <a
-                href="/admin/adminUserCreate"
-                class="btn btn btn-outline-dark btn-sm"
-                >신규등록</a
-              >
             </div>
           </div>
 
@@ -153,7 +154,7 @@
                     </tr>
                     <tr>
                       <th>생년월일</th>
-                      <td>19960411</td>
+                      <td>1996/04/11</td>
                     </tr>
                     <tr>
                       <th>아이디</th>
