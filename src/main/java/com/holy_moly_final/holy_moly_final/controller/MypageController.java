@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/mypage")
 public class MypageController {
 
-    @RequestMapping(value = "/mypageMyinfo", method = RequestMethod.GET)
+    @RequestMapping(value = "/myinfo", method = RequestMethod.GET)
     public ModelAndView myinfo(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 

@@ -53,10 +53,12 @@
   </head>
 
   <body>
-  <jsp:include page="../navbar.jsp" />
+    <jsp:include page="../navbar.jsp" />
     <!--바디바디 시작-->
-    <div class="container mt-5 mb-5" style="font-family: 'Noto Sans KR', sans-serif">
-      
+    <div
+      class="container mt-5"
+      style="font-family: 'Noto Sans KR', sans-serif; margin-bottom: 200px"
+    >
       <div class="content-area group">
         <div class="mb-5">
           <!--마이페이지-->

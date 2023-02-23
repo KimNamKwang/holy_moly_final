@@ -95,7 +95,11 @@
           <div class="text-end mt-3">
             <button
               class="btn btn-lg text-light fw-bold"
-              style="background-color: rgb(55, 210, 67)"
+              style="
+                background-color: rgb(55, 210, 67);
+                border-radius: 50%;
+                font-size: 1.3rem;
+              "
             >
               >
             </button>

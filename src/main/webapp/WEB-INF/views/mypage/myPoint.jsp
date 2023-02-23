@@ -222,7 +222,7 @@
       class="container"
       style="align-content: center; font-family: 'Noto Sans KR', sans-serif"
     >
-      <div class="content-area group">
+      <div class="content-area group" style="padding-bottom: 200px">
         <h2 class="mypage-title text-center"><b>포인트</b></h2>
         <br /><br />
 
