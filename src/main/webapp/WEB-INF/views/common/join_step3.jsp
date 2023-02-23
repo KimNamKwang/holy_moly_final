@@ -26,7 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/join.css" />
+    <link rel="stylesheet" href="/resources/css/join.css" />
     <style>
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -81,6 +81,18 @@
       <form action="/common/join_step4" method="">
         <div class="bg-white border text-start p-4" style="border-radius: 20px">
           <table class="table align-middle table-borderless">
+            <tr>
+              <th class="text-nowrap" style="vertical-align: top">생년월일</th>
+              <td>
+                <input
+                  type="date"
+                  class="form-control w-50"
+                  name="birth_date"
+                  id="birth_date"
+                  required
+                />
+              </td>
+            </tr>
             <tr>
               <th style="vertical-align: top">연락처</th>
               <td class="row">
@@ -192,7 +204,7 @@
               >BACK</a
             >
           </div>
-          <div class="col text-end mt-3">
+          <div class="col text-end mt-3" style="margin-bottom: 200px">
             <button
               class="btn btn-lg text-light fw-bold"
               style="background-color: rgb(55, 210, 67)"

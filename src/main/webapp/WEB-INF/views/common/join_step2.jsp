@@ -26,7 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/join.css" />
+    <link rel="stylesheet" href="/resources/css/join.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
@@ -144,7 +144,7 @@
           <div class="col text-end mt-3">
             <button
               class="btn btn-lg text-light fw-bold"
-              style="background-color: rgb(55, 210, 67)"
+              style="background-color: rgb(55, 210, 67); margin-bottom: 200px"
               id="target_btn"
             >
               >
