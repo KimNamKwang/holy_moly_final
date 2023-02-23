@@ -87,31 +87,39 @@
           <div id="boxForChange" class="mt-5 justify-content-center"></div>
 
           <div id="agreement_box" class="mt-5 justify-content-center">
-            <div class="all_check mb-5" style="text-align: center">
+            <div
+              class="all_check mb-5 d-flex align-items-center justify-content-center"
+              style="text-align: center"
+            >
               <input
                 class="form-check-input"
+                style="zoom: 1.5; border-radius: 50%"
                 type="checkbox"
                 id="check_evt1"
                 value="Y"
                 name="agree"
                 onclick="selectAll(this)"
               /><label for="check_evt1">
-                <span class="ps-1"
+                <span class="ps-2"
                   >이용약관, 개인정보 처리방침, 개인정보 취급위탁, 만14세이상에
                   모두 동의합니다.</span
                 ></label
               >
             </div>
-            <div style="text-align: center">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="text-align: center"
+            >
               <input
                 class="form-check-input"
+                style="zoom: 1.3; border-radius: 50%"
                 type="checkbox"
                 id="check_evt2"
                 value="Y"
                 required
                 name="agree"
               /><label for="check_evt2">
-                <span class="ps-1">[필수] 택배이용약관</span>
+                <span class="ps-2">[필수] 택배이용약관</span>
               </label>
             </div>
 
@@ -122,7 +130,7 @@
                   width: 80%;
                   height: 250px;
                   padding: 10px;
-                  border: 0.1px solid gray;
+                  border: 0.1px solid rgb(221, 221, 221);
                 "
               >
                 <h4><strong>제 1 장 총칙</strong></h4>
@@ -217,9 +225,13 @@
               </div>
             </div>
 
-            <div class="pt-5" style="text-align: center">
+            <div
+              class="pt-5 d-flex align-items-center justify-content-center"
+              style="text-align: center"
+            >
               <input
                 class="form-check-input"
+                style="zoom: 1.3; border-radius: 50%"
                 type="checkbox"
                 id="check_evt3"
                 value="Y"
@@ -227,7 +239,7 @@
                 name="agree"
                 required
               /><label for="check_evt3">
-                <span class="ps-1">[필수] 이용약관동의</span></label
+                <span class="ps-2">[필수] 이용약관동의</span></label
               >
             </div>
 
@@ -238,7 +250,7 @@
                   width: 80%;
                   height: 250px;
                   padding: 10px;
-                  border: 0.1px solid gray;
+                  border: 0.1px solid rgb(221, 221, 221);
                 "
               >
                 <h5><strong>제1장 총칙</strong></h5>
@@ -387,9 +399,13 @@
               </div>
             </div>
 
-            <div class="pt-5" style="text-align: center">
+            <div
+              class="pt-5 d-flex align-items-center justify-content-center"
+              style="text-align: center"
+            >
               <input
                 class="form-check-input"
+                style="zoom: 1.3; border-radius: 50%"
                 type="checkbox"
                 id="check_evt4"
                 value="Y"
@@ -397,7 +413,7 @@
                 class="mt-5"
                 required
               /><label for="check_evt4">
-                <span class="ps-1">[필수] 개인정보처리방침</span></label
+                <span class="ps-2">[필수] 개인정보처리방침</span></label
               >
             </div>
             <div class="d-flex justify-content-center mt-3">
@@ -407,7 +423,7 @@
                   width: 80%;
                   height: 250px;
                   padding: 10px;
-                  border: 0.1px solid gray;
+                  border: 0.1px solid rgb(221, 221, 221);
                 "
               >
                 <p>
@@ -483,9 +499,13 @@
               </div>
             </div>
 
-            <div class="pt-5" style="text-align: center">
+            <div
+              class="pt-5 d-flex align-items-center justify-content-center"
+              style="text-align: center"
+            >
               <input
                 class="form-check-input"
+                style="zoom: 1.3; border-radius: 50%"
                 type="checkbox"
                 id="check_evt5"
                 value="Y"
@@ -493,7 +513,7 @@
                 class="mt-5"
                 required
               /><label for="check_evt5">
-                <span class="ps-1">[필수] 개인정보 취급위탁</span></label
+                <span class="ps-2">[필수] 개인정보 취급위탁</span></label
               >
             </div>
             <div class="d-flex justify-content-center mt-3">
@@ -503,7 +523,7 @@
                   width: 80%;
                   height: 250px;
                   padding: 10px;
-                  border: 0.1px solid gray;
+                  border: 0.1px solid rgb(221, 221, 221);
                 "
               >
                 <p>
@@ -530,9 +550,13 @@
               </div>
             </div>
 
-            <div class="pt-5" style="text-align: center">
+            <div
+              class="pt-5 d-flex align-items-center justify-content-center"
+              style="text-align: center"
+            >
               <input
                 class="form-check-input"
+                style="zoom: 1.3; border-radius: 50%"
                 type="checkbox"
                 id="check_evt6"
                 value="Y"
@@ -540,13 +564,13 @@
                 class="mt-5"
                 required
               /><label for="check_evt6">
-                <span class="ps-1"
+                <span class="ps-2"
                   >[필수] 만 14세 이상 (만 14세미만 아동의 경우 서비스 제공
                   불가)</span
                 ></label
               >
             </div>
-            <div style="text-align: center" class="mt-4">
+            <div style="text-align: center; margin-bottom: 100px" class="mt-4">
               <button
                 type="submit"
                 class="text-light btn"
@@ -633,7 +657,7 @@
     </main>
     <jsp:include page="../footer.jsp" />
 
-    <script src="/js/termsForHomes.js"></script>
+    <script src="/resources/js/termsForHomes.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="

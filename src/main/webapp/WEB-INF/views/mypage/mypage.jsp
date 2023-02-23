@@ -53,10 +53,12 @@
   </head>
 
   <body>
-  <jsp:include page="../navbar.jsp" />
+    <jsp:include page="../navbar.jsp" />
     <!--바디바디 시작-->
-    <div class="container mt-5 mb-5" style="font-family: 'Noto Sans KR', sans-serif">
-      
+    <div
+      class="container mt-5"
+      style="font-family: 'Noto Sans KR', sans-serif; margin-bottom: 200px"
+    >
       <div class="content-area group">
         <div class="mb-5">
           <!--마이페이지-->
@@ -106,7 +108,7 @@
                 <ul>
                   <li>
                     <a href="/mypage/myPoint" class="d-flex align-items-center">
-                      <img src="/images/쿠폰함.png" alt="" />
+                      <img src="/resources/images/쿠폰함.png" alt="" />
                       <b class="ms-1">포인트</b>
                       <b class="ms-3"
                         ><span style="color: rgb(55, 210, 67); font-size: 150%"
@@ -125,7 +127,7 @@
                       href="/customer/inquiryList"
                       class="d-flex align-items-center"
                     >
-                      <img src="/images/내문의현황.png" alt="" />
+                      <img src="/resources/images/내문의현황.png" alt="" />
                       <b class="ms-1">내 문의 현황</b>
                       <b class="ms-3">
                         <span style="font-size: 1.5rem">97</span>건

@@ -145,7 +145,7 @@
                 >
                   <div>
                     <img
-                      src="/images/접수완료.png"
+                      src="/resources/images/접수완료.png"
                       style="width: 44px; height: 44px"
                       alt=""
                     />
@@ -165,7 +165,7 @@
                 >
                   <div>
                     <img
-                      src="/images/배송중.png"
+                      src="/resources/images/배송중.png"
                       style="width: 45px; height: 45px"
                       alt=""
                     />
@@ -185,7 +185,7 @@
                 >
                   <div>
                     <img
-                      src="/images/택배이용안내.png"
+                      src="/resources/images/택배이용안내.png"
                       style="width: 55px; height: 55px"
                       alt=""
                     />
@@ -211,7 +211,7 @@
                 >
                   <div>
                     <img
-                      src="/images/배송완료.png"
+                      src="/resources/images/배송완료.png"
                       style="width: 45px; height: 45px"
                       alt=""
                     />

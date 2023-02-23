@@ -51,7 +51,7 @@
             <!-- 그림삽입 저작권침해임 -->
             <div>
               <span class="tracking-list-icon">
-                <img src="/images/돋보기.png" alt="" width="40%" />
+                <img src="/resources/images/돋보기.png" alt="" width="40%" />
               </span>
             </div>
 

@@ -62,7 +62,11 @@
               <!-- 그림삽입 저작권침해임 -->
               <div>
                 <span class="tracking-list-icon">
-                  <img src="/images/없어요.png" alt="" width="150px" />
+                  <img
+                    src="/resources/images/없어요.png"
+                    alt=""
+                    width="150px"
+                  />
                 </span>
               </div>
               <div class="p-3" style="color: gray">

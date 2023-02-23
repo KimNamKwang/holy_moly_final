@@ -74,7 +74,7 @@
   </head>
 
   <body style="height: 1500px">
-  <jsp:include page="./navbar.jsp" />
+    <jsp:include page="./navbar.jsp" />
     <!-- main -->
     <div
       class="container d-flex justify-content-center"
@@ -121,7 +121,7 @@
                   >
                     <div>
                       <img
-                        src="/images/홈.png"
+                        src="/resources/images/홈.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -154,7 +154,7 @@
                   >
                     <div>
                       <img
-                        src="/images/다량택배.png"
+                        src="/resources/images/다량택배.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -183,7 +183,7 @@
                   >
                     <div>
                       <img
-                        src="/images/왕관.png"
+                        src="/resources/images/왕관.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -218,7 +218,7 @@
                   >
                     <div>
                       <img
-                        src="/images/택배이용안내.png"
+                        src="/resources/images/택배이용안내.png"
                         style="width: 80px; height: 80px"
                         alt=""
                       />
@@ -250,7 +250,7 @@
                   >
                     <div>
                       <img
-                        src="/images/포장안내.png"
+                        src="/resources/images/포장안내.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -282,7 +282,7 @@
                   >
                     <div>
                       <img
-                        src="/images/이용불가상품.png"
+                        src="/resources/images/이용불가상품.png"
                         style="width: 60px; height: 60px"
                         alt=""
                       />
@@ -314,7 +314,7 @@
                   >
                     <div>
                       <img
-                        src="/images/고객센터.png"
+                        src="/resources/images/고객센터.png"
                         style="width: 70px; height: 70px"
                         alt=""
                       />
@@ -365,7 +365,11 @@
                       href="/event/eventView"
                       class="text-decoration-none text-light"
                     >
-                      <img class="h-50" src="/images/캐러셀1.png" alt="dhl" />
+                      <img
+                        class="h-50"
+                        src="/resources/images/캐러셀1.png"
+                        alt="dhl"
+                      />
                     </a>
                   </div>
                   <div class="carousel-item" data-bs-interval="4000">
@@ -373,7 +377,11 @@
                       href="/event/eventView"
                       class="text-decoration-none text-light"
                     >
-                      <img class="h-50" src="/images/캐러셀2.png" alt="dock" />
+                      <img
+                        class="h-50"
+                        src="/resources/images/캐러셀2.png"
+                        alt="dock"
+                      />
                     </a>
                   </div>
                   <button
@@ -499,7 +507,11 @@
                   >
                     <div>
                       <a href="/mypage/myPoint" style="text-decoration: none">
-                        <img src="/images/쿠폰함.png" width="34px" alt="" />
+                        <img
+                          src="/resources/images/쿠폰함.png"
+                          width="34px"
+                          alt=""
+                        />
                         <span
                           style="color: rgb(144, 146, 148); font-size: 0.9rem"
                           >포인트</span
@@ -517,7 +529,7 @@
                         style="text-decoration: none"
                       >
                         <img
-                          src="/images/내문의현황.png"
+                          src="/resources/images/내문의현황.png"
                           class="ms-1"
                           width="28px"
                           alt=""
@@ -544,7 +556,7 @@
     </div>
     <!-- 여기까지 main -->
     <jsp:include page="./footer.jsp" />
-    <script src="/js/index.js"></script>
+    <script src="/resources/js/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

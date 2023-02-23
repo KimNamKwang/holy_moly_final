@@ -113,7 +113,7 @@
             <div class="row">
               <div class="col-auto">
                 <img
-                  src="/images/김치.jpg"
+                  src="/resources/images/김치.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -137,7 +137,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/한약.jpg"
+                  src="/resources/images/한약.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -161,7 +161,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/과일.jpg"
+                  src="/resources/images/과일.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -182,7 +182,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/카메라.jpg"
+                  src="/resources/images/카메라.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -207,7 +207,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/쌀.jpg"
+                  src="/resources/images/쌀.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -225,7 +225,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/의류.jpg"
+                  src="/resources/images/의류.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -245,7 +245,7 @@
       </div>
     </div>
     <jsp:include page="../footer.jsp" />
-    <script src="../../../../resources/static/js/guidePackaging.js"></script>
+    <script src="/resources/js/guidePackaging.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

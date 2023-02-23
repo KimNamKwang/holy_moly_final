@@ -176,13 +176,16 @@
             </div>
           </div>
           <!-- 버튼 구역 -->
-          <div class="text-end mt-3">
+          <div class="col text-end mt-2">
             <button
               class="btn btn-lg text-light fw-bold"
-              style="background-color: rgb(55, 210, 67)"
-              id="target_btn"
+              style="
+                background-color: rgb(55, 210, 67);
+                border-radius: 50%;
+                font-size: 1.3rem;
+              "
             >
-              >
+              ⅴ
             </button>
           </div>
         </form>

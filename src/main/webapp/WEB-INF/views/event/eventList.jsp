@@ -44,7 +44,11 @@
               style="text-decoration: none"
             >
               <div>
-                <img src="/images/캐러셀1.png" alt="" style="width: 90%" />
+                <img
+                  src="/resources/images/캐러셀1.png"
+                  alt=""
+                  style="width: 90%"
+                />
               </div>
               <div class="fs-4 pt-3 pb-3">
                 다량접수 할인 홈택배 2023년 2월 할인 이벤트!
@@ -59,7 +63,11 @@
               style="text-decoration: none"
             >
               <div>
-                <img src="/images/캐러셀2.png" alt="" style="width: 90%" />
+                <img
+                  src="/resources/images/캐러셀2.png"
+                  alt=""
+                  style="width: 90%"
+                />
               </div>
               <div class="fs-4 pt-3 pb-3">
                 택배 보내고 베토벤:Beethoven Secret 데이트 즐기자!

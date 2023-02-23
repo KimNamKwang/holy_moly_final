@@ -74,7 +74,7 @@
           <div class="border p-5" style="border-radius: 20px; background-color: white; width: 50%">
             <div>
               <span class="tracking-list-icon">
-                <img src="./images/box.png" alt="" width="30%" />
+                <img src="/resources/images/box.png" alt="" width="30%" />
               </span>
             </div>
 

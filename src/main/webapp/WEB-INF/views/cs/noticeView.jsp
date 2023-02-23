@@ -49,7 +49,7 @@
             <span>조회수 135</span>
           </div>
           <div class="p-5 m-3">
-            <img src="/images/공지.PNG" class="w-100" alt="" />
+            <img src="/resources/images/공지.PNG" class="w-100" alt="" />
           </div>
         </div>
         <div class="d-flex justify-content-center mt-4">
