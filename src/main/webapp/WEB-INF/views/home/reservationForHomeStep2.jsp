@@ -399,7 +399,10 @@
                 </table>
               </div>
 
-              <div class="d-flex justify-content-center mt-5">
+              <div
+                class="d-flex justify-content-center mt-5"
+                style="margin-bottom: 70px"
+              >
                 <a
                   href="/home/reservationForHome"
                   class="btn btn-secondary me-3"

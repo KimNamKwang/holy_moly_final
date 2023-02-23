@@ -68,6 +68,75 @@
             </a>
           </div>
         </div>
+        <div class="pt-3" style="margin-bottom: 80px">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a
+                  class="page-link border-0"
+                  style="
+                    color: rgb(180, 180, 180);
+                    background-color: rgb(249, 249, 249);
+                  "
+                  href="#"
+                  aria-label="Previous"
+                >
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+
+              <li class="page-item">
+                <a
+                  class="page-link border-0"
+                  style="
+                    color: rgb(55, 210, 67);
+                    background-color: rgb(249, 249, 249);
+                  "
+                  href="#"
+                  >1</a
+                >
+              </li>
+              <li class="page-item">
+                <a
+                  class="page-link border-0"
+                  style="
+                    color: rgb(180, 180, 180);
+                    background-color: rgb(249, 249, 249);
+                  "
+                  href="#"
+                  >2</a
+                >
+              </li>
+              <li class="page-item">
+                <a
+                  class="page-link border-0"
+                  style="
+                    color: rgb(180, 180, 180);
+                    background-color: rgb(249, 249, 249);
+                  "
+                  href="#"
+                  >3</a
+                >
+              </li>
+
+              <li class="page-item">
+                <a
+                  class="page-link border-0"
+                  style="
+                    color: rgb(180, 180, 180);
+                    background-color: rgb(249, 249, 249);
+                  "
+                  href="#"
+                  aria-label="Next"
+                >
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
     <jsp:include page="../footer.jsp" />

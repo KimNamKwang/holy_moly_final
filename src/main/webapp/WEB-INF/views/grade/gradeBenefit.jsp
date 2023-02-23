@@ -40,6 +40,7 @@
         z-index: 1;
         font-family: 'Noto Sans KR', sans-serif;
         background-color: rgb(249, 249, 249);
+        padding-bottom: 200px;
       "
     >
       <div class="container" style="width: 650px">
@@ -210,7 +211,7 @@
             </div>
           </div>
         </div>
-        <div class="text-center mb-5">
+        <div class="text-center">
           <a
             href="/join/join_step1"
             class="btn text-light fw-bold"

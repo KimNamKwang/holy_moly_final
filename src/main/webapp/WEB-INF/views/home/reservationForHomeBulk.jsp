@@ -246,7 +246,10 @@
 
             <br />
 
-            <div class="d-flex justify-content-center">
+            <div
+              class="d-flex justify-content-center"
+              style="margin-bottom: 70px"
+            >
               <a
                 href="/terms/termsForHomeBulk"
                 class="btn btn-secondary me-3"

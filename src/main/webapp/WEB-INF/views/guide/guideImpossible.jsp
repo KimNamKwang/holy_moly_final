@@ -43,7 +43,7 @@
       class="container-fluid d-flex flex-column justify-content-center"
       style="background-color: rgb(249, 249, 249)"
     >
-      <div class="container" style="width: 600px">
+      <div class="container" style="width: 600px; padding-bottom: 200px">
         <div class="text-center fs-2 fw-bold mt-5 mb-4">이용불가 상품</div>
         <div
           class="shadow-sm p-4 mb-4"
@@ -171,7 +171,7 @@
           </div>
         </div>
         <div
-          class="shadow-sm p-4 mb-4"
+          class="shadow-sm p-4"
           style="border-radius: 10px 10px; background-color: white"
         >
           <div class="pb-3" style="font-size: 1.2rem">

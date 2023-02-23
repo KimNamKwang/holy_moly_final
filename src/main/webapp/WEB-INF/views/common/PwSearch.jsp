@@ -118,8 +118,12 @@
           <div class="col mt-3">
             <a
               href="/common/login"
-              class="btn btn-sm btn-secondary"
-              style="border-radius: 50px"
+              class="btn btn-sm"
+              style="
+                border-radius: 50px;
+                color: white;
+                background-color: rgb(165, 165, 165);
+              "
               >BACK</a
             >
           </div>
@@ -127,10 +131,14 @@
           <div class="col text-end mt-3">
             <button
               onclick="doAction()"
-              class="btn text-light fw-bold"
-              style="background-color: rgb(55, 210, 67)"
+              class="btn btn-lg text-light fw-bold"
+              style="
+                background-color: rgb(55, 210, 67);
+                border-radius: 50%;
+                font-size: 1.3rem;
+              "
             >
-              > >
+              >
             </button>
           </div>
         </div>

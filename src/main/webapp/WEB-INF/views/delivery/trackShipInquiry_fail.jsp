@@ -50,7 +50,7 @@
         <div class="col-auto">
           <br /><br />
 
-          <div class="fs-3 fw-bold text-center">
+          <div class="fs-3 fw-bold text-center pb-3">
             <span style="color: rgb(55, 210, 67)"> 조회결과</span>
           </div>
 
@@ -73,7 +73,7 @@
 
           <br />
 
-          <div class="fs-3 fw-bold text-center">
+          <div class="fs-3 fw-bold text-center" style="padding-bottom: 200px">
             <span style="width: 100px">
               <a
                 href="/delivery/trackShipment"

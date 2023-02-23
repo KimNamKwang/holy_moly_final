@@ -31,7 +31,7 @@
   <body>
     <jsp:include page="../navbar.jsp" />
     <main class="container" style="font-family: 'Noto Sans KR', sans-serif">
-      <div class="mt-5">
+      <div class="mt-5" style="padding-bottom: 200px">
         <div>
           <div class="fs-3">
             <span class="fw-bold">결제</span>가 완료되었습니다.

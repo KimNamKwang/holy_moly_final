@@ -245,7 +245,10 @@
           </table>
           <br />
 
-          <div class="d-flex justify-content-center">
+          <div
+            class="d-flex justify-content-center"
+            style="margin-bottom: 70px"
+          >
             <a
               href="/terms/termsForHome"
               class="btn btn-secondary me-3"

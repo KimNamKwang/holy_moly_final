@@ -35,7 +35,10 @@
         <div class="fs-1 fw-bold mt-5 mb-5">공지사항</div>
       </div>
     </div>
-    <div class="pt-5 pb-4" style="background-color: rgb(249, 249, 249)">
+    <div
+      class="pt-5"
+      style="background-color: rgb(249, 249, 249); padding-bottom: 100px"
+    >
       <div class="container">
         <div class="p-4" style="background-color: white">
           <div class="fs-4 border-bottom border-dark pb-3">

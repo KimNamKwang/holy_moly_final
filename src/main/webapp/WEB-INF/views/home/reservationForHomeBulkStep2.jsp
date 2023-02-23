@@ -34,7 +34,7 @@
   </head>
 
   <body>
-  <jsp:include page="../navbar.jsp" />
+    <jsp:include page="../navbar.jsp" />
     <main class="container" style="font-family: 'Noto Sans KR', sans-serif">
       <div class="mt-5">
         <ul class="list-unstyled d-flex justify-content-center">
@@ -448,7 +448,10 @@
                 </div>
               </div>
 
-              <div class="d-flex justify-content-center mt-5">
+              <div
+                class="d-flex justify-content-center mt-5"
+                style="margin-bottom: 70px"
+              >
                 <a
                   href="/home/reservationForHomeBulk"
                   class="btn btn-secondary me-3"

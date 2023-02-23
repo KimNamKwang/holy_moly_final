@@ -69,7 +69,7 @@
           class="container bg-white w-75 mt-4 align-items-center shadow-sm p-3"
           style="border-radius: 15px 15px"
         >
-          <div class="mt-3" style="font-size: smaller">
+          <div class="mt-3" style="font-size: 0.9rem">
             전체<span class="fw-bold">128건</span>
           </div>
           <hr class="mt-1" />
