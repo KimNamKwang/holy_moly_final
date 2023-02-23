@@ -613,7 +613,7 @@
               </div>
             </div>
           </div>
-          <div class="mt-4" style="text-align: center">
+          <div class="mt-4" style="text-align: center; margin-bottom: 100px">
             <div class="row d-flex justify-content-center">
               <div class="col text-end">
                 <button
