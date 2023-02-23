@@ -32,21 +32,6 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-      }
-
-      .hover:hover {
-        outline: 1px solid rgb(55, 210, 67);
-        color: rgb(55, 210, 67);
-      }
-
-      .color:hover {
-        color: rgb(55, 210, 67);
-      }
-    </style>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
