@@ -68,7 +68,7 @@
         <div id="agreement_box" class="mt-5">
           <div class="receiver receiver_a" cidx="0">
             <h2 class="mgb_5 fw-bold">받는 사람</h2>
-            <form action="/home/reservationForHomeBulkStep4" method="get">
+            <form action="/home/reservationForHomeBulkStep3" method="get">
               <table class="table border-top border-3">
                 <colgroup>
                   <col style="width: 23%" />
@@ -335,7 +335,7 @@
                           배송 시 택배함에 넣어 주세요
                         </option>
                         <option value="option7">
-                          배송 시 문앞에 놓아 주세요.
+                          배송 시 문앞에 놓아 주세요
                         </option>
                         <option value="write">직접입력하기</option>
                       </select>
@@ -402,6 +402,50 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="mt-5">
+                <div
+                  style="
+                    font-family: 'Zen Dots', cursive;
+                    color: rgb(76, 183, 86);
+                    margin-bottom: 2rem;
+                  "
+                >
+                  <span class="fst-italic fw-bold ms-2 fs-4">POST</span>
+                  <span class="material-symbols-outlined fw-bold align-middle">
+                    local_shipping
+                  </span>
+                </div>
+                <div style="font-size: 12px">
+                  <ul>
+                    <li>
+                      물품이 무게 2kg 박스크기가 60cm를 초과되거나
+                      운송장(15X7cm) 보다 작은 경우 현장에서 집하가 거부될 수
+                      있습니다.
+                    </li>
+                    <li>
+                      무게와 박스크기 중 1가지 이상 규격초과시 할증이 부과되며
+                      할증요금은 결제요청메시지를 통해 신용카드/휴대폰소액결제로
+                      결제할 수 있습니다.
+                    </li>
+                    <li>
+                      예약취소는 방문희망 당일 오전 7:30분까지 가능합니다.
+                    </li>
+                    <li>
+                      당일취소/규격초과/고객부재 등 고객님 사유로 인한
+                      집하실패(집하거부)시 예약 건 당 1,000원의 방문수수료가
+                      차감됩니다.
+                    </li>
+                    <li>
+                      천재지변, 기상악화 등의 비상상황 발생 시 집하가 지연되거나
+                      예약변경 및 취소가 될 수 있습니다.
+                    </li>
+                    <li>
+                      17시 이후 수거된 물품은 거점 계류되어 배송이 지연될 수
+                      있습니다.
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               <div class="d-flex justify-content-center mt-5">

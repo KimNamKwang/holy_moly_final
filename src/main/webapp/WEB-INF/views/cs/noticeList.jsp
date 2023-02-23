@@ -47,7 +47,6 @@
           <form
             class="d-flex justify-content-between w-75 container"
             role="search"
-            action=""
           >
             <div class="fs-3 fw-bold">공지사항</div>
             <div class="d-flex">
@@ -74,7 +73,9 @@
             <div class="text-secondary" style="font-size: small">
               2023.01.09
             </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
+            <a
+              href="/cs/noticeView"
+              class="mt-2 text-decoration-none text-dark"
               >2023년 설 연휴 택배중단 안내</a
             >
             <hr />
@@ -83,7 +84,9 @@
             <div class="text-secondary" style="font-size: small">
               2023.01.03
             </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
+            <a
+              href="/cs/noticeView"
+              class="mt-2 text-decoration-none text-dark"
               >2023년 설 연휴 홈택배 중단 일정 안내</a
             >
             <hr />
@@ -92,7 +95,9 @@
             <div class="text-secondary" style="font-size: small">
               2022.12.28
             </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
+            <a
+              href="/cs/noticeView"
+              class="mt-2 text-decoration-none text-dark"
               >국내택배 운임 조정 안내</a
             >
             <hr />
@@ -101,7 +106,9 @@
             <div class="text-secondary" style="font-size: small">
               2022.12.22
             </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
+            <a
+              href="/cs/noticeView"
+              class="mt-2 text-decoration-none text-dark"
               >제주도 전역 기상학화 영향으로 선박 결항 안내</a
             >
             <hr />

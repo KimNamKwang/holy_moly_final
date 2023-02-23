@@ -82,6 +82,53 @@
                 </tr>
               </tbody>
             </table>
+            <div class="mt-2">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a
+                    class="page-link"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    aria-label="Previous"
+                  >
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only"></span>
+                  </a>
+                </li>
+
+                <li class="page-item">
+                  <a class="page-link text-dark" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a
+                    class="page-link"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    >2</a
+                  >
+                </li>
+                <li class="page-item">
+                  <a
+                    class="page-link"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    >3</a
+                  >
+                </li>
+
+                <li class="page-item">
+                  <a
+                    class="page-link"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    aria-label="Next"
+                  >
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
             <div class="text-end pt-2 pb-2">
               <a
                 href="/admin/adminUserCreate"
@@ -103,6 +150,10 @@
                     <tr>
                       <th>이름</th>
                       <td>userName</td>
+                    </tr>
+                    <tr>
+                      <th>생년월일</th>
+                      <td>19960411</td>
                     </tr>
                     <tr>
                       <th>아이디</th>

@@ -31,255 +31,140 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
-    <style>
-      #dateFirst:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-
-      #dateSecond:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-
-      #dateThird:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-
-      #dateFourth:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-
-      #dateFifth:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-
-      #dateSixth:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-
-      #dateSeventh:hover {
-        color: rgb(55, 210, 67);
-        outline: 1px solid rgb(55, 210, 67);
-      }
-    </style>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
     <jsp:include page="../navbar.jsp" />
     <main class="container" style="font-family: 'Noto Sans KR', sans-serif">
       <div class="mt-5">
-        <ul class="list-unstyled d-flex justify-content-center">
-          <li
-            id="reserv_for_home"
-            class="pb-4 me-2"
-            style="
-              border-bottom: 3px solid rgb(55, 210, 67);
-              width: 330px;
-              text-align: center;
-            "
-          >
-            <a href="#" class="text-decoration-none text-dark fs-5"
-              >다량홈택배 예약하기</a
-            >
-          </li>
+        <div class="fs-4 fw-bold pb-2">상품이용내역</div>
+        <table class="table table-bordered mb-5">
+          <colgroup>
+            <col style="width: 30%" />
+            <col style="width: 20%" />
+            <col style="width: 17%" />
+            <col style="width: 13%" />
+            <col style="width: 20%" />
+          </colgroup>
+          <tbody>
+            <tr class="bg-secondary bg-opacity-10">
+              <th scope="col">상품명</th>
+              <th scope="col">방문희망일</th>
+              <th scope="col">결제방식</th>
+              <th scope="col" class="text-nowrap">박스수량</th>
+              <th scope="col" class="last">운임합계</th>
+            </tr>
+            <tr>
+              <td>CJ 대한통운</td>
+              <td id="d_req_date_text">2023-02-06</td>
 
-          <li
-            id="reserv_check_and_cancel"
-            class="pb-4 ms-2"
-            style="opacity: 0.5; width: 330px; text-align: center"
-          >
-            <a href="#" class="text-decoration-none text-dark fs-5"
-              >예약확인 및 취소</a
-            >
-          </li>
-        </ul>
+              <td>선불</td>
 
-        <div id="boxForChange" class="mt-5 justify-content-center"></div>
+              <td>1개</td>
+              <td class="font07 last">6,990원</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="fs-4 fw-bold pb-2">결제내역</div>
+        <table class="table table-bordered mb-5">
+          <colgroup>
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+          </colgroup>
+          <tbody>
+            <tr class="bg-secondary bg-opacity-10">
+              <th scope="col">상품금액</th>
+              <th scope="col">할인금액</th>
+              <th scope="col">결제금액</th>
+              <th scope="col">결제수단</th>
+            </tr>
+            <tr>
+              <td class="font07">6,990원</td>
+              <td class="font07">0원</td>
+              <td class="font07">6,990원</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div id="agreement_box" class="mt-5">
-          <div>
-            <!-- 다량택배 이용 form태그 -->
-            <form action="/home/reservationForHomeBulkStep4" method="get">
-              <div class="fs-3 mb-4">방문희망일 선택</div>
-              <input
-                type="date"
-                id="VISITING_DATE"
-                name="VISITING_DATE"
-                min="2023-02-15"
-              />
-              <div class="d-flex justify-content-center mt-5 mb-5">
-                <select name="request" class="form-control">
-                  <option value="">===물품전달방식선택===</option>
-
-                  <option value="option1">
-                    집하기사님께 직접전달하겠습니다.
-                  </option>
-                  <option value="option2">
-                    부재중으로 현관문 앞에 두겠습니다.
-                  </option>
-                  <option value="option3">
-                    부재중으로 아파트 경비실에 맡겨 놓겠습니다.
-                  </option>
-
-                  <option value="option4">
-                    부재중으로 무인택배함에 맡겨 놓겠습니다.
-                  </option>
-                  <option value="option5">도착하시면 전화주세요.</option>
-                </select>
-              </div>
-              <div></div>
-              <div
-                style="
-                  font-family: 'Zen Dots', cursive;
-                  color: rgb(76, 183, 86);
-                  margin-bottom: 2rem;
-                "
-              >
-                <span class="fst-italic fw-bold ms-2 fs-4">POST</span>
-                <span class="material-symbols-outlined fw-bold align-middle">
-                  home_shipping
-                </span>
-              </div>
-              <div style="font-size: 12px">
-                <ul>
-                  <li>
-                    물품이 무게 2kg 박스크기가 60cm를 초과되거나 운송장(15X7cm)
-                    보다 작은 경우 현장에서 집하가 거부될 수 있습니다.
-                  </li>
-                  <li>
-                    무게와 박스크기 중 1가지 이상 규격초과시 할증이 부과되며
-                    할증요금은 결제요청메시지를 통해 신용카드/휴대폰소액결제로
-                    결제할 수 있습니다.
-                  </li>
-                  <li>예약취소는 방문희망 당일 오전 7:30분까지 가능합니다.</li>
-                  <li>
-                    당일취소/규격초과/고객부재 등 고객님 사유로 인한
-                    집하실패(집하거부)시 예약 건 당 1,000원의 방문수수료가
-                    차감됩니다.
-                  </li>
-                  <li>
-                    천재지변, 기상악화 등의 비상상황 발생 시 집하가 지연되거나
-                    예약변경 및 취소가 될 수 있습니다.
-                  </li>
-                  <li>
-                    17시 이후 수거된 물품은 거점 계류되어 배송이 지연될 수
-                    있습니다.
-                  </li>
-                </ul>
-              </div>
-              <div class="d-flex justify-content-center">
-                <a
-                  href="/home/reservationForHomeBulkStep2"
-                  class="btn btn-secondary me-3"
-                  style="width: 12rem; height: 3rem; padding-top: 11px"
-                >
-                  이전단계
-                </a>
-                <button
-                  class="btn me-3 text-light"
-                  type="submit"
-                  style="
-                    width: 12rem;
-                    height: 3rem;
-                    background-color: rgb(55, 210, 67);
-                  "
-                >
-                  다음단계
-                </button>
-              </div>
-            </form>
-          </div>
+        <div class="fs-5 fw-bold pb-2">보내는 사람</div>
+        <div class="border border-1 mb-5 p-2">
+          <div>강항수(H.P:010-1324-2131)</div>
+          <div>서울특별시 강북구 노해로 5-1(수유동) 구두수선대-24</div>
         </div>
+        <div class="fs-5 fw-bold pb-2">받는 사람</div>
+        <div class="border border-1 p-2">
+          <div>31321(H.P:010-1324-2321)</div>
+          <div>서울특별시 강남구 테헤란로 101(역삼동) 이즈타워</div>
+          <div>(포장수량: 1 박스)-일반:1</div>
+          <div>물품: 서적</div>
+          <div>가격:120,000원</div>
+        </div>
+        <div class="border border-1 mt-5 p-2">
+          <ul class="list-unstyled">
+            <li>
+              &nbsp;&nbsp;&nbsp;* 고객님! 택배물품 포장상태를 확인해 주세요.
+            </li>
+            <li>&nbsp;&nbsp;&nbsp;* 고객님! 집하요청일을 확인해주세요.</li>
+          </ul>
 
-        <!-- 예약확인 및 취소용 form태그 -->
-        <form action="" method="get">
-          <div
-            class="container"
-            id="text_for_reserv_check_and_cancel"
-            style="display: none"
-          >
-            <div class="border d-flex" style="height: 10rem">
-              <div
-                class="align-self-center border-end flex-fill"
-                style="text-align: center; font-size: 1.1rem"
-              >
-                택배예약 시 등록한
-                <span style="color: rgb(55, 210, 67)">보내는분 연락처</span>와
-                <div>
-                  <span style="color: rgb(55, 210, 67)">비밀번호</span>를 입력해
-                  주세요.
-                </div>
-                예약일 기준 90일 이내 정보에 한하여 조회됩니다.
-              </div>
-              <div
-                class="align-self-center flex-fill"
-                style="
-                  text-align: center;
-                  color: rgb(69, 69, 69);
-                  font-size: 0.9rem;
-                "
-              >
-                휴대폰번호
-                <input
-                  class="ms-4"
-                  type="text"
-                  style="border: 1px solid rgb(204, 204, 204); height: 35px"
-                />
-                <div class="mt-2">
-                  비밀번호 &nbsp;&nbsp;
-                  <input
-                    class="ms-4"
-                    type="password"
-                    style="border: 1px solid rgb(204, 204, 204); height: 35px"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="mt-4 row" style="text-align: center">
-              <div class="col text-end">
-                <button
-                  type="submit"
-                  class="text-light btn"
-                  style="
-                    background-color: rgb(54, 213, 66);
-                    width: 13rem;
-                    height: 3rem;
-                  "
-                >
-                  예약내역 조회
-                </button>
-              </div>
-              <div class="col text-start">
-                <button
-                  type="submit"
-                  class="text-light btn"
-                  style="
-                    background-color: rgb(54, 213, 66);
-                    width: 13rem;
-                    height: 3rem;
-                  "
-                >
-                  이용문의
-                </button>
-              </div>
-            </div>
+          <ol class="l_info_1">
+            <li>
+              배송사원이 택배 물품 수령 방문 시, 상품 종류에 따라 적합하게
+              물품이 포장 되어 있어야 접수가 가능합니다.
+            </li>
+            <!--<li>박스 당 내품가액 50만원 이하의 물품만 예약가능하며 금액초과 물품을 집하요청하였을 경우 집하를 거부할수 있습니다.</li>-->
+            <li>박스 당 내품가액 50만원 이하의 물품만 예약가능합니다.</li>
+            <li>
+              <!--접수하신 물품이 물품규격 이외의 물품이거나 취급불가 물품, 또는 포장불량인 경우 집하거부 될 수 있으며 취소수수료가 발생합니다. -->
+              보내실 물품이 접수가능규격초과,포장불량,취급불가 품목일 경우
+              집하거부되거나 추가운임이 할증될 수 있습니다.
+              <!--<a href="javascript:layerOpen(jQuery('div[id=divLayerPop]'));" class="bt_gra">
+                고객 유의사항 다시 보기
+              </a>-->
+            </li>
+            <li>
+              군부대 및 사서함을 이용한 주소는 집하 및 배송이 되지 않습니다.
+            </li>
+            <li>
+              예약 시 예약한 수하인 주소가 부정확하거나 배송이 불가한 주소지로
+              입력 시 반송비용은 송하인이 부담해야 합니다.
+            </li>
+
+            <li>
+              집하 및 배송지연 문의는 택배사고객센터로 문의 해 주시기 바랍니다
+            </li>
+            <!--<li>
+              착불택배를 예약하신 경우,택배를 받으신 분이 착불택배비를 결제하지 않거나 로지아이 홈페이지의 결제페이지를 통하지 않고 택배기사에게 현금으로 지급한 경우,  예약 시 예치하신 착불보증금은 반환되지 않않으므로 택배를 받으시는 분께 착불요금 결제방법을 반드시 알려주시기 바랍니다. 특히 쇼핑몰 반품이나 AS를 위해 업체로 보내시는 경우, 로지아이 홈페이지에서 착불택배비 결제가능여부 협의 후 접수해 주시기 바랍니다. 
+            </li>-->
+          </ol>
+        </div>
+        <form action="/home/payment_completed" method="get">
+          <div class="d-flex justify-content-center mt-5">
+            <a
+              href="/home/reservationForHomeBulkStep2"
+              class="btn btn-secondary me-3"
+              style="width: 12rem; height: 3rem; padding-top: 11px"
+            >
+              이전단계
+            </a>
+            <button
+              class="btn me-3 text-light"
+              style="
+                width: 12rem;
+                height: 3rem;
+                background-color: rgb(55, 210, 67);
+              "
+            >
+              결제 및 예약완료
+            </button>
           </div>
         </form>
       </div>
     </main>
     <jsp:include page="../footer.jsp" />
-    <script src="/js/termsForHomes.js"></script>
-    <script src="/js/reservationHomeBulk.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

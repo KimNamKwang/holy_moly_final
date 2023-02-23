@@ -116,7 +116,7 @@
                         어제 출발했다고 조회가 되는데 오늘 중으로 도착할까요?
                       </div>
                       <div class="pt-3">
-                        <div>
+                        <div id="replybtn">
                           <a
                             class="btn d-flex align-items-center"
                             href="#collapseTarget01"
@@ -146,7 +146,9 @@
                               rows="6"
                               placeholder="비방, 명예훼손을 포함은 답글의 경우 분쟁의 사유가 될 수 있습니다."
                             ></textarea>
-                            <div class="mt-2 text-end">
+                            <div
+                              class="mt-2 text-end d-flex justify-content-end"
+                            >
                               <span id="counter01" style="font-size: 0.9rem">
                                 0
                               </span>
@@ -158,26 +160,105 @@
                               >
                                 / 400(최소15자)
                               </span>
+                              <div id="updatearea">
+                                <button
+                                  id="sendBtn"
+                                  class="btn ms-1"
+                                  style="
+                                    background-color: rgb(204, 204, 204);
+                                    color: white;
+                                    width: 70px;
+                                  "
+                                >
+                                  등록
+                                </button>
+                                <a
+                                  href="#collapseTarget01"
+                                  data-bs-toggle="collapse"
+                                  class="btn btn-secondary"
+                                  style="color: white; width: 70px"
+                                >
+                                  닫기
+                                </a>
+                              </div>
+                            </div>
+                            <div
+                              class="mt-2 text-end"
+                              id="editarea"
+                              style="display: none"
+                            >
                               <button
-                                id="sendBtn"
+                                id="editBtn"
                                 class="btn ms-1"
                                 style="
-                                  background-color: rgb(204, 204, 204);
+                                  background-color: rgb(55, 210, 67);
                                   color: white;
                                   width: 70px;
                                 "
                               >
-                                등록
+                                수정
                               </button>
-                              <a
-                                href="#collapseTarget01"
-                                data-bs-toggle="collapse"
-                                class="btn btn-secondary"
-                                style="color: white; width: 70px"
+                              <button
+                                id="deleteBtn"
+                                class="btn ms-1"
+                                style="
+                                  background-color: rgb(55, 210, 67);
+                                  color: white;
+                                  width: 70px;
+                                "
                               >
-                                닫기
-                              </a>
+                                삭제
+                              </button>
                             </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="mt-2">
+                            <ul class="pagination justify-content-center">
+                              <li class="page-item">
+                                <a
+                                  class="page-link"
+                                  style="color: rgb(180, 180, 180)"
+                                  href="#"
+                                  aria-label="Previous"
+                                >
+                                  <span aria-hidden="true">&laquo;</span>
+                                  <span class="sr-only"></span>
+                                </a>
+                              </li>
+
+                              <li class="page-item">
+                                <a class="page-link text-dark" href="#">1</a>
+                              </li>
+                              <li class="page-item">
+                                <a
+                                  class="page-link"
+                                  style="color: rgb(180, 180, 180)"
+                                  href="#"
+                                  >2</a
+                                >
+                              </li>
+                              <li class="page-item">
+                                <a
+                                  class="page-link"
+                                  style="color: rgb(180, 180, 180)"
+                                  href="#"
+                                  >3</a
+                                >
+                              </li>
+
+                              <li class="page-item">
+                                <a
+                                  class="page-link"
+                                  style="color: rgb(180, 180, 180)"
+                                  href="#"
+                                  aria-label="Next"
+                                >
+                                  <span aria-hidden="true">&raquo;</span>
+                                  <span class="sr-only"></span>
+                                </a>
+                              </li>
+                            </ul>
                           </div>
                         </div>
                       </div>
@@ -218,7 +299,17 @@
         }
       });
     </script>
-
+    <script>
+      $(function () {
+        var value = $("#contents01").val();
+        if (value != "") {
+          $("#editarea").css("display", "block");
+          $("#updatearea").css("display", "none");
+          $("#collapseTarget01").removeClass("collapse");
+          $("#replybtn").hide();
+        }
+      });
+    </script>
     <script src="/js/test.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
