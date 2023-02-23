@@ -1,4 +1,4 @@
-package com.holy_moly_final.holy_moly_final.controller.adminController;
+package com.holy_moly_final.holy_moly_final.controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,14 +19,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/admin")
-public class AdminController {
+@RequestMapping(value = "/company")
+public class CompanyController {
 
-    @RequestMapping(value = "adminBoard", method = RequestMethod.POST)
-    public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/company_introduction", method = RequestMethod.POST)
+    public ModelAndView company_introduction(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
-        modelAndView.setViewName("admin/adminBoard");
+        modelAndView.setViewName("company/company_introduction");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/store", method = RequestMethod.POST)
+    public ModelAndView store(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+
+        modelAndView.setViewName("company/store");
         return modelAndView;
     }
 
