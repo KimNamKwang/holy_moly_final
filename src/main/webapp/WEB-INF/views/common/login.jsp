@@ -26,7 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/join.css" />
+    <link rel="stylesheet" href="/resources/css/join.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
@@ -76,7 +76,11 @@
         <div class="d-flex justify-content-center">
           <div
             class="bg-white border text-start w-100"
-            style="border-radius: 20px; padding: 50px 100px 50px 100px"
+            style="
+              border-radius: 20px;
+              padding: 50px 100px 50px 100px;
+              margin-bottom: 200px;
+            "
           >
             <div>
               <div class="form-check-label fw-bold pb-2">아이디</div>
@@ -167,7 +171,7 @@
               </div>
             </div>
             <div class="text-center pt-4">
-              <div style="font-size: 0.7rem; color: rgb(191, 194, 193)">
+              <div style="font-size: 0.8rem; color: rgb(191, 194, 193)">
                 *회원가입이나 로그인 없이 비회원 예약이 가능합니다.
               </div>
             </div>
