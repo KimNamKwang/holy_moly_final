@@ -55,8 +55,8 @@
       </ul>
     </div>
     <div
-      class="container-fluid pb-5"
-      style="background-color: rgb(249, 249, 249)"
+      class="container-fluid"
+      style="background-color: rgb(249, 249, 249); padding-bottom: 500px"
     >
       <div class="d-flex row justify-content-center text-center">
         <div

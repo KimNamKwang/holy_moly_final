@@ -43,7 +43,7 @@
 
   <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
-    <div class="container" style="width: 600px">
+    <div class="container" style="width: 600px; padding-bottom: 200px">
       <div
         class="row mb-5 d-flex align-items-center text-start"
         style="padding-top: 150px"
@@ -199,15 +199,23 @@
           <div class="col mt-3">
             <a
               href="/common/join_step2"
-              class="btn btn-sm btn-secondary"
-              style="border-radius: 50px"
+              class="btn btn-sm"
+              style="
+                border-radius: 50px;
+                color: white;
+                background-color: rgb(165, 165, 165);
+              "
               >BACK</a
             >
           </div>
           <div class="col text-end mt-3" style="margin-bottom: 200px">
             <button
               class="btn btn-lg text-light fw-bold"
-              style="background-color: rgb(55, 210, 67)"
+              style="
+                background-color: rgb(55, 210, 67);
+                border-radius: 50%;
+                font-size: 1.3rem;
+              "
             >
               >
             </button>

@@ -35,7 +35,7 @@
   </head>
   <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
-    <div class="container" style="width: 600px">
+    <div class="container" style="width: 600px; padding-bottom: 200px">
       <form action="/common/join_step2">
         <div
           class="row mb-5 d-flex align-items-center text-start"
@@ -88,7 +88,7 @@
                 class="form-check-input me-1"
                 name="agree"
                 id="agree_all"
-                style="zoom: 1.5"
+                style="zoom: 1.5; border-radius: 50%"
                 onclick="selectAll(this)"
               />
               <label
@@ -102,7 +102,8 @@
             <div>
               <input
                 type="checkbox"
-                class="form-check-input me-1"
+                class="form-check-input me-1 mb-2"
+                style="zoom: 1.3; border-radius: 50%"
                 name="agree"
                 id="check_evt2"
                 required
@@ -120,7 +121,8 @@
             <div>
               <input
                 type="checkbox"
-                class="form-check-input me-1"
+                class="form-check-input me-1 mb-2"
+                style="zoom: 1.3; border-radius: 50%"
                 name="agree"
                 id="check_evt3"
                 required
@@ -138,7 +140,8 @@
             <div>
               <input
                 type="checkbox"
-                class="form-check-input me-1"
+                class="form-check-input me-1 mb-2"
+                style="zoom: 1.3; border-radius: 50%"
                 name="agree"
                 id="check_evt4"
                 required
@@ -156,7 +159,8 @@
             <div>
               <input
                 type="checkbox"
-                class="form-check-input me-1"
+                class="form-check-input me-1 mb-2"
+                style="zoom: 1.3; border-radius: 50%"
                 name="agree"
                 id="check_evt5"
               />
@@ -172,11 +176,17 @@
             </div>
           </div>
         </div>
-        <div
-          class="text-end mt-3"
-          style="margin-bottom: 200px; margin-bottom: 200px"
-        >
-          <button class="btn btn-lg text-light fw-bold">></button>
+        <div class="col text-end mt-2">
+          <button
+            class="btn btn-lg text-light fw-bold"
+            style="
+              background-color: rgb(55, 210, 67);
+              border-radius: 50%;
+              font-size: 1.3rem;
+            "
+          >
+            >
+          </button>
         </div>
       </form>
 

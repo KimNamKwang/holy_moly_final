@@ -27,63 +27,75 @@
     ></script>
   </head>
 
-  <body
-    class="bg-light"
-    style="z-index: 1; font-family: 'Noto Sans KR', sans-serif"
-  >
+  <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
-
-    <div class="container-fluid bg-white">
-      <div
-        class="fs-3 fw-bold d-flex align-items-center justify-content-center"
-        style="height: 6rem"
-      >
-        1:1문의
-      </div>
-    </div>
-    <div class="container">
-      <div class="d-flex row justify-content-center text-center">
-        <div class="p-0" style="width: 710px">
-          <div
-            class="border p-4 mt-5"
-            style="border-radius: 20px; background-color: white"
+    <div class="container text-center">
+      <div class="fs-1 fw-bold p-5">고객센터</div>
+      <ul class="d-flex justify-content-center list-unstyled">
+        <li class="fs-3 fw-bold pe-5" style="opacity: 0.5">
+          <a
+            href="/customer/faqList"
+            id="how_to_use"
+            class="text-decoration-none text-dark"
           >
-            <div class="text-start">
-              <div class="fs-5 fw-bold pb-4">1:1 문의 상세</div>
-              <div class="row d-flex justify-content-between">
-                <div class="col fs-6 fw-bold">내가문의한제목</div>
-                <div
-                  class="col-auto p-1"
-                  style="
-                    background-color: rgb(242, 255, 216);
-                    border-radius: 20px;
-                    color: rgb(55, 210, 77);
-                    font-size: 0.9rem;
-                  "
-                >
-                  기타/서비스불만
+            FAQ
+          </a>
+        </li>
+        <li class="fs-3 fw-bold ps-5" id="pee_notice">
+          <a href="/customer/inquiry" class="text-decoration-none text-dark">
+            1:1문의
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="container-fluid"
+      style="background-color: rgb(249, 249, 249); padding-bottom: 500px"
+    >
+      <div class="container">
+        <div class="d-flex row justify-content-center text-center">
+          <div class="p-0" style="width: 710px">
+            <div
+              class="border p-4 mt-5"
+              style="border-radius: 20px; background-color: white"
+            >
+              <div class="text-start">
+                <div class="fs-5 fw-bold pb-4">1:1 문의 상세</div>
+                <div class="row d-flex justify-content-between">
+                  <div class="col fs-6 fw-bold">내가문의한제목</div>
+                  <div
+                    class="col-auto p-1"
+                    style="
+                      background-color: rgb(242, 255, 216);
+                      border-radius: 20px;
+                      color: rgb(55, 210, 77);
+                      font-size: 0.9rem;
+                    "
+                  >
+                    기타/서비스불만
+                  </div>
+                  <div
+                    class="mt-1"
+                    style="font-size: 0.9rem; color: rgb(165, 165, 165)"
+                  >
+                    등록일 | 2023.01.10
+                  </div>
+                  <div class="fs-6 pt-3">문의내용문의내용</div>
                 </div>
-                <div
-                  class="mt-1"
-                  style="font-size: 0.9rem; color: rgb(165, 165, 165)"
-                >
-                  등록일 | 2023.01.10
-                </div>
-                <div class="fs-6 pt-3">문의내용문의내용</div>
               </div>
             </div>
-          </div>
-          <div class="text-start mt-4">
-            <a
-              href="/customer/inquiryList"
-              class="btn btn-sm"
-              style="
-                border-radius: 50px;
-                color: white;
-                background-color: rgb(165, 165, 165);
-              "
-              >BACK</a
-            >
+            <div class="text-start mt-4">
+              <a
+                href="/customer/inquiryList"
+                class="btn btn-sm"
+                style="
+                  border-radius: 50px;
+                  color: white;
+                  background-color: rgb(165, 165, 165);
+                "
+                >BACK</a
+              >
+            </div>
           </div>
         </div>
       </div>

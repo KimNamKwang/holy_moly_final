@@ -62,8 +62,8 @@
       </ul>
     </div>
     <div
-      class="container-fluid pb-5"
-      style="background-color: rgb(249, 249, 249)"
+      class="container-fluid"
+      style="background-color: rgb(249, 249, 249); padding-bottom: 200px"
     >
       <form
         action="/customer/inquiryList"
@@ -87,7 +87,9 @@
                       name="userName"
                       id="userName"
                       value="홍길동"
+                      placeholder="이름"
                       required
+                      readonly
                     />
                   </td>
                 </tr>
@@ -101,7 +103,9 @@
                       name="userEmail"
                       id="userEmail"
                       value="honghong@naver.com"
+                      placeholder="이메일 주소"
                       required
+                      readonly
                     />
                   </td>
                 </tr>
@@ -118,7 +122,9 @@
                       name="userPhoneNumber"
                       id="userPhoneNumber"
                       value="01011112222"
+                      placeholder="전화번호"
                       required
+                      readonly
                     />
                   </td>
                 </tr>
@@ -191,30 +197,45 @@
               </table>
               <input
                 type="checkbox"
-                class="form-check-input"
+                class="form-check-input me-1"
+                style="border-radius: 50%; width: 20px; height: 20px"
                 name=""
                 id="agree"
                 required
               />
-              <label for="agree" class="form-check-label"
-                >개인정보 수집 및 활용 동의 (필수)</label
-              >
+              <label for="agree" class="form-check-label">
+                <a
+                  href="#modalTermsForUse"
+                  class="text-decoration-none text-dark"
+                  data-bs-toggle="modal"
+                >
+                  개인정보 수집 및 활용 동의 (필수)
+                </a>
+              </label>
             </div>
             <div class="row">
               <div class="col mt-3">
                 <a
                   href="/customer/inquiry"
-                  class="btn btn-sm btn-secondary"
-                  style="border-radius: 50px"
+                  class="btn btn-sm"
+                  style="
+                    border-radius: 50px;
+                    background-color: rgb(165, 165, 165);
+                    color: white;
+                  "
                   >BACK</a
                 >
               </div>
               <div class="col text-end mt-3">
                 <button
-                  class="btn text-light fw-bold"
-                  style="background-color: rgb(55, 210, 67)"
+                  class="btn btn-lg text-light fw-bold"
+                  style="
+                    background-color: rgb(55, 210, 67);
+                    border-radius: 50%;
+                    font-size: 1.3rem;
+                  "
                 >
-                  > >
+                  >
                 </button>
               </div>
               <!-- 모달창 -->
@@ -243,6 +264,46 @@
           </div>
         </div>
       </form>
+
+      <div class="modal fade" id="modalTermsForUse">
+        <div class="modal-dialog">
+          <div
+            class="modal-content p-4"
+            style="border-radius: 15px 15px; width: 40rem; height: 50rem"
+          >
+            <div class="modal-header d-flex justify-content-center">
+              <div class="fs-4 fw-bold">개인정보 수집 및 활용</div>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="pb-1" style="font-size: 0.9rem">
+                  수집·이용 목적 : 1대1문의
+                </div>
+                <div class="pb-1" style="font-size: 0.9rem">
+                  수집항목 : 이름, 이메일 주소, 휴대폰 번호, 비밀번호,
+                  운송장번호
+                </div>
+                <div class="fs-5 fw-bold">보유기간 : 3년</div>
+              </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button
+                class="btn"
+                style="
+                  background-color: rgb(55, 210, 67);
+                  color: white;
+                  width: 150px;
+                  height: 45px;
+                  border-radius: 9px 9px;
+                "
+                data-bs-dismiss="modal"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <jsp:include page="../footer.jsp" />
     <script
