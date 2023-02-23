@@ -36,8 +36,11 @@
   <body>
     <jsp:include page="../navbar.jsp" />
     <main
-      class="bg-secondary bg-opacity-10 pb-5"
-      style="font-family: 'Noto Sans KR', sans-serif"
+      style="
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: rgb(249, 249, 249);
+        padding-bottom: 150px;
+      "
     >
       <div>
         <div
@@ -63,9 +66,12 @@
           </form>
         </div>
         <div
-          class="container bg-white w-75 mt-4 border rounded align-items-center"
+          class="container bg-white w-75 mt-4 align-items-center shadow-sm p-3"
+          style="border-radius: 15px 15px"
         >
-          <div class="mt-3" style="font-size: smaller">전체 128건</div>
+          <div class="mt-3" style="font-size: smaller">
+            전체<span class="fw-bold">128건</span>
+          </div>
           <hr class="mt-1" />
 
           <!-- 내용 (title, date) -->
@@ -73,9 +79,7 @@
             <div class="text-secondary" style="font-size: small">
               2023.01.09
             </div>
-            <a
-              href="/cs/noticeView"
-              class="mt-2 text-decoration-none text-dark"
+            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
               >2023년 설 연휴 택배중단 안내</a
             >
             <hr />
@@ -84,9 +88,7 @@
             <div class="text-secondary" style="font-size: small">
               2023.01.03
             </div>
-            <a
-              href="/cs/noticeView"
-              class="mt-2 text-decoration-none text-dark"
+            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
               >2023년 설 연휴 홈택배 중단 일정 안내</a
             >
             <hr />
@@ -95,9 +97,7 @@
             <div class="text-secondary" style="font-size: small">
               2022.12.28
             </div>
-            <a
-              href="/cs/noticeView"
-              class="mt-2 text-decoration-none text-dark"
+            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
               >국내택배 운임 조정 안내</a
             >
             <hr />
@@ -106,35 +106,58 @@
             <div class="text-secondary" style="font-size: small">
               2022.12.22
             </div>
-            <a
-              href="/cs/noticeView"
-              class="mt-2 text-decoration-none text-dark"
+            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
               >제주도 전역 기상학화 영향으로 선박 결항 안내</a
             >
             <hr />
           </div>
-          <div class="text-center text-secondary mb-3">
+          <div class="mb-3 pt-3">
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
+                  <a
+                    class="page-link border-0"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    aria-label="Previous"
+                  >
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only"></span>
                   </a>
                 </li>
 
                 <li class="page-item">
-                  <a class="page-link" href="#">1</a>
+                  <a
+                    class="page-link border-0"
+                    style="color: rgb(55, 210, 67)"
+                    href="#"
+                    >1</a
+                  >
                 </li>
                 <li class="page-item">
-                  <a class="page-link" href="#">2</a>
+                  <a
+                    class="page-link border-0"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    >2</a
+                  >
                 </li>
                 <li class="page-item">
-                  <a class="page-link" href="#">3</a>
+                  <a
+                    class="page-link border-0"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    >3</a
+                  >
                 </li>
 
                 <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
+                  <a
+                    class="page-link border-0"
+                    style="color: rgb(180, 180, 180)"
+                    href="#"
+                    aria-label="Next"
+                  >
                     <span aria-hidden="true">&raquo;</span>
                     <span class="sr-only"></span>
                   </a>
