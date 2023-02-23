@@ -45,7 +45,7 @@
 
   <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
-        <main>
+    <main>
       <div
         class="container-fluid pt-5"
         style="background-color: rgb(249, 249, 249); padding-bottom: 200px"
