@@ -1,37 +1,26 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
     <style>
-      #termsUl > li {
+      #termsUl>li {
         list-style-type: none;
       }
 
-      li > a {
+      li>a {
         text-decoration-line: none;
       }
     </style>
@@ -42,38 +31,22 @@
     <main>
       <div class="container">
         <div class="mb-5">
-          <div
-            class="h2 fw-bold text-center mt-5 mb-5"
-            style="font-family: 'Noto Sans KR', sans-serif"
-          >
-          약관
+          <div class="h2 fw-bold text-center mt-5 mb-5" style="font-family: 'Noto Sans KR', sans-serif">
+            약관
           </div>
           <div class="d-flex justify-content-center">
-            <ul
-              id="termsUl"
-              class="d-flex justify-content-evenly align-items-center w-50"
-              style="font-size: small"
-            >
+            <ul id="termsUl" class="d-flex justify-content-evenly align-items-center w-50" style="font-size: small">
               <li>
-                <a
-                  class="border-bottom border-success p-2 text-secondary"
-                  href="/terms/terms"
-                  >이용약관</a
-                >
+                <a class="p-2 text-secondary" style="border-bottom: 1px solid rgb(55, 210, 67)"
+                  href="/terms/terms">이용약관</a>
               </li>
               <li>
-                <a
-                  class="border-bottom border-success p-2 text-secondary"
-                  href="/terms/termsPS"
-                  >택배 이용 약관</a
-                >
+                <a class="p-2 text-secondary" style="border-bottom: 1px solid rgb(55, 210, 67)" href="/terms/termsPS">택배
+                  이용 약관</a>
               </li>
               <li>
-                <a
-                  class="border-bottom border-success p-2 text-secondary"
-                  href="/terms/termsPrivacy"
-                  >개인정보 처리방침</a
-                >
+                <a class="p-2 text-secondary" style="border-bottom: 1px solid rgb(55, 210, 67)"
+                  href="/terms/termsPrivacy">개인정보 처리방침</a>
               </li>
             </ul>
           </div>
@@ -81,17 +54,12 @@
         <!-- 약관 내용 담는 곳 -->
         <div class="d-flex justify-content-center">
           <div class="overflow-auto w-75">
-            <p class="fs-4 fw-bold mb-4"
-               style="font-family: 'Noto Sans KR', sans-serif"
-            >
+            <p class="fs-4 fw-bold mb-4" style="font-family: 'Noto Sans KR', sans-serif">
               소화물 일관수송 약관</p>
             <div class="text-center">
               <p style="font-weight: bold" class="text-success">제1장 총칙</p>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 1조 (목적)
             </p>
             <p style="font-size: small">
@@ -99,10 +67,7 @@
               간의 공정한 택배거래를 위하여 그 계약조건을 정함을 목적으로
               합니다.
             </p>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 2조 (용어의 정의)
             </p>
             <div>
@@ -152,10 +117,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 3조 (약관의 명시 및 설명)
             </p>
             <div>
@@ -171,10 +133,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제4조 (적용법규 등)
             </p>
             <p style="font-size: small">
@@ -187,10 +146,7 @@
                 제2장 운송물의 수탁
               </p>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 5조(사업자의 의무)
             </p>
             <div>
@@ -224,10 +180,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 6조(송화인의 의무)
             </p>
             <div>
@@ -244,10 +197,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 7조(운송장)
             </p>
             <div>
@@ -304,10 +254,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 8조 (운임의 청구와 유치권)
             </p>
             <div>
@@ -337,10 +284,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 9조 (포장)
             </p>
             <div>
@@ -368,10 +312,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 10조 (외부표시)
             </p>
             <p style="font-size: small">
@@ -379,10 +320,7 @@
               운송 상의 특별한 주의사항, 인도 예정일(시) 등의 필요한 사항을
               표시합니다.
             </p>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 11조 (운송물의 확인)
             </p>
             <div>
@@ -400,10 +338,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 12조 (운송물의 수탁거절)
             </p>
             <div style="font-size: small">
@@ -450,10 +385,7 @@
                 제3장 운송물의 인도
               </p>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 13조 (공동운송 또는 타 운송수단의 이용)
             </p>
             <p style="font-size: small">
@@ -461,10 +393,7 @@
               운송물을 다른 운송사업자와 협정을 체결하여 공동으로 운송하거나
               다른 운송사업자의 운송수단을 이용하여 운송할 수 있습니다.
             </p>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 14조 (운송물의 인도일)
             </p>
             <div>
@@ -498,10 +427,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 15조 (수화인 부재 시의 조치)
             </p>
             <div>
@@ -527,10 +453,7 @@
                 제4장 운송물의 처분
               </p>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 16조 (인도할 수 없는 운송물의 처분)
             </p>
             <div>
@@ -583,10 +506,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 17조 (고객의 처분청구권)
             </p>
             <div>
@@ -614,10 +534,7 @@
                 제5장 운송물의 사고
               </p>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 18조 (사고발생시의 조치)
             </p>
             <div>
@@ -642,10 +559,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 19조 (사고증명서의 발행)
             </p>
             <p style="font-size: small">
@@ -659,20 +573,14 @@
                 제6장 운송물의 책임
               </p>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 20조 (책임의 시작)
             </p>
             <p style="font-size: small">
               운송물의 멸실, 훼손 또는 연착에 관한 사업자의 책임은 운송물을
               고객(송화인)으로부터 수탁한 때로부터 시작됩니다.
             </p>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 21조 (공동운송 또는 타 운송수단 이용시 책임)
             </p>
             <p style="font-size: small">
@@ -680,10 +588,7 @@
               다른 운송사업자의 운송수단을 이용하여 운송한 운송물이 멸실, 훼손
               또는 연착되는 때에는 이에 대한 책임은 사업자가 부담합니다.
             </p>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 22조 (손해배상)
             </p>
             <div>
@@ -781,10 +686,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 23조 (사고발생시의 운임 등의 환급과 청구)
             </p>
             <div>
@@ -805,10 +707,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 24조 (사업자의 면책)
             </p>
             <p style="font-size: small">
@@ -817,10 +716,7 @@
               지지 아니합니다.
             </p>
 
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 25조 (책임의 특별소멸 사유와 시효)
             </p>
             <div>
@@ -846,10 +742,7 @@
                 </li>
               </ol>
             </div>
-            <p
-              style="font-size: smaller; font-weight: bold"
-              class="text-success mb-0"
-            >
+            <p style="font-size: smaller; font-weight: bold" class="text-success mb-0">
               제 26조 (분쟁해결)
             </p>
             <div>
@@ -884,10 +777,9 @@
       </div>
     </main>
     <jsp:include page="../footer.jsp" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
-</html>
+
+  </html>
