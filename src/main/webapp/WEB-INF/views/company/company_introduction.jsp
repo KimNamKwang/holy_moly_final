@@ -40,7 +40,9 @@
         <div class="d-flex">
           <div class="border rounded-4 p-4" style="width: 50rem">
             <div class="d-flex align-items-center">
-              <div><img src="/images/로고(투명).png" width="150" /></div>
+              <div>
+                <img src="/resources/images/로고(투명).png" width="150" />
+              </div>
               <div class="align-items-center">
                 <div class="fs-4 fw-bold">(주)포스트네트웍스</div>
                 <div>6개월 차 업체 • 택배 배송</div>
@@ -68,13 +70,25 @@
               </div>
               <div class="d-flex">
                 <div>
-                  <img src="/images/트럭 이미지.png" width="200" alt="" />
+                  <img
+                    src="/resources/images/트럭 이미지.png"
+                    width="200"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/다량택배.png" width="200" alt="" />
+                  <img
+                    src="/resources/images/다량택배.png"
+                    width="200"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/고객센터.png" width="200" alt="" />
+                  <img
+                    src="/resources/images/고객센터.png"
+                    width="200"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>

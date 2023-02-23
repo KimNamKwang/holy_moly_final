@@ -45,7 +45,7 @@
           <div class="pt-3" style="color: rgb(148, 148, 151)">2022.11.30</div>
           <div class="p-5 m-3">
             <a href="">
-              <img src="/images/이벤트뷰.PNG" class="w-100" alt="" />
+              <img src="/resources/images/이벤트뷰.PNG" class="w-100" alt="" />
             </a>
           </div>
         </div>

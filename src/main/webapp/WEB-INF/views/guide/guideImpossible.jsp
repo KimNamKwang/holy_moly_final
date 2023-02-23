@@ -74,7 +74,7 @@
             <div class="col">
               <div>
                 <img
-                  src="/images/도자기.jpg"
+                  src="/resources/images/도자기.jpg"
                   alt=""
                   style="border-radius: 15px 15px"
                   width="150px"
@@ -85,7 +85,7 @@
             <div class="col">
               <div>
                 <img
-                  src="/images/부패.jpg"
+                  src="/resources/images/부패.jpg"
                   alt=""
                   style="border-radius: 15px 15px"
                   width="150px"
@@ -96,7 +96,7 @@
             <div class="col">
               <div>
                 <img
-                  src="/images/포장불량.avif"
+                  src="/resources/images/포장불량.avif"
                   alt=""
                   style="border-radius: 15px 15px"
                   width="150px"
@@ -109,7 +109,7 @@
             <div class="col">
               <div>
                 <img
-                  src="/images/귀금속.jpg"
+                  src="/resources/images/귀금속.jpg"
                   alt=""
                   style="border-radius: 15px 15px"
                   width="150px"
@@ -120,7 +120,7 @@
             <div class="col">
               <div>
                 <img
-                  src="/images/처방약.avif"
+                  src="/resources/images/처방약.avif"
                   alt=""
                   style="border-radius: 15px 15px"
                   width="150px"
@@ -131,7 +131,7 @@
             <div class="col">
               <div>
                 <img
-                  src="/images/액체.avif"
+                  src="/resources/images/액체.avif"
                   alt=""
                   style="border-radius: 15px 15px"
                   width="150px"

@@ -108,7 +108,7 @@
                 <div>&nbsp;</div>
                 <div class="fw-bold">비고 이용약관 동의함</div>
               </div>
-              <div><img src="/image/barcode.png" alt="" /></div>
+              <div><img src="/resources/image/barcode.png" alt="" /></div>
             </div>
           </div>
         </div>

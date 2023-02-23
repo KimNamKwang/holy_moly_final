@@ -120,7 +120,7 @@
           >
             <div>
               <span class="tracking-list-icon">
-                <img src="./images/box.png" alt="" width="30%" />
+                <img src="/resources/images/box.png" alt="" width="30%" />
               </span>
             </div>
 

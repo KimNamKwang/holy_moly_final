@@ -81,7 +81,7 @@
                     <div class="row d-flex justify-content-between">
                       <div class="pb-1">
                         <img
-                          src="/images/사람아이콘.png"
+                          src="/resources/images/사람아이콘.png"
                           style="width: 35px"
                           alt=""
                         />

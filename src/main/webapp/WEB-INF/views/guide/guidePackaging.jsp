@@ -113,7 +113,7 @@
             <div class="row">
               <div class="col-auto">
                 <img
-                  src="/images/김치.jpg"
+                  src="/resources/images/김치.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -137,7 +137,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/한약.jpg"
+                  src="/resources/images/한약.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -161,7 +161,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/과일.jpg"
+                  src="/resources/images/과일.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -182,7 +182,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/카메라.jpg"
+                  src="/resources/images/카메라.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -207,7 +207,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/쌀.jpg"
+                  src="/resources/images/쌀.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
@@ -225,7 +225,7 @@
             <div class="row pt-5">
               <div class="col-auto">
                 <img
-                  src="/images/의류.jpg"
+                  src="/resources/images/의류.jpg"
                   style="border-radius: 10px 10px"
                   alt=""
                   width="130px"
