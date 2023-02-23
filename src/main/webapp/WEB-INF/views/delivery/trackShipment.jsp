@@ -41,7 +41,7 @@
 
   <body>
     <jsp:include page="../navbar.jsp" />
-    <main>
+    <main style="font-family: 'Noto Sans KR', sans-serif">
       <div
         class="fs-3 fw-bold d-flex align-items-center justify-content-center"
         style="height: 6rem"
@@ -70,7 +70,7 @@
             />
 
             <!-- 버튼 -->
-            <a href="/delivery/trackShipInquiry">
+            <a href="./trackShipInquiry.html">
               <button
                 class=""
                 style="
@@ -118,7 +118,7 @@
             <!-- 그림삽입 저작권침해임 -->
             <div>
               <span class="tracking-list-icon">
-                <img src="/images/box.png" alt="" width="30%" />
+                <img src="./images/box.png" alt="" width="30%" />
               </span>
             </div>
 
@@ -127,7 +127,7 @@
             <div class="row">
               <div class="col">
                 <a
-                  href="/common/login"
+                  href="./login.html"
                   class="btn text-light fw-bold"
                   style="
                     background-color: rgb(55, 210, 67);
