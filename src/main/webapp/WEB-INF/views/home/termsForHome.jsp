@@ -40,10 +40,10 @@
   </head>
 
   <body>
-    <br />
-    <br />
-    <br />
     <jsp:include page="../navbar.jsp" />
+    <br />
+    <br />
+    <br />
     <main style="font-family: 'Noto Sans KR', sans-serif">
       <form action="/home/reservationForHome" method="get">
         <div class="container-fluid">
