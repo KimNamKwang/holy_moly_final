@@ -10,14 +10,14 @@ import com.holy_moly_final.holy_moly_final.Paginations;
 import com.holy_moly_final.holy_moly_final.dao.CommonDao;
 
 @Service
-public class CommonService {
+public class DeliveryService {
     @Autowired
     CommonDao commonDao;
 
     public Object getOneWithAttachFiles(Object dataMap) {
         // Attach Files ArrayList<Map>
         HashMap<String, Object> result = new HashMap<String, Object>();
-        // result.put("attachFiles", attachFileService.getList(dataMap));
+        result.put("attachFiles", this.getList(dataMap));
 
         /*
          * 위에서 넣은 result가 사라지지 않게 하기 위해 putAll사용. putAll은 같은 key가 아니면 자동으로 list에다가 put을
@@ -74,43 +74,43 @@ public class CommonService {
     }
 
     public Object getTotal(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.selectTotal";
+        String sqlMapId = "Common.selectTotal";
         Object result = commonDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object getList(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.selectListByUID";
+        String sqlMapId = "Common.selectListByUID";
         Object result = commonDao.getList(sqlMapId, dataMap);
         return result;
     }
 
     public Object getOne(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.selectByUID";
+        String sqlMapId = "Common.selectForTrackShipInquiry";
         Object result = commonDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object update(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.updateByUID";
+        String sqlMapId = "Common.updateByUID";
         Object result = commonDao.update(sqlMapId, dataMap);
         return result;
     }
 
     public Object insertOne(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.insertWithUID";
+        String sqlMapId = "Common.insertWithUID";
         Object result = commonDao.insert(sqlMapId, dataMap);
         return result;
     }
 
     public Object delete(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.deleteByUID";
+        String sqlMapId = "Common.deleteByUID";
         Object result = commonDao.delete(sqlMapId, dataMap);
         return result;
     }
 
     public Object deleteMulti(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.deleteMultiByUIDs";
+        String sqlMapId = "Common.deleteMultiByUIDs";
         Object result = commonDao.delete(sqlMapId, dataMap);
         return result;
     }
