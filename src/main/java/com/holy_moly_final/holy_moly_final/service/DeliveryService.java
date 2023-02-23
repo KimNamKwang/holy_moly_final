@@ -80,7 +80,7 @@ public class DeliveryService {
     }
 
     public Object getList(Object dataMap) {
-        String sqlMapId = "Common.selectListByUID";
+        String sqlMapId = "Common.selectForTrackShipInquiry";
         Object result = commonDao.getList(sqlMapId, dataMap);
         return result;
     }
