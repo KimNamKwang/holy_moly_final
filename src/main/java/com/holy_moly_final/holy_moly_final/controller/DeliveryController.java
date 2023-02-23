@@ -11,16 +11,27 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.service.DeliveryService;
+import com.holy_moly_final.holy_moly_final.utils.CommonUtils;
+
 @Controller
 @RequestMapping(value = "/delivery")
 public class DeliveryController {
+
+    @Autowired
+    DeliveryService deliveryService;
+
+    @Autowired
+    CommonUtils commonUtils;
 
     @RequestMapping(value = "/trackShipInquiry_fail", method = RequestMethod.GET)
     public ModelAndView trackShipInquiry_fail(@RequestParam Map<String, Object> params,
@@ -31,9 +42,10 @@ public class DeliveryController {
     }
 
     @RequestMapping(value = "/trackShipInquiry", method = RequestMethod.GET)
-    public ModelAndView trackShipInquiry(@RequestParam Map<String, Object> params,
+    public ModelAndView trackShipInquiry(@RequestParam Map<String, Object> params, @PathVariable String TRACKING_NUMBER,
             ModelAndView modelAndView) {
-
+        // Object resultMap = deliveryService.getOne(params);
+        // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("delivery/trackShipInquiry");
         return modelAndView;
     }
@@ -41,7 +53,6 @@ public class DeliveryController {
     @RequestMapping(value = "/trackShipment", method = RequestMethod.GET)
     public ModelAndView trackShipment(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
         modelAndView.setViewName("delivery/trackShipment");
         return modelAndView;
     }
