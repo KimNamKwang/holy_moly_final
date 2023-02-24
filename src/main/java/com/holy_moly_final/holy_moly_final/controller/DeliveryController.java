@@ -42,10 +42,10 @@ public class DeliveryController {
     }
 
     @RequestMapping(value = "/trackShipInquiry", method = RequestMethod.GET)
-    public ModelAndView trackShipInquiry(@RequestParam Map<String, Object> params, @PathVariable String TRACKING_NUMBER,
-            ModelAndView modelAndView) {
-        // Object resultMap = deliveryService.getOne(params);
-        // modelAndView.addObject("resultMap", resultMap);
+    public ModelAndView trackShipInquiry(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        // params.put("TRACKING_NUMBER", TRACKING_NUMBER);
+        Object resultMap = deliveryService.getOne(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("delivery/trackShipInquiry");
         return modelAndView;
     }
