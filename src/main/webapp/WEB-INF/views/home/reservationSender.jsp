@@ -44,7 +44,7 @@
         <div class="container d-flex justify-content-center">
           <div class="mt-5" style="width: 650px">
             <h2 class="fw-bold text-center">프리미엄 홈택배 예약</h2>
-            <form action="./reservationReceiver.html" method="post">
+            <form action="/home/reservationReceiver" method="post">
               <div class="row">
                 <div
                   class="col fs-4 fw-bold pb-2 mb-4 pt-3"
