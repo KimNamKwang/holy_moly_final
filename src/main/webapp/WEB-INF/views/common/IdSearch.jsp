@@ -37,7 +37,7 @@
   <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
     <div class="container" style="width: 600px">
-      <form action="/common/join_step2">
+      <form action="/common/join_step2" method="get">
         <div
           class="row mb-5 d-flex align-items-center"
           style="padding-top: 150px"
@@ -93,7 +93,7 @@
                 <input
                   class="form-control form-check-input"
                   type="text"
-                  name="userId"
+                  name="NAME"
                   placeholder="이름"
                   required
                   style="
@@ -118,7 +118,7 @@
                         height: 50px;
                         border-radius: 10px 10px;
                       "
-                      id="phone"
+                      name="PHONE"
                       type="text"
                       class="form-control"
                       placeholder="휴대폰 번호"
