@@ -47,7 +47,7 @@
     <main style="font-family: 'Noto Sans KR', sans-serif">
       <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
         <div class="container d-flex justify-content-center">
-          <form action="./reservationCollect.html" method="get">
+          <form action="./reservationCollect" method="get">
             <div class="mt-5" style="width: 650px">
               <h2 class="fw-bold text-center">프리미엄 홈택배 예약</h2>
               <div class="row">
@@ -135,6 +135,7 @@
                           type="radio"
                           name="visit-time-select"
                           id="visit-time_1_1"
+                          value="2023-02-22 14:20:47"
                         />
                         <label class="form-check-label" for="visit-time_1_1"
                           >신청</label
