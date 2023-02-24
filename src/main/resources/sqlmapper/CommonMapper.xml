@@ -12,6 +12,12 @@
         ON PROGRESS_STATUS_TYPE.TRACKING_NUMBER = SHIPMENT.TRACKING_NUMBER
         INNER JOIN ITEM_TYPES
         ON SHIPMENT.ITEM_TYPE_UID = ITEM_TYPES.ITEM_TYPE_UID
-        WHERE SHIPMENT.TRACKING_NUMBER =  #{TRACKING_NUMBER};
+        WHERE SHIPMENT.TRACKING_NUMBER =  #{TRACKING_NUMBER}
+    </select>
+
+    <select id="selectUserUIDByNameAndPhone" parameterType="Map" resultType="Map">
+      SELECT USER_UID
+        FROM USERS
+        WHERE NAME = #{NAME} AND PHONE = #{PHONE}
     </select>
 </mapper>

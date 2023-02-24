@@ -37,7 +37,7 @@
   <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
     <div class="container" style="width: 600px">
-      <form action="/common/join_step2" method="get">
+      <form action="./join_step2" method="get">
         <div
           class="row mb-5 d-flex align-items-center"
           style="padding-top: 150px"
