@@ -93,6 +93,7 @@ public class HomeController {
         modelAndView.setViewName("home/termsForHomeBulk");
         return modelAndView;
     }
+
     @RequestMapping(value = "/reservationCollect", method = RequestMethod.GET)
     public ModelAndView reservationCollect(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -100,6 +101,7 @@ public class HomeController {
         modelAndView.setViewName("home/reservationCollect");
         return modelAndView;
     }
+
     @RequestMapping(value = "/reservationInfo", method = RequestMethod.GET)
     public ModelAndView reservationInfo(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -107,6 +109,7 @@ public class HomeController {
         modelAndView.setViewName("home/reservationInfo");
         return modelAndView;
     }
+
     @RequestMapping(value = "/reservationReceiver", method = RequestMethod.GET)
     public ModelAndView reservationReceiver(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -114,11 +117,28 @@ public class HomeController {
         modelAndView.setViewName("home/reservationReceiver");
         return modelAndView;
     }
+
     @RequestMapping(value = "/reservationSender", method = RequestMethod.GET)
     public ModelAndView reservationSender(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
         modelAndView.setViewName("home/reservationSender");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/payment", method = RequestMethod.GET)
+    public ModelAndView payment(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+
+        modelAndView.setViewName("home/payment");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/reservationPaymentInfo", method = RequestMethod.GET)
+    public ModelAndView reservationPaymentInfo(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+
+        modelAndView.setViewName("home/reservationPaymentInfo");
         return modelAndView;
     }
 
