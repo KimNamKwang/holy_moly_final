@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -120,11 +121,8 @@
                   "
                 >
                   <thead>
-                    <tr>
+                    <tr id="visit_date">
                       <th>방문시간</th>
-                      <th>$('date')</th>
-                      <th>2/28 (화)</th>
-                      <th>2/29 (수)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -282,11 +280,6 @@
                         <label class="form-check-label" for="visit-time_4_3"
                           >신청</label
                         >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="datetime-local" name="VISITING_DATE" />
                       </td>
                     </tr>
                   </tbody>
@@ -462,7 +455,7 @@
       </div>
     </main>
 
-    <script src="/resources/js/date.js"></script>
+    <script src="/resources/js/reservationInfo.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
