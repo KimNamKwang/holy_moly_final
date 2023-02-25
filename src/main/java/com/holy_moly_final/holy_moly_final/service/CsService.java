@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.holy_moly_final.holy_moly_final.dao.SharedDao;
+import com.holy_moly_final.holy_moly_final.utils.Paginations;
 
 @Service
 public class CsService {
@@ -17,8 +18,12 @@ public class CsService {
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);
         int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
-        Paginations
-        return Object;
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        result.put("resultList", this.getList(dataMap));
+
+        return result;
     }
 
     public Object getTotal(Object dataMap) {

@@ -32,7 +32,7 @@ public class CsController {
     public ModelAndView noticeList(@RequestParam Map<String, Object> params, @PathVariable int currentPage,
             ModelAndView modelAndView) {
         params.put("currentPage", currentPage);
-        Object resultMap = csService.getList(params);
+        Object resultMap = csService.getListWithPagination(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("cs/noticeList");
         return modelAndView;
