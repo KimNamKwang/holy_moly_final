@@ -48,7 +48,6 @@
             class="border p-5 mt-5"
             style="border-radius: 20px; background-color: white; width: 50%"
           >
-            <!-- 그림삽입 저작권침해임 -->
             <div>
               <span class="tracking-list-icon">
                 <img src="/resources/images/돋보기.png" alt="" width="40%" />
@@ -59,7 +58,9 @@
               <div class="p-3">
                 <b
                   >회원님의 아이디는 <br />
-                  <span style="color: rgb(55, 210, 67)">dlwogus6893</span>
+                  <span style="color: rgb(55, 210, 67)"
+                    >${resultMap.USER_UID}</span
+                  >
                   입니다.</b
                 >
               </div>
