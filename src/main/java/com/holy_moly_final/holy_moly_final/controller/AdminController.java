@@ -50,7 +50,7 @@ public class AdminController {
 
         modelAndView.setViewName("admin/adminBoardUpdate");
         return modelAndView;
-    } 
+    }
 
     @RequestMapping(value = "adminInquiry", method = RequestMethod.GET)
     public ModelAndView adminInquiry(@RequestParam Map<String, Object> params,
@@ -71,8 +71,17 @@ public class AdminController {
     @RequestMapping(value = "adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-            Object resultMap = commonService.insertUserDataForAdmin(params); 
-            modelAndView.addObject("resultMap", resultMap);
+        // Object resultMap = commonService.insertUserDataForAdmin(params);
+        // modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminUsers");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "forWork", method = RequestMethod.GET)
+    public ModelAndView forWork(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = commonService.insertUserDataForAdmin(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
