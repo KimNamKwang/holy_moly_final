@@ -40,7 +40,7 @@ public class CommonController {
     @RequestMapping(value = "/IdResult_su", method = RequestMethod.GET)
     public ModelAndView IdResult_su(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        Object resultMap = commonService.getOne(params);
+        Object resultMap = commonService.getUserUIDByNameAndPhone(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/IdResult_su");
         return modelAndView;
@@ -65,7 +65,8 @@ public class CommonController {
     @RequestMapping(value = "/join_step2", method = RequestMethod.GET)
     public ModelAndView join_step2(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step2");
         return modelAndView;
     }
@@ -73,7 +74,8 @@ public class CommonController {
     @RequestMapping(value = "/join_step3", method = RequestMethod.GET)
     public ModelAndView join_step3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step3");
         return modelAndView;
     }
@@ -81,7 +83,8 @@ public class CommonController {
     @RequestMapping(value = "/join_step4", method = RequestMethod.GET)
     public ModelAndView join_step4(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = commonService.insertUserDataAndGet(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step4");
         return modelAndView;
     }

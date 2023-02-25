@@ -71,17 +71,22 @@
           </span>
         </div>
       </div>
-      <form action="/common/join_step3" method="">
+      <form action="/common/join_step3" method="get">
         <div class="bg-white border text-start p-4" style="border-radius: 20px">
           <table class="table align-middle table-borderless">
             <tr>
+              <input
+                type="hidden"
+                name="MARKETING_RECEIVE_ACCEPTION"
+                value=" ${resultMap.agree}"
+              />
               <th style="vertical-align: top">이름</th>
               <td>
                 <input
                   type="text"
                   class="form-control"
-                  name="userName"
-                  id="userName"
+                  name="Name"
+                  id="Name"
                   placeholder="이름"
                   required
                 />
@@ -93,8 +98,8 @@
                 <input
                   type="text"
                   class="form-control"
-                  name="userId"
-                  id="userId"
+                  name="USER_UID"
+                  id="USER_UID"
                   minlength="4"
                   placeholder="아이디"
                   required
@@ -108,8 +113,8 @@
                   <input
                     type="password"
                     class="form-control"
-                    name="userPassword"
-                    id="userPassword"
+                    name="PASSWORD"
+                    id="PASSWORD"
                     minlength="8"
                     placeholder="비밀번호"
                     onchange="isSame()"
@@ -120,8 +125,8 @@
                   <input
                     type="password"
                     class="form-control"
-                    name="userPasswordCheck"
-                    id="userPasswordCheck"
+                    name="PASSWORDCheck"
+                    id="PASSWORDCheck"
                     placeholder="비밀번호확인"
                     onchange="isSame()"
                     required
@@ -148,6 +153,7 @@
           <div class="col text-end mt-3">
             <button
               class="btn btn-lg text-light fw-bold"
+              type="submit"
               style="
                 background-color: rgb(55, 210, 67);
                 border-radius: 50%;
@@ -164,12 +170,12 @@
     <script>
       function isSame() {
         if (
-          document.getElementById("userPassword").value != "" &&
-          document.getElementById("userPasswordCheck").value != ""
+          document.getElementById("PASSWORD").value != "" &&
+          document.getElementById("PASSWORDCheck").value != ""
         ) {
           if (
-            document.getElementById("userPassword").value ==
-            document.getElementById("userPasswordCheck").value
+            document.getElementById("PASSWORD").value ==
+            document.getElementById("PASSWORDCheck").value
           ) {
             document.getElementById("same").innerHTML =
               "비밀번호가 일치합니다.";

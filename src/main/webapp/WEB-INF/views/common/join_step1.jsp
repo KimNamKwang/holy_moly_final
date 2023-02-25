@@ -36,7 +36,7 @@
   <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
     <div class="container" style="width: 600px; padding-bottom: 200px">
-      <form action="/common/join_step2">
+  
         <div
           class="row mb-5 d-flex align-items-center text-start"
           style="padding-top: 150px"
@@ -156,6 +156,7 @@
                 </a>
               </label>
             </div>
+            <form action="/common/join_step2">
             <div>
               <input
                 type="checkbox"
@@ -312,7 +313,7 @@
         <div class="modal-dialog">
           <div class="modal-content ps-3 pe-3">
             <div class="modal-header">
-              <div class="fs-5 fw-bold">개인정보처리방침</div>
+              <div class="fs-5 fw-bold">개인정보 수집. 이용 동의</div>
             </div>
             <div class="modal-body">
               <div style="overflow: auto; height: 250px; padding: 10px">
@@ -369,7 +370,7 @@
         <div class="modal-dialog">
           <div class="modal-content ps-3 pe-3">
             <div class="modal-header">
-              <div class="fs-5 fw-bold">개인정보처리방침</div>
+              <div class="fs-5 fw-bold">마케팅 정보 수신 동의</div>
             </div>
             <div class="modal-body">
               <div style="overflow: auto; height: 250px; padding: 10px">

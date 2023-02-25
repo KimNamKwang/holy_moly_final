@@ -23,7 +23,7 @@ public class CommonService {
          * 위에서 넣은 result가 사라지지 않게 하기 위해 putAll사용. putAll은 같은 key가 아니면 자동으로 list에다가 put을
          * 해준다
          */
-        result.putAll((Map<String, Object>) this.getOne(dataMap));
+        // result.putAll((Map<String, Object>) this.getOne(dataMap));
         return result;
     }
 
@@ -40,21 +40,40 @@ public class CommonService {
         return result;
     }
 
-    public Object insertWithFilesAndGetList(Object dataMap) {
-        // insert files
-        Object result = this.insertMulti(dataMap);
-        result = this.insertOne(dataMap);
-        result = this.getList(dataMap);
+    // public Object insertWithFilesAndGetList(Object dataMap) {
+    // // insert files
+    // Object result = this.insertMulti(dataMap);
+    // result = this.insertOne(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+
+    // }
+
+    public Object getOne(Object dataMap) {
+        String sqlMapId = "CommonCodeOur.selectByUID";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertUserDataAndGet(Object dataMap) {
+        Object result = this.insertUserData(dataMap);
+        result = this.getUserData(dataMap);
         return result;
 
     }
 
-    public Object insertOneAndGetList(Object dataMap) {
-        Object result = this.insertOne(dataMap);
-        result = this.getList(dataMap);
+    public Object getUserData(Object dataMap) {
+        String sqlMapId = "Common.selectUserDataForJoinStep4";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
-
     }
+
+    // public Object insertOneAndGetList(Object dataMap) {
+    // Object result = this.insertOne(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+
+    // }
 
     public Object updateAndGetList(Object dataMap) {
         Object result = this.update(dataMap);
@@ -85,7 +104,7 @@ public class CommonService {
         return result;
     }
 
-    public Object getOne(Object dataMap) {
+    public Object getUserUIDByNameAndPhone(Object dataMap) {
         String sqlMapId = "Common.selectUserUIDByNameAndPhone";
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
@@ -97,8 +116,8 @@ public class CommonService {
         return result;
     }
 
-    public Object insertOne(Object dataMap) {
-        String sqlMapId = "Common.insertWithUID";
+    public Object insertUserData(Object dataMap) {
+        String sqlMapId = "Common.insertUserDataForJoin";
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }

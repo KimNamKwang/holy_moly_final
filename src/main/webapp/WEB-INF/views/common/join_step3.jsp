@@ -78,16 +78,34 @@
           </span>
         </div>
       </div>
-      <form action="/common/join_step4" method="">
+      <form action="/common/join_step4" method="get">
         <div class="bg-white border text-start p-4" style="border-radius: 20px">
           <table class="table align-middle table-borderless">
+            <input
+              type="hidden"
+              name="MARKETING_RECEIVE_ACCEPTION"
+              value="${resultMap.MARKETING_RECEIVE_ACCEPTION}"
+            />
+            <input type="hidden" name="Name" value="${resultMap.Name}" />
+            <input
+              type="hidden"
+              name="USER_UID"
+              value="${resultMap.USER_UID}"
+            />
+            <input
+              type="hidden"
+              name="PASSWORD"
+              value="${resultMap.PASSWORD}"
+            />
+            <input type="hidden" name="GRADE_UID" value="GRADE_F" />
+            <input type="hidden" name="AUTH_UID" value="AUTH_U" />
             <tr>
               <th class="text-nowrap" style="vertical-align: top">생년월일</th>
               <td>
                 <input
                   type="date"
                   class="form-control w-50"
-                  name="birth_date"
+                  name="BIRTH_DATE"
                   id="birth_date"
                   required
                 />
@@ -114,7 +132,7 @@
                 <div class="col-1">-</div>
                 <div class="col">
                   <input
-                    type="number"
+                    type="tel"
                     class="form-control text-center"
                     id="phoneSecond"
                     name="phoneSecond"
@@ -124,7 +142,7 @@
                 <div class="col-1">-</div>
                 <div class="col">
                   <input
-                    type="number"
+                    type="tel"
                     class="form-control text-center"
                     id="phoneThird"
                     name="phoneThird"
@@ -141,7 +159,7 @@
                 <input
                   type="email"
                   class="form-control"
-                  name="userEmail"
+                  name="E_MAIL"
                   id="userEmail"
                   minlength="5"
                   placeholder="이메일 주소"
@@ -165,7 +183,7 @@
                   class="col-10 form-control"
                   type="text"
                   id="sample6_postcode"
-                  name="postcode"
+                  name="POSTALCODE"
                   onclick="sample6_execDaumPostcode()"
                   placeholder="우편번호"
                 />
@@ -173,7 +191,7 @@
                   class="form-control"
                   type="text"
                   id="sample6_address"
-                  name="address"
+                  name="ADDRESS"
                   placeholder="주소"
                 />
                 <input
@@ -181,14 +199,14 @@
                   type="text"
                   class="col-10"
                   id="sample6_detailAddress"
-                  name="addressadd"
+                  name="DETAILADDRESS"
                   placeholder="상세주소"
                 />
                 <input
                   class="form-control"
                   type="text"
                   id="sample6_extraAddress"
-                  name="extraaddress"
+                  name="EXTRAADDRESS"
                   placeholder="참고항목"
                 />
               </td>
