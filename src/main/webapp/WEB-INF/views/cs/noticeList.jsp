@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -73,44 +75,19 @@
             전체<span class="fw-bold">128건</span>
           </div>
           <hr class="mt-1" />
+          <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
+                    <!-- 내용 (title, date) -->
+          <div>
+            <div class="text-secondary" style="font-size: small">
+              ${resultData.DATE_CREATED}
+            </div>
+            <a href="/cs/noticeView/${resultData.COMMONBOARD_UID}" class="mt-2 text-decoration-none text-dark"
+              >${resultData.TITLE}</a
+            >
+            <hr />
+          </div>
+          </c:forEach>
 
-          <!-- 내용 (title, date) -->
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2023.01.09
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >2023년 설 연휴 택배중단 안내</a
-            >
-            <hr />
-          </div>
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2023.01.03
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >2023년 설 연휴 홈택배 중단 일정 안내</a
-            >
-            <hr />
-          </div>
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2022.12.28
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >국내택배 운임 조정 안내</a
-            >
-            <hr />
-          </div>
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2022.12.22
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >제주도 전역 기상학화 영향으로 선박 결항 안내</a
-            >
-            <hr />
-          </div>
           <div class="mb-3 pt-3">
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">

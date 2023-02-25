@@ -11,21 +11,29 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.service.CsService;
+
 @Controller
 @RequestMapping(value = "/cs")
 public class CsController {
+    @Autowired
+    CsService csService;
 
-    @RequestMapping(value = "/noticeList", method = RequestMethod.GET)
-    public ModelAndView noticeList(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/noticeList/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView noticeList(@RequestParam Map<String, Object> params, @PathVariable int currentPage,
             ModelAndView modelAndView) {
-
+        params.put("currentPage", currentPage);
+        Object resultMap = csService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("cs/noticeList");
         return modelAndView;
     }
