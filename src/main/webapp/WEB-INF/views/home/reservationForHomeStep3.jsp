@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib
+prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,9 +86,11 @@
               <th scope="col">결제수단</th>
             </tr>
             <tr>
-              <td class="font07">6,990원</td>
-              <td class="font07">0원</td>
-              <td class="font07">6,990원</td>
+              <td class="font07">${resultMap.NUMBER_OF_ITEMS * 3500} 원</td>
+              <td class="font07">
+                0원(로그인 구현되면 GRADE 체크해서 차등적용)
+              </td>
+              <td class="font07">???원</td>
               <td></td>
             </tr>
           </tbody>
@@ -93,16 +98,29 @@
 
         <div class="fs-5 fw-bold pb-2">보내는 사람</div>
         <div class="border border-1 mb-5 p-2">
-          <div>강항수(H.P:010-1324-2131)</div>
-          <div>서울특별시 강북구 노해로 5-1(수유동) 구두수선대-24</div>
+          <div>${resultMap.SENDER_NAME}(H.P:${resultMap.SENDER_PHONE})</div>
+          <div>
+            ${resultMap.DEPARTURE_ADDRESS} ${resultMap.DEPARTURE_DETAILADDRESS}
+          </div>
         </div>
         <div class="fs-5 fw-bold pb-2">받는 사람</div>
         <div class="border border-1 p-2">
-          <div>31321(H.P:010-1324-2321)</div>
-          <div>서울특별시 강남구 테헤란로 101(역삼동) 이즈타워</div>
+          <div>${resultMap.RECIPIENT_NAME}(H.P:010-1324-2321)</div>
+          <div>
+            ${resultMap.DESTINATION_ADDRESS}
+            ${resultMap.DESTINATION_DETAILADDRESS}
+          </div>
           <div>(포장수량: 1 박스)-일반:1</div>
-          <div>물품: 서적</div>
-          <div>가격:120,000원</div>
+          <div>
+            물품:
+            <c:set var="ITEM_TYPE" value="${resultMap.ITEM_TYPE_UID}">
+              <c:if test="${fn:contains(ITEM_TYPE,'f')}"> 농축산물류 </c:if>
+              <c:if test="${fn:contains(ITEM_TYPE,'b')}"> 서적 </c:if>
+              <c:if test="${fn:contains(ITEM_TYPE,'m')}"> 약품류 </c:if>
+              <c:if test="${fn:contains(ITEM_TYPE,'c')}"> 의류/잡화 </c:if>
+            </c:set>
+          </div>
+          <div>가격:${resultMap.NUMBER_OF_ITEMS * resultMap.ITEM_PRICE} 원</div>
         </div>
         <div class="border border-1 mt-5 p-2">
           <ul class="list-unstyled">
