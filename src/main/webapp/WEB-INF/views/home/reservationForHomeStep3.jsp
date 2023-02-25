@@ -55,13 +55,15 @@
               <th scope="col" class="last">운임합계</th>
             </tr>
             <tr>
-              <td>CJ 대한통운</td>
-              <td id="d_req_date_text">2023-02-06</td>
+              <td>${resultMap.SHIPMENT_TYPE_DESCRIPTION}</td>
+              <td>${resultMap.VISITING_DATE}</td>
 
               <td>선불</td>
 
-              <td>1개</td>
-              <td class="font07 last">6,990원</td>
+              <td>${resultMap.NUMBER_OF_ITEMS} 개</td>
+              <td class="font07 last">
+                ${resultMap.NUMBER_OF_ITEMS * 3500} 원
+              </td>
             </tr>
           </tbody>
         </table>

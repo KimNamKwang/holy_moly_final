@@ -68,6 +68,51 @@
                   <col style="width: 23%" />
                 </colgroup>
                 <tbody>
+                  <input
+                    type="hidden"
+                    name="SENDER_NAME"
+                    value="${resultMap.SENDER_NAME}"
+                  />
+                  <input
+                    type="hidden"
+                    name="SENDER_PHONE"
+                    value="${resultMap.phoneFirst}${resultMap.phoneSecond}${resultMap.phoneThird}"
+                  />
+                  <input
+                    type="hidden"
+                    name="DEPARTURE_POSTALCODE"
+                    value="${resultMap.DEPARTURE_POSTALCODE}"
+                  />
+                  <input
+                    type="hidden"
+                    name="DEPARTURE_ADDRESS"
+                    value="${resultMap.DEPARTURE_ADDRESS}"
+                  />
+                  <input
+                    type="hidden"
+                    name="DEPARTURE_DETAILADDRESS"
+                    value="${resultMap.DEPARTURE_DETAILADDRESS}"
+                  />
+                  <input
+                    type="hidden"
+                    name="DEPARTURE_EXTRAADDRESS"
+                    value="${resultMap.DEPARTURE_EXTRAADDRESS}"
+                  />
+                  <input
+                    type="hidden"
+                    name="SHIPMENT_PASSWORD"
+                    value="${resultMap.SHIPMENT_PASSWORD}"
+                  />
+                  <input
+                    type="hidden"
+                    name="SHIPMENT_TYPE_UID"
+                    value="SHIP_GEN"
+                  />
+                  <input
+                    type="hidden"
+                    name="SHIPMENT_TYPE_DESCRIPTION"
+                    value="일반 택배"
+                  />
                   <tr class="first1">
                     <th scope="row" class="bg-secondary bg-opacity-10">
                       받는 사람
@@ -75,7 +120,7 @@
                     <td class="lh_40">
                       <input
                         class="inp04 form-control w-50 inp03"
-                        name="r_name"
+                        name="RECIPIENT_NAME"
                         type="text"
                         maxlength="7"
                         value=""
@@ -91,7 +136,7 @@
                       <div class="col-auto">
                         <select
                           class="form-select select_st sel22"
-                          name="s_mobile1"
+                          name="phoneFirst"
                           id="phoneFirst"
                           required
                         >
@@ -109,7 +154,7 @@
                           type="tel"
                           class="inp17 form-control text-center"
                           id="phoneSecond"
-                          name="s_mobile2"
+                          name="phoneSecond"
                           onblur="onlyNumber(this);"
                           required
                         />
@@ -120,7 +165,7 @@
                           type="tel"
                           class="inp17 form-control text-center"
                           id="phoneThird"
-                          name="s_mobile3"
+                          name="phoneThird"
                           onblur="onlyNumber(this);"
                           required
                         />
@@ -145,14 +190,14 @@
                         <input
                           class="form-control w-50 mt-2"
                           type="text"
-                          name="postcode"
+                          name="DESTINATION_POSTALCODE"
                           id="sample6_postcode"
                           placeholder="우편번호"
                         />
                         <input
                           class="form-control mt-2"
                           type="text"
-                          name="address"
+                          name="DESTINATION_ADDRESS"
                           class="col-6"
                           id="sample6_address"
                           placeholder="주소"
@@ -160,7 +205,7 @@
                         <input
                           class="form-control mt-2"
                           type="text"
-                          name="addressadd"
+                          name="DESTINATION_DETAILADDRESS"
                           class="col-10"
                           id="sample6_detailAddress"
                           placeholder="상세주소"
@@ -168,7 +213,7 @@
                         <input
                           class="form-control mt-2"
                           type="text"
-                          name="extraaddress"
+                          name="DESTINATION_EXTRAADDRESS"
                           id="sample6_extraAddress"
                           placeholder="참고항목"
                         />
@@ -179,32 +224,28 @@
                   <tr>
                     <th class="bg-secondary bg-opacity-10">물품종류</th>
                     <td>
-                      <select name="" class="form-select w-25">
+                      <select name="ITEM_TYPE_UID" class="form-select w-25">
                         <option>물품선택</option>
-                        <option value="food">농축산물류 ↓</option>
-                        <option value="food_dried">건어물</option>
-                        <option value="food_fruits">과일류</option>
-                        <option value="food_rice">쌀</option>
-                        <option value="food_vegetables">채소류</option>
-                        <option value="food_else">기타 농축산물류</option>
-                        <option value="book">서적류 ↓</option>
-                        <option value="book_documents">서류</option>
-                        <option value="book_publications">서적</option>
-                        <option value="book_prints">인쇄물</option>
-                        <option value="book_else">기타 서적류</option>
-                        <option value="medicine">약품류 ↓</option>
-                        <option value="medicine_drugs">의약품</option>
-                        <option value="medicine_oriental">한약</option>
-                        <option value="medicine_healthSupplement">
-                          건강보조제품
-                        </option>
-                        <option value="clothing">의류/잡화 ↓</option>
-                        <option value="clothing_clothes">의류</option>
-                        <option value="clothing_shoes">신발</option>
-                        <option value="clothing_bagAndWallets">
-                          가방/지갑
-                        </option>
-                        <option value="clothing_accessories">액세서리</option>
+                        <option value="item_f_01">농축산물류 ↓</option>
+                        <option value="item_f_02">건어물</option>
+                        <option value="item_f_03">과일류</option>
+                        <option value="item_f_04">쌀</option>
+                        <option value="item_f_05">채소류</option>
+                        <option value="item_f_06">기타 농축산물류</option>
+                        <option value="item_b_01">서적류 ↓</option>
+                        <option value="item_b_02">서류</option>
+                        <option value="item_b_03">서적</option>
+                        <option value="item_b_04">인쇄물</option>
+                        <option value="item_b_05">기타 서적류</option>
+                        <option value="item_m_01">약품류 ↓</option>
+                        <option value="item_m_02">의약품</option>
+                        <option value="item_m_03">한약</option>
+                        <option value="item_m_04">건강보조제품</option>
+                        <option value="item_c_01">의류/잡화 ↓</option>
+                        <option value="item_c_02">의류</option>
+                        <option value="item_c_03">신발</option>
+                        <option value="item_c_04">가방/지갑</option>
+                        <option value="item_c_05">액세서리</option>
                       </select>
 
                       <div class="select_type11">
@@ -237,7 +278,7 @@
                           <input
                             type="Tel"
                             class="inp03 form-control"
-                            name="r_p_pric"
+                            name="ITEM_PRICE"
                             value=""
                             maxlength="2"
                           />
@@ -247,7 +288,7 @@
 
                       <p class="ls-1 c_8 tpirce" style="font-size: 0.9rem">
                         * 사고발생 시 보상기준이 되니 실제 물품 금액을
-                        입력해주세요.
+                        입력해주세요. 물품별 최대 금액은 99만원입니다.
                       </p>
                     </td>
                   </tr>
@@ -290,7 +331,7 @@
                             <input
                               type="hidden"
                               id="total_count_items"
-                              name="total_count_items"
+                              name="NUMBER_OF_ITEMS"
                             />
                           </div>
                         </li>
@@ -307,51 +348,31 @@
                       <select
                         class="select08 w100 etc_info_select form-select w-75"
                         id="etc_info_select_idx_0"
-                        name="etc_info_select"
+                        name="REQUEST_UID"
                       >
                         <option value="">===선택===</option>
 
-                        <option value="option1">
+                        <option value="REQ_01">
                           기사님 방문 전 연락주세요
                         </option>
-                        <option value="option2">
+                        <option value="REQ_02">
                           보낼 물품을 문 앞에 놓아 두겠습니다
                         </option>
-                        <option value="option3">
+                        <option value="REQ_03">
                           보낼 물품을 경비실에 맡겨두겠습니다
                         </option>
 
-                        <option value="option4">파손에 주의해 주세요</option>
-                        <option value="option5">
+                        <option value="REQ_04">파손에 주의해 주세요</option>
+                        <option value="REQ_05">
                           배송 시 경비실에 맡겨 주세요
                         </option>
-                        <option value="option6">
+                        <option value="REQ_06">
                           배송 시 택배함에 넣어 주세요
                         </option>
-                        <option value="option7">
+                        <option value="REQ_07">
                           배송 시 문앞에 놓아 주세요.
                         </option>
-                        <option value="write">직접입력하기</option>
                       </select>
-
-                      <div
-                        class="etc_info_write_div"
-                        style="padding-top: 10px; display: none"
-                        id="etc_info_write_div_idx_0"
-                      >
-                        <p class="wide_i">
-                          <input
-                            type="text"
-                            class="inp08"
-                            name="etc_info"
-                            id="etc_info"
-                            placeholder="요청사항을 입력해주세요. (입력내용은 운송장에 표기되며 최대 30자까지 입력가능)"
-                            value=""
-                            maxlength="30"
-                          />
-                        </p>
-                        <!--<p class="lh_24 f11">※배송기사님 전달메시지를 등록해주세요.(운송장에 표기됨)</p>-->
-                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -369,7 +390,7 @@
                       <th scope="row">방문희망일</th>
                       <td>
                         <select
-                          name="d_req_date"
+                          name="VISITING_DATE"
                           id="d_req_date_select"
                           class="select01 form-select w-50"
                         ></select>
