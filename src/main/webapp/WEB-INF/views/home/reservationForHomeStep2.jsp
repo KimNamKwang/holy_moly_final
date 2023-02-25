@@ -332,6 +332,7 @@
                               type="hidden"
                               id="total_count_items"
                               name="NUMBER_OF_ITEMS"
+                              min="1"
                             />
                           </div>
                         </li>

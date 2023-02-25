@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
 taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib
-prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <%@ taglib prefix="fn"
+uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -112,13 +113,14 @@ prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
           </div>
           <div>(포장수량: 1 박스)-일반:1</div>
           <div>
-            물품:
+            물품: <%--
             <c:set var="ITEM_TYPE" value="${resultMap.ITEM_TYPE_UID}">
               <c:if test="${fn:contains(ITEM_TYPE,'f')}"> 농축산물류 </c:if>
               <c:if test="${fn:contains(ITEM_TYPE,'b')}"> 서적 </c:if>
               <c:if test="${fn:contains(ITEM_TYPE,'m')}"> 약품류 </c:if>
               <c:if test="${fn:contains(ITEM_TYPE,'c')}"> 의류/잡화 </c:if>
             </c:set>
+            --%>
           </div>
           <div>가격:${resultMap.NUMBER_OF_ITEMS * resultMap.ITEM_PRICE} 원</div>
         </div>
