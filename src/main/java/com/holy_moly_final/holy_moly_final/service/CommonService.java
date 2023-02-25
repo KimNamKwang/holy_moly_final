@@ -75,6 +75,13 @@ public class CommonService {
 
     // }
 
+    public Object insertUserDataForAdmin(Object dataMap) {
+        String sqlMapId = "Common.insertUserDataForAdmin";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+
+    }
+
     public Object updateAndGetList(Object dataMap) {
         Object result = this.update(dataMap);
         result = this.getList(dataMap);

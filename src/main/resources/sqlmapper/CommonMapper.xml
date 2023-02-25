@@ -45,4 +45,12 @@ VALUE ( #{USER_UID}, #{Name}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
 
  </insert>
 
+ <insert id="insertUserDataForAdmin" parameterType="Map">
+    INSERT INTO USERS (USER_UID, NAME, PASSWORD, E_MAIL, BIRTH_DATE, POSTALCODE, ADDRESS, DETAILADDRESS,
+			EXTRAADDRESS, JOINDATE, PHONE, MARKETING_RECEIVE_ACCEPTION, GRADE_UID, AUTH_UID) 
+VALUE ( #{USER_UID}, #{Name}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCODE}, #{ADDRESS}, #{DETAILADDRESS}, 
+ #{EXTRAADDRESS}, sysdate(), CONCAT (#{phoneFirst},#{phoneSecond},#{phoneThird}), 'N', #{GRADE_UID}, 'AUTH_U');
+
+ </insert>
+
 </mapper>

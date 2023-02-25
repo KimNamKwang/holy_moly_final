@@ -43,7 +43,7 @@
         <div class="container" style="width: 650px">
           <!-- 이용방법 -->
           <div class="fs-3 fw-bold pb-3">사용자 신규 등록</div>
-          <form action="/admin/adminUsers" method="post">
+          <form action="/admin/adminUsers" method="get">
             <div
               class="shadow-sm p-4 mb-4"
               style="border-radius: 10px 10px; background-color: white"
@@ -55,7 +55,7 @@
                     <input
                       type="text"
                       class="form-control w-50"
-                      name="userName"
+                      name="NAME"
                       placeholder="이름"
                       required
                     />
@@ -67,7 +67,7 @@
                     <input
                       type="text"
                       class="form-control w-50"
-                      name="userId"
+                      name="USER_UID"
                       placeholder="아이디"
                       required
                     />
@@ -79,7 +79,7 @@
                     <input
                       type="password"
                       class="form-control w-50"
-                      name="userPassword"
+                      name="PASSWORD"
                       placeholder="비밀번호"
                       required
                     />
@@ -91,19 +91,19 @@
                     <input
                       type="date"
                       class="form-control form-control w-50"
-                      name="birth_date"
+                      name="BIRTH_DATE"
                     />
                   </td>
                 </tr>
                 <tr>
                   <th class="text-nowrap">등급</th>
                   <td>
-                    <select class="form-select w-50" name="userGrade">
-                      <option value="family">FAMILY</option>
-                      <option value="purple">PURPLE</option>
-                      <option value="vip">VIP</option>
-                      <option value="vvip">VVIP</option>
-                      <option value="platinum">PLATINUM</option>
+                    <select class="form-select w-50" name="GRADE_UID">
+                      <option value="GRADE_F">FAMILY</option>
+                      <option value="GRADE_PU">PURPLE</option>
+                      <option value="GRADE_V">VIP</option>
+                      <option value="GRADE_VV">VVIP</option>
+                      <option value="GRADE_PL">PLATINUM</option>
                     </select>
                   </td>
                 </tr>
@@ -114,7 +114,7 @@
                       <input
                         type="text"
                         class="form-control"
-                        name="userEmail"
+                        name="E_MAIL"
                         placeholder="이메일 주소"
                       />
                     </div>
@@ -124,7 +124,7 @@
                   <th class="text-nowrap">연락처</th>
                   <td class="row">
                     <div class="col">
-                      <select class="form-select" name="phoneFirst">
+                      <select class="form-select" name="PHONE">
                         <option value="010">010</option>
                         <option value="011">011</option>
                         <option value="016">016</option>
@@ -165,14 +165,14 @@
                     <input
                       class="form-control w-50 mt-2"
                       type="text"
-                      name="postcode"
+                      name="POSTALCODE"
                       id="sample6_postcode"
                       placeholder="우편번호"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="address"
+                      name="ADDRESS"
                       class="col-6"
                       id="sample6_address"
                       placeholder="주소"
@@ -180,7 +180,7 @@
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="addressadd"
+                      name="DETAILADDRESS"
                       class="col-10"
                       id="sample6_detailAddress"
                       placeholder="상세주소"
@@ -188,7 +188,7 @@
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="extraaddress"
+                      name="EXTRAADDRESS"
                       id="sample6_extraAddress"
                       placeholder="참고항목"
                     />

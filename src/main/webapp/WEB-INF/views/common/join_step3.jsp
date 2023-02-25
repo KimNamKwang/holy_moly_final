@@ -94,7 +94,7 @@
             />
             <input
               type="hidden"
-              name="PASSWORD"
+              name="PASSWORD" 
               value="${resultMap.PASSWORD}"
             />
             <input type="hidden" name="GRADE_UID" value="GRADE_F" />
