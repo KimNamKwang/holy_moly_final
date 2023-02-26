@@ -58,218 +58,223 @@
       "
     >
       <div class="container pb-4" style="width: 45rem">
-        <!-- 제목 -->
-        <div class="fw-bold fs-4 text-center pt-4">프리미엄 홈택배</div>
-        <!-- 결제 정보 -->
-        <div style="color: rgb(55, 210, 67)">
-          <div class="fs-5 fw-bold">결제</div>
-          <div><hr style="border: 1px solid; margin-top: 0.6rem" /></div>
-        </div>
-
-        <!-- 테이블 전체 박스 -->
-        <div style="background-color: white; border-radius: 10px" class="p-3">
-          <!-- 할인/부가결제-->
-          <div>
-            <div class="fw-bold">할인/부가결제</div>
-            <div>
-              <hr style="border: 0.1rem solid lightgray" />
-            </div>
-            <div class="d-flex justify-content-between">
-              <div>적립금</div>
-              <div class="d-flex">
-                <input
-                  type="number"
-                  name="usePoint"
-                  id="usePoint"
-                  class="form-control"
-                />
-                <button
-                  id="usePointbtn"
-                  class="text-nowrap btn text-light"
-                  style="background-color: rgb(55, 210, 67)"
-                >
-                  전액 사용
-                </button>
-              </div>
-            </div>
-
-            <div
-              class="d-flex justify-content-between"
-              style="font-size: 0.9rem"
-            >
-              <!-- 정보창 -->
-              <div id="information" style="color: red"></div>
-              <div class="d-flex">
-                <div>보유 잔액</div>
-                <div>&nbsp;</div>
-                <p class="text-info" id="balance">4900</p>
-                <p class="text-info">원</p>
-              </div>
-            </div>
+        <form action="/home/payment_completed" method="get">
+          <!-- 제목 -->
+          <div class="fw-bold fs-4 text-center pt-4">결제</div>
+          <!-- 결제 정보 -->
+          <div style="color: rgb(55, 210, 67)">
+            <div class="fs-5 fw-bold">결제</div>
+            <div><hr style="border: 1px solid; margin-top: 0.6rem" /></div>
           </div>
 
-          <!-- 결제정보 -->
-          <div class="mt-5">
-            <div class="fw-bold">결제정보</div>
+          <!-- 테이블 전체 박스 -->
+          <div style="background-color: white; border-radius: 10px" class="p-3">
+            <!-- 할인/부가결제-->
             <div>
-              <hr style="border: 0.1rem solid lightgray" />
-            </div>
-            <table>
-              <tr>
-                <td>기본운임</td>
-                <td style="text-align: end">
-                  <span id="basicPrice">7490</span>원
-                </td>
-              </tr>
-              <tr>
-                <td>도서지역 할증료</td>
-                <td style="text-align: end">
-                  <span id="islandPrice">0</span>원
-                </td>
-              </tr>
-              <tr>
-                <td>할인/부가결제</td>
-                <td style="text-align: end">
-                  <span id="pointPrice">0</span>원
-                </td>
-              </tr>
-              <tr
-                style="background-color: rgba(211, 211, 211, 0.3)"
-                id="greenColor"
+              <div class="fw-bold">할인/부가결제</div>
+              <div>
+                <hr style="border: 0.1rem solid lightgray" />
+              </div>
+              <div class="d-flex justify-content-between">
+                <div>포인트</div>
+                <div class="d-flex">
+                  <input
+                    type="number"
+                    name="usePoint"
+                    id="usePoint"
+                    class="form-control"
+                  />
+                  <a
+                    href="#"
+                    id="usePointbtn"
+                    class="text-nowrap btn text-light"
+                    style="background-color: rgb(55, 210, 67)"
+                  >
+                    전액 사용
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="d-flex justify-content-between"
+                style="font-size: 0.9rem"
               >
-                <th>최종 결제 금액</th>
-                <th style="text-align: end"><span id="lastPrice">0</span>원</th>
-              </tr>
-            </table>
-          </div>
-
-          <!--결제수단 -->
-          <div class="mt-5">
-            <div class="fw-bold">결제수단</div>
-            <div>
-              <hr style="border: 0.1rem solid lightgray" />
-            </div>
-            <select class="form-select mb-2" id="paymentSelect">
-              <option value="1">계좌이체</option>
-              <option value="2">카드결제</option>
-              <option value="3">휴대폰결제</option>
-            </select>
-
-            <!-- 계좌이체 -->
-            <div id="escrow">
-              <div>
-                <div style="font-size: small">
-                  <ul>
-                    <li>
-                      실시간 계좌이체를 이용하기 위해서는 계좌 결제앱이
-                      설치되어있어야합니다.
-                    </li>
-                    <li>
-                      계좌이체는 ATM이나 은행 홈페이지에 접속하지 않고 PEST
-                      홈페이지 내에서 즉시 결제, 출금되는 결제 방식 입니다.
-                    </li>
-                    <li>
-                      현재 약 20여개의 은행이 가능하며 현금영수증 발행은 결제 시
-                      즉시 발급받으실 수 있습니다.
-                    </li>
-                  </ul>
+                <!-- 정보창 -->
+                <div id="information" style="color: red"></div>
+                <div class="d-flex">
+                  <div>보유 포인트</div>
+                  <div>&nbsp;</div>
+                  <p class="text-info" id="balance">4900</p>
+                  <p class="text-info">원</p>
                 </div>
               </div>
             </div>
-            <!-- 카드결제 -->
-            <div id="card" style="display: none">
+
+            <!-- 결제정보 -->
+            <div class="mt-5">
+              <div class="fw-bold">결제정보</div>
               <div>
-                <select
-                  name="cardSelect"
-                  id="cardSelect"
-                  class="form-select w-25"
+                <hr style="border: 0.1rem solid lightgray" />
+              </div>
+              <table>
+                <tr>
+                  <td>기본운임</td>
+                  <td style="text-align: end">
+                    <span id="basicPrice">7490</span>원
+                  </td>
+                </tr>
+                <tr>
+                  <td>도서지역 할증료</td>
+                  <td style="text-align: end">
+                    <span id="islandPrice">0</span>원
+                  </td>
+                </tr>
+                <tr>
+                  <td>할인/부가결제</td>
+                  <td style="text-align: end">
+                    <span id="pointPrice">0</span>원
+                  </td>
+                </tr>
+                <tr
+                  style="background-color: rgba(211, 211, 211, 0.3)"
+                  id="greenColor"
                 >
-                  <option value="none" selected>카드선택</option>
-                  <option value="samsung">삼성카드</option>
-                  <option value="hyundai">현대카드</option>
-                  <option value="hana">하나카드</option>
-                  <option value="kb">국민카드</option>
-                  <option value="shinhan">신한카드</option>
-                </select>
+                  <th>최종 결제 금액</th>
+                  <th style="text-align: end">
+                    <span id="lastPrice">0</span>원
+                  </th>
+                </tr>
+              </table>
+            </div>
+
+            <!--결제수단 -->
+            <div class="mt-5">
+              <div class="fw-bold">결제수단</div>
+              <div>
+                <hr style="border: 0.1rem solid lightgray" />
+              </div>
+              <select class="form-select mb-2" id="paymentSelect">
+                <option value="1">계좌이체</option>
+                <option value="2">카드결제</option>
+                <option value="3">휴대폰결제</option>
+              </select>
+
+              <!-- 계좌이체 -->
+              <div id="escrow">
+                <div>
+                  <div style="font-size: small">
+                    <ul>
+                      <li>
+                        실시간 계좌이체를 이용하기 위해서는 계좌 결제앱이
+                        설치되어있어야합니다.
+                      </li>
+                      <li>
+                        계좌이체는 ATM이나 은행 홈페이지에 접속하지 않고 PEST
+                        홈페이지 내에서 즉시 결제, 출금되는 결제 방식 입니다.
+                      </li>
+                      <li>
+                        현재 약 20여개의 은행이 가능하며 현금영수증 발행은 결제
+                        시 즉시 발급받으실 수 있습니다.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 카드결제 -->
+              <div id="card" style="display: none">
+                <div>
+                  <select
+                    name="cardSelect"
+                    id="cardSelect"
+                    class="form-select w-25"
+                  >
+                    <option value="none" selected>카드선택</option>
+                    <option value="samsung">삼성카드</option>
+                    <option value="hyundai">현대카드</option>
+                    <option value="hana">하나카드</option>
+                    <option value="kb">국민카드</option>
+                    <option value="shinhan">신한카드</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 휴대폰결제 -->
+              <div id="phone" style="display: none">
+                <div>
+                  <div style="font-size: small">
+                    <ul>
+                      <li>부분환불/결제 월이 지난 경우, 계좌로 환불 됩니다.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- 휴대폰결제 -->
-            <div id="phone" style="display: none">
+
+            <!-- 약관동의 -->
+            <div class="mt-5">
+              <div class="fw-bold">약관</div>
               <div>
-                <div style="font-size: small">
-                  <ul>
-                    <li>부분환불/결제 월이 지난 경우, 계좌로 환불 됩니다.</li>
-                  </ul>
+                <hr style="border: 0.1rem solid lightgray" />
+              </div>
+              <div>
+                <div class="pb-2" style="font-size: 1.1rem" id="checkbox_group">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="check_all"
+                  />
+                  <label class="form-check-label" for="check_all"
+                    >모든 약관동의</label
+                  >
+                </div>
+                <div class="pb-2" id="checkbox_group">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="check_1"
+                    name="check"
+                  />
+                  <label class="form-check-label" for="check_1"
+                    >[필수] 구매조건 확인 및 결제진행 동의</label
+                  >
+                </div>
+                <div class="pb-2" id="checkbox_group">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="check_2"
+                    name="check"
+                  />
+                  <label class="form-check-label" for="check_2"
+                    >[필수] 청약철회방침 동의</label
+                  >
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 약관동의 -->
-          <div class="mt-5">
-            <div class="fw-bold">약관</div>
-            <div>
-              <hr style="border: 0.1rem solid lightgray" />
+          <!-- 버튼 박스 -->
+          <div class="row mb-5">
+            <div class="col mt-3">
+              <a
+                href="/home/reservationForHomeStep3"
+                class="btn btn-sm btn-secondary"
+                style="border-radius: 50px"
+                >BACK</a
+              >
             </div>
-            <div>
-              <div class="pb-2" style="font-size: 1.1rem" id="checkbox_group">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="check_all"
-                />
-                <label class="form-check-label" for="check_all"
-                  >모든 약관동의</label
-                >
-              </div>
-              <div class="pb-2" id="checkbox_group">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="check_1"
-                  name="check"
-                />
-                <label class="form-check-label" for="check_1"
-                  >[필수] 구매조건 확인 및 결제진행 동의</label
-                >
-              </div>
-              <div class="pb-2" id="checkbox_group">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="check_2"
-                  name="check"
-                />
-                <label class="form-check-label" for="check_2"
-                  >[필수] 청약철회방침 동의</label
-                >
-              </div>
+            <div class="col text-end mt-3">
+              <!--수정시 jquery attr href 링크 수정해야함 -->
+              <button
+                type="submit"
+                class="btn btn-lg text-light fw-bold"
+                style="background-color: rgb(55, 210, 67)"
+                id="paymentBtn"
+              >
+                결제하기
+              </button>
             </div>
           </div>
-        </div>
-
-        <!-- 버튼 박스 -->
-        <div class="row mb-5">
-          <div class="col mt-3">
-            <a
-              href="/index"
-              class="btn btn-sm btn-secondary"
-              style="border-radius: 50px"
-              >BACK</a
-            >
-          </div>
-          <div class="col text-end mt-3">
-            <!--수정시 jquery attr href 링크 수정해야함 -->
-            <a
-              href="/index"
-              class="btn btn-lg text-light fw-bold"
-              style="background-color: rgb(55, 210, 67)"
-              id="paymentBtn"
-            >
-              결제하기
-            </a>
-          </div>
-        </div>
+        </form>
       </div>
     </main>
     <jsp:include page="../footer.jsp" />

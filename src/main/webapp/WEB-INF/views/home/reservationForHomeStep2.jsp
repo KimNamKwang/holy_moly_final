@@ -108,6 +108,8 @@
                     name="SHIPMENT_TYPE_UID"
                     value="SHIP_GEN"
                   />
+                  <%-- SHIPMENT_TYPE_UID와 SHIPMENT_TYPE_DESCRIPTION은
+                  일반택배라면 하드코딩 고정. --%>
                   <input
                     type="hidden"
                     name="SHIPMENT_TYPE_DESCRIPTION"

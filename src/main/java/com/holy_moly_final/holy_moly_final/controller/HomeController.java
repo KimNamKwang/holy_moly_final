@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,9 +19,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.utils.CommonUtils;
+
 @Controller
 @RequestMapping(value = "/home")
 public class HomeController {
+
+    @Autowired
+    CommonUtils commonUtils;
 
     @RequestMapping(value = "/payment_completed", method = RequestMethod.GET)
     public ModelAndView payment_completed(@RequestParam Map<String, Object> params,
@@ -132,7 +138,9 @@ public class HomeController {
     @RequestMapping(value = "/payment", method = RequestMethod.GET)
     public ModelAndView payment(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        params.put("TRACKING_NUMBER", commonUtils.getUniqueSequence());
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("home/payment");
         return modelAndView;
     }
