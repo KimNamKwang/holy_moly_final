@@ -60,7 +60,9 @@
       <div class="container pb-4" style="width: 45rem">
         <form action="/home/payment_completed" method="get">
           <!-- 제목 -->
-          <div class="fw-bold fs-4 text-center pt-4">결제</div>
+          <div class="fw-bold fs-4 text-center pt-4">
+            (일반홈택배)(다량홈택배)(프리미엄)결제
+          </div>
           <!-- 결제 정보 -->
           <div style="color: rgb(55, 210, 67)">
             <div class="fs-5 fw-bold">결제</div>
@@ -103,6 +105,8 @@
                 <div id="information" style="color: red"></div>
                 <div class="d-flex">
                   <div>보유 포인트</div>
+                  <%-- 로그인 상태인지 체크하여 로그인 했으면 보유 포인트 값을
+                  불러오고 비회원이라면 보유포인트 0원 --%>
                   <div>&nbsp;</div>
                   <p class="text-info" id="balance">4900</p>
                   <p class="text-info">원</p>
@@ -131,6 +135,8 @@
                 </tr>
                 <tr>
                   <td>할인/부가결제</td>
+                  <%-- 로그인했다면 사용자 등급별로 할인 받는 금액 + 위에서
+                  포인트로 충당한 비용 까지 제하기. --%>
                   <td style="text-align: end">
                     <span id="pointPrice">0</span>원
                   </td>
