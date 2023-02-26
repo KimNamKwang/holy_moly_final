@@ -14,6 +14,13 @@ public class CsService {
     @Autowired
     SharedDao sharedDao;
 
+    public Object getOneWithAppendViews(Object dataMap){
+        Object result = this.updateView(dataMap);
+        result = this.getOne(dataMap);
+
+        return result;
+    }
+
     public Object getListWithPagination(Object dataMap) {
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);
@@ -37,4 +44,18 @@ public class CsService {
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
+
+    public Object updateView(Object dataMap) {
+        String sqlMapId = "Cs.updateViewsByCommonBoard_UID";
+        Object result = sharedDao.update(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getOne(Object dataMap) {
+        String sqlMapId = "Cs.selectNoticeViewByCommonBoard_UID";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+
+        return result;
+    }
+
 }

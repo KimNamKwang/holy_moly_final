@@ -38,10 +38,13 @@ public class CsController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/noticeView", method = RequestMethod.GET)
-    public ModelAndView noticeView(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/noticeView/{COMMONBOARD_UID}", method = RequestMethod.GET)
+    public ModelAndView noticeView(@RequestParam Map<String, Object> params, @PathVariable String COMMONBOARD_UID,
             ModelAndView modelAndView) {
 
+        params.put("COMMONBOARD_UID", COMMONBOARD_UID);
+        Object resultMap = csService.getOneWithAppendViews(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("cs/noticeView");
         return modelAndView;
     }

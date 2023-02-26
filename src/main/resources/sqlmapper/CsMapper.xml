@@ -14,6 +14,21 @@
         </if>
     </select>
 
+    <!--call Cs.selectNoticeViewByCommonBoard_UID  -->
+    <select id="selectNoticeViewByCommonBoard_UID" parameterType="Map" resultType="Map">
+        SELECT COMMON_BOARD.COMMONBOARD_UID, TITLE,VIEWS , CONTENT, DATE_CREATED, FILE_FOLDER_NAME, ORIGINALFILE_NAME
+        FROM COMMON_BOARD LEFT JOIN ATTACHED_FILES
+        ON COMMON_BOARD.COMMONBOARD_UID = ATTACHED_FILES.COMMONBOARD_UID
+        WHERE BOARD_UID = 'BOARD_NOTICE' AND COMMON_BOARD.COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </select>
+
+    <!--call Cs.updateViewsByCommonBoard_UID  -->
+    <update id="updateViewsByCommonBoard_UID" parameterType="Map">
+        UPDATE COMMON_BOARD
+        SET VIEWS = VIEWS + 1
+        WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </update>
+
     <select id="selectTotal" parameterType="Map" resultType="int">
         SELECT COUNT(*) AS TOTAL_NOTICE
         FROM COMMON_BOARD INNER JOIN MAIN_BOARD
