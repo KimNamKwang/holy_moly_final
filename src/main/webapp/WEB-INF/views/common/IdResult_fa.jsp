@@ -38,11 +38,11 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="bg-light">
     <jsp:include page="../navbar.jsp" />
     <!-- 큰상자 -->
     <div
-      class="container text-nowrap"
+      class="container text-nowrap mb-5 mt-5"
       style="font-family: 'Noto Sans KR', sans-serif"
     >
       <div class="d-flex row justify-content-center text-center text-nowrap">

@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,13 +45,14 @@
       <div class="container">
         <div class="p-4" style="background-color: white">
           <div class="fs-4 border-bottom border-dark pb-3">
-            2023년 설 연휴 택배중단 안내
+            ${resultMap.TITLE}
           </div>
           <div class="pt-3" style="color: rgb(148, 148, 151)">
-            <span class="pe-3">2023.01.09</span>
-            <span>조회수 135</span>
+            <span class="pe-3">${fn:substring(resultMap.DATE_CREATED,0,10)}</span>
+            <span>조회수 ${resultMap.VIEWS}</span>
           </div>
           <div class="p-5 m-3">
+            <div>${resultMap.CONTENT}</div>
             <img src="/resources/images/공지.PNG" class="w-100" alt="" />
           </div>
         </div>

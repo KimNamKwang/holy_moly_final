@@ -81,7 +81,7 @@
                   <input
                     type="text"
                     class="inp04 form-control w-50"
-                    name="s_name"
+                    name="SENDER_NAME"
                     maxlength="7"
                     value=""
                   />
@@ -93,7 +93,7 @@
                   <div class="col-auto">
                     <select
                       class="form-select select_st sel22"
-                      name="s_mobile1"
+                      name="phoneFirst"
                       id="phoneFirst"
                       required
                     >
@@ -111,7 +111,7 @@
                       type="tel"
                       class="inp17 form-control text-center"
                       id="phoneSecond"
-                      name="s_mobile2"
+                      name="phoneSecond"
                       onblur="onlyNumber(this);"
                       required
                     />
@@ -122,7 +122,7 @@
                       type="tel"
                       class="inp17 form-control text-center"
                       id="phoneThird"
-                      name="s_mobile3"
+                      name="phoneThird"
                       onblur="onlyNumber(this);"
                       required
                     />
@@ -133,38 +133,6 @@
                   >
                     * 연락처기반으로 예약조회가 가능하니, 정확한 입력바랍니다.
                   </p>
-                </td>
-              </tr>
-
-              <tr class="s_div_AddPhone s_add_phone" style="display: none">
-                <th>추가 연락처</th>
-                <td class="tel_area">
-                  <input
-                    type="tel"
-                    class="inp22"
-                    name="s_phone1"
-                    maxlength="3"
-                    value=""
-                    onblur="onlyNumber(this);"
-                  />
-                  -
-                  <input
-                    type="tel"
-                    class="inp17"
-                    name="s_phone2"
-                    maxlength="4"
-                    value=""
-                    onblur="onlyNumber(this);"
-                  />
-                  -
-                  <input
-                    type="tel"
-                    class="inp17"
-                    name="s_phone3"
-                    maxlength="4"
-                    value=""
-                    onblur="onlyNumber(this);"
-                  />
                 </td>
               </tr>
 
@@ -192,28 +160,28 @@
                     <input
                       class="form-control w-50 mt-2"
                       type="text"
-                      name="postcode"
+                      name="DEPARTURE_POSTALCODE"
                       id="sample6_postcode"
                       placeholder="우편번호"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="address"
+                      name="DEPARTURE_ADDRESS"
                       id="sample6_address"
                       placeholder="주소"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="addressadd"
+                      name="DEPARTURE_DETAILADDRESS"
                       id="sample6_detailAddress"
                       placeholder="상세주소"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="extraaddress"
+                      name="DEPARTURE_EXTRAADDRESS"
                       id="sample6_extraAddress"
                       placeholder="참고항목"
                     />
@@ -226,11 +194,12 @@
                 <td>
                   <input
                     class="form-control w-50"
-                    name="pwd"
+                    name="SHIPMENT_PASSWORD"
                     type="password"
                     value=""
                     maxlength="4"
                     placeholder="숫자 4자리를 입력해 주세요."
+                    required
                   />
 
                   <p

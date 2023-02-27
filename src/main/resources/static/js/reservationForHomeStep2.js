@@ -4,6 +4,7 @@ let result = document.getElementById("result");
 let total_count_items = document.getElementById("total_count_items");
 let totalcost = document.getElementById("totalcost");
 let i = 1;
+total_count_items.value = 1;
 
 document.getElementById("minus").addEventListener("click", function () {
   minusOne();

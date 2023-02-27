@@ -79,31 +79,31 @@
               <div class="col border-bottom p-2">
                 <div class="row">
                   <div class="col">생년월일</div>
-                  <div class="col text-nowrap">1995. 01. 01</div>
+                  <div class="col text-nowrap">${resultMap.BIRTH_DATE}</div>
                 </div>
               </div>
               <div class="border-bottom p-2">
                 <div class="row pb-2">
                   <div class="col-auto fw-bold">이름</div>
-                  <div class="col-auto fs-5">홍길*</div>
-                  <div class="col-auto">(☎️010-1111-2222)</div>
+                  <div class="col-auto fs-5">${resultMap.NAME}</div>
+                  <div class="col-auto">(☎️${resultMap.PHONE})</div>
                 </div>
                 <div class="fw-bold">주소</div>
-                <div>서울특별시 어쩌고 저쩌고 101호</div>
+                <div>${resultMap.ADDRESS} ${resultMap.DETAILADDRESS}</div>
               </div>
               <div class="p-2">
                 <div class="row">
                   <div class="col fw-bold text-nowrap">이메일 주소</div>
-                  <div class="col text-nowrap">honghong@naver.com</div>
+                  <div class="col text-nowrap">${resultMap.E_MAIL}</div>
                 </div>
               </div>
             </div>
             <div class="col p-3">
               <div class="opacity-50">
                 <div class="fw-bold pb-2">아이디</div>
-                <div class="fs-5 pb-2">memarcis2</div>
+                <div class="fs-5 pb-2">${resultMap.USER_UID}</div>
                 <div class="fw-bold pb-2">비밀번호</div>
-                <div class="fs-5">**********</div>
+                <div class="fs-5">${resultMap.PASSWORD}</div>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div class="fw-bold">비고 이용약관 동의함</div>

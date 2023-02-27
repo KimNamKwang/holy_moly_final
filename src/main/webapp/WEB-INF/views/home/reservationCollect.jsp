@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,7 +52,7 @@
 
   <body>
     <main style="font-family: 'Noto Sans KR', sans-serif">
-      <form action="./reservationInfo.html" method="post">
+      <form action="/home/reservationInfo" method="post">
         <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
           <div class="container d-flex justify-content-center">
             <div class="mt-5" style="width: 650px">

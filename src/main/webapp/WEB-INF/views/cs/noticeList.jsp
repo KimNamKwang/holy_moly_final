@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,48 +72,24 @@
           class="container bg-white w-75 mt-4 align-items-center shadow-sm p-3"
           style="border-radius: 15px 15px"
         >
+          <c:set var="_pagination" value="${resultMap.paginations}" />
           <div class="mt-3" style="font-size: 0.9rem">
-            전체<span class="fw-bold">128건</span>
+            전체<span class="fw-bold">${_pagination.totalCount}건</span>
           </div>
           <hr class="mt-1" />
+          <c:forEach items="${resultMap.resultList}" var="resultData" varStatus="loop">
+                    <!-- 내용 (title, date) -->
+          <div>
+            <div class="text-secondary" style="font-size: small">
+              ${fn:substring(resultData.DATE_CREATED,0,10)}
+            </div>
+            <a href="/cs/noticeView/${resultData.COMMONBOARD_UID}" class="mt-2 text-decoration-none text-dark"
+              >${resultData.TITLE}</a
+            >
+            <hr />
+          </div>
+          </c:forEach>
 
-          <!-- 내용 (title, date) -->
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2023.01.09
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >2023년 설 연휴 택배중단 안내</a
-            >
-            <hr />
-          </div>
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2023.01.03
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >2023년 설 연휴 홈택배 중단 일정 안내</a
-            >
-            <hr />
-          </div>
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2022.12.28
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >국내택배 운임 조정 안내</a
-            >
-            <hr />
-          </div>
-          <div>
-            <div class="text-secondary" style="font-size: small">
-              2022.12.22
-            </div>
-            <a href="/cs/noticeView" class="mt-2 text-decoration-none text-dark"
-              >제주도 전역 기상학화 영향으로 선박 결항 안내</a
-            >
-            <hr />
-          </div>
           <div class="mb-3 pt-3">
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
@@ -118,44 +97,29 @@
                   <a
                     class="page-link border-0"
                     style="color: rgb(180, 180, 180)"
-                    href="#"
+                    href="/cs/noticeList/${_pagination.previousPage}"
                     aria-label="Previous"
                   >
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only"></span>
                   </a>
                 </li>
-
+                <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
                 <li class="page-item">
                   <a
                     class="page-link border-0"
                     style="color: rgb(55, 210, 67)"
-                    href="#"
-                    >1</a
+                    href="/cs/noticeList/${i}"
+                    >${i}</a
                   >
                 </li>
-                <li class="page-item">
-                  <a
-                    class="page-link border-0"
-                    style="color: rgb(180, 180, 180)"
-                    href="#"
-                    >2</a
-                  >
-                </li>
-                <li class="page-item">
-                  <a
-                    class="page-link border-0"
-                    style="color: rgb(180, 180, 180)"
-                    href="#"
-                    >3</a
-                  >
-                </li>
+                </c:forEach>
 
                 <li class="page-item">
                   <a
                     class="page-link border-0"
                     style="color: rgb(180, 180, 180)"
-                    href="#"
+                    href="/cs/noticeList/${_pagination.nextPage}"
                     aria-label="Next"
                   >
                     <span aria-hidden="true">&raquo;</span>

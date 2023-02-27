@@ -10,9 +10,9 @@ import com.holy_moly_final.holy_moly_final.dao.SharedDao;
 import com.holy_moly_final.holy_moly_final.utils.Paginations;
 
 @Service
-public class DeliveryService {
+public class CommonService {
     @Autowired
-    SharedDao commonDao;
+    SharedDao sharedDao;
 
     public Object getOneWithAttachFiles(Object dataMap) {
         // Attach Files ArrayList<Map>
@@ -23,7 +23,7 @@ public class DeliveryService {
          * 위에서 넣은 result가 사라지지 않게 하기 위해 putAll사용. putAll은 같은 key가 아니면 자동으로 list에다가 put을
          * 해준다
          */
-        result.putAll((Map<String, Object>) this.getOne(dataMap));
+        // result.putAll((Map<String, Object>) this.getOne(dataMap));
         return result;
     }
 
@@ -36,22 +36,48 @@ public class DeliveryService {
 
     public Object insertMulti(Object dataMap) {
         String sqlMapId = "AttachFile.insertMulti";
-        Object result = commonDao.insert(sqlMapId, dataMap);
+        Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
 
-    public Object insertWithFilesAndGetList(Object dataMap) {
-        // insert files
-        Object result = this.insertMulti(dataMap);
-        result = this.insertOne(dataMap);
-        result = this.getList(dataMap);
+    // public Object insertWithFilesAndGetList(Object dataMap) {
+    // // insert files
+    // Object result = this.insertMulti(dataMap);
+    // result = this.insertOne(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+
+    // }
+
+    public Object getOne(Object dataMap) {
+        String sqlMapId = "CommonCodeOur.selectByUID";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertUserDataAndGet(Object dataMap) {
+        Object result = this.insertUserData(dataMap);
+        result = this.getUserData(dataMap);
         return result;
 
     }
 
-    public Object insertOneAndGetList(Object dataMap) {
-        Object result = this.insertOne(dataMap);
-        result = this.getList(dataMap);
+    public Object getUserData(Object dataMap) {
+        String sqlMapId = "Common.selectUserDataForJoinStep4";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    // public Object insertOneAndGetList(Object dataMap) {
+    // Object result = this.insertOne(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+
+    // }
+
+    public Object insertUserDataForAdmin(Object dataMap) {
+        String sqlMapId = "Common.insertUserDataForAdmin";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
 
     }
@@ -75,43 +101,43 @@ public class DeliveryService {
 
     public Object getTotal(Object dataMap) {
         String sqlMapId = "Common.selectTotal";
-        Object result = commonDao.getOne(sqlMapId, dataMap);
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object getList(Object dataMap) {
         String sqlMapId = "Common.selectForTrackShipInquiry";
-        Object result = commonDao.getList(sqlMapId, dataMap);
+        Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
 
-    public Object getOne(Object dataMap) {
-        String sqlMapId = "Common.selectForTrackShipInquiry";
-        Object result = commonDao.getOne(sqlMapId, dataMap);
+    public Object getUserUIDByNameAndPhone(Object dataMap) {
+        String sqlMapId = "Common.selectUserUIDByNameAndPhone";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object update(Object dataMap) {
         String sqlMapId = "Common.updateByUID";
-        Object result = commonDao.update(sqlMapId, dataMap);
+        Object result = sharedDao.update(sqlMapId, dataMap);
         return result;
     }
 
-    public Object insertOne(Object dataMap) {
-        String sqlMapId = "Common.insertWithUID";
-        Object result = commonDao.insert(sqlMapId, dataMap);
+    public Object insertUserData(Object dataMap) {
+        String sqlMapId = "Common.insertUserDataForJoin";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
 
     public Object delete(Object dataMap) {
         String sqlMapId = "Common.deleteByUID";
-        Object result = commonDao.delete(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 
     public Object deleteMulti(Object dataMap) {
         String sqlMapId = "Common.deleteMultiByUIDs";
-        Object result = commonDao.delete(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 }

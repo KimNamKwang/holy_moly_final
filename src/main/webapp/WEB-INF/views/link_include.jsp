@@ -16,3 +16,11 @@ ${pageContext.request.contextPath}
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
+
+
+<%-- jstl 관련 태그 --%>
+<%-- jstl function을 사용가능 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>

@@ -1,3 +1,6 @@
+// 방문희망month일 select
+// 내일, 모레, 글피 yyyy년 mm월 dd일 (E)
+
 let today = new Date();
 let fullDate;
 let Year;
@@ -16,8 +19,10 @@ for (let i = 1; i <= 3; i++) {
   date = fullDate.getDate();
   day = week[fullDate.getDay()];
 
-  resultDate = Year + "년 " + Month + "월 " + date + "일 (" + day + ")";
-  selectVisitingDate.innerHTML +=
-    "<option value='" + Year + Month + date + "'>" + resultDate + "</option>";
-  console.log(resultDate);
+  if (day != "일" && day != "토") {
+    resultDate = Year + "년 " + Month + "월 " + date + "일 (" + day + ")";
+    selectVisitingDate.innerHTML +=
+      "<option value='" + Year + Month + date + "'>" + resultDate + "</option>";
+    console.log(resultDate);
+  } else i--;
 }

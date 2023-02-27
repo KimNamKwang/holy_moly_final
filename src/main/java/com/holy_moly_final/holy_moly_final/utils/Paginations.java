@@ -1,4 +1,4 @@
-package com.holy_moly_final.holy_moly_final;
+package com.holy_moly_final.holy_moly_final.utils;
 
 public class Paginations {
 

@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,9 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.service.CommonService;
+import com.holy_moly_final.holy_moly_final.service.DeliveryService;
+
 @Controller
 @RequestMapping(value = "/common")
 public class CommonController {
+
+    @Autowired
+    CommonService commonService;
 
     @RequestMapping(value = "/IdResult_fa", method = RequestMethod.GET)
     public ModelAndView IdResult_fa(@RequestParam Map<String, Object> params,
@@ -33,7 +40,8 @@ public class CommonController {
     @RequestMapping(value = "/IdResult_su", method = RequestMethod.GET)
     public ModelAndView IdResult_su(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = commonService.getUserUIDByNameAndPhone(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/IdResult_su");
         return modelAndView;
     }
@@ -57,7 +65,8 @@ public class CommonController {
     @RequestMapping(value = "/join_step2", method = RequestMethod.GET)
     public ModelAndView join_step2(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step2");
         return modelAndView;
     }
@@ -65,7 +74,8 @@ public class CommonController {
     @RequestMapping(value = "/join_step3", method = RequestMethod.GET)
     public ModelAndView join_step3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step3");
         return modelAndView;
     }
@@ -73,7 +83,8 @@ public class CommonController {
     @RequestMapping(value = "/join_step4", method = RequestMethod.GET)
     public ModelAndView join_step4(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = commonService.insertUserDataAndGet(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step4");
         return modelAndView;
     }

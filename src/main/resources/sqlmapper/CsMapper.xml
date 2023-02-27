@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Cs">
+    <!--call Cs.selectNoticeListByBoardType  -->
+    <select id="selectNoticeListByBoardType" parameterType="Map" resultType="Map">
+        SELECT COMMONBOARD_UID,TITLE, DATE_CREATED
+        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
+        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
+        WHERE MAIN_BOARD.BOARD_TYPE = 'NOTICE'
+        ORDER BY DATE_CREATED DESC;
+         <if test = "pageScale != null">
+         LIMIT #{pageBegin}, #{pageScale}
+        </if>
+    </select>
+
+    <!--call Cs.selectNoticeViewByCommonBoard_UID  -->
+    <select id="selectNoticeViewByCommonBoard_UID" parameterType="Map" resultType="Map">
+        SELECT COMMON_BOARD.COMMONBOARD_UID, TITLE,VIEWS , CONTENT, DATE_CREATED, FILE_FOLDER_NAME, ORIGINALFILE_NAME
+        FROM COMMON_BOARD LEFT JOIN ATTACHED_FILES
+        ON COMMON_BOARD.COMMONBOARD_UID = ATTACHED_FILES.COMMONBOARD_UID
+        WHERE BOARD_UID = 'BOARD_NOTICE' AND COMMON_BOARD.COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </select>
+
+    <!--call Cs.updateViewsByCommonBoard_UID  -->
+    <update id="updateViewsByCommonBoard_UID" parameterType="Map">
+        UPDATE COMMON_BOARD
+        SET VIEWS = VIEWS + 1
+        WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </update>
+
+    <select id="selectTotal" parameterType="Map" resultType="int">
+        SELECT COUNT(*) AS TOTAL_NOTICE
+        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
+        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
+        WHERE MAIN_BOARD.BOARD_TYPE = 'NOTICE';
+    </select>
+
+</mapper>
