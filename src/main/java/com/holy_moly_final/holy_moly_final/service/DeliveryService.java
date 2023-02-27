@@ -14,62 +14,9 @@ public class DeliveryService {
     @Autowired
     SharedDao sharedDao;
 
-    public Object getOneWithAttachFiles(Object dataMap) {
-        // Attach Files ArrayList<Map>
-        HashMap<String, Object> result = new HashMap<String, Object>();
-        result.put("attachFiles", this.getList(dataMap));
-
-        /*
-         * 위에서 넣은 result가 사라지지 않게 하기 위해 putAll사용. putAll은 같은 key가 아니면 자동으로 list에다가 put을
-         * 해준다
-         */
-        result.putAll((Map<String, Object>) this.getOne(dataMap));
-        return result;
-    }
-
-    public Object deleteAndGetList(Object dataMap) {
-        Object result = this.delete(dataMap);/* 이미 이 클래스 내에서 delete가 있기 때문 */
-        result = this.getList(dataMap);
-        return result;
-
-    }
-
     public Object insertMulti(Object dataMap) {
         String sqlMapId = "AttachFile.insertMulti";
         Object result = sharedDao.insert(sqlMapId, dataMap);
-        return result;
-    }
-
-    public Object insertWithFilesAndGetList(Object dataMap) {
-        // insert files
-        Object result = this.insertMulti(dataMap);
-        result = this.insertOne(dataMap);
-        result = this.getList(dataMap);
-        return result;
-
-    }
-
-    public Object insertOneAndGetList(Object dataMap) {
-        Object result = this.insertOne(dataMap);
-        result = this.getList(dataMap);
-        return result;
-
-    }
-
-    public Object updateAndGetList(Object dataMap) {
-        Object result = this.update(dataMap);
-        result = this.getList(dataMap);
-        return result;
-    }
-
-    public Object getListWithPagination(Object dataMap) {
-        Map<String, Object> result = new HashMap<String, Object>();
-        int totalCount = (int) this.getTotal(dataMap);
-        int currentPage = (int) ((HashMap<String, Object>) dataMap).get("currentPage");
-        Paginations paginations = new Paginations(totalCount, currentPage);
-        result.put("paginations", paginations);
-        ((HashMap<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
-        result.put("resultList", this.getList(dataMap));
         return result;
     }
 
@@ -79,15 +26,23 @@ public class DeliveryService {
         return result;
     }
 
-    public Object getList(Object dataMap) {
-        String sqlMapId = "Delivery.selectForTrackShipInquiry";
+    public Object getOneForTrackShipInquiry(Object dataMap) {
+        String sqlMapId = "Delivery.selectOneForTrackShipInquiry";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getListForTrackShipInquiry(Object dataMap) {
+        String sqlMapId = "Delivery.selectListForTrackShipInquiry";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
 
-    public Object getOne(Object dataMap) {
-        String sqlMapId = "Delivery.";
-        Object result = sharedDao.getOne(sqlMapId, dataMap);
+    public Object getListAndOneForTrackShipInquiry(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("resultOne", this.getOneForTrackShipInquiry(dataMap));
+        result.put("resultList", this.getListForTrackShipInquiry(dataMap));
+
         return result;
     }
 

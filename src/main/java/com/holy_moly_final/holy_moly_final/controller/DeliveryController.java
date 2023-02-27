@@ -44,7 +44,7 @@ public class DeliveryController {
     @RequestMapping(value = "/trackShipInquiry", method = RequestMethod.GET)
     public ModelAndView trackShipInquiry(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // params.put("TRACKING_NUMBER", TRACKING_NUMBER);
-        Object resultMap = deliveryService.getList(params);
+        Object resultMap = deliveryService.getListAndOneForTrackShipInquiry(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("delivery/trackShipInquiry");
         return modelAndView;

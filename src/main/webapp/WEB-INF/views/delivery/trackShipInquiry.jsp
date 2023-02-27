@@ -75,20 +75,21 @@
               <div class="fs-5 fw-bold" style="color: rgb(55, 210, 67)">
                 기본 배송정보
               </div>
+              <c:set var="_resultOne" value="${resultMap.resultOne}" />
               <div class="row mt-4 mb-4">
                 <div class="col">
-                  <span class="fs-5 fw-bold">${resultMap.TRACKING_NUMBER}</span>
+                  <span class="fs-5 fw-bold">${_resultOne.TRACKING_NUMBER}</span>
                   <span class="fw-bold" style="
                   background-color: rgb(249, 249, 249);
                   border-radius: 20px;
                   color: rgb(55, 210, 77);
                   padding: 3px 8px 3px 8px;
                 ">
-                    ${resultMap.PROGRESS_STATUS_DESCRIPTION}
+                    ${_resultOne.PROGRESS_STATUS_DESCRIPTION}
                   </span>
                 </div>
                 <div class="col text-end" style="color: rgb(165, 166, 165)">
-                  예약일자 : ${resultMap.RESERVATION_DATE}
+                  예약일자 : ${_resultOne.RESERVATION_DATE}
                 </div>
               </div>
               <div class="row">
@@ -97,9 +98,9 @@
                     받는 분
                   </div>
                   <div>
-                    <span class="fs-4 fw-bold">${resultMap.RECIPIENT_NAME}</span>
+                    <span class="fs-4 fw-bold">${_resultOne.RECIPIENT_NAME}</span>
                     <span class="ps-2 ms-4"
-                      style="border-left: 1px solid rgb(184, 185, 184)">${resultMap.ITEM_TYPE_DESCRIPTION}</span>
+                      style="border-left: 1px solid rgb(184, 185, 184)">${_resultOne.ITEM_TYPE_DESCRIPTION}</span>
                   </div>
                 </div>
                 <div class="col-auto">
@@ -107,7 +108,7 @@
                     보내는 분
                   </div>
                   <div>
-                    <span class="fs-4 fw-bold">${resultMap.SENDER_NAME}</span>
+                    <span class="fs-4 fw-bold">${_resultOne.SENDER_NAME}</span>
                     <span class="fw-bold" style="
                     background-color: rgb(249, 249, 249);
                     border-radius: 20px;
@@ -125,7 +126,7 @@
               <div style="color: rgb(184, 185, 184)">
                 고객님의 개인정보 보호를 위하여 일부 *표 처리 하였습니다.
               </div>
-              <c:set var="PROGRESS_STATUS_DESCRIPTION" value="${resultMap.PROGRESS_STATUS_DESCRIPTION}" />
+              <c:set var="PROGRESS_STATUS_DESCRIPTION" value="${_resultOne.PROGRESS_STATUS_DESCRIPTION}" />
               <div class="p-4 mt-4" style="
               border: 1px solid rgb(201, 201, 201);
               border-radius: 15px 15px;
@@ -203,23 +204,39 @@
                   </div>
                 </div>
               </div>
-              <div class="row d-flex align-items-center mt-4">
-                <div class=" col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION=='접수완료' ? 'darkFortext' : 'grayForText' }">
-                  <div>2023-02-15</div>
-                  <div>11:03</div>
-                </div>
-                <div class="col-auto">
-                  <div class="${PROGRESS_STATUS_DESCRIPTION == '접수완료' ? 'greenForDot' : 'grayForDot' }" style="
+
+
+
+              <c:set var="listCount" value="${resultMap.resultList.size()}" />
+
+              <c:forEach items="${resultMap.resultList}" var="_resultList" varStatus="loop">
+
+                <div class="row d-flex align-items-center mt-4">
+                  <div class=" col-auto fw-bold ${listCount == loop.count ? 'darkFortext' : 'grayForText' }">
+                    <div>${_resultList.PROGRESS_STATUS_TIME}</div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="${listCount == loop.count ? 'greenForDot' : 'grayForDot' }" style="
                   width: 15px;
                   height: 15px;
                   border-radius: 50%;
                 "></div>
+                  </div>
+                  <div
+                    class="col fs-5 fw-bold col fs-5 fw-bold ${listCount == loop.count ? 'darkForText' : 'grayForText' }">
+                    ${_resultList.PROGRESS_STATUS_DESCRIPTION}</div>
                 </div>
-                <div
-                  class="col fs-5 fw-bold col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '접수완료' ? 'darkForText' : 'grayForText' }">
-                  접수완료</div>
-              </div>
-              <div class="row d-flex align-items-center mt-5">
+              </c:forEach>
+
+
+
+
+
+
+
+
+
+              <%-- <div class="row d-flex align-items-center mt-5">
                 <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'darkFortext' : 'grayForText' }">
                   <div>2023-02-16</div>
                   <div>16:39</div>
@@ -233,47 +250,48 @@
                 </div>
                 <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'darkForText' : 'grayForText' }">
                   수거완료</div>
+            </div>
+            <div class="row d-flex align-items-center mt-5">
+              <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkFortext' : 'grayForText' }">
+                <div>2023-02-16</div>
+                <div>16:39</div>
               </div>
-              <div class="row d-flex align-items-center mt-5">
-                <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkFortext' : 'grayForText' }">
-                  <div>2023-02-16</div>
-                  <div>16:39</div>
-                </div>
-                <div class="col-auto">
-                  <div class="${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForDot' : 'grayForDot' }" style="
+              <div class="col-auto">
+                <div class="${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForDot' : 'grayForDot' }" style="
                
                   width: 15px;
                   height: 15px;
                   border-radius: 50%;
                 "></div>
-                </div>
-                <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkForText' : 'grayForText' }">
-                  배송중</div>
               </div>
-              <div class="row d-flex align-items-center mt-5">
-                <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkFortext' : 'grayForText' }">
-                  <div>2023-02-16</div>
-                  <div>20:39</div>
-                </div>
-                <div class="col-auto">
-                  <div class="${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'greenForDot' : 'grayForDot' }" style="                  
+              <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkForText' : 'grayForText' }">
+                배송중</div>
+            </div>
+            <div class="row d-flex align-items-center mt-5">
+              <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkFortext' : 'grayForText' }">
+                <div>2023-02-16</div>
+                <div>20:39</div>
+              </div>
+              <div class="col-auto">
+                <div class="${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'greenForDot' : 'grayForDot' }" style="                  
                   width: 15px;
                   height: 15px;
                   border-radius: 50%;
                 "></div>
-                </div>
-                <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkForText' : 'grayForText' }">
-                  배송완료
-                </div>
+              </div>
+              <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkForText' : 'grayForText' }">
+                배송완료
               </div>
             </div>
-            <div class="mt-4">
-              <a href="/delivery/trackShipment" class="btn btnd-sm" style="
+            --%>
+          </div>
+          <div class="mt-4">
+            <a href="/delivery/trackShipment" class="btn btnd-sm" style="
               border-radius: 50px;
               color: white;
               background-color: rgb(165, 165, 165);
             ">BACK</a>
-            </div>
+          </div>
           </div>
         </main>
         <jsp:include page="../footer.jsp" />
