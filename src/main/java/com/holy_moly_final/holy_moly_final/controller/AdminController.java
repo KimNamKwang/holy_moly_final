@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.service.AdminService;
 import com.holy_moly_final.holy_moly_final.service.CommonService;
 
 @Controller
@@ -26,7 +27,7 @@ import com.holy_moly_final.holy_moly_final.service.CommonService;
 public class AdminController {
 
     @Autowired
-    CommonService commonService;
+    AdminService adminService;
 
     @RequestMapping(value = "adminBoard", method = RequestMethod.GET)
     public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
@@ -71,7 +72,7 @@ public class AdminController {
     @RequestMapping(value = "adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        // Object resultMap = commonService.insertUserDataForAdmin(params);
+        // Object resultMap = adminService.insertUserDataForAdmin(params);
         // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
@@ -80,7 +81,7 @@ public class AdminController {
     @RequestMapping(value = "forWork", method = RequestMethod.GET)
     public ModelAndView forWork(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        Object resultMap = commonService.insertUserDataForAdmin(params);
+        Object resultMap = adminService.insertUserDataForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;

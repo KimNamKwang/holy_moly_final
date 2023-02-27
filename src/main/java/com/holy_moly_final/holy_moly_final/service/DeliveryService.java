@@ -12,7 +12,7 @@ import com.holy_moly_final.holy_moly_final.utils.Paginations;
 @Service
 public class DeliveryService {
     @Autowired
-    SharedDao commonDao;
+    SharedDao sharedDao;
 
     public Object getOneWithAttachFiles(Object dataMap) {
         // Attach Files ArrayList<Map>
@@ -36,7 +36,7 @@ public class DeliveryService {
 
     public Object insertMulti(Object dataMap) {
         String sqlMapId = "AttachFile.insertMulti";
-        Object result = commonDao.insert(sqlMapId, dataMap);
+        Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
 
@@ -75,43 +75,43 @@ public class DeliveryService {
 
     public Object getTotal(Object dataMap) {
         String sqlMapId = "Common.selectTotal";
-        Object result = commonDao.getOne(sqlMapId, dataMap);
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object getList(Object dataMap) {
-        String sqlMapId = "Common.selectForTrackShipInquiry";
-        Object result = commonDao.getList(sqlMapId, dataMap);
+        String sqlMapId = "Delivery.selectForTrackShipInquiry";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
 
     public Object getOne(Object dataMap) {
-        String sqlMapId = "Common.selectForTrackShipInquiry";
-        Object result = commonDao.getOne(sqlMapId, dataMap);
+        String sqlMapId = "Delivery.";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
     public Object update(Object dataMap) {
         String sqlMapId = "Common.updateByUID";
-        Object result = commonDao.update(sqlMapId, dataMap);
+        Object result = sharedDao.update(sqlMapId, dataMap);
         return result;
     }
 
     public Object insertOne(Object dataMap) {
         String sqlMapId = "Common.insertWithUID";
-        Object result = commonDao.insert(sqlMapId, dataMap);
+        Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
 
     public Object delete(Object dataMap) {
         String sqlMapId = "Common.deleteByUID";
-        Object result = commonDao.delete(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 
     public Object deleteMulti(Object dataMap) {
         String sqlMapId = "Common.deleteMultiByUIDs";
-        Object result = commonDao.delete(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 }
