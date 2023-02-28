@@ -1,6 +1,7 @@
 package com.holy_moly_final.holy_moly_final.controller;
 
 import java.io.BufferedWriter;
+import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -72,6 +73,8 @@ public class AdminController {
     @RequestMapping(value = "adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+                Object resultMap = adminService.getListAndPaginationsForUser(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
@@ -79,28 +82,40 @@ public class AdminController {
     @RequestMapping(value = "/userInsert", method = RequestMethod.GET)
     public ModelAndView userInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        Object resultMap = adminService.insertUserDataForAdmin(params);
+        Object resultMap = adminService.insertUserInfoAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/userSelect", method = RequestMethod.GET)
-    public ModelAndView fors(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/userUpdate", method = RequestMethod.GET)
+    public ModelAndView userUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        Object resultMap = adminService.getListAndPaginationsForUser(params);
-        modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("admin/adminUsers");
+                Object resultMap = adminService.updateUserInfoAndgetListForAdmin(params);
+                modelAndView.addObject("resultMap", resultMap);
+                modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
-    }
+    
+   }
 
-
-    @RequestMapping(value = "adminUserUpdate", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminUserUpdate", method = RequestMethod.GET)
     public ModelAndView adminUserUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+                Object resultMap = adminService.getUserInfo(params);
+                modelAndView.addObject("resultMap", resultMap);
+                modelAndView.setViewName("admin/adminUserUpdate");
+        return modelAndView;
+    }
 
-        modelAndView.setViewName("admin/adminUserUpdate");
+    // delete 할 애
+    @RequestMapping(value = "/adminUserdelete", method = RequestMethod.GET)
+    public ModelAndView adminUserdelete(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+                Object resultMap = adminService.getUserInfo(params);
+                modelAndView.addObject("resultMap", resultMap);
+                modelAndView.setViewName("admin/adminUserUpdate");
         return modelAndView;
     }
 
 }
+

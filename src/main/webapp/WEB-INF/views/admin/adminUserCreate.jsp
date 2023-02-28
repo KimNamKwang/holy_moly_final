@@ -124,7 +124,7 @@
                   <th class="text-nowrap">연락처</th>
                   <td class="row">
                     <div class="col">
-                      <select class="form-select" name="PHONE">
+                      <select class="form-select" name="phoneFirst">
                         <option value="010">010</option>
                         <option value="011">011</option>
                         <option value="016">016</option>
