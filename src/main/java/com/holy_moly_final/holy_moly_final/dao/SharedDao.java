@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class SharedDao {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
-
+ 
     public Object getList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;

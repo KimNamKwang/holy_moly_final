@@ -48,7 +48,7 @@ public class DeliveryController {
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("delivery/trackShipInquiry");
         return modelAndView;
-    }
+    } 
 
     @RequestMapping(value = "/trackShipment", method = RequestMethod.GET)
     public ModelAndView trackShipment(@RequestParam Map<String, Object> params,
