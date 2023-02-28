@@ -51,7 +51,7 @@ public class DeliveryController {
             modelAndView.setViewName("delivery/trackShipInquiry_fail");
         }
         return modelAndView;
-    }
+    } 
 
     @RequestMapping(value = "/trackShipment", method = RequestMethod.GET)
     public ModelAndView trackShipment(@RequestParam Map<String, Object> params,

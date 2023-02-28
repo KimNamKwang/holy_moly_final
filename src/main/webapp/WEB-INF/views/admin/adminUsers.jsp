@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,7 +45,8 @@
         <div class="container">
           <div class="fs-2 fw-bold pb-3">사용자 관리</div>
           <div class="text-secondary">
-            총 인원수 : <span class="fw-bold">3</span>
+            총 인원수 :
+            <span class="fw-bold">${resultMap.totalCount.TOTAL_USER}</span>
           </div>
           <div class="ps-4 pe-4 mt-2 shadow-sm" style="background-color: white">
             <table class="table text-center border-none mb-0">
@@ -56,30 +59,36 @@
                   <th>관리</th>
                 </tr>
               </thead>
-              <tbody class="">
-                <tr>
-                  <td>
-                    <a
-                      href="#modalRead"
-                      data-bs-toggle="modal"
-                      class="text-dark"
-                      >홍길동</a
-                    >
-                  </td>
-                  <td>honghong</td>
-                  <td>2022-12-28 12:00:00</td>
-                  <td>FAMILY</td>
-                  <td>
-                    <a
-                      href="/admin/adminUserUpdate"
-                      class="btn btn btn-outline-dark btn-sm"
-                      >수정</a
-                    >
-                    <button class="btn btn btn-outline-dark btn-sm">
-                      탈퇴
-                    </button>
-                  </td>
-                </tr>
+              <tbody>
+                <c:forEach
+                  items="${resultMap.userList}"
+                  var="_userList"
+                  varStatus="loop"
+                >
+                  <tr>
+                    <td>
+                      <a
+                        href="#modalRead"
+                        data-bs-toggle="modal"
+                        class="text-dark"
+                        >${_userList.NAME}</a
+                      >
+                    </td>
+                    <td>${_userList.USER_UID}</td>
+                    <td>${_userList.JOINDATE}</td>
+                    <td>${_userList.GRADE}</td>
+                    <td>
+                      <a
+                        href="/admin/adminUserUpdate"
+                        class="btn btn btn-outline-dark btn-sm"
+                        >수정</a
+                      >
+                      <button class="btn btn btn-outline-dark btn-sm">
+                        탈퇴
+                      </button>
+                    </td>
+                  </tr>
+                </c:forEach>
               </tbody>
             </table>
 
@@ -139,6 +148,7 @@
             </div>
           </div>
 
+          <!-- 추후 구현(ajax) -->
           <!-- 사용자 상세 정보 -->
           <div class="modal fade" id="modalRead">
             <div class="modal-dialog">

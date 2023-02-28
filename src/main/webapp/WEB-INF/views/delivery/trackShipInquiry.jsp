@@ -32,7 +32,6 @@
 
           .grayForCircle {
             background-color: rgb(247, 247, 247);
-
           }
 
           .greenForText {
@@ -55,16 +54,13 @@
             color: black;
           }
         </style>
-
       </head>
 
       <body style="font-family: 'Noto Sans KR', sans-serif">
         <jsp:include page="../navbar.jsp" />
         <main class="container-fluid d-flex flex-column justify-content-center pt-5"
           style="background-color: rgb(249, 249, 249); padding-bottom: 200px">
-
-
-          <div class="container" id="caseSuccess" style="width: 650px">
+          <div class="container" style="width: 650px">
             <div class="text-center fs-2 fw-bold pb-5">배송조회</div>
             <div class="pb-2 mb-3 fw-bold fs-3" style="color: rgb(55, 210, 67)">
               조회결과
@@ -134,55 +130,48 @@
               border-radius: 15px 15px;
             ">
                 <div class="row" style="color: rgb(184, 185, 184); padding-left: 10px">
-                  <div class="col
-                  d-flex flex-column justify-content-center">
+                  <div class="col d-flex flex-column justify-content-center">
                     <div
                       class="rounded-circle ${PROGRESS_STATUS_DESCRIPTION == '접수완료' ? 'greenForCircle' : 'grayForCircle' } d-flex flex-column align-items-center justify-content-center"
-                      style="
-                    width: 80px;
-                    height: 80px;
-                  ">
+                      style="width: 80px; height: 80px">
                       <div>
                         <img src="/resources/images/접수완료.png" style="width: 44px; height: 44px" alt="" />
                       </div>
                     </div>
                     <div class="text-center ${PROGRESS_STATUS_DESCRIPTION == '접수완료' ? 'greenForText' : '' } pt-2">
-                      접수완료</div>
+                      접수완료
+                    </div>
                   </div>
                   <div
                     class="col-auto ${PROGRESS_STATUS_DESCRIPTION == '접수완료' ? 'greenForText' : '' } d-flex align-items-center">
-                    ></div>
+                    >
+                  </div>
                   <div class="col">
                     <div
                       class="rounded-circle ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'greenForText' : 'grayForCircle' } d-flex flex-column align-items-center justify-content-center"
-                      style="
-                    width: 80px;
-                    height: 80px;
-                   ;
-                  ">
+                      style="width: 80px; height: 80px ;">
                       <div>
                         <img src="/resources/images/배송중.png" style="width: 45px; height: 45px" alt="" />
                       </div>
                     </div>
-                    <div class="text-center ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'greenForText' : '' } pt-2">수거완료
+                    <div class="text-center ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'greenForText' : '' } pt-2">
+                      수거완료
                     </div>
                   </div>
                   <div
                     class="col-auto ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'greenForText' : '' } d-flex align-items-center">
-                    ></div>
+                    >
+                  </div>
                   <div class="col">
                     <div
                       class="rounded-circle ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForCircle' : 'grayForCircle' } d-flex flex-column align-items-center justify-content-center"
-                      style="
-                    width: 80px;
-                    height: 80px;
-                  ;
-                  ">
+                      style="width: 80px; height: 80px ;">
                       <div>
                         <img src="/resources/images/택배이용안내.png" style="width: 55px; height: 55px" alt="" />
                       </div>
                     </div>
-                    <div class="text-center ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForText' : '' }  pt-2">배송중
+                    <div class="text-center ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForText' : '' } pt-2">
+                      배송중
                     </div>
                   </div>
                   <div
@@ -192,10 +181,7 @@
                   <div class="col">
                     <div
                       class="rounded-circle ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'greenForCircle' : 'grayForCircle' } d-flex flex-column align-items-center justify-content-center"
-                      style="
-                    width: 80px;
-                    height: 80px;
-                  ">
+                      style="width: 80px; height: 80px">
                       <div>
                         <img src="/resources/images/배송완료.png" style="width: 45px; height: 45px" alt="" />
                       </div>
@@ -207,40 +193,88 @@
                 </div>
               </div>
 
-
-
               <c:set var="listCount" value="${resultMap.resultList.size()}" />
 
               <c:forEach items="${resultMap.resultList}" var="_resultList" varStatus="loop">
-
                 <div class="row d-flex align-items-center mt-4">
-                  <div class=" col-auto fw-bold ${listCount == loop.count ? 'darkFortext' : 'grayForText' }">
+                  <div class="col-auto fw-bold ${listCount == loop.count ? 'darkFortext' : 'grayForText' }">
                     <div>${_resultList.PROGRESS_STATUS_TIME}</div>
                   </div>
                   <div class="col-auto">
-                    <div class="${listCount == loop.count ? 'greenForDot' : 'grayForDot' }" style="
-                  width: 15px;
-                  height: 15px;
-                  border-radius: 50%;
-                "></div>
+                    <div class="${listCount == loop.count ? 'greenForDot' : 'grayForDot' }"
+                      style="width: 15px; height: 15px; border-radius: 50%"></div>
                   </div>
                   <div
                     class="col fs-5 fw-bold col fs-5 fw-bold ${listCount == loop.count ? 'darkForText' : 'grayForText' }">
-                    ${_resultList.PROGRESS_STATUS_DESCRIPTION}</div>
+                    ${_resultList.PROGRESS_STATUS_DESCRIPTION}
+                  </div>
                 </div>
               </c:forEach>
 
 
 
 
+
+
+
+
+
+              <%-- <div class="row d-flex align-items-center mt-5">
+                <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'darkFortext' : 'grayForText' }">
+                  <div>2023-02-16</div>
+                  <div>16:39</div>
+                </div>
+                <div class="col-auto">
+                  <div class="${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'greenForDot' : 'grayForDot' }" style="              
+                  width: 15px;
+                  height: 15px;
+                  border-radius: 50%;
+                "></div>
+                </div>
+                <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'darkForText' : 'grayForText' }">
+                  수거완료</div>
             </div>
-            <div class="mt-4">
-              <a href="/delivery/trackShipment" class="btn btnd-sm" style="
+            <div class="row d-flex align-items-center mt-5">
+              <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkFortext' : 'grayForText' }">
+                <div>2023-02-16</div>
+                <div>16:39</div>
+              </div>
+              <div class="col-auto">
+                <div class="${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForDot' : 'grayForDot' }" style="
+               
+                  width: 15px;
+                  height: 15px;
+                  border-radius: 50%;
+                "></div>
+              </div>
+              <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkForText' : 'grayForText' }">
+                배송중</div>
+            </div>
+            <div class="row d-flex align-items-center mt-5">
+              <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkFortext' : 'grayForText' }">
+                <div>2023-02-16</div>
+                <div>20:39</div>
+              </div>
+              <div class="col-auto">
+                <div class="${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'greenForDot' : 'grayForDot' }" style="                  
+                  width: 15px;
+                  height: 15px;
+                  border-radius: 50%;
+                "></div>
+              </div>
+              <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkForText' : 'grayForText' }">
+                배송완료
+              </div>
+            </div>
+            --%>
+          </div>
+          <div class="mt-4">
+            <a href="/delivery/trackShipment" class="btn btnd-sm" style="
               border-radius: 50px;
               color: white;
               background-color: rgb(165, 165, 165);
             ">BACK</a>
-            </div>
+          </div>
           </div>
         </main>
         <jsp:include page="../footer.jsp" />

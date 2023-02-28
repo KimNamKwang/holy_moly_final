@@ -1,5 +1,7 @@
 package com.holy_moly_final.holy_moly_final.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,31 @@ public class AdminService {
         String sqlMapId = "Admin.insertUserDataForAdmin";
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
+    }
 
+    public Object getListAndPaginationsForUser(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("userList", this.getListFotUser(dataMap));
+        result.put("paginations", this.paginationsForUser(dataMap));
+        result.put("totalCount", this.getCountUsers(dataMap));
+        return result;
+    }
+
+    public Object getListFotUser(Object dataMap) {
+        String sqlMapId = "Admin.selectUserList";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object paginationsForUser(Object dataMap) {
+        String sqlMapId = "Admin.selectUsersPaginations";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getCountUsers(Object dataMap) {
+        String sqlMapId = "Admin.selectUsersCount";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
     }
 }

@@ -43,7 +43,7 @@
         <div class="container" style="width: 650px">
           <!-- 이용방법 -->
           <div class="fs-3 fw-bold pb-3">사용자 신규 등록</div>
-          <form action="/admin/forWork" method="get">
+          <form action="/admin/userInsert" method="get">
             <div
               class="shadow-sm p-4 mb-4"
               style="border-radius: 10px 10px; background-color: white"

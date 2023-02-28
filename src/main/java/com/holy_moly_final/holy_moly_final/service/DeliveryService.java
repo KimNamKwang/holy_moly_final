@@ -30,7 +30,7 @@ public class DeliveryService {
         String sqlMapId = "Delivery.selectOneForTrackShipInquiry";
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
-    }
+    } 
 
     public Object getListForTrackShipInquiry(Object dataMap) {
         String sqlMapId = "Delivery.selectListForTrackShipInquiry";

@@ -10,7 +10,26 @@
 			EXTRAADDRESS, JOINDATE, PHONE, MARKETING_RECEIVE_ACCEPTION, GRADE_UID, AUTH_UID) 
 VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCODE}, #{ADDRESS}, #{DETAILADDRESS}, 
  #{EXTRAADDRESS}, sysdate(), CONCAT (#{phoneFirst},#{phoneSecond},#{phoneThird}), 'N', #{GRADE_UID}, 'AUTH_U');
-
  </insert>
+
+<select id="selectUserList" parameterType="Map" resultType="Map">
+      SELECT USERS.NAME, USERS.USER_UID, USERS.JOINDATE, USERS.BIRTH_DATE, USERS.PHONE, USERS.E_MAIL, USERS.ADDRESS,
+		USERS.DETAILADDRESS, USERS.EXTRAADDRESS, USER_GRADES.GRADE
+      FROM USER_GRADES INNER JOIN USERS
+      ON USERS.GRADE_UID = USER_GRADES.GRADE_UID;
+</select> 
+
+<select id="selectUsersPaginations" parameterType="Map" resultType="Map">
+      SELECT *
+      FROM USERS
+      ORDER BY JOINDATE
+      LIMIT 0, 10;
+</select> 
+
+<select id="selectUsersCount" parameterType="Map" resultType="Map">
+      SELECT COUNT(*) AS TOTAL_USER
+      FROM USERS;
+</select> 
+
 
 </mapper>

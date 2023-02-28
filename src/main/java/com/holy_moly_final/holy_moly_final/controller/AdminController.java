@@ -72,20 +72,28 @@ public class AdminController {
     @RequestMapping(value = "adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        // Object resultMap = adminService.insertUserDataForAdmin(params);
-        // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
 
-    @RequestMapping(value = "forWork", method = RequestMethod.GET)
-    public ModelAndView forWork(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/userInsert", method = RequestMethod.GET)
+    public ModelAndView userInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         Object resultMap = adminService.insertUserDataForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/userSelect", method = RequestMethod.GET)
+    public ModelAndView fors(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = adminService.getListAndPaginationsForUser(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminUsers");
+        return modelAndView;
+    }
+
 
     @RequestMapping(value = "adminUserUpdate", method = RequestMethod.GET)
     public ModelAndView adminUserUpdate(@RequestParam Map<String, Object> params,
