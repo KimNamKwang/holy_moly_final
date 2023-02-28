@@ -12,9 +12,37 @@ public class AdminService {
     @Autowired
     SharedDao sharedDao;
 
-    public Object insertUserDataForAdmin(Object dataMap) {
+    public Object insertUserInfoAndgetListForAdmin(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("insertUserInfo", this.insertUserInfo(dataMap));
+        result.put("userList", this.getListFotUser(dataMap));
+        result.put("totalCount", this.getCountUsers(dataMap));
+        return result;
+    }
+
+    public Object insertUserInfo(Object dataMap) {
         String sqlMapId = "Admin.insertUserDataForAdmin";
         Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object updateUserInfoAndgetListForAdmin(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("updateUserInfo", this.updateUserInfo(dataMap));
+        result.put("userList", this.getListFotUser(dataMap));
+        result.put("totalCount", this.getCountUsers(dataMap));
+        return result;
+    }
+
+    public Object updateUserInfo(Object dataMap) {
+        String sqlMapId = "Admin.updateUserDataForAdmin";
+        Object result = sharedDao.update(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getUserInfo(Object dataMap) {
+        String sqlMapId = "Admin.selectUserInfo";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
 

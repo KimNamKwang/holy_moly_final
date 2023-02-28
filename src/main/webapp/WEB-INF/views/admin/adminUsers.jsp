@@ -75,11 +75,12 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                       >
                     </td>
                     <td>${_userList.USER_UID}</td>
+                    <!-- 가입일 날짜와 시간 사이에 'T' 문자 추후 제거 요망 -->
                     <td>${_userList.JOINDATE}</td>
                     <td>${_userList.GRADE}</td>
                     <td>
                       <a
-                        href="/admin/adminUserUpdate"
+                        href="/admin/adminUserUpdate?USER_UID=${_userList.USER_UID}"
                         class="btn btn btn-outline-dark btn-sm"
                         >수정</a
                       >

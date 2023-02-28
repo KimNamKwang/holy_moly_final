@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,6 +29,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
@@ -43,7 +53,7 @@
         <div class="container" style="width: 650px">
           <!-- 이용방법 -->
           <div class="fs-3 fw-bold pb-3">사용자 정보 수정</div>
-          <form action="/admin/adminUsers" method="post">
+          <form action="/admin/userUpdate" method="get">
             <div
               class="shadow-sm p-4 mb-4"
               style="border-radius: 10px 10px; background-color: white"
@@ -55,21 +65,23 @@
                     <input
                       type="text"
                       class="form-control form-control w-50"
-                      name="userName"
+                      name="NAME"
                       placeholder="이름"
-                      value="userName"
+                      value="${resultMap.NAME}"
                     />
                   </td>
                 </tr>
                 <tr>
                   <th class="text-nowrap">아이디</th>
                   <td>
+                    <div class="ps-2">
+                      ${resultMap.USER_UID}
+                    </div>
                     <input
-                      type="text"
+                      type="hidden"
                       class="form-control form-control w-50"
-                      name="userId"
-                      disabled
-                      placeholder="userId"
+                      name="USER_UID"
+                      value="${resultMap.USER_UID}"
                     />
                   </td>
                 </tr>
@@ -79,9 +91,9 @@
                     <input
                       type="text"
                       class="form-control form-control w-50"
-                      name="userPassword"
+                      name="PASSWORD"
                       placeholder="비밀번호"
-                      value="userPassword"
+                      value="${resultMap.PASSWORD}"
                       required
                     />
                   </td>
@@ -91,20 +103,20 @@
                   <input
                     type="date"
                     class="form-control form-control w-50"
-                    name="birth_date"
-                    value="1996-04-11"
+                    name="BIRTH_DATE"
+                    value="${fn:substring(resultMap.BIRTH_DATE,0,10)}"
                   />
                 </td>
               </tr>
                 <tr>
                   <th class="text-nowrap">등급</th>
                   <td>
-                    <select class="form-select w-50" name="userGrade">
-                      <option value="platinum">PLATINUM</option>
-                      <option value="vvip">VVIP</option>
-                      <option value="vip">VIP</option>
-                      <option value="purple" selected>PURPLE</option>
-                      <option value="family">FAMILY</option>
+                    <select class="form-select w-50" name="GRADE_UID">
+                      <option value="GRADE_PL" ${resultMap.GRADE == 'PLATINUM' ? 'selected' : '' }>PLATINUM</option>
+                      <option value="GRADE_VV" ${resultMap.GRADE == 'VVIP' ? 'selected' : '' }>VVIP</option>
+                      <option value="GRADE_V" ${resultMap.GRADE == 'VIP' ? 'selected' : '' }>VIP</option>
+                      <option value="GRADE_PU" ${resultMap.GRADE == 'PURPLE' ? 'selected' : '' }>PURPLE</option>
+                      <option value="GRADE_F" ${resultMap.GRADE == 'FAMILY' ? 'selected' : '' }>FAMILY</option>
                     </select>
                   </td>
                 </tr>
@@ -114,47 +126,25 @@
                     <div class="col">
                       <input
                         type="text"
-                        class="form-control form-control"
-                        name="userEmail"
+                        class="form-control form-control w-75"
+                        name="E_MAIL"
                         placeholder="이메일 주소"
-                        value="email@naver.com"
+                        value="${resultMap.E_MAIL}"
                       />
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <th class="text-nowrap">연락처</th>
-                  <td class="row">
-                    <div class="col">
-                      <select class="form-select" name="phoneFirst">
-                        <option value="010">010</option>
-                        <option value="011">011</option>
-                        <option value="016">016</option>
-                        <option value="017">017</option>
-                        <option value="018">018</option>
-                        <option value="019">019</option>
-                      </select>
-                    </div>
-                    <div class="col-auto">-</div>
-                    <div class="col">
-                      <input
-                        type="text"
-                        class="form-control form-control text-center"
-                        name="phoneSecond"
-                        value="1234"
-                        required
-                      />
-                    </div>
-                    <div class="col-auto">-</div>
-                    <div class="col">
-                      <input
-                        type="text"
-                        class="form-control form-control text-center"
-                        name="phoneThird"
-                        value="5678"
-                        required
-                      />
-                    </div>
+                  <td>
+                    <input
+                    type="number"
+                    class="form-control w-50"
+                    id="phone"
+                    name="PHONE"
+                    value="${resultMap.PHONE}"
+                    required
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -169,36 +159,36 @@
                     <input
                       class="form-control w-50 mt-2"
                       type="text"
-                      name="postcode"
+                      name="POSTALCODE"
                       id="sample6_postcode"
                       placeholder="우편번호"
-                      value="39205"
+                      value="${resultMap.POSTALCODE}"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="address"
+                      name="ADDRESS"
                       class="col-6"
                       id="sample6_address"
                       placeholder="주소"
-                      value="서울시 강동구 북삼로"
+                      value="${resultMap.ADDRESS}"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="addressadd"
+                      name="DETAILADDRESS"
                       class="col-10"
                       id="sample6_detailAddress"
                       placeholder="상세주소"
-                      value="1302호"
+                      value="${resultMap.DETAILADDRESS}"
                     />
                     <input
                       class="form-control mt-2"
                       type="text"
-                      name="extraaddress"
+                      name="EXTRAADDRESS"
                       id="sample6_extraAddress"
                       placeholder="참고항목"
-                      value="(북삼동)"
+                      value="${resultMap.EXTRAADDRESS}"
                     />
                   </td>
                 </tr>
@@ -231,6 +221,7 @@
     ></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
+      // 우편번호
       function sample6_execDaumPostcode() {
         new daum.Postcode({
           oncomplete: function (data) {
