@@ -62,7 +62,9 @@
         <jsp:include page="../navbar.jsp" />
         <main class="container-fluid d-flex flex-column justify-content-center pt-5"
           style="background-color: rgb(249, 249, 249); padding-bottom: 200px">
-          <div class="container" style="width: 650px">
+
+
+          <div class="container" id="caseSuccess" style="width: 650px">
             <div class="text-center fs-2 fw-bold pb-5">배송조회</div>
             <div class="pb-2 mb-3 fw-bold fs-3" style="color: rgb(55, 210, 67)">
               조회결과
@@ -231,67 +233,14 @@
 
 
 
-
-
-
-
-
-              <%-- <div class="row d-flex align-items-center mt-5">
-                <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'darkFortext' : 'grayForText' }">
-                  <div>2023-02-16</div>
-                  <div>16:39</div>
-                </div>
-                <div class="col-auto">
-                  <div class="${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'greenForDot' : 'grayForDot' }" style="              
-                  width: 15px;
-                  height: 15px;
-                  border-radius: 50%;
-                "></div>
-                </div>
-                <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '수거완료' ? 'darkForText' : 'grayForText' }">
-                  수거완료</div>
             </div>
-            <div class="row d-flex align-items-center mt-5">
-              <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkFortext' : 'grayForText' }">
-                <div>2023-02-16</div>
-                <div>16:39</div>
-              </div>
-              <div class="col-auto">
-                <div class="${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'greenForDot' : 'grayForDot' }" style="
-               
-                  width: 15px;
-                  height: 15px;
-                  border-radius: 50%;
-                "></div>
-              </div>
-              <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송중' ? 'darkForText' : 'grayForText' }">
-                배송중</div>
-            </div>
-            <div class="row d-flex align-items-center mt-5">
-              <div class="col-auto fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkFortext' : 'grayForText' }">
-                <div>2023-02-16</div>
-                <div>20:39</div>
-              </div>
-              <div class="col-auto">
-                <div class="${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'greenForDot' : 'grayForDot' }" style="                  
-                  width: 15px;
-                  height: 15px;
-                  border-radius: 50%;
-                "></div>
-              </div>
-              <div class="col fs-5 fw-bold ${PROGRESS_STATUS_DESCRIPTION == '배송완료' ? 'darkForText' : 'grayForText' }">
-                배송완료
-              </div>
-            </div>
-            --%>
-          </div>
-          <div class="mt-4">
-            <a href="/delivery/trackShipment" class="btn btnd-sm" style="
+            <div class="mt-4">
+              <a href="/delivery/trackShipment" class="btn btnd-sm" style="
               border-radius: 50px;
               color: white;
               background-color: rgb(165, 165, 165);
             ">BACK</a>
-          </div>
+            </div>
           </div>
         </main>
         <jsp:include page="../footer.jsp" />

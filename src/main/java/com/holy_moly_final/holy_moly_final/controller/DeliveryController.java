@@ -47,6 +47,9 @@ public class DeliveryController {
         Object resultMap = deliveryService.getListAndOneForTrackShipInquiry(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("delivery/trackShipInquiry");
+        if (((Map) resultMap).get("resultOne") == null) {
+            modelAndView.setViewName("delivery/trackShipInquiry_fail");
+        }
         return modelAndView;
     }
 

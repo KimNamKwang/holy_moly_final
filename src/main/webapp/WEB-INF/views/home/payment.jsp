@@ -51,17 +51,19 @@
             <form action="/home/payment_completed" method="get">
               <!-- 제목 -->
               <div class="fw-bold fs-4 text-center pt-4">
-                <c:if test="${resultMap.SHIPMENT_TYPE_UID} == SHIP_GEN ">
+
+                <c:if test="${resultMap.SHIPMENT_TYPE_UID eq 'SHIP_GEN' }">
                   일반홈택배
                 </c:if>
-                <c:if test="${resultMap.SHIPMENT_TYPE_UID} == SHIP_BULK ">
+                <c:if test="${resultMap.SHIPMENT_TYPE_UID eq 'SHIP_BULK'} ">
                   다량홈택배
                 </c:if>
-                <c:if test="${resultMap.SHIPMENT_TYPE_UID} == SHIP_PRE ">
+                <c:if test="${resultMap.SHIPMENT_TYPE_UID eq 'SHIP_PRE'} ">
                   프리미엄
                 </c:if>
+                결제
               </div>
-              결제
+
               <!-- 결제 정보 -->
               <div style="color: rgb(55, 210, 67)">
                 <div class="fs-5 fw-bold">결제</div>
@@ -131,7 +133,7 @@
                     <tr style="background-color: rgba(211, 211, 211, 0.3)" id="greenColor">
                       <th>최종 결제 금액</th>
                       <th style="text-align: end">
-                        <span id="lastPrice">0</span>원
+                        <span name="lastPrice" id="lastPrice">0</span>원
                       </th>
                     </tr>
                   </table>
@@ -143,7 +145,7 @@
                   <div>
                     <hr style="border: 0.1rem solid lightgray" />
                   </div>
-                  <select class="form-select mb-2" id="paymentSelect">
+                  <select class="form-select mb-2" name="paymentSelect" id="paymentSelect">
                     <option value="1">계좌이체</option>
                     <option value="2">카드결제</option>
                     <option value="3">휴대폰결제</option>
