@@ -30,7 +30,7 @@ public class DeliveryService {
         String sqlMapId = "Delivery.selectOneForTrackShipInquiry";
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
-    } 
+    }
 
     public Object getListForTrackShipInquiry(Object dataMap) {
         String sqlMapId = "Delivery.selectListForTrackShipInquiry";
@@ -42,7 +42,12 @@ public class DeliveryService {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("resultOne", this.getOneForTrackShipInquiry(dataMap));
         result.put("resultList", this.getListForTrackShipInquiry(dataMap));
+        return result;
+    }
 
+    public Object getTrackingNumberByPhoneAndPW(Object dataMap) {
+        String sqlMapId = "Delivery.selectTrackingNumForTrackinNumInquiry";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
 

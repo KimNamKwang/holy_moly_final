@@ -51,12 +51,24 @@ public class DeliveryController {
             modelAndView.setViewName("delivery/trackShipInquiry_fail");
         }
         return modelAndView;
-    } 
+    }
 
     @RequestMapping(value = "/trackShipment", method = RequestMethod.GET)
     public ModelAndView trackShipment(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         modelAndView.setViewName("delivery/trackShipment");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/trackingNumberInquiry", method = RequestMethod.GET)
+    public ModelAndView trackingNumberInquiry(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = deliveryService.getTrackingNumberByPhoneAndPW(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("delivery/trackingNumberInquiry");
+        if (resultMap == null) {
+            modelAndView.setViewName("delivery/trackingNumberInquiry_fail");
+        }
         return modelAndView;
     }
 

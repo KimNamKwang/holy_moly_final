@@ -28,4 +28,11 @@
       LIMIT 1
 
     </select>
+
+    <select id="selectTrackingNumForTrackinNumInquiry" parameterType="Map" resultType="Map">
+      SELECT TRACKING_NUMBER
+      FROM SHIPMENT
+      WHERE SENDER_PHONE = #{SENDER_PHONE} AND SHIPMENT_PASSWORD = #{SHIPMENT_PASSWORD}
+    </select>
+
 </mapper>

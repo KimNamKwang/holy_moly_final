@@ -1,42 +1,26 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>택배조회</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- 구글폰트 링크 -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -48,81 +32,44 @@
       <form action="/home/reservationForHome" method="get">
         <div class="container-fluid">
           <ul class="list-unstyled d-flex justify-content-center">
-            <li
-              id="reserv_for_home"
-              class="pb-4 me-2"
-              style="
+            <li id="reserv_for_home" class="pb-4 me-2" style="
                 border-bottom: 3px solid rgb(55, 210, 67);
                 width: 330px;
                 text-align: center;
-              "
-            >
+              ">
               <div class="">
-                <a href="#" class="text-decoration-none text-dark fs-5"
-                  >일반홈택배 예약하기</a
-                >
+                <a href="#" class="text-decoration-none text-dark fs-5">일반홈택배 예약하기</a>
               </div>
             </li>
 
-            <li
-              id="reserv_check_and_cancel"
-              class="pb-4 ms-2"
-              style="opacity: 0.5; width: 330px; text-align: center"
-            >
-              <a href="#" class="text-decoration-none text-dark fs-5"
-                >예약확인 및 취소</a
-              >
+            <li id="reserv_check_and_cancel" class="pb-4 ms-2" style="opacity: 0.5; width: 330px; text-align: center">
+              <a href="#" class="text-decoration-none text-dark fs-5">예약확인 및 취소</a>
             </li>
           </ul>
           <div id="boxForChange" class="mt-5 justify-content-center"></div>
 
           <div id="agreement_box" class="mt-5 justify-content-center">
-            <div
-              class="all_check mb-5 d-flex align-items-center justify-content-center"
-              style="text-align: center"
-            >
-              <input
-                class="form-check-input"
-                style="zoom: 1.5; border-radius: 50%"
-                type="checkbox"
-                id="check_evt1"
-                value="Y"
-                name="agree"
-                onclick="selectAll(this)"
-              /><label for="check_evt1">
-                <span class="ps-2"
-                  >이용약관, 개인정보 처리방침, 개인정보 취급위탁, 만14세이상에
-                  모두 동의합니다.</span
-                ></label
-              >
+            <div class="all_check mb-5 d-flex align-items-center justify-content-center" style="text-align: center">
+              <input class="form-check-input" style="zoom: 1.5; border-radius: 50%" type="checkbox" id="check_evt1"
+                value="Y" name="agree" onclick="selectAll(this)" /><label for="check_evt1">
+                <span class="ps-2">이용약관, 개인정보 처리방침, 개인정보 취급위탁, 만14세이상에
+                  모두 동의합니다.</span></label>
             </div>
-            <div
-              class="d-flex align-items-center justify-content-center"
-              style="text-align: center"
-            >
-              <input
-                class="form-check-input"
-                style="zoom: 1.3; border-radius: 50%"
-                type="checkbox"
-                id="check_evt2"
-                value="Y"
-                required
-                name="agree"
-              /><label for="check_evt2">
+            <div class="d-flex align-items-center justify-content-center" style="text-align: center">
+              <input class="form-check-input" style="zoom: 1.3; border-radius: 50%" type="checkbox" id="check_evt2"
+                value="Y" required name="agree" /><label for="check_evt2">
                 <span class="ps-2">[필수] 택배이용약관</span>
               </label>
             </div>
 
             <div class="d-flex justify-content-center mt-3">
-              <div
-                style="
+              <div style="
                   overflow: scroll;
                   width: 80%;
                   height: 250px;
                   padding: 10px;
                   border: 0.1px solid rgb(221, 221, 221);
-                "
-              >
+                ">
                 <h4><strong>제 1 장 총칙</strong></h4>
 
                 <h5>제1조(목적)</h5>
@@ -215,34 +162,20 @@
               </div>
             </div>
 
-            <div
-              class="pt-5 d-flex align-items-center justify-content-center"
-              style="text-align: center"
-            >
-              <input
-                class="form-check-input"
-                style="zoom: 1.3; border-radius: 50%"
-                type="checkbox"
-                id="check_evt3"
-                value="Y"
-                class="mt-5"
-                name="agree"
-                required
-              /><label for="check_evt3">
-                <span class="ps-2">[필수] 이용약관동의</span></label
-              >
+            <div class="pt-5 d-flex align-items-center justify-content-center" style="text-align: center">
+              <input class="form-check-input" style="zoom: 1.3; border-radius: 50%" type="checkbox" id="check_evt3"
+                value="Y" class="mt-5" name="agree" required /><label for="check_evt3">
+                <span class="ps-2">[필수] 이용약관동의</span></label>
             </div>
 
             <div class="d-flex justify-content-center mt-3">
-              <div
-                style="
+              <div style="
                   overflow: scroll;
                   width: 80%;
                   height: 250px;
                   padding: 10px;
                   border: 0.1px solid rgb(221, 221, 221);
-                "
-              >
+                ">
                 <h5><strong>제1장 총칙</strong></h5>
 
                 <h5>제1조(약관의 적용)</h5>
@@ -389,33 +322,19 @@
               </div>
             </div>
 
-            <div
-              class="pt-5 d-flex align-items-center justify-content-center"
-              style="text-align: center"
-            >
-              <input
-                class="form-check-input"
-                style="zoom: 1.3; border-radius: 50%"
-                type="checkbox"
-                id="check_evt4"
-                value="Y"
-                name="agree"
-                class="mt-5"
-                required
-              /><label for="check_evt4">
-                <span class="ps-2">[필수] 개인정보처리방침</span></label
-              >
+            <div class="pt-5 d-flex align-items-center justify-content-center" style="text-align: center">
+              <input class="form-check-input" style="zoom: 1.3; border-radius: 50%" type="checkbox" id="check_evt4"
+                value="Y" name="agree" class="mt-5" required /><label for="check_evt4">
+                <span class="ps-2">[필수] 개인정보처리방침</span></label>
             </div>
             <div class="d-flex justify-content-center mt-3">
-              <div
-                style="
+              <div style="
                   overflow: scroll;
                   width: 80%;
                   height: 250px;
                   padding: 10px;
                   border: 0.1px solid rgb(221, 221, 221);
-                "
-              >
+                ">
                 <p>
                   주식회사 비지에프네트웍스(이하 “BGF네트웍스”라 합니다)는
                   이용자님들의 개인정보를 중요하게 생각하며 아래와 같은
@@ -489,33 +408,19 @@
               </div>
             </div>
 
-            <div
-              class="pt-5 d-flex align-items-center justify-content-center"
-              style="text-align: center"
-            >
-              <input
-                class="form-check-input"
-                style="zoom: 1.3; border-radius: 50%"
-                type="checkbox"
-                id="check_evt5"
-                value="Y"
-                name="agree"
-                class="mt-5"
-                required
-              /><label for="check_evt5">
-                <span class="ps-2">[필수] 개인정보 취급위탁</span></label
-              >
+            <div class="pt-5 d-flex align-items-center justify-content-center" style="text-align: center">
+              <input class="form-check-input" style="zoom: 1.3; border-radius: 50%" type="checkbox" id="check_evt5"
+                value="Y" name="agree" class="mt-5" required /><label for="check_evt5">
+                <span class="ps-2">[필수] 개인정보 취급위탁</span></label>
             </div>
             <div class="d-flex justify-content-center mt-3">
-              <div
-                style="
+              <div style="
                   overflow: scroll;
                   width: 80%;
                   height: 250px;
                   padding: 10px;
                   border: 0.1px solid rgb(221, 221, 221);
-                "
-              >
+                ">
                 <p>
                   원활한 서비스 제공을 위하여 정보통신망 이용촉진 및 정보보호
                   등에 관한 법률 2항을 준수하며 아래와 같이 개인정보를
@@ -540,36 +445,18 @@
               </div>
             </div>
 
-            <div
-              class="pt-5 d-flex align-items-center justify-content-center"
-              style="text-align: center"
-            >
-              <input
-                class="form-check-input"
-                style="zoom: 1.3; border-radius: 50%"
-                type="checkbox"
-                id="check_evt6"
-                value="Y"
-                name="agree"
-                class="mt-5"
-                required
-              /><label for="check_evt6">
-                <span class="ps-2"
-                  >[필수] 만 14세 이상 (만 14세미만 아동의 경우 서비스 제공
-                  불가)</span
-                ></label
-              >
+            <div class="pt-5 d-flex align-items-center justify-content-center" style="text-align: center">
+              <input class="form-check-input" style="zoom: 1.3; border-radius: 50%" type="checkbox" id="check_evt6"
+                value="Y" name="agree" class="mt-5" required /><label for="check_evt6">
+                <span class="ps-2">[필수] 만 14세 이상 (만 14세미만 아동의 경우 서비스 제공
+                  불가)</span></label>
             </div>
             <div style="text-align: center; margin-bottom: 100px" class="mt-4">
-              <button
-                type="submit"
-                class="text-light btn"
-                style="
+              <button type="submit" class="text-light btn" style="
                   background-color: rgb(54, 213, 66);
                   width: 13rem;
                   height: 3rem;
-                "
-              >
+                ">
                 다음단계
               </button>
             </div>
@@ -577,17 +464,10 @@
         </div>
       </form>
 
-      <form action="" method="get">
-        <div
-          class="container"
-          id="text_for_reserv_check_and_cancel"
-          style="display: none"
-        >
+      <form action="/delivery/trackingNumberInquiry" method="get">
+        <div class="container" id="text_for_reserv_check_and_cancel" style="display: none">
           <div class="border d-flex" style="height: 10rem">
-            <div
-              class="align-self-center border-end flex-fill"
-              style="text-align: center"
-            >
+            <div class="align-self-center border-end flex-fill" style="text-align: center">
               택배예약 시 등록한
               <span style="color: rgb(55, 210, 67)">보내는분 연락처</span>와
               <div>
@@ -598,46 +478,32 @@
             </div>
             <div class="align-self-center flex-fill" style="text-align: center">
               휴대폰번호
-              <input
-                type="text"
-                class="ms-4"
-                style="border: 1px solid rgb(204, 204, 204); height: 35px"
-              />
+              <input type="text" name="SENDER_PHONE" class="ms-4"
+                style="border: 1px solid rgb(204, 204, 204); height: 35px" />
               <div class="mt-2">
                 비밀번호 &nbsp;&nbsp;
-                <input
-                  type="password"
-                  class="ms-4"
-                  style="border: 1px solid rgb(204, 204, 204); height: 35px"
-                />
+                <input type="password" name="SHIPMENT_PASSWORD" class="ms-4"
+                  style="border: 1px solid rgb(204, 204, 204); height: 35px" />
               </div>
             </div>
           </div>
           <div class="mt-4" style="text-align: center; margin-bottom: 100px">
             <div class="row d-flex justify-content-center">
               <div class="col text-end">
-                <button
-                  type="submit"
-                  class="text-light btn"
-                  style="
+                <button type="submit" class="text-light btn" style="
                     background-color: rgb(54, 213, 66);
                     width: 13rem;
                     height: 3rem;
-                  "
-                >
+                  ">
                   예약내역 조회
                 </button>
               </div>
               <div class="col text-start">
-                <button
-                  type="submit"
-                  class="text-light btn"
-                  style="
+                <button type="submit" class="text-light btn" style="
                     background-color: rgb(54, 213, 66);
                     width: 13rem;
                     height: 3rem;
-                  "
-                >
+                  ">
                   이용문의
                 </button>
               </div>
@@ -648,15 +514,11 @@
     </main>
     <jsp:include page="../footer.jsp" />
     <script src="/resources/js/termsForHomes.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
-</html>
+
+  </html>

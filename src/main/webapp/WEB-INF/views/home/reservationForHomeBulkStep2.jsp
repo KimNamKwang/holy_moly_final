@@ -1,31 +1,20 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
     <style>
       .hover:hover {
         outline: 1px solid rgb(55, 210, 67);
@@ -42,28 +31,16 @@
     <main class="container" style="font-family: 'Noto Sans KR', sans-serif">
       <div class="mt-5">
         <ul class="list-unstyled d-flex justify-content-center">
-          <li
-            id="reserv_for_home"
-            class="pb-4 me-2"
-            style="
+          <li id="reserv_for_home" class="pb-4 me-2" style="
               border-bottom: 3px solid rgb(55, 210, 67);
               width: 330px;
               text-align: center;
-            "
-          >
-            <a href="#" class="text-decoration-none text-dark fs-5"
-              >다량홈택배 예약하기</a
-            >
+            ">
+            <a href="#" class="text-decoration-none text-dark fs-5">다량홈택배 예약하기</a>
           </li>
 
-          <li
-            id="reserv_check_and_cancel"
-            class="pb-4 ms-2"
-            style="opacity: 0.5; width: 330px; text-align: center"
-          >
-            <a href="#" class="text-decoration-none text-dark fs-5"
-              >예약확인 및 취소</a
-            >
+          <li id="reserv_check_and_cancel" class="pb-4 ms-2" style="opacity: 0.5; width: 330px; text-align: center">
+            <a href="#" class="text-decoration-none text-dark fs-5">예약확인 및 취소</a>
           </li>
         </ul>
 
@@ -83,14 +60,8 @@
                       받는 사람
                     </th>
                     <td class="lh_40">
-                      <input
-                        class="inp04 form-control w-50 inp03"
-                        name="r_name"
-                        type="text"
-                        maxlength="7"
-                        value=""
-                        placeholder="성명/상호명 입력"
-                      />
+                      <input class="inp04 form-control w-50 inp03" name="r_name" type="text" maxlength="7" value=""
+                        placeholder="성명/상호명 입력" />
                     </td>
                   </tr>
                   <tr>
@@ -99,12 +70,7 @@
                     </th>
                     <td class="tel_area row">
                       <div class="col-auto">
-                        <select
-                          class="form-select select_st sel22"
-                          name="s_mobile1"
-                          id="phoneFirst"
-                          required
-                        >
+                        <select class="form-select select_st sel22" name="s_mobile1" id="phoneFirst" required>
                           <option value="010">010</option>
                           <option value="011">011</option>
                           <option value="016">016</option>
@@ -115,25 +81,13 @@
                       </div>
                       <div class="col-1">-</div>
                       <div class="col">
-                        <input
-                          type="tel"
-                          class="inp17 form-control text-center"
-                          id="phoneSecond"
-                          name="s_mobile2"
-                          onblur="onlyNumber(this);"
-                          required
-                        />
+                        <input type="tel" class="inp17 form-control text-center" id="phoneSecond" name="s_mobile2"
+                          onblur="onlyNumber(this);" required />
                       </div>
                       <div class="col-1">-</div>
                       <div class="col">
-                        <input
-                          type="tel"
-                          class="inp17 form-control text-center"
-                          id="phoneThird"
-                          name="s_mobile3"
-                          onblur="onlyNumber(this);"
-                          required
-                        />
+                        <input type="tel" class="inp17 form-control text-center" id="phoneThird" name="s_mobile3"
+                          onblur="onlyNumber(this);" required />
                       </div>
                     </td>
                   </tr>
@@ -146,42 +100,16 @@
                     </th>
                     <td>
                       <p class="mgb_5">
-                        <input
-                          class="form-control w-25"
-                          type="button"
-                          onclick="sample6_execDaumPostcode()"
-                          value="우편번호 찾기"
-                        />
-                        <input
-                          class="form-control w-50 mt-2"
-                          type="text"
-                          name="postcode"
-                          id="sample6_postcode"
-                          placeholder="우편번호"
-                        />
-                        <input
-                          class="form-control mt-2"
-                          type="text"
-                          name="address"
-                          class="col-6"
-                          id="sample6_address"
-                          placeholder="주소"
-                        />
-                        <input
-                          class="form-control mt-2"
-                          type="text"
-                          name="addressadd"
-                          class="col-10"
-                          id="sample6_detailAddress"
-                          placeholder="상세주소"
-                        />
-                        <input
-                          class="form-control mt-2"
-                          type="text"
-                          name="extraaddress"
-                          id="sample6_extraAddress"
-                          placeholder="참고항목"
-                        />
+                        <input class="form-control w-25" type="button" onclick="sample6_execDaumPostcode()"
+                          value="우편번호 찾기" />
+                        <input class="form-control w-50 mt-2" type="text" name="postcode" id="sample6_postcode"
+                          placeholder="우편번호" />
+                        <input class="form-control mt-2" type="text" name="address" class="col-6" id="sample6_address"
+                          placeholder="주소" />
+                        <input class="form-control mt-2" type="text" name="addressadd" class="col-10"
+                          id="sample6_detailAddress" placeholder="상세주소" />
+                        <input class="form-control mt-2" type="text" name="extraaddress" id="sample6_extraAddress"
+                          placeholder="참고항목" />
                       </p>
                     </td>
                   </tr>
@@ -219,23 +147,11 @@
 
                       <div class="select_type11">
                         <div class="mt-3">
-                          <a
-                            name="aNoticeView"
-                            href="guideHome.html"
-                            class="btn btn-outline-dark btn-sm"
-                            ><span>유의사항 보기</span></a
-                          >
-                          <a
-                            href="./guideImpossible.html"
-                            class="btn btn-outline-dark btn-sm"
-                            ><span>취급제한품목</span></a
-                          >
+                          <a name="aNoticeView" href="guideHome.html" class="btn btn-outline-dark btn-sm"><span>유의사항
+                              보기</span></a>
+                          <a href="./guideImpossible.html" class="btn btn-outline-dark btn-sm"><span>취급제한품목</span></a>
                         </div>
-                        <span
-                          style="display: none"
-                          class="p_kind_table_ajaxcall_yn"
-                          >N</span
-                        >
+                        <span style="display: none" class="p_kind_table_ajaxcall_yn">N</span>
                       </div>
                     </td>
                   </tr>
@@ -244,13 +160,7 @@
                     <td>
                       <div class="row">
                         <div class="col-auto">
-                          <input
-                            type="Tel"
-                            class="inp03 form-control"
-                            name="r_p_pric"
-                            value=""
-                            maxlength="2"
-                          />
+                          <input type="Tel" class="inp03 form-control" name="r_p_pric" value="" maxlength="2" />
                         </div>
                         <div class="col">만원 (수량 : 1개)</div>
                       </div>
@@ -274,17 +184,8 @@
                       <ul class="boxsize list-unstyled">
                         <li>
                           <p class="tit">
-                            <input
-                              id="bs_B_0"
-                              type="checkbox"
-                              value="B"
-                              class="chk optTitleB chk_sel form-check-input"
-                              required
-                            /><label
-                              for="bs_B_0"
-                              class="optLabelB form-check-label ps-1"
-                              >일반박스</label
-                            >
+                            <input id="bs_B_0" type="checkbox" value="B" class="chk optTitleB chk_sel form-check-input"
+                              required /><label for="bs_B_0" class="optLabelB form-check-label ps-1">일반박스</label>
                           </p>
                           <p class="f11">15kg이하/ 120cm이하</p>
                         </li>
@@ -297,11 +198,7 @@
                               <span id="result">1</span>
                               <a class="btn" id="plus">+</a>
                             </span>
-                            <input
-                              type="hidden"
-                              id="total_count_items"
-                              name="total_count_items"
-                            />
+                            <input type="hidden" id="total_count_items" name="total_count_items" />
                           </div>
                         </li>
                       </ul>
@@ -314,11 +211,8 @@
                     </th>
 
                     <td class="select_100">
-                      <select
-                        class="select08 w100 etc_info_select form-select w-75"
-                        id="etc_info_select_idx_0"
-                        name="etc_info_select"
-                      >
+                      <select class="select08 w100 etc_info_select form-select w-75" id="etc_info_select_idx_0"
+                        name="etc_info_select">
                         <option value="">===선택===</option>
 
                         <option value="option1">
@@ -344,21 +238,11 @@
                         <option value="write">직접입력하기</option>
                       </select>
 
-                      <div
-                        class="etc_info_write_div"
-                        style="padding-top: 10px; display: none"
-                        id="etc_info_write_div_idx_0"
-                      >
+                      <div class="etc_info_write_div" style="padding-top: 10px; display: none"
+                        id="etc_info_write_div_idx_0">
                         <p class="wide_i">
-                          <input
-                            type="text"
-                            class="inp08"
-                            name="etc_info"
-                            id="etc_info"
-                            placeholder="요청사항을 입력해주세요. (입력내용은 운송장에 표기되며 최대 30자까지 입력가능)"
-                            value=""
-                            maxlength="30"
-                          />
+                          <input type="text" class="inp08" name="etc_info" id="etc_info"
+                            placeholder="요청사항을 입력해주세요. (입력내용은 운송장에 표기되며 최대 30자까지 입력가능)" value="" maxlength="30" />
                         </p>
                         <!--<p class="lh_24 f11">※배송기사님 전달메시지를 등록해주세요.(운송장에 표기됨)</p>-->
                       </div>
@@ -377,16 +261,10 @@
                     <tr id="">
                       <th scope="row">방문희망일</th>
                       <td>
-                        <select
-                          name="d_req_date"
-                          id="d_req_date_select"
-                          class="select01 form-select w-50"
-                        ></select>
+                        <select name="d_req_date" id="d_req_date_select" class="select01 form-select w-50"></select>
 
-                        <span style="font-size: 13px"
-                          ><br />※ 당일 PM 11시 59분 이후 신청 시 익일자
-                          지정불가!</span
-                        >
+                        <span style="font-size: 13px"><br />※ 당일 PM 11시 59분 이후 신청 시 익일자
+                          지정불가!</span>
                         <span style="font-size: 13px">
                           <br />※ 영업소, 택배기사의 사정으로 픽업 및 배송이
                           지연될 수 있으며, 집하/배송지연 문의는 택배사
@@ -399,22 +277,15 @@
               </div>
 
               <div class="d-flex justify-content-center mt-5">
-                <a
-                  href="./reservationForHomeBulk.html"
-                  class="btn btn-secondary me-3"
-                  style="width: 12rem; height: 3rem; padding-top: 11px"
-                >
+                <a href="./reservationForHomeBulk.html" class="btn btn-secondary me-3"
+                  style="width: 12rem; height: 3rem; padding-top: 11px">
                   이전단계
                 </a>
-                <button
-                  class="btn me-3 text-light"
-                  type="submit"
-                  style="
+                <button class="btn me-3 text-light" type="submit" style="
                     width: 12rem;
                     height: 3rem;
                     background-color: rgb(55, 210, 67);
-                  "
-                >
+                  ">
                   다음단계
                 </button>
               </div>
@@ -422,17 +293,10 @@
           </div>
         </div>
 
-        <form action="" method="get">
-          <div
-            class="container"
-            id="text_for_reserv_check_and_cancel"
-            style="display: none"
-          >
+        <form action="/delivery/trackingNumberInquiry" method="get">
+          <div class="container" id="text_for_reserv_check_and_cancel" style="display: none">
             <div class="border d-flex" style="height: 10rem">
-              <div
-                class="align-self-center border-end flex-fill"
-                style="text-align: center"
-              >
+              <div class="align-self-center border-end flex-fill" style="text-align: center">
                 택배예약 시 등록한
                 <span style="color: rgb(55, 210, 67)">보내는분 연락처</span>와
                 <div>
@@ -441,51 +305,34 @@
                 </div>
                 예약일 기준 90일 이내 정보에 한하여 조회됩니다.
               </div>
-              <div
-                class="align-self-center flex-fill"
-                style="text-align: center"
-              >
+              <div class="align-self-center flex-fill" style="text-align: center">
                 휴대폰번호
-                <input
-                  type="text"
-                  class="ms-4"
-                  style="border: 1px solid rgb(204, 204, 204); height: 35px"
-                />
+                <input type="text" name="SENDER_PHONE" class="ms-4"
+                  style="border: 1px solid rgb(204, 204, 204); height: 35px" />
                 <div class="mt-2">
                   비밀번호 &nbsp;&nbsp;
-                  <input
-                    type="password"
-                    class="ms-4"
-                    style="border: 1px solid rgb(204, 204, 204); height: 35px"
-                  />
+                  <input type="password" name="SHIPMENT_PASSWORD" class="ms-4"
+                    style="border: 1px solid rgb(204, 204, 204); height: 35px" />
                 </div>
               </div>
             </div>
-            <div class="mt-4" style="text-align: center">
+            <div class="mt-4" style="text-align: center; margin-bottom: 100px">
               <div class="row d-flex justify-content-center">
                 <div class="col text-end">
-                  <button
-                    type="submit"
-                    class="text-light btn"
-                    style="
+                  <button type="submit" class="text-light btn" style="
                       background-color: rgb(54, 213, 66);
                       width: 13rem;
                       height: 3rem;
-                    "
-                  >
+                    ">
                     예약내역 조회
                   </button>
                 </div>
                 <div class="col text-start">
-                  <button
-                    type="submit"
-                    class="text-light btn"
-                    style="
+                  <button type="submit" class="text-light btn" style="
                       background-color: rgb(54, 213, 66);
                       width: 13rem;
                       height: 3rem;
-                    "
-                  >
+                    ">
                     이용문의
                   </button>
                 </div>
@@ -500,11 +347,9 @@
     <script src="/resources/js/reservationForHomeStep2.js"></script>
     <script src="/resources/js/reservationVisitDate.js"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
@@ -561,4 +406,5 @@
       }
     </script>
   </body>
-</html>
+
+  </html>
