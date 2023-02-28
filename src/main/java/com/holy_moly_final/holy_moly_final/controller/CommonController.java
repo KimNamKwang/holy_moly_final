@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +29,9 @@ public class CommonController {
 
     @Autowired
     CommonService commonService;
+
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
 
     @RequestMapping(value = "/IdResult_fa", method = RequestMethod.GET)
     public ModelAndView IdResult_fa(@RequestParam Map<String, Object> params,
@@ -89,19 +93,27 @@ public class CommonController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(@RequestParam Map<String, Object> params,
-            ModelAndView modelAndView) {
-
-        modelAndView.setViewName("common/login");
-        return modelAndView;
-    }
-
     @RequestMapping(value = "/PwSearch", method = RequestMethod.GET)
     public ModelAndView PwSearch(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
         modelAndView.setViewName("common/PwSearch");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView login(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        String pass = bcryptPasswordEncoder.encode("pw123");
+        modelAndView.setViewName("common/login");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView logout(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+
+        modelAndView.setViewName("common/logout");
         return modelAndView;
     }
 
