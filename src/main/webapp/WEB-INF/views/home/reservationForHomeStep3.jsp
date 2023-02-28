@@ -33,11 +33,11 @@
                 <div class="fs-4 fw-bold pb-2">상품이용내역</div>
                 <table class="table table-bordered mb-5">
                   <colgroup>
-                    <col style="width: 30%" />
-                    <col style="width: 20%" />
-                    <col style="width: 17%" />
-                    <col style="width: 13%" />
-                    <col style="width: 20%" />
+                    <col style="width: 33%" />
+                    <col style="width: 27%" />
+
+                    <col style="width: 14%" />
+                    <col style="width: 26%" />
                   </colgroup>
                   <tbody>
                     <%-- 여기부터 input hidden으로 넘기는 parameter들 --%>
@@ -72,7 +72,7 @@
                           <tr class="bg-secondary bg-opacity-10">
                             <th scope="col">상품명</th>
                             <th scope="col">방문희망일</th>
-                            <th scope="col">결제방식</th>
+
                             <th scope="col" class="text-nowrap">박스수량</th>
                             <th scope="col" class="last">운임합계</th>
                           </tr>
@@ -80,7 +80,7 @@
                             <td>${resultMap.SHIPMENT_TYPE_DESCRIPTION}</td>
                             <td>${resultMap.VISITING_DATE}</td>
 
-                            <td>선불</td>
+
 
                             <td>${resultMap.NUMBER_OF_ITEMS} 개</td>
                             <td class="font07 last">
@@ -90,21 +90,21 @@
                   </tbody>
                 </table>
                 <div class="fs-4 fw-bold pb-2">
-                  (예상)이라고 추가하는게 나을 듯? 결제내역
+                  예상결제내역
                 </div>
                 <table class="table table-bordered mb-5">
                   <colgroup>
-                    <col style="width: 25%" />
-                    <col style="width: 25%" />
-                    <col style="width: 25%" />
-                    <col style="width: 25%" />
+                    <col style="width: 33%" />
+                    <col style="width: 34%" />
+                    <col style="width: 33%" />
+
                   </colgroup>
                   <tbody>
                     <tr class="bg-secondary bg-opacity-10">
                       <th scope="col">상품금액</th>
                       <th scope="col">할인금액</th>
                       <th scope="col">결제금액</th>
-                      <th scope="col">결제수단</th>
+
                     </tr>
                     <tr>
                       <td class="font07">${resultMap.NUMBER_OF_ITEMS * 3500} 원</td>
@@ -114,7 +114,7 @@
                         원(로그인 구현되면 GRADE 체크해서 차등적용)
                       </td>
                       <td class="font07">???원</td>
-                      <td>여기다가는 뭐 넣지?</td>
+
                     </tr>
                   </tbody>
                 </table>
