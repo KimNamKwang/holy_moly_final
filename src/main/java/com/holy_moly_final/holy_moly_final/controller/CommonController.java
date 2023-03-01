@@ -80,6 +80,7 @@ public class CommonController {
     @RequestMapping(value = "/join_step3", method = RequestMethod.GET)
     public ModelAndView join_step3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        // String pass = bcryptPasswordEncoder.encode();
         Object resultMap = params;
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step3");
@@ -89,7 +90,10 @@ public class CommonController {
     @RequestMapping(value = "/join_step4", method = RequestMethod.GET)
     public ModelAndView join_step4(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        String PASSWORD = bcryptPasswordEncoder.encode((String) params.get("PASSWORD_NOT_ENCODED"));
+        params.put("PASSWORD", PASSWORD);
         Object resultMap = commonService.insertUserDataAndGet(params);
+
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step4");
         return modelAndView;
