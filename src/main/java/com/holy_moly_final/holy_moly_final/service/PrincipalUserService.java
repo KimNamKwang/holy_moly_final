@@ -20,7 +20,7 @@ public class PrincipalUserService implements UserDetailsService {
     /* uri가 login일때 spring security가 호출 */
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         /* query문으로 select 함 */
-        String sqlMapId = "Memberwithauthority.selectByUID";
+        String sqlMapId = "Memberwithauthority.selectUserInfoByUIDForLogin";
         Object usernameObj = username;
         /* Spring에서는 DB에 갔다오는 부분에서 로그인에 username만 요구하고 password는 요구하지 않는다 */
         Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, usernameObj);
