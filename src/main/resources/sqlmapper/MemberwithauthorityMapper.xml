@@ -21,4 +21,10 @@
 		,'UUID-1111-1111111',now(),'UUID-1111-1111111',now());
 
 	</insert>
+
+	<select id="selectUserPointByUID" parameterType="String" resultType="Map">
+		SELECT sum(POINT_CHANGE_VALUE) as 'totalPoint'
+		FROM POINT
+		WHERE USER_UID = #{username};
+	</select>
 </mapper>

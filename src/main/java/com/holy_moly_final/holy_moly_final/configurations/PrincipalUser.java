@@ -11,10 +11,18 @@ public class PrincipalUser implements UserDetails {
 
     private Map userInfo;
     private String memberName;
+    private String totalPoint;
 
     public PrincipalUser(Map userInfo) {
         this.userInfo = userInfo;
         this.memberName = (String) userInfo.get("NAME");
+        String Point = (String) userInfo.get("totalPoint");
+        if (Point != null) {
+            this.totalPoint = Point;
+        } else {
+            this.totalPoint = "0";
+        }
+
         int i = 1;
 
     }
@@ -69,6 +77,14 @@ public class PrincipalUser implements UserDetails {
 
     public void setMemberName(String memberName) {
         this.memberName = memberName;
+    }
+
+    public String getTotalPoint() {
+        return totalPoint;
+    }
+
+    public void setTotalPoint(String totalPoint) {
+        this.totalPoint = totalPoint;
     }
 
 }

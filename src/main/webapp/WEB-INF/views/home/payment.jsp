@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+    
       <!DOCTYPE html>
       <html lang="en">
 
@@ -42,6 +44,15 @@
       </head>
 
       <body>
+        <sec:authorize access="isAnonymous()">
+        <c:set var="_setBalance" value="0" />
+        </sec:authorize>
+
+        <sec:authorize access="isAuthenticated()">
+        <%-- 로그인이 되어잇으면 username을 가지고 DB를 갓다와야함 --%>
+        <sec:authentication property="principal" var="prc" />
+        <c:set var="_setBalance" value="${prc.totalPoint}" />
+        </sec:authorize>
         <jsp:include page="../navbar.jsp" />
         <main style="
         font-family: 'Noto Sans KR', sans-serif;
@@ -98,7 +109,7 @@
                       <div>보유 포인트</div>
                       <%-- 로그인 상태인지 체크하여 로그인 했으면 보유 포인트 값을 불러오고 비회원이라면 보유포인트 0원 --%>
                         <div>&nbsp;</div>
-                        <p class="text-info" id="balance">4900</p>
+                        <p class="text-info" id="balance">${_setBalance}</p>
                         <p class="text-info">원</p>
                     </div>
                   </div>

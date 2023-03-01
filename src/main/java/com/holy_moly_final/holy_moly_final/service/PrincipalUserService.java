@@ -24,6 +24,13 @@ public class PrincipalUserService implements UserDetailsService {
         Object usernameObj = username;
         /* Spring에서는 DB에 갔다오는 부분에서 로그인에 username만 요구하고 password는 요구하지 않는다 */
         Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, usernameObj);
+        Object resultPoint = this.loadUserPointByUsername(usernameObj);
+        String totalPoint = null;
+        if (resultPoint != null) {
+            totalPoint = ((Map<String, Object>) resultPoint).get("totalPoint").toString();
+        }
+        resultMap.put("totalPoint", totalPoint);
+        // 포인트 넣기
 
         /* session에 등록 */
         PrincipalUser principalUser = new PrincipalUser(resultMap);
@@ -34,6 +41,14 @@ public class PrincipalUserService implements UserDetailsService {
          * authentication이 PrincipalUser의 getPasseord()를 가져와서 password를 체크한다
          */
         return principalUser;
+    }
+
+    public Object loadUserPointByUsername(Object usernameObj) {
+        String sqlMapId = "Memberwithauthority.selectUserPointByUID";
+        Object dataMap = usernameObj;
+        Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, dataMap);
+
+        return resultMap;
     }
 
 }
