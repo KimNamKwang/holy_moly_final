@@ -51,6 +51,38 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
             >
           </div>
         </div>
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+          <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
+            <div class="color">
+              <a
+                href="/admin/adminBoard"
+                class="nav-link fw-bold text-nowrap"
+                style="font-size: 1.2rem"
+                >게시판 관리</a
+              >
+            </div>
+          </div>
+          <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
+            <div class="color">
+              <a
+                href="/admin/adminUsers"
+                class="nav-link fw-bold text-nowrap"
+                style="font-size: 1.2rem"
+                >유저 관리</a
+              >
+            </div>
+          </div>
+          <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
+            <div class="color">
+              <a
+                href="/admin/adminInquiry"
+                class="nav-link fw-bold text-nowrap"
+                style="font-size: 1.2rem"
+                >1대1 문의 관리</a
+              >
+            </div>
+          </div>
+        </sec:authorize>
       </div>
       <div class="text-end">
         <div class="row">

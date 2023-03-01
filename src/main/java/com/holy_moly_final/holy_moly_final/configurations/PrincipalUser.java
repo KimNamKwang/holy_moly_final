@@ -23,7 +23,7 @@ public class PrincipalUser implements UserDetails {
     public Collection<GrantedAuthority> getAuthorities() {
         // 권한들
         Collection<GrantedAuthority> collections = new ArrayList<>();
-        collections.add(new SimpleGrantedAuthority((String) userInfo.get("AUTH_UID")));
+        collections.add(new SimpleGrantedAuthority((String) userInfo.get("AUTH")));
         return collections;
     }
 
