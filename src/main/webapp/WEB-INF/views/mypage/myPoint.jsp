@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib prefix="fn"
+uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +17,7 @@
     />
 
     <!-- 23.02.06추가 -->
-    <link rel="stylesheet" href="/css/mypage.css" />
+    <link rel="stylesheet" href="/resources/css/mypage.css" />
 
     <!-- 23.02.04추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
@@ -167,7 +170,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body text-center">
             <div class="row mb-3">
               <div class="col-4">
                 <b>날짜</b>
@@ -176,31 +179,41 @@
                 <b>적립/사용</b>
               </div>
               <div class="col-4">
-                <b>&nbsp;&nbsp;금액</b>
+                <b>금액</b>
               </div>
             </div>
-            <div class="row">
-              <div class="col-4">23.02.10</div>
-              <div class="col-4">&nbsp;&nbsp; 적립</div>
-              <div class="col-4">+3,000</div>
-            </div>
-            <div class="row">
-              <div class="col-4">23.02.11</div>
-              <div class="col-4">&nbsp;&nbsp; 적립</div>
-              <div class="col-4">+1,300</div>
-              <div class="col-4">23.02.12</div>
-              <div class="col-4">&nbsp;&nbsp; 사용</div>
-              <div class="col-4">-2,300</div>
-              <div class="col-4">23.02.13</div>
-              <div class="col-4">&nbsp;&nbsp; 적립</div>
-              <div class="col-4">+5,300</div>
-            </div>
+            <c:forEach
+              items="${resultMap.pointBreakdown}"
+              var="_pointBreakdown"
+              varStatus="loop"
+            >
+              <div class="row">
+                <div class="col-4">
+                  ${fn:substring(_pointBreakdown.POINT_CHANGE_DATE,0,10)}
+                </div>
+                <div class="col-4">
+                  <c:if test="${_pointBreakdown.POINT_CHANGE_VALUE gt 0}">
+                    적립
+                  </c:if>
+                  <c:if test="${_pointBreakdown.POINT_CHANGE_VALUE lt 0}">
+                    사용
+                  </c:if>
+                </div>
+                <div class="col-4 fw-bold" style="color: rgb(55, 210, 67)">
+                  <c:if test="${_pointBreakdown.POINT_CHANGE_VALUE gt 0}">
+                    +${_pointBreakdown.POINT_CHANGE_VALUE}
+                  </c:if>
+                  <c:if test="${_pointBreakdown.POINT_CHANGE_VALUE lt 0}">
+                    ${_pointBreakdown.POINT_CHANGE_VALUE}
+                  </c:if>
+                </div>
+              </div>
+            </c:forEach>
           </div>
-
           <div class="modal-footer">
-            <div class="col" style="color: rgb(55, 210, 67)">
+            <div class="col fw-bold fs-5" style="color: rgb(55, 210, 67)">
               <img src="/resources/images/포인트 아이콘.png" alt="" />
-              123,000
+              ${resultMap.totalPoint.TOTAL_POINT}
             </div>
             <div class="text-align:center">
               <button
@@ -243,7 +256,7 @@
           >
             <div class="box-row">
               <span class="" style="color: white; font-size: 1.5em">
-                <b>123,000원</b></span
+                <b>${resultMap.totalPoint.TOTAL_POINT}원</b></span
               >
             </div>
 
@@ -295,6 +308,8 @@
 	</script> -->
 
     <jsp:include page="../footer.jsp" />
+
+    <script src="/resources/js/myPoint.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
