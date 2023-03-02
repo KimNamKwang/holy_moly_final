@@ -34,11 +34,7 @@ public class PrincipalUser implements UserDetails {
         this.grade_Uid = grade_Uid;
         this.user_Uid = user_Uid;
         this.grade_Desc = grade_Desc;
-        if (user_Inquirys_Count != null) {
-            this.user_Inquirys_Count = Inquirys_Count;
-        } else {
-            this.user_Inquirys_Count = "0";
-        }
+        this.user_Inquirys_Count = Inquirys_Count;
         int i = 1;
 
     }
