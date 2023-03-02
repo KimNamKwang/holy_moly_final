@@ -84,10 +84,10 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         class="btn btn btn-outline-dark btn-sm"
                         >수정</a
                       >
-                      <button class="btn btn btn-outline-dark btn-sm">
+                      <a href="/admin/userDelete?USER_UID=${_userList.USER_UID}" class="btn btn btn-outline-dark btn-sm">
                         탈퇴
-                      </button>
-                    </td>
+                      </a>
+                    </td> 
                   </tr>
                 </c:forEach>
               </tbody>

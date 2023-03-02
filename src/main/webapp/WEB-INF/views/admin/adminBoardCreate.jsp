@@ -57,7 +57,7 @@
                       type="text"
                       class="outline-green w-100 border border-secondary border-opacity-25 p-2"
                       style="border-radius: 10px"
-                      name="boradTitle"
+                      name="TITLE"
                       placeholder="제목"
                     />
                   </td>
@@ -68,13 +68,13 @@
                     <select
                       class="w-100 border border-secondary border-opacity-25 p-2 text-center"
                       style="border-radius: 10px"
-                      name="boardType"
+                      name="BOARD_UID"
                       id="boardType"
                     >
                       <option value="" selected disabled>선택</option>
-                      <option value="notice">공지사항</option>
-                      <option value="event">이벤트</option>
-                      <option value="faq">FAQ</option>
+                      <option value="BOARD_NOTICE">공지사항</option>
+                      <option value="BOARD_EVENT">이벤트</option>
+                      <option value="BOARD_FAQ">FAQ</option>
                     </select>
                   </td>
                 </tr>
@@ -85,7 +85,7 @@
                       <input class="w-100 p-2"
                         style="border: 1px solid rgb(218,220,222);border-radius: 10px 10px; height: 43px;"
                         type="date"
-                        name=""
+                        name="EVENT_START_DATE"
                         id="eventTermStart">
                     </div>
                     <div class="col-auto ">
@@ -94,7 +94,7 @@
                     <div class="col">
                       <input class="w-100 p-2"
                         style="border: 1px solid rgb(218,220,222); border-radius: 10px 10px;  height: 43px;"
-                        type="date" name="" id="">
+                        type="date" name="EVENT_END_DATE" id="">
                     </div>
                   </td>
                 </tr>
@@ -105,13 +105,13 @@
                     <select
                       class="w-100 border border-secondary border-opacity-25 p-2 text-center"
                       style="border-radius: 10px"
-                      name="boardType"
+                      name="FAQ_TYPE_UID"
                     >
                       <option value="" selected disabled>선택</option>
-                      <option value="received">접수문의</option>
-                      <option value="shipping">배송문의</option>
-                      <option value="map">지도문의</option>
-                      <option value="accident">사고문의</option>
+                      <option value="FAQ_REGISTER">접수문의</option>
+                      <option value="FAQ_SHIPPING">배송문의</option>
+                      <option value="FAQ_MAP">지도문의</option>
+                      <option value="FAQ_ACCIDENT">사고문의</option>
                     </select>
                   </td>
                 </tr>
@@ -121,7 +121,7 @@
                     <textarea
                       class="w-100 border border-secondary border-opacity-25 p-2"
                       style="resize: none; height: 200px; border-radius: 10px"
-                      name="content"
+                      name="CONTENT"
                       placeholder="내용"
                       required
                     ></textarea>
@@ -131,7 +131,7 @@
                   <th style="border-bottom: none">이미지</th>
                   <td style="border-bottom: none">
                     <div>
-                      <input class="form-control" type="file" multiple />
+                      <input class="form-control" type="file" name="ORIGINALFILE_NAME" multiple />
                     </div>
                     <div style="font-size: 0.8rem; color: rgb(171, 171, 171)">
                       *FAQ는 이미지가 등록되지 않습니다.
