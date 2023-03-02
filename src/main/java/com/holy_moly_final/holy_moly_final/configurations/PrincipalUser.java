@@ -11,10 +11,30 @@ public class PrincipalUser implements UserDetails {
 
     private Map userInfo;
     private String memberName;
+    private String totalPoint;
+    private String grade_Uid;
+    private String grade_Desc;
+    private String user_Uid;
+    private String user_Inquirys_Count;
 
     public PrincipalUser(Map userInfo) {
         this.userInfo = userInfo;
         this.memberName = (String) userInfo.get("NAME");
+        String Point = (String) userInfo.get("totalPoint");
+        String grade_Uid = (String) userInfo.get("GRADE_UID");
+        String user_Uid = (String) userInfo.get("USER_UID");
+        String grade_Desc = (String) userInfo.get("GRADE");
+        String Inquirys_Count = (String) userInfo.get("user_inquiry_count");
+        if (Point != null) {
+            this.totalPoint = Point;
+        } else {
+            this.totalPoint = "0";
+        }
+
+        this.grade_Uid = grade_Uid;
+        this.user_Uid = user_Uid;
+        this.grade_Desc = grade_Desc;
+        this.user_Inquirys_Count = Inquirys_Count;
         int i = 1;
 
     }
@@ -23,7 +43,7 @@ public class PrincipalUser implements UserDetails {
     public Collection<GrantedAuthority> getAuthorities() {
         // 권한들
         Collection<GrantedAuthority> collections = new ArrayList<>();
-        collections.add(new SimpleGrantedAuthority((String) userInfo.get("AUTH_UID")));
+        collections.add(new SimpleGrantedAuthority((String) userInfo.get("AUTH")));
         return collections;
     }
 
@@ -69,6 +89,46 @@ public class PrincipalUser implements UserDetails {
 
     public void setMemberName(String memberName) {
         this.memberName = memberName;
+    }
+
+    public String getTotalPoint() {
+        return totalPoint;
+    }
+
+    public void setTotalPoint(String totalPoint) {
+        this.totalPoint = totalPoint;
+    }
+
+    public String getGrade_Uid() {
+        return grade_Uid;
+    }
+
+    public void setGrade_Uid(String grade_Uid) {
+        this.grade_Uid = grade_Uid;
+    }
+
+    public String getUser_Uid() {
+        return user_Uid;
+    }
+
+    public void setUser_Uid(String user_Uid) {
+        this.user_Uid = user_Uid;
+    }
+
+    public String getGrade_Desc() {
+        return grade_Desc;
+    }
+
+    public void setGrade_Desc(String grade_Desc) {
+        this.grade_Desc = grade_Desc;
+    }
+
+    public String getUser_Inquirys_Count() {
+        return user_Inquirys_Count;
+    }
+
+    public void setUser_Inquirys_Count(String user_Inquirys_Count) {
+        this.user_Inquirys_Count = user_Inquirys_Count;
     }
 
 }

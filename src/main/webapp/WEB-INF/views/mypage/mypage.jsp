@@ -1,4 +1,8 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib prefix="fn"
+uri="http://java.sun.com/jsp/jstl/functions" %> <%@ taglib
+uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,42 +70,60 @@
         </div>
         <div class="row">
           <!-- 1박스 -->
-          <div class="col-auto">
-            <h3><b>이재현</b>님은</h3>
+          <div class="col-auto pe-5">
+            <h3><b>${resultMap.userInfo.NAME}</b>님은</h3>
             <h3>
-              <b><span style="color: rgb(55, 210, 67)">FAMILY</span></b
+              <b
+                ><span style="color: rgb(55, 210, 67)"
+                  >${resultMap.userInfo.GRADE}</span
+                ></b
               >등급 회원입니다.
             </h3>
-            <hr noshade size="5px" style="width: 350px" />
-            <a href="/mypage/myinfo">
-              <button
-                id="btn-update-myinfo"
-                style="
-                  border-radius: 20px;
-                  background-color: #f2ffd9;
-                  border: 1px solid white;
-                "
-              >
-                <span style="color: rgb(55, 210, 67)"> 내 정보 수정</span>
-              </button></a
-            >
+            <hr noshade size="5px" style="width: 450px" />
+            <div class="row">
+              <div class="col-auto">
+                <sec:authentication
+                  property="principal"
+                  var="userDetailsBean"
+                />
+                <form action="/mypage/myinfo" method="get">
+                  <input
+                    type="hidden"
+                    value="${userDetailsBean.user_Uid}"
+                    name="USER_UID"
+                  />
+                  <button
+                    id="btn-update-myinfo"
+                    style="
+                      border-radius: 20px;
+                      background-color: #f2ffd9;
+                      border: 1px solid white;
+                    "
+                  >
+                    <span style="color: rgb(55, 210, 67)"> 내 정보 수정</span>
+                  </button>
+                </form>
+              </div>
 
-            <a href="/grade/gradeBenefit">
-              <button
-                style="
-                  border-radius: 20px;
-                  background-color: #f2ffd9;
-                  border: 1px solid white;
-                "
-              >
-                <span style="color: rgb(55, 210, 67)">등급별 혜택</span>
-              </button></a
-            >
+              <div class="col">
+                <a href="/grade/gradeBenefit">
+                  <button
+                    style="
+                      border-radius: 20px;
+                      background-color: #f2ffd9;
+                      border: 1px solid white;
+                    "
+                  >
+                    <span style="color: rgb(55, 210, 67)">등급별 혜택</span>
+                  </button></a
+                >
+              </div>
+            </div>
           </div>
           <!-- 윗부분 -->
           <div
             class="col-auto"
-            style="border-left: 1px solid gray; height: 100px"
+            style="border-left: 1px solid rgb(217, 217, 217); height: 100px"
           >
             <div>
               <div id="menu_div">
@@ -109,10 +131,10 @@
                   <li>
                     <a href="/mypage/myPoint" class="d-flex align-items-center">
                       <img src="/resources/images/쿠폰함.png" alt="" />
-                      <b class="ms-1">포인트</b>
+                      <b class="ms-1 pe-5">포인트</b>
                       <b class="ms-3"
                         ><span style="color: rgb(55, 210, 67); font-size: 150%"
-                          >123,000</span
+                          >${resultMap.userInfo.POINT}</span
                         >
                       </b>
                     </a>
@@ -128,9 +150,11 @@
                       class="d-flex align-items-center"
                     >
                       <img src="/resources/images/내문의현황.png" alt="" />
-                      <b class="ms-1">내 문의 현황</b>
+                      <b class="ms-1 pe-5">내 문의 현황</b>
                       <b class="ms-3">
-                        <span style="font-size: 1.5rem">97</span>건
+                        <span style="font-size: 1.5rem"
+                          >${resultMap.inquiryTotalCount.TOTAL_USER_INQUIRYS}</span
+                        >건
                       </b>
                     </a>
                   </li>
@@ -223,23 +247,30 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>배송일자</th>
-                          <th>연락처</th>
-                          <th>수신자</th>
-                          <th>주소</th>
-                          <th>메모</th>
+                          <th class="text-nowrap">예약일자</th>
+                          <th class="text-nowrap">연락처</th>
+                          <th class="text-nowrap">수신자</th>
+                          <th class="text-nowrap">주소</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <!-- 반복문 -->
-                        <tr>
-                          <td>방문택배내용</td>
-                          <td>내용</td>
-                          <td>내용</td>
-                          <td>내용</td>
-                          <td>내용</td>
-                        </tr>
-                        <!-- 반복문 -->
+                        <c:forEach
+                          items="${resultMap.shipmentBreakdown}"
+                          var="_shipmentBreakdown"
+                          varStatus="loop"
+                        >
+                          <tr>
+                            <td>
+                              ${fn:substring(_shipmentBreakdown.RESERVATION_DATE,0,10)}
+                            </td>
+                            <td>${_shipmentBreakdown.RECIPIENT_PHONE}</td>
+                            <td>${_shipmentBreakdown.RECIPIENT_NAME}</td>
+                            <td>
+                              ${_shipmentBreakdown.DESTINATION_ADDRESS}
+                              ${_shipmentBreakdown.DESTINATION_DETAILADDRESS}
+                            </td>
+                          </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div>
@@ -254,23 +285,30 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>배송일자</th>
-                          <th>연락처</th>
-                          <th>수신자</th>
-                          <th>주소</th>
-                          <th>메모</th>
+                          <th class="text-nowrap">예약일자</th>
+                          <th class="text-nowrap">연락처</th>
+                          <th class="text-nowrap">수신자</th>
+                          <th class="text-nowrap">주소</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <!-- 반복문 -->
-                        <tr>
-                          <td>프리미엄택배내용</td>
-                          <td>내용</td>
-                          <td>내용</td>
-                          <td>내용</td>
-                          <td>내용</td>
-                        </tr>
-                        <!-- 반복문 -->
+                        <c:forEach
+                          items="${resultMap.shipmentBreakdown}"
+                          var="_shipmentBreakdown"
+                          varStatus="loop"
+                        >
+                          <tr>
+                            <td>
+                              ${fn:substring(_shipmentBreakdown.RESERVATION_DATE,0,10)}
+                            </td>
+                            <td>${_shipmentBreakdown.RECIPIENT_PHONE}</td>
+                            <td>${_shipmentBreakdown.RECIPIENT_NAME}</td>
+                            <td>
+                              ${_shipmentBreakdown.DESTINATION_ADDRESS}
+                              ${_shipmentBreakdown.DESTINATION_DETAILADDRESS}
+                            </td>
+                          </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div>

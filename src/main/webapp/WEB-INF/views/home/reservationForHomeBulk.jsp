@@ -50,14 +50,14 @@
                     보내는 사람
                   </th>
                   <td class="lh_40">
-                    <input type="text" class="inp04 form-control w-50" name="s_name" maxlength="7" value="" />
+                    <input type="text" class="inp04 form-control w-50" name="SENDER_NAME" maxlength="7" value="" />
                   </td>
                 </tr>
                 <tr>
                   <th scope="row" class="bg-secondary bg-opacity-10">연락처</th>
                   <td class="tel_area row">
                     <div class="col-auto">
-                      <select class="form-select select_st sel22" name="s_mobile1" id="phoneFirst" required>
+                      <select class="form-select select_st sel22" name="phoneFirst" id="phoneFirst" required>
                         <option value="010">010</option>
                         <option value="011">011</option>
                         <option value="016">016</option>
@@ -68,12 +68,12 @@
                     </div>
                     <div class="col-1">-</div>
                     <div class="col">
-                      <input type="tel" class="inp17 form-control text-center" id="phoneSecond" name="s_mobile2"
+                      <input type="tel" class="inp17 form-control text-center" id="phoneSecond" name="phoneSecond"
                         onblur="onlyNumber(this);" required />
                     </div>
                     <div class="col-1">-</div>
                     <div class="col">
-                      <input type="tel" class="inp17 form-control text-center" id="phoneThird" name="s_mobile3"
+                      <input type="tel" class="inp17 form-control text-center" id="phoneThird" name="phoneThird"
                         onblur="onlyNumber(this);" required />
                     </div>
                     <p class="c_red pdt_10" style="color: rgb(255, 80, 123); font-size: 0.9rem">
@@ -104,14 +104,14 @@
                     <p class="mgb_5">
                       <input class="form-control w-25" type="button" onclick="sample6_execDaumPostcode()"
                         value="우편번호 찾기" />
-                      <input class="form-control w-50 mt-2" type="text" name="postcode" id="sample6_postcode"
-                        placeholder="우편번호" />
-                      <input class="form-control mt-2" type="text" name="address" id="sample6_address"
+                      <input class="form-control w-50 mt-2" type="text" name="DEPARTURE_POSTALCODE"
+                        id="sample6_postcode" placeholder="우편번호" />
+                      <input class="form-control mt-2" type="text" name="DEPARTURE_ADDRESS" id="sample6_address"
                         placeholder="주소" />
-                      <input class="form-control mt-2" type="text" name="addressadd" id="sample6_detailAddress"
-                        placeholder="상세주소" />
-                      <input class="form-control mt-2" type="text" name="extraaddress" id="sample6_extraAddress"
-                        placeholder="참고항목" />
+                      <input class="form-control mt-2" type="text" name="DEPARTURE_DETAILADDRESS"
+                        id="sample6_detailAddress" placeholder="상세주소" />
+                      <input class="form-control mt-2" type="text" name="DEPARTURE_EXTRAADDRESS"
+                        id="sample6_extraAddress" placeholder="참고항목" />
                     </p>
                   </td>
                 </tr>
@@ -121,7 +121,7 @@
                     비밀번호
                   </th>
                   <td>
-                    <input class="form-control w-50" name="pwd" type="password" value="" maxlength="4"
+                    <input class="form-control w-50" name="SHIPMENT_PASSWORD" type="password" value="" maxlength="4"
                       placeholder="숫자 4자리를 입력해 주세요." />
 
                     <p class="c_red pdt_10" style="color: rgb(255, 80, 123); font-size: 0.9rem">

@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,6 +80,7 @@ public class CommonController {
     @RequestMapping(value = "/join_step3", method = RequestMethod.GET)
     public ModelAndView join_step3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        // String pass = bcryptPasswordEncoder.encode();
         Object resultMap = params;
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step3");
@@ -87,7 +90,10 @@ public class CommonController {
     @RequestMapping(value = "/join_step4", method = RequestMethod.GET)
     public ModelAndView join_step4(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        String PASSWORD = bcryptPasswordEncoder.encode((String) params.get("PASSWORD_NOT_ENCODED"));
+        params.put("PASSWORD", PASSWORD);
         Object resultMap = commonService.insertUserDataAndGet(params);
+
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("common/join_step4");
         return modelAndView;
@@ -104,7 +110,16 @@ public class CommonController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        String pass = bcryptPasswordEncoder.encode("pw123");
+        // String pass = bcryptPasswordEncoder.encode("pw123");
+
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = null;
+
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername(); /* 로그인 상태 확인 */
+        } else {
+            username = principal.toString(); /* 로그아웃 상태 확인 */
+        }
         modelAndView.setViewName("common/login");
         return modelAndView;
     }

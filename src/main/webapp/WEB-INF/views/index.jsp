@@ -64,6 +64,7 @@
         <!-- main -->
         <div class="container d-flex justify-content-center"
           style="width: 1000px; font-family: 'Noto Sans KR', sans-serif">
+          <sec:authentication property="principal" var="userDetailsBean" />
           <div class="row">
             <div class="col-10">
               <section class="mt-3" style="font-family: 'Noto Sans KR', sans-serif">
@@ -307,44 +308,48 @@
             </div>
             <!-- 사이드 바 시작(회원정보) -->
             <div class="col-2">
-              <nav class="navbar">
-                <a href="#collapseID" style="font-size: 15px" class="navbar-toggler" data-bs-toggle="collapse"><span
-                    class="navbar-toggler-icon"></span></a>
-                <div class="collapse navbar-collapse" id="collapseID">
-                  <div class="card" style="
+              <sec:authorize access="isAuthenticated()">
+                <nav class="navbar">
+                  <a href="#collapseID" style="font-size: 15px" class="navbar-toggler" data-bs-toggle="collapse"><span
+                      class="navbar-toggler-icon"></span></a>
+                  <div class="collapse navbar-collapse" id="collapseID">
+                    <div class="card" style="
                   width: 15rem;
                   border: 2px solid rgb(171, 171, 171);
                   border-radius: 10px 10px;
                 ">
-                    <div class="card-header">
-                      <span class="fw-bold fs-4">홍길동</span><span class="fs-4">님</span>
-                      <span style="font-size: 0.9rem">(honggildong)</span>
-                    </div>
-                    <div class="card-body">
-                      <div>
-                        <span style="color: rgb(180, 180, 180); font-size: 0.9rem">Level</span>
-                        <span class="fw-bold fs-5" style="color: rgb(123, 76, 211)">Family</span>
+                      <div class="card-header">
+                        <span class="fw-bold fs-4">${userDetailsBean.memberName}</span><span class="fs-4">님</span>
                       </div>
-                      <div class="pt-3 mt-3" style="border-top: 1px solid rgb(203, 203, 203)">
+                      <div class="card-body">
                         <div>
-                          <a href="/mypage/myPoint" style="text-decoration: none">
-                            <img src="/resources/images/쿠폰함.png" width="34px" alt="" />
-                            <span style="color: rgb(144, 146, 148); font-size: 0.9rem">포인트</span>
-                            <span class="fs-5 fw-bold ps-2" style="color: rgb(55, 210, 67)">1024P</span>
-                          </a>
+                          <span style="color: rgb(180, 180, 180); font-size: 0.9rem">Level</span>
+                          <span class="fw-bold fs-5"
+                            style="color: rgb(123, 76, 211)">${userDetailsBean.grade_Desc}</span>
                         </div>
-                        <div>
-                          <a href="/customer/inquiryList" style="text-decoration: none">
-                            <img src="/resources/images/내문의현황.png" class="ms-1" width="28px" alt="" />
-                            <span style="color: rgb(144, 146, 148); font-size: 0.9rem">내 문의</span>
-                            <span class="fs-5 fw-bold ps-2" style="color: rgb(76, 112, 211)">1</span>
-                          </a>
+                        <div class="pt-3 mt-3" style="border-top: 1px solid rgb(203, 203, 203)">
+                          <div>
+                            <a href="/mypage/myPoint" style="text-decoration: none">
+                              <img src="/resources/images/쿠폰함.png" width="34px" alt="" />
+                              <span style="color: rgb(144, 146, 148); font-size: 0.9rem">포인트</span>
+                              <span class="fs-5 fw-bold ps-2"
+                                style="color: rgb(55, 210, 67)">${userDetailsBean.totalPoint}P</span>
+                            </a>
+                          </div>
+                          <div>
+                            <a href="/customer/inquiryList" style="text-decoration: none">
+                              <img src="/resources/images/내문의현황.png" class="ms-1" width="28px" alt="" />
+                              <span style="color: rgb(144, 146, 148); font-size: 0.9rem">내 문의</span>
+                              <span class="fs-5 fw-bold ps-2"
+                                style="color: rgb(76, 112, 211)">${userDetailsBean.user_Inquirys_Count}</span>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </nav>
+                </nav>
+              </sec:authorize>
             </div>
             <!-- 사이드 바 끝(회원정보) -->
           </div>

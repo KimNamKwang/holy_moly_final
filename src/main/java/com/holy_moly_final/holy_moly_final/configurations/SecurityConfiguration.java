@@ -19,9 +19,9 @@ public class SecurityConfiguration {
                 /* 유저와 관리자 부터 접근가능 ↓ */
                 // .antMatchers("/").access("hasRole('AUTH_U') or hasRole('AUTH_A')")
                 /* 로그인 여부만 판단하는 기능 ↓ */
-                //.antMatchers("/").authenticated()
+                // .antMatchers("/").authenticated()
                 /* 관리자만 접근 가능 ↓ */
-                //.antMatchers("/admin/*").access("hasRole('AUTH_A')")
+                .antMatchers("/admin/*").access("hasRole('ROLE_ADMIN')")
                 // .antMatchers("/admin/*").authenticated()
                 // .antMatchers("/manager/*").access("hasRole('ROLE_MANAGER') or
                 // hasRole('ROLE_ADMIN')")

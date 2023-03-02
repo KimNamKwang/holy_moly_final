@@ -28,6 +28,7 @@
   </head>
 
   <body>
+    <jsp:include page="../navbar.jsp" />
     <main class="container" style="font-family: 'Noto Sans KR', sans-serif">
       <div class="mt-5">
         <ul class="list-unstyled d-flex justify-content-center">
@@ -49,205 +50,203 @@
         <div id="agreement_box" class="mt-5">
           <div class="receiver receiver_a" cidx="0">
             <h2 class="mgb_5 fw-bold">받는 사람</h2>
-            <form action="./reservationForHomeBulkStep4.html" method="get">
+            <form action="/home/reservationForHomeBulkStep3" method="get">
               <table class="table border-top border-3">
                 <colgroup>
                   <col style="width: 23%" />
                 </colgroup>
                 <tbody>
-                  <tr class="first1">
-                    <th scope="row" class="bg-secondary bg-opacity-10">
-                      받는 사람
-                    </th>
-                    <td class="lh_40">
-                      <input class="inp04 form-control w-50 inp03" name="r_name" type="text" maxlength="7" value=""
-                        placeholder="성명/상호명 입력" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="bg-secondary bg-opacity-10">
-                      연락처
-                    </th>
-                    <td class="tel_area row">
-                      <div class="col-auto">
-                        <select class="form-select select_st sel22" name="s_mobile1" id="phoneFirst" required>
-                          <option value="010">010</option>
-                          <option value="011">011</option>
-                          <option value="016">016</option>
-                          <option value="017">017</option>
-                          <option value="018">018</option>
-                          <option value="019">019</option>
-                        </select>
-                      </div>
-                      <div class="col-1">-</div>
-                      <div class="col">
-                        <input type="tel" class="inp17 form-control text-center" id="phoneSecond" name="s_mobile2"
-                          onblur="onlyNumber(this);" required />
-                      </div>
-                      <div class="col-1">-</div>
-                      <div class="col">
-                        <input type="tel" class="inp17 form-control text-center" id="phoneThird" name="s_mobile3"
-                          onblur="onlyNumber(this);" required />
-                      </div>
-                    </td>
-                  </tr>
-
-                  <!--<tr class="add_phone div_AddPhone" style="display:none;">-->
-
-                  <tr>
-                    <th scope="row" class="bg-secondary bg-opacity-10">
-                      받는 곳
-                    </th>
-                    <td>
-                      <p class="mgb_5">
-                        <input class="form-control w-25" type="button" onclick="sample6_execDaumPostcode()"
-                          value="우편번호 찾기" />
-                        <input class="form-control w-50 mt-2" type="text" name="postcode" id="sample6_postcode"
-                          placeholder="우편번호" />
-                        <input class="form-control mt-2" type="text" name="address" class="col-6" id="sample6_address"
-                          placeholder="주소" />
-                        <input class="form-control mt-2" type="text" name="addressadd" class="col-10"
-                          id="sample6_detailAddress" placeholder="상세주소" />
-                        <input class="form-control mt-2" type="text" name="extraaddress" id="sample6_extraAddress"
-                          placeholder="참고항목" />
-                      </p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th class="bg-secondary bg-opacity-10">물품종류</th>
-                    <td>
-                      <select name="" class="form-select w-25">
-                        <option>물품선택</option>
-                        <option value="food">농축산물류 ↓</option>
-                        <option value="food_dried">건어물</option>
-                        <option value="food_fruits">과일류</option>
-                        <option value="food_rice">쌀</option>
-                        <option value="food_vegetables">채소류</option>
-                        <option value="food_else">기타 농축산물류</option>
-                        <option value="book">서적류 ↓</option>
-                        <option value="book_documents">서류</option>
-                        <option value="book_publications">서적</option>
-                        <option value="book_prints">인쇄물</option>
-                        <option value="book_else">기타 서적류</option>
-                        <option value="medicine">약품류 ↓</option>
-                        <option value="medicine_drugs">의약품</option>
-                        <option value="medicine_oriental">한약</option>
-                        <option value="medicine_healthSupplement">
-                          건강보조제품
-                        </option>
-                        <option value="clothing">의류/잡화 ↓</option>
-                        <option value="clothing_clothes">의류</option>
-                        <option value="clothing_shoes">신발</option>
-                        <option value="clothing_bagAndWallets">
-                          가방/지갑
-                        </option>
-                        <option value="clothing_accessories">액세서리</option>
-                      </select>
-
-                      <div class="select_type11">
-                        <div class="mt-3">
-                          <a name="aNoticeView" href="guideHome.html" class="btn btn-outline-dark btn-sm"><span>유의사항
-                              보기</span></a>
-                          <a href="./guideImpossible.html" class="btn btn-outline-dark btn-sm"><span>취급제한품목</span></a>
-                        </div>
-                        <span style="display: none" class="p_kind_table_ajaxcall_yn">N</span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="bg-secondary bg-opacity-10">물품단가</th>
-                    <td>
-                      <div class="row">
+                  <input type="hidden" name="SENDER_NAME" value="${resultMap.SENDER_NAME}" />
+                  <input type="hidden" name="SENDER_PHONE"
+                    value="${resultMap.phoneFirst}${resultMap.phoneSecond}${resultMap.phoneThird}" />
+                  <input type="hidden" name="DEPARTURE_POSTALCODE" value="${resultMap.DEPARTURE_POSTALCODE}" />
+                  <input type="hidden" name="DEPARTURE_ADDRESS" value="${resultMap.DEPARTURE_ADDRESS}" />
+                  <input type="hidden" name="DEPARTURE_DETAILADDRESS" value="${resultMap.DEPARTURE_DETAILADDRESS}" />
+                  <input type="hidden" name="DEPARTURE_EXTRAADDRESS" value="${resultMap.DEPARTURE_EXTRAADDRESS}" />
+                  <input type="hidden" name="SHIPMENT_PASSWORD" value="${resultMap.SHIPMENT_PASSWORD}" />
+                  <input type="hidden" name="SHIPMENT_TYPE_UID" value="SHIP_BULK" />
+                  <%-- SHIPMENT_TYPE_UID와 SHIPMENT_TYPE_DESCRIPTION은 일반택배라면 하드코딩 고정. --%>
+                    <input type="hidden" name="SHIPMENT_TYPE_DESCRIPTION" value="다량 택배" />
+                    <tr class="first1">
+                      <th scope="row" class="bg-secondary bg-opacity-10">
+                        받는 사람
+                      </th>
+                      <td class="lh_40">
+                        <input class="inp04 form-control w-50 inp03" name="RECIPIENT_NAME" type="text" maxlength="7"
+                          value="" placeholder="성명/상호명 입력" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="bg-secondary bg-opacity-10">
+                        연락처
+                      </th>
+                      <td class="tel_area row">
                         <div class="col-auto">
-                          <input type="Tel" class="inp03 form-control" name="r_p_pric" value="" maxlength="2" />
+                          <select class="form-select select_st sel22" name="phoneFirst" id="phoneFirst" required>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                          </select>
                         </div>
-                        <div class="col">만원 (수량 : 1개)</div>
-                      </div>
+                        <div class="col-1">-</div>
+                        <div class="col">
+                          <input type="tel" class="inp17 form-control text-center" id="phoneSecond" name="phoneSecond"
+                            onblur="onlyNumber(this);" required />
+                        </div>
+                        <div class="col-1">-</div>
+                        <div class="col">
+                          <input type="tel" class="inp17 form-control text-center" id="phoneThird" name="phoneThird"
+                            onblur="onlyNumber(this);" required />
+                        </div>
+                      </td>
+                    </tr>
 
-                      <p class="ls-1 c_8 tpirce" style="font-size: 0.9rem">
-                        * 사고발생 시 보상기준이 되니 실제 물품 금액을
-                        입력해주세요.
-                      </p>
-                    </td>
-                  </tr>
+                    <!--<tr class="add_phone div_AddPhone" style="display:none;">-->
 
-                  <tr>
-                    <th colspan="2" class="bg-secondary bg-opacity-10">
-                      포장수량선택
-                      <span class="f12 fnor c_8">(중복선택 가능)</span>
-                    </th>
-                  </tr>
-
-                  <tr>
-                    <td colspan="2" class="boxsize_wrap">
-                      <ul class="boxsize list-unstyled">
-                        <li>
-                          <p class="tit">
-                            <input id="bs_B_0" type="checkbox" value="B" class="chk optTitleB chk_sel form-check-input"
-                              required /><label for="bs_B_0" class="optLabelB form-check-label ps-1">일반박스</label>
-                          </p>
-                          <p class="f11">15kg이하/ 120cm이하</p>
-                        </li>
-
-                        <li class="sum">
-                          <p class="tit">총 발송수량</p>
-                          <div>
-                            <span class="count">
-                              <a class="btn" id="minus">-</a>
-                              <span id="result">1</span>
-                              <a class="btn" id="plus">+</a>
-                            </span>
-                            <input type="hidden" id="total_count_items" name="total_count_items" />
-                          </div>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-
-                  <tr class="first1">
-                    <th scope="row" class="bg-secondary bg-opacity-10">
-                      요청사항
-                    </th>
-
-                    <td class="select_100">
-                      <select class="select08 w100 etc_info_select form-select w-75" id="etc_info_select_idx_0"
-                        name="etc_info_select">
-                        <option value="">===선택===</option>
-
-                        <option value="option1">
-                          기사님 방문 전 연락주세요
-                        </option>
-                        <option value="option2">
-                          보낼 물품을 문 앞에 놓아 두겠습니다
-                        </option>
-                        <option value="option3">
-                          보낼 물품을 경비실에 맡겨두겠습니다
-                        </option>
-
-                        <option value="option4">파손에 주의해 주세요</option>
-                        <option value="option5">
-                          배송 시 경비실에 맡겨 주세요
-                        </option>
-                        <option value="option6">
-                          배송 시 택배함에 넣어 주세요
-                        </option>
-                        <option value="option7">
-                          배송 시 문앞에 놓아 주세요.
-                        </option>
-                        <option value="write">직접입력하기</option>
-                      </select>
-
-                      <div class="etc_info_write_div" style="padding-top: 10px; display: none"
-                        id="etc_info_write_div_idx_0">
-                        <p class="wide_i">
-                          <input type="text" class="inp08" name="etc_info" id="etc_info"
-                            placeholder="요청사항을 입력해주세요. (입력내용은 운송장에 표기되며 최대 30자까지 입력가능)" value="" maxlength="30" />
+                    <tr>
+                      <th scope="row" class="bg-secondary bg-opacity-10">
+                        받는 곳
+                      </th>
+                      <td>
+                        <p class="mgb_5">
+                          <input class="form-control w-25" type="button" onclick="sample6_execDaumPostcode()"
+                            value="우편번호 찾기" />
+                          <input class="form-control w-50 mt-2" type="text" name="DESTINATION_POSTALCODE"
+                            id="sample6_postcode" placeholder="우편번호" />
+                          <input class="form-control mt-2" type="text" name="DESTINATION_ADDRESS" class="col-6"
+                            id="sample6_address" placeholder="주소" />
+                          <input class="form-control mt-2" type="text" name="DESTINATION_DETAILADDRESS" class="col-10"
+                            id="sample6_detailAddress" placeholder="상세주소" />
+                          <input class="form-control mt-2" type="text" name="DESTINATION_EXTRAADDRESS"
+                            id="sample6_extraAddress" placeholder="참고항목" />
                         </p>
-                        <!--<p class="lh_24 f11">※배송기사님 전달메시지를 등록해주세요.(운송장에 표기됨)</p>-->
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th class="bg-secondary bg-opacity-10">물품종류</th>
+                      <td>
+                        <select name="ITEM_TYPE_UID" class="form-select w-25" required>
+                          <option value="">물품선택</option>
+                          <option value="item_f_01">농축산물류 ↓</option>
+                          <option value="item_f_02">건어물</option>
+                          <option value="item_f_03">과일류</option>
+                          <option value="item_f_04">쌀</option>
+                          <option value="item_f_05">채소류</option>
+                          <option value="item_f_06">기타 농축산물류</option>
+                          <option value="item_b_01">서적류 ↓</option>
+                          <option value="item_b_02">서류</option>
+                          <option value="item_b_03">서적</option>
+                          <option value="item_b_04">인쇄물</option>
+                          <option value="item_b_05">기타 서적류</option>
+                          <option value="item_m_01">약품류 ↓</option>
+                          <option value="item_m_02">의약품</option>
+                          <option value="item_m_03">한약</option>
+                          <option value="item_m_04">건강보조제품</option>
+                          <option value="item_c_01">의류/잡화 ↓</option>
+                          <option value="item_c_02">의류</option>
+                          <option value="item_c_03">신발</option>
+                          <option value="item_c_04">가방/지갑</option>
+                          <option value="item_c_05">액세서리</option>
+                        </select>
+
+                        <div class="select_type11">
+                          <div class="mt-3">
+                            <a name="aNoticeView" href="/guide/guideHome" class="btn btn-outline-dark btn-sm"><span>유의사항
+                                보기</span></a>
+                            <a href="/guide/guideImpossible" class="btn btn-outline-dark btn-sm"><span>취급제한품목</span></a>
+                          </div>
+                          <span style="display: none" class="p_kind_table_ajaxcall_yn">N</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="bg-secondary bg-opacity-10">물품단가</th>
+                      <td>
+                        <div class="row">
+                          <div class="col-auto">
+                            <input type="Tel" class="inp03 form-control" name="ITEM_PRICE" value="" maxlength="2" />
+                          </div>
+                          <div class="col">만원 (수량 : 1개)</div>
+                        </div>
+
+                        <p class="ls-1 c_8 tpirce" style="font-size: 0.9rem">
+                          * 사고발생 시 보상기준이 되니 실제 물품 금액을
+                          입력해주세요.
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th colspan="2" class="bg-secondary bg-opacity-10">
+                        포장수량선택
+                        <span class="f12 fnor c_8">(중복선택 가능)</span>
+                      </th>
+                    </tr>
+
+                    <tr>
+                      <td colspan="2" class="boxsize_wrap">
+                        <ul class="boxsize list-unstyled">
+                          <li>
+                            <p class="tit">
+                              <input id="bs_B_0" type="checkbox" value="B"
+                                class="chk optTitleB chk_sel form-check-input" required /><label for="bs_B_0"
+                                class="optLabelB form-check-label ps-1">일반박스</label>
+                            </p>
+                            <p class="f11">15kg이하/ 120cm이하</p>
+                          </li>
+
+                          <li class="sum">
+                            <p class="tit">총 발송수량</p>
+                            <div>
+                              <span class="count">
+                                <a class="btn" id="minus">-</a>
+                                <span id="result">5</span>
+                                <a class="btn" id="plus">+</a>
+                              </span>
+                              <input type="hidden" id="total_count_items" name="NUMBER_OF_ITEMS" />
+                            </div>
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+
+                    <tr class="first1">
+                      <th scope="row" class="bg-secondary bg-opacity-10">
+                        요청사항
+                      </th>
+
+                      <td class="select_100">
+                        <select class="select08 w100 etc_info_select form-select w-75" id="etc_info_select_idx_0"
+                          name="REQUEST_UID">
+                          <option value="">===선택===</option>
+
+                          <option value="REQ_01">
+                            기사님 방문 전 연락주세요
+                          </option>
+                          <option value="REQ_02">
+                            보낼 물품을 문 앞에 놓아 두겠습니다
+                          </option>
+                          <option value="REQ_03">
+                            보낼 물품을 경비실에 맡겨두겠습니다
+                          </option>
+
+                          <option value="REQ_04">파손에 주의해 주세요</option>
+                          <option value="REQ_05">
+                            배송 시 경비실에 맡겨 주세요
+                          </option>
+                          <option value="REQ_06">
+                            배송 시 택배함에 넣어 주세요
+                          </option>
+                          <option value="REQ_07">
+                            배송 시 문앞에 놓아 주세요.
+                          </option>
+                        </select>
+                      </td>
+                    </tr>
                 </tbody>
               </table>
               <div class="" style="position: relative">
@@ -261,7 +260,7 @@
                     <tr id="">
                       <th scope="row">방문희망일</th>
                       <td>
-                        <select name="d_req_date" id="d_req_date_select" class="select01 form-select w-50"></select>
+                        <select name="VISITING_DATE" id="d_req_date_select" class="select01 form-select w-50"></select>
 
                         <span style="font-size: 13px"><br />※ 당일 PM 11시 59분 이후 신청 시 익일자
                           지정불가!</span>
@@ -277,7 +276,7 @@
               </div>
 
               <div class="d-flex justify-content-center mt-5">
-                <a href="./reservationForHomeBulk.html" class="btn btn-secondary me-3"
+                <a href="/home/reservationForHomeBulk" class="btn btn-secondary me-3"
                   style="width: 12rem; height: 3rem; padding-top: 11px">
                   이전단계
                 </a>
@@ -342,9 +341,9 @@
         </form>
       </div>
     </main>
-
+    <jsp:include page="../footer.jsp" />
     <script src="/resources/js/termsForHomes.js"></script>
-    <script src="/resources/js/reservationForHomeStep2.js"></script>
+    <script src="/resources/js/reservationForHomeBulkStep2.js"></script>
     <script src="/resources/js/reservationVisitDate.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

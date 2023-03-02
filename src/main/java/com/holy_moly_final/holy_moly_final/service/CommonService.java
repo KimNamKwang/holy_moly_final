@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.holy_moly_final.holy_moly_final.dao.SharedDao;
@@ -13,6 +14,8 @@ import com.holy_moly_final.holy_moly_final.utils.Paginations;
 public class CommonService {
     @Autowired
     SharedDao sharedDao;
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
 
     public Object getOneWithAttachFiles(Object dataMap) {
         // Attach Files ArrayList<Map>

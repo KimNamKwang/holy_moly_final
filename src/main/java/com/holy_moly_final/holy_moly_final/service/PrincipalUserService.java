@@ -20,10 +20,25 @@ public class PrincipalUserService implements UserDetailsService {
     /* uri가 login일때 spring security가 호출 */
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         /* query문으로 select 함 */
-        String sqlMapId = "Memberwithauthority.selectByUID";
+        String sqlMapId = "Memberwithauthority.selectUserInfoByUIDForLogin";
         Object usernameObj = username;
         /* Spring에서는 DB에 갔다오는 부분에서 로그인에 username만 요구하고 password는 요구하지 않는다 */
         Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, usernameObj);
+
+        Object resultPoint = this.loadUserPointByUsername(usernameObj);
+        String totalPoint = null;
+        if (resultPoint != null) {
+            totalPoint = ((Map<String, Object>) resultPoint).get("totalPoint").toString();
+        }
+        resultMap.put("totalPoint", totalPoint);
+        // 포인트 넣기
+
+        Object inquirys_Count = this.getInquirysCountForSideBar(usernameObj);
+        String user_inquiry_count = null;
+        if (inquirys_Count != null) {
+            user_inquiry_count = ((Map<String, Object>) inquirys_Count).get("USER_INQUIRYS_COUNT").toString();
+        }
+        resultMap.put("user_inquiry_count", user_inquiry_count);
 
         /* session에 등록 */
         PrincipalUser principalUser = new PrincipalUser(resultMap);
@@ -34,6 +49,22 @@ public class PrincipalUserService implements UserDetailsService {
          * authentication이 PrincipalUser의 getPasseord()를 가져와서 password를 체크한다
          */
         return principalUser;
+    }
+
+    public Object loadUserPointByUsername(Object usernameObj) {
+        String sqlMapId = "Memberwithauthority.selectUserPointByUID";
+        Object dataMap = usernameObj;
+        Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, dataMap);
+
+        return resultMap;
+    }
+
+    public Object getInquirysCountForSideBar(Object usernameObj) {
+        String sqlMapId = "Memberwithauthority.selectInquirysCount";
+        Object dataMap = usernameObj;
+        Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, dataMap);
+
+        return resultMap;
     }
 
 }

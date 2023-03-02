@@ -15,14 +15,7 @@ public class IndexController {
     @RequestMapping(value = { "/", "", "/index" }, method = RequestMethod.GET)
     public ModelAndView guideHome(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String username = null;
 
-        if (principal instanceof UserDetails) {
-            username = ((UserDetails) principal).getUsername(); /* 로그인 상태 확인 */
-        } else {
-            username = principal.toString(); /* 로그아웃 상태 확인 */
-        }
         modelAndView.setViewName("index");
         return modelAndView;
     }

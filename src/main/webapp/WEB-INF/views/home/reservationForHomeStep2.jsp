@@ -118,8 +118,8 @@
                     <tr>
                       <th class="bg-secondary bg-opacity-10">물품종류</th>
                       <td>
-                        <select name="ITEM_TYPE_UID" class="form-select w-25">
-                          <option>물품선택</option>
+                        <select name="ITEM_TYPE_UID" class="form-select w-25" required>
+                          <option value="">물품선택</option>
                           <option value="item_f_01">농축산물류 ↓</option>
                           <option value="item_f_02">건어물</option>
                           <option value="item_f_03">과일류</option>
