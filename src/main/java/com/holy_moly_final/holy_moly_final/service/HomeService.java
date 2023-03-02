@@ -13,8 +13,9 @@ public class HomeService {
     SharedDao sharedDao;
 
     public Object insertshipment(Object dataMap) {
+
         Object TOTAL_PRICE = (((Map<String, Object>) dataMap).get("TOTAL_PRICE"));
-        TOTAL_PRICE = Integer.parseInt(TOTAL_PRICE);
+        TOTAL_PRICE = Integer.parseInt((String) TOTAL_PRICE);
         ((Map<String, Object>) dataMap).put("TOTAL_PRICE", TOTAL_PRICE);
 
         String sqlMapId = "Home.insertShipment";
