@@ -46,7 +46,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
           <div class="fs-2 fw-bold pb-3">사용자 관리</div>
           <div class="text-secondary">
             총 인원수 :
-            <span class="fw-bold">${resultMap.totalCount.TOTAL_USER}</span>
+            <span class="fw-bold"
+              >${resultMap.totalCount.TOTAL_USER_INQUIRYS}</span
+            >
           </div>
           <div class="ps-4 pe-4 mt-2 shadow-sm" style="background-color: white">
             <table class="table text-center border-none mb-0">
