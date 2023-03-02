@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Index">
+
+<!-- 공지사항 고정이라 하드코딩으로 고정. -->
+<select id="selectNoticeListDESC3" parameterType="Map" resultType="Map">
+     SELECT TITLE, DATE_CREATED 
+      FROM  COMMON_BOARD
+      WHERE BOARD_UID = 'BOARD_NOTICE' 
+      ORDER BY DATE_CREATED DESC
+      LIMIT 3
+      ;
+    </select>
+
+
+    
+
+</mapper>

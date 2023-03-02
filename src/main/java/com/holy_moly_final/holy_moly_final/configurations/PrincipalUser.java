@@ -16,6 +16,11 @@ public class PrincipalUser implements UserDetails {
     private String grade_Desc;
     private String user_Uid;
     private String user_Inquirys_Count;
+    private String postalCode;
+    private String phone;
+    private String address;
+    private String detailAddress;
+    private String extraAddress;
 
     public PrincipalUser(Map userInfo) {
         this.userInfo = userInfo;
@@ -25,6 +30,12 @@ public class PrincipalUser implements UserDetails {
         String user_Uid = (String) userInfo.get("USER_UID");
         String grade_Desc = (String) userInfo.get("GRADE");
         String Inquirys_Count = (String) userInfo.get("user_inquiry_count");
+        String postalCode = (String) userInfo.get("POSTALCODE");
+        String phone = (String) userInfo.get("PHONE");
+        String address = (String) userInfo.get("ADDRESS");
+        String detailAddress = (String) userInfo.get("DETAILADDRESS");
+        String extraAddress = (String) userInfo.get("EXTRAADDRESS");
+
         if (Point != null) {
             this.totalPoint = Point;
         } else {
@@ -34,7 +45,18 @@ public class PrincipalUser implements UserDetails {
         this.grade_Uid = grade_Uid;
         this.user_Uid = user_Uid;
         this.grade_Desc = grade_Desc;
-        this.user_Inquirys_Count = Inquirys_Count;
+        this.postalCode = postalCode;
+        this.phone = phone;
+        this.address = address;
+        this.detailAddress = detailAddress;
+        this.extraAddress = extraAddress;
+
+        if (Inquirys_Count != null) {
+            this.user_Inquirys_Count = Inquirys_Count;
+        } else {
+            this.user_Inquirys_Count = "0";
+        }
+
         int i = 1;
 
     }
@@ -131,4 +153,43 @@ public class PrincipalUser implements UserDetails {
         this.user_Inquirys_Count = user_Inquirys_Count;
     }
 
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDetailAddress() {
+        return detailAddress;
+    }
+
+    public void setDetailAddress(String detailAddress) {
+        this.detailAddress = detailAddress;
+    }
+
+    public String getExtraAddress() {
+        return extraAddress;
+    }
+
+    public void setExtraAddress(String extraAddress) {
+        this.extraAddress = extraAddress;
+    }
 }

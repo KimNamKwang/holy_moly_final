@@ -2,6 +2,8 @@
   <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
       <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+      <%@ taglib
+      uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
         <!DOCTYPE html>
         <html lang="en">
@@ -57,8 +59,8 @@
                       <input type="hidden" name="DESTINATION_DETAILADDRESS"
                         value="${resultMap.DESTINATION_DETAILADDRESS}" />
                       <input type="hidden" name="DESTINATION_EXTRAADDRESS"
-                        value="${resultMap.DESTINATION_EXTRAADDRESS}" />
-                      <input type="hidden" name="TOTAL_PRICE" value="${resultMap.NUMBER_OF_ITEMS * 6990}" />
+                        value="${resultMap.DESTINATION_EXTRAADDRESS}" /> 
+                      <input type="hidden" name="TOTAL_PRICE_BEFORE_DISCOUNT" value="${resultMap.NUMBER_OF_ITEMS * 6990}" />
                       <input type="hidden" name="ITEM_PRICE" value="${resultMap.ITEM_PRICE}" />
                       <input type="hidden" name="SHIPMENT_PASSWORD" value="${resultMap.SHIPMENT_PASSWORD}" />
                       <input type="hidden" name="VISITING_DATE" value="${resultMap.VISITING_DATE}" />
@@ -100,46 +102,46 @@
                       <th scope="col">결제금액</th>
                     </tr>
                     <tr>
-                      <td class="font07">${resultMap.NUMBER_OF_ITEMS * 6990} 원</td>
+                      <td class="font07">${resultMap.NUMBER_OF_ITEMS * 6990} 원</td>                     
                       <td class="font07">
-                        <c:if test="${resultMap.NUMBER_OF_ITEMS}"> 0 </c:if>
-                        원(로그인 구현되면 GRADE 체크해서 차등적용)
-                      </td>
-                      <td class="font07">
-                        <sec:authentication property="principal" var="userDetailsBean" />
-                        <c:set var="USER_GRADE_UID" value="${userDetailsBean.userGrade}" />
                         <sec:authorize access="isAnonymous()">
-                          <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%>
-                            0
+                          <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%> 
+                          0
                         </sec:authorize>
-                        <%-- 로그인이 되어있을때 --%>
+                       
+                        <sec:authentication property="principal" var="userDetailsBean" />
+                        <c:set var="USER_GRADE_UID" value="${userDetailsBean.userGrade}" />                    
+                       
 
+                        <%-- 로그인이 되어있을때 --%>                        
                           <sec:authorize access="isAuthenticated()">
+                          <c:set var="ITEM_COUNT" value=" ${resultMap.NUMBER_OF_ITEMS}" />
+                          
                             <c:choose>
                               <c:when test="${USER_GRADE_UID == 'GRADE_F'}">
-                                ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.02}
+                                ${resultMap.NUMBER_OF_ITEMS * 6990 * 0.02}
                                 <c:set var="TOTAL_PRICE"
-                                  value="${(resultMap.NUMBER_OF_ITEMS * 3290) - resultMap.NUMBER_OF_ITEMS * 3290 * 0.02}" />
+                                  value="${(resultMap.NUMBER_OF_ITEMS * 6990) - resultMap.NUMBER_OF_ITEMS * 6990 * 0.02}" />
                               </c:when>
                               <c:when test="${USER_GRADE_UID == 'GRADE_PU'}">
-                                ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.04}
+                                ${resultMap.NUMBER_OF_ITEMS * 6990 * 0.04}
                                 <c:set var="TOTAL_PRICE"
-                                  value="${(resultMap.NUMBER_OF_ITEMS * 3290) - resultMap.NUMBER_OF_ITEMS * 3290 * 0.04}" />
+                                  value="${(resultMap.NUMBER_OF_ITEMS * 6990) - resultMap.NUMBER_OF_ITEMS * 6990 * 0.04}" />
                               </c:when>
                               <c:when test="${USER_GRADE_UID == 'GRADE_V'}">
-                                ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.06}
+                                ${resultMap.NUMBER_OF_ITEMS * 6990 * 0.06}
                                 <c:set var="TOTAL_PRICE"
-                                  value="${(resultMap.NUMBER_OF_ITEMS * 3290) - resultMap.NUMBER_OF_ITEMS * 3290 * 0.06}" />
+                                  value="${(resultMap.NUMBER_OF_ITEMS * 6990) - resultMap.NUMBER_OF_ITEMS * 6990 * 0.06}" />
                               </c:when>
                               <c:when test="${USER_GRADE_UID == 'GRADE_VV'}">
-                                ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.08}
+                                ${resultMap.NUMBER_OF_ITEMS * 6990 * 0.08}
                                 <c:set var="TOTAL_PRICE"
-                                  value="${(resultMap.NUMBER_OF_ITEMS * 3290) - resultMap.NUMBER_OF_ITEMS * 3290 * 0.82}" />
+                                  value="${(resultMap.NUMBER_OF_ITEMS * 6990) - resultMap.NUMBER_OF_ITEMS * 6990 * 0.08}" />
                               </c:when>
                               <c:otherwise>
-                                ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.1}
+                                ${resultMap.NUMBER_OF_ITEMS * 6990 * 0.1}
                                 <c:set var="TOTAL_PRICE"
-                                  value="${(resultMap.NUMBER_OF_ITEMS * 3290) - resultMap.NUMBER_OF_ITEMS * 3290 * 0.1}" />
+                                  value="${(resultMap.NUMBER_OF_ITEMS * 6990) - resultMap.NUMBER_OF_ITEMS * 6990 * 0.1}" />
                               </c:otherwise>
                             </c:choose>
                           </sec:authorize>
