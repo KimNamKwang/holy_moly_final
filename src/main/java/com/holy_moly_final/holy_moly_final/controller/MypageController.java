@@ -31,7 +31,6 @@ public class MypageController {
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
     public ModelAndView mypage(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
             Object resultMap = mypageService.selectUserAndShipmentAndInquiryCount(params);
             modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("/mypage/mypage");

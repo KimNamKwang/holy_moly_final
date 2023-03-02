@@ -12,7 +12,8 @@
             ON USERS.USER_UID = MYPAGE.USER_UID
             INNER JOIN POINT
             ON USERS.USER_UID = POINT.USER_UID
-            WHERE USERS.USER_UID = 'user1';
+            WHERE USERS.USER_UID =  
+            #{USER_UID};
       </select> 
 
       <select id="selectShipment" parameterType="Map" resultType="Map">
@@ -23,13 +24,13 @@
                   ON MYPAGE.TRACKING_NUMBER = SHIPMENT.TRACKING_NUMBER
                   INNER JOIN SHIPMENT_TYPES
                   ON SHIPMENT.SHIPMENT_TYPE_UID = SHIPMENT_TYPES.SHIPMENT_TYPE_UID
-                  WHERE MYPAGE.USER_UID = 'user1';
+                  WHERE MYPAGE.USER_UID = #{USER_UID};
       </select> 
 
       <select id="selectUserInquiryCount" parameterType="Map" resultType="Map">
             SELECT COUNT(*) AS TOTAL_USER_INQUIRYS
             FROM INQUIRYS
-            WHERE USER_UID = 'user2'; 
+            WHERE USER_UID = #{USER_UID}; 
       </select> 
 
       <select id="selectUserPointBreakdown" parameterType="Map" resultType="Map">
