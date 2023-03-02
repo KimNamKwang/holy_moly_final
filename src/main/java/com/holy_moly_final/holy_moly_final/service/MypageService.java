@@ -63,6 +63,21 @@ public class MypageService {
         return result;
     }
 
+    public Object updateAndGetUserAndShipment(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("updateUserInfo", this.updateUserInfo(dataMap));
+        result.put("userInfo", this.getUserInfo(dataMap));
+        result.put("shipmentBreakdown", this.getShipmentBreakdown(dataMap));
+        result.put("inquiryTotalCount", this.getUserInquiryCount(dataMap));
+        return result;
+    }
+
+    public Object updateUserInfo(Object dataMap) {
+        String sqlMapId = "Mypage.updateUserInfo";
+        Object result = sharedDao.update(sqlMapId, dataMap);
+        return result;
+    }
+
 
 
 
@@ -79,26 +94,6 @@ public class MypageService {
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
-
-    public Object updateUserInfoAndgetListForAdmin(Object dataMap) {
-        HashMap<String, Object> result = new HashMap<String, Object>();
-        result.put("updateUserInfo", this.updateUserInfo(dataMap));
-        result.put("userList", this.getListFotUser(dataMap));
-        result.put("totalCount", this.getCountUsers(dataMap));
-        return result;
-    }
-
-    public Object updateUserInfo(Object dataMap) {
-        String sqlMapId = "Admin.updateUserDataForAdmin";
-        Object result = sharedDao.update(sqlMapId, dataMap);
-        return result;
-    }
-
-    // public Object getUserInfo(Object dataMap) {
-    //     String sqlMapId = "Admin.selectUserInfo";
-    //     Object result = sharedDao.getOne(sqlMapId, dataMap);
-    //     return result;
-    // }
 
     public Object getListAndPaginationsForUser(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();

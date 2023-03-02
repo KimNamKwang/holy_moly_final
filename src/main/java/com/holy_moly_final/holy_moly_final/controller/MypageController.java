@@ -28,7 +28,7 @@ public class MypageController {
     @Autowired
     MypageService mypageService;
 
-    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
+    @RequestMapping(value = {"mypage", "/", ""}, method = RequestMethod.GET)
     public ModelAndView mypage(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
             Object resultMap = mypageService.selectUserAndShipmentAndInquiryCount(params);
@@ -57,6 +57,16 @@ public class MypageController {
         modelAndView.setViewName("mypage/myinfo");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/userUpdate", method = RequestMethod.GET)
+    public ModelAndView userUpdate(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+                Object resultMap = mypageService.updateAndGetUserAndShipment(params);
+                modelAndView.addObject("resultMap", resultMap);
+                modelAndView.setViewName("mypage/mypage");
+        return modelAndView;
+    
+   }
 
     @RequestMapping(value = "/myinfoPass", method = RequestMethod.GET)
     public ModelAndView myinfoPass(@RequestParam Map<String, Object> params,
