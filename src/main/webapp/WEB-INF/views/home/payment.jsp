@@ -59,12 +59,14 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
   <body>
     <sec:authorize access="isAnonymous()">
       <c:set var="_setBalance" value="0" />
+      <c:set var="USER_UID" value="" />
     </sec:authorize>
 
     <sec:authorize access="isAuthenticated()">
       <%-- 로그인이 되어잇으면 username을 가지고 DB를 갓다와야함 --%>
       <sec:authentication property="principal" var="prc" />
       <c:set var="_setBalance" value="${prc.totalPoint}" />
+      <c:set var="USER_UID" value="${prc.user_Uid}" />
     </sec:authorize>
     <jsp:include page="../navbar.jsp" />
     <main
@@ -92,6 +94,21 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <%-- 여기부터 input hidden으로 넘기는 parameter들 --%>
           <input
             type="hidden"
+            name="USER_UID"
+            value="${USER_UID}"
+          />
+          <input
+            type="hidden"
+            name="POINT_UID"
+            value="${resultMap.TRACKING_NUMBER}"
+          />
+          <input
+            type="hidden"
+            name="TRACKING_NUMBER"
+            value="${resultMap.TRACKING_NUMBER}"
+          />
+          <input
+            type="hidden"
             name="NUMBER_OF_ITEMS"
             value="${resultMap.NUMBER_OF_ITEMS}"
           />
@@ -103,7 +120,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <input
             type="hidden"
             name="SENDER_PHONE"
-            value="${resultMap.phoneFirst}${resultMap.phoneSecond}${resultMap.phoneThird}"
+            value="${resultMap.SENDER_PHONE}"
           />
           <input
             type="hidden"
@@ -133,7 +150,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <input
             type="hidden"
             name="RECIPIENT_PHONE"
-            value="${resultMap.phoneFirst}${resultMap.phoneSecond}${resultMap.phoneThird}"
+            value="${resultMap.RECIPIENT_PHONE}"
           />
           <input
             type="hidden"
@@ -158,12 +175,13 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <input
             type="hidden"
             name="TOTAL_PRICE"
-            value="${resultMap.NUMBER_OF_ITEMS * 3500}"
+            value=""
+            id="total_price"
           />
           <input
             type="hidden"
             name="ITEM_PRICE"
-            value="${resultMap.ITEM_PRICE}"
+            value="${resultMap.ITEM_PRICE*10000}"
           />
           <input
             type="hidden"
@@ -257,7 +275,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 <tr>
                   <td>기본운임</td>
                   <td style="text-align: end">
-                    <span id="basicPrice">7490</span>원
+                    <span id="basicPrice">${resultMap.TOTAL_PRICE}</span>원
                   </td>
                 </tr>
                 <tr>
@@ -412,6 +430,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 class="btn btn-lg text-light fw-bold"
                 style="background-color: rgb(55, 210, 67)"
                 id="paymentBtn"
+                disabled="disabled"
               >
                 결제하기
               </button>
@@ -451,6 +470,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           // 계산식
           var lastPrice = basicPrice - usePoint - islandPrice;
           $("#lastPrice").text(lastPrice);
+          $("#total_price").val(lastPrice);
         });
 
         $("#usePoint").change(function () {
@@ -478,6 +498,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
             // 계산식
             var lastPrice = basicPrice - usePoint - islandPrice;
             $("#lastPrice").text(lastPrice);
+            $("#total_price").val(lastPrice);
           }
         });
       });
@@ -513,17 +534,17 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
     <script>
       // 버튼 활성화 / 비활성화
       $(function () {
-        $("#paymentBtn").removeAttr("href");
+        $("#paymentBtn").attr("disabled", true);
         $("#paymentBtn").css("opacity", "25%");
 
         $("#check_all").click(function () {
           if ($(this).is(":checked")) {
             $("input:checkbox").prop("checked", true);
-            $("#paymentBtn").attr("href", "./index.html");
+            $("#paymentBtn").attr("disabled", false);
             $("#paymentBtn").css("opacity", "100%");
           } else {
             $("input:checkbox").prop("checked", false);
-            $("#paymentBtn").removeAttr("href");
+            $("#paymentBtn").attr("disabled", true);
             $("#paymentBtn").css("opacity", "25%");
           }
         });
@@ -531,10 +552,10 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
         $("input:checkbox[name='check']").change(function () {
           var check_lengh = $("input:checkbox[name='check']:checked").length;
           if (check_lengh == 2) {
-            $("#paymentBtn").attr("href", "./index.html");
+            $("#paymentBtn").attr("disabled", false);
             $("#paymentBtn").css("opacity", "100%");
           } else {
-            $("#paymentBtn").removeAttr("href");
+            $("#paymentBtn").attr("disabled", true);
             $("#paymentBtn").css("opacity", "25%");
           }
         });

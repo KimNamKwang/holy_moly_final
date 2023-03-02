@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.service.HomeService;
 import com.holy_moly_final.holy_moly_final.utils.CommonUtils;
 
 @Controller
@@ -28,9 +29,16 @@ public class HomeController {
     @Autowired
     CommonUtils commonUtils;
 
+    @Autowired
+    HomeService homeService;
+
     @RequestMapping(value = "/payment_completed", method = RequestMethod.GET)
     public ModelAndView payment_completed(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        homeService.insertshipment(params);
+        Object resultMap = params;
+
+        // DB로 간다
 
         modelAndView.setViewName("home/payment_completed");
         return modelAndView;

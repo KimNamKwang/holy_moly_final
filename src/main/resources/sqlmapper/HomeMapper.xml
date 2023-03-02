@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Home">
+
+    <!--call Home.insertShipment  -->
+    <insert id="insertShipment" parameterType="Map">
+		INSERT INTO SHIPMENT (TRACKING_NUMBER, NUMBER_OF_ITEMS, SENDER_NAME, SENDER_PHONE, DEPARTURE_POSTALCODE,
+		DEPARTURE_ADDRESS, DEPARTURE_DETAILADDRESS, DEPARTURE_EXTRAADDRESS, RECIPIENT_NAME, RECIPIENT_PHONE,
+        DESTINATION_POSTALCODE, DESTINATION_ADDRESS, DESTINATION_DETAILADDRESS, DESTINATION_EXTRAADDRESS,
+        TOTAL_PRICE, ITEM_PRICE, SHIPMENT_PASSWORD, VISITING_DATE, RESERVATION_DATE,
+        SHIPMENT_TYPE_UID, REQUEST_UID, ITEM_TYPE_UID)
+        VALUES (#{TRACKING_NUMBER}, #{NUMBER_OF_ITEMS}, #{SENDER_NAME}, #{SENDER_PHONE}, #{DEPARTURE_POSTALCODE},
+        #{DEPARTURE_ADDRESS}, #{DEPARTURE_DETAILADDRESS}, #{DEPARTURE_EXTRAADDRESS}, #{RECIPIENT_NAME},#{RECIPIENT_PHONE},
+        #{DESTINATION_POSTALCODE}, #{DESTINATION_ADDRESS}, #{DESTINATION_DETAILADDRESS}, #{DESTINATION_EXTRAADDRESS},
+        #{TOTAL_PRICE}, #{ITEM_PRICE}, #{SHIPMENT_PASSWORD}, #{VISITING_DATE}, SYSDATE(),
+        #{SHIPMENT_TYPE_UID}, #{REQUEST_UID}, #{ITEM_TYPE_UID})
+	</insert>
+
+    <!--call Home.selectNoticeListByBoardType  -->
+    <select id="selectNoticeListByBoardType" parameterType="Map" resultType="Map">
+        SELECT COMMONBOARD_UID,TITLE, DATE_CREATED
+        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
+        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
+        WHERE MAIN_BOARD.BOARD_TYPE = 'NOTICE'
+        ORDER BY DATE_CREATED DESC;
+         <if test = "pageScale != null">
+         LIMIT #{pageBegin}, #{pageScale}
+        </if>
+    </select>
+
+    <!--call Cs.selectNoticeViewByCommonBoard_UID  -->
+    <select id="selectNoticeViewByCommonBoard_UID" parameterType="Map" resultType="Map">
+        SELECT COMMON_BOARD.COMMONBOARD_UID, TITLE,VIEWS , CONTENT, DATE_CREATED, FILE_FOLDER_NAME, ORIGINALFILE_NAME
+        FROM COMMON_BOARD LEFT JOIN ATTACHED_FILES
+        ON COMMON_BOARD.COMMONBOARD_UID = ATTACHED_FILES.COMMONBOARD_UID
+        WHERE BOARD_UID = 'BOARD_NOTICE' AND COMMON_BOARD.COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </select>
+
+    <!--call Cs.updateViewsByCommonBoard_UID  -->
+    <update id="updateViewsByCommonBoard_UID" parameterType="Map">
+        UPDATE COMMON_BOARD
+        SET VIEWS = VIEWS + 1
+        WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </update>
+
+    <!--call Home.selectNoticeListByBoardType  -->
+    <select id="selectTotal" parameterType="Map" resultType="int">
+        SELECT COUNT(*) AS TOTAL_NOTICE
+        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
+        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
+        WHERE MAIN_BOARD.BOARD_TYPE = 'NOTICE';
+    </select>
+</mapper>

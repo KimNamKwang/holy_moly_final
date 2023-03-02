@@ -110,7 +110,7 @@
                         </sec:authorize>
                        
                         <sec:authentication property="principal" var="userDetailsBean" />
-                        <c:set var="USER_GRADE_UID" value="${userDetailsBean.userGrade}" />                    
+                        <%-- <c:set var="USER_GRADE_UID" value="${userDetailsBean.userGrade}" />                     --%>
                        
 
                         <%-- 로그인이 되어있을때 --%>                        
