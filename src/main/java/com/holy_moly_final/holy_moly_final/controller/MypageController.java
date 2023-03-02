@@ -22,6 +22,14 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/mypage")
 public class MypageController {
 
+    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
+    public ModelAndView mypage(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+
+        modelAndView.setViewName("/");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/myinfo", method = RequestMethod.GET)
     public ModelAndView myinfo(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -35,14 +43,6 @@ public class MypageController {
             ModelAndView modelAndView) {
 
         modelAndView.setViewName("mypage/myinfoPass");
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
-    public ModelAndView mypage(@RequestParam Map<String, Object> params,
-            ModelAndView modelAndView) {
-
-        modelAndView.setViewName("mypage/mypage");
         return modelAndView;
     }
 

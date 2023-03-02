@@ -44,7 +44,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
         <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
           <div class="color">
             <a
-              href="/mypage/mypage"
+              href="/mypage"
               class="nav-link fw-bold text-nowrap"
               style="font-size: 1.2rem"
               >MY</a
