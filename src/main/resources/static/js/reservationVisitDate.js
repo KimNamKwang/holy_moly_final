@@ -12,6 +12,8 @@ let week = new Array("일", "월", "화", "수", "목", "금", "토");
 
 let selectVisitingDate = document.querySelector("#d_req_date_select");
 let resultDate;
+let sendDate;
+
 for (let i = 1; i <= 3; i++) {
   fullDate = new Date(today.setDate(today.getDate() + 1));
   Year = fullDate.getFullYear();
@@ -19,10 +21,17 @@ for (let i = 1; i <= 3; i++) {
   date = fullDate.getDate();
   day = week[fullDate.getDay()];
 
+  sendDate =
+    Year +
+    "-" +
+    (Month < 9 ? "0" + Month : Month) +
+    "-" +
+    (date < 9 ? "0" + date : date);
+
   if (day != "일" && day != "토") {
     resultDate = Year + "년 " + Month + "월 " + date + "일 (" + day + ")";
     selectVisitingDate.innerHTML +=
-      "<option value='" + Year + Month + date + "'>" + resultDate + "</option>";
+      "<option value='" + sendDate + "'>" + resultDate + "</option>";
     console.log(resultDate);
   } else i--;
 }
