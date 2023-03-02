@@ -10,15 +10,20 @@
 			EXTRAADDRESS, JOINDATE, PHONE, MARKETING_RECEIVE_ACCEPTION, GRADE_UID, AUTH_UID) 
 VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCODE}, #{ADDRESS}, #{DETAILADDRESS}, 
  #{EXTRAADDRESS}, sysdate(), CONCAT (#{phoneFirst},#{phoneSecond},#{phoneThird}), 'N', #{GRADE_UID}, 'AUTH_U');
- </insert>
+</insert>
 
-  <update id="updateUserDataForAdmin" parameterType="Map">
+<update id="updateUserDataForAdmin" parameterType="Map">
       UPDATE USERS
       SET NAME = #{NAME}, PASSWORD = #{PASSWORD}, E_MAIL = #{E_MAIL}, BIRTH_DATE = #{BIRTH_DATE},
 		POSTALCODE = #{POSTALCODE}, ADDRESS = #{ADDRESS}, DETAILADDRESS = #{DETAILADDRESS}, EXTRAADDRESS = #{EXTRAADDRESS},
         PHONE = #{PHONE}, GRADE_UID = #{GRADE_UID}
       WHERE USER_UID = #{USER_UID};
 </update>
+
+<delete id="deleteUserDataForAdmin" parameterType="Map">
+      DELETE FROM USERS
+      WHERE USER_UID = #{USER_UID};
+</delete>
 
 <select id="selectUserInfo" parameterType="Map" resultType="Map">
       SELECT USERS.NAME, USERS.USER_UID, USERS.PASSWORD, USERS.JOINDATE, USERS.BIRTH_DATE, USERS.PHONE, USERS.E_MAIL, USERS.POSTALCODE, USERS.ADDRESS,
@@ -47,5 +52,30 @@ VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
       FROM USERS;
 </select> 
 
+
+<select id="selectBoardList" parameterType="Map" resultType="Map">
+      SELECT COMMON_BOARD.TITLE, COMMON_BOARD.DATE_CREATED, MAIN_BOARD.BOARD_TYPE_DESCRIPTION
+      FROM MAIN_BOARD INNER JOIN COMMON_BOARD
+      ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID;
+</select> 
+
+<select id="selectBoardPaginations" parameterType="Map" resultType="Map">
+      SELECT *
+      FROM COMMON_BOARD
+      ORDER BY DATE_CREATED
+      LIMIT 0, 10;
+</select> 
+
+<select id="selectBoardCount" parameterType="Map" resultType="Map">
+      SELECT COUNT(*) AS TOTAL_BOARD
+      FROM COMMON_BOARD;
+</select> 
+
+ <insert id="insertBoardForAdmin" parameterType="Map">
+      INSERT INTO COMMON_BOARD (COMMONBOARD_UID, TITLE, CONTENT, DATE_CREATED, WRITER, VIEWS, USER_UID,
+		BOARD_UID, FAQ_TYPE_UID)
+      VALUES ('BOARD502', #{TITLE}, #{CONTENT}, SYSDATE(), '관리자', 0, 'admin1',
+		#{BOARD_UID}, #{FAQ_TYPE_UID});
+</insert>
 
 </mapper>

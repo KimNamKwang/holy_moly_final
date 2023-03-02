@@ -33,7 +33,8 @@ public class AdminController {
     @RequestMapping(value = "adminBoard", method = RequestMethod.GET)
     public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = adminService.getListAndPaginationsForBoard(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminBoard");
         return modelAndView;
     }
@@ -43,6 +44,15 @@ public class AdminController {
             ModelAndView modelAndView) {
 
         modelAndView.setViewName("admin/adminBoardCreate");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/boardInsert", method = RequestMethod.GET)
+    public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = adminService.insertUserInfoAndgetListForAdmin(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
 
@@ -62,6 +72,9 @@ public class AdminController {
         return modelAndView;
     }
 
+
+    // Users
+
     @RequestMapping(value = "adminUserCreate", method = RequestMethod.GET)
     public ModelAndView adminUserCreate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -70,7 +83,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
                 Object resultMap = adminService.getListAndPaginationsForUser(params);
@@ -107,13 +120,12 @@ public class AdminController {
         return modelAndView;
     }
 
-    // delete 할 애
-    @RequestMapping(value = "/adminUserdelete", method = RequestMethod.GET)
+    @RequestMapping(value = "/userDelete", method = RequestMethod.GET)
     public ModelAndView adminUserdelete(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-                Object resultMap = adminService.getUserInfo(params);
+                Object resultMap = adminService.deleteUserInfoAndgetListForAdmin(params);
                 modelAndView.addObject("resultMap", resultMap);
-                modelAndView.setViewName("admin/adminUserUpdate");
+                modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
 
