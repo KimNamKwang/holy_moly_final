@@ -3,19 +3,19 @@ let minus = document.getElementById("minus");
 let result = document.getElementById("result");
 let total_count_items = document.getElementById("total_count_items");
 let totalcost = document.getElementById("totalcost");
-let i = 1;
-total_count_items.value = 1;
+let i = 5;
+total_count_items.value = 5;
 
 document.getElementById("minus").addEventListener("click", function () {
   minusOne();
 });
 
 function minusOne(event) {
-  if (i > 0) {
+  if (i > 5) {
     i--;
     total_count_items.value = i;
     result.textContent = i;
-    let totalcostNum = i * 6990;
+    let totalcostNum = i * 3290;
     totalcost.textContent = totalcostNum.toLocaleString();
   } else {
     totalcost.textContent = 0;
@@ -30,6 +30,6 @@ function plusOne(event) {
   i++;
   result.textContent = i;
   total_count_items.value = i;
-  let totalcostNum = i * 6990;
+  let totalcostNum = i * 3290;
   totalcost.textContent = totalcostNum.toLocaleString();
 }

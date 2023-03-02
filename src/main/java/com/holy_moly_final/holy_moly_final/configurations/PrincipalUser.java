@@ -12,17 +12,23 @@ public class PrincipalUser implements UserDetails {
     private Map userInfo;
     private String memberName;
     private String totalPoint;
+    private String userGrade;
+    private String user_Uid;
 
     public PrincipalUser(Map userInfo) {
         this.userInfo = userInfo;
         this.memberName = (String) userInfo.get("NAME");
         String Point = (String) userInfo.get("totalPoint");
+        String userGrade = (String) userInfo.get("GRADE_UID");
+        String user_Uid = (String) userInfo.get("USER_UID");
         if (Point != null) {
             this.totalPoint = Point;
         } else {
             this.totalPoint = "0";
         }
 
+        this.userGrade = userGrade;
+        this.user_Uid = user_Uid;
         int i = 1;
 
     }
@@ -85,6 +91,22 @@ public class PrincipalUser implements UserDetails {
 
     public void setTotalPoint(String totalPoint) {
         this.totalPoint = totalPoint;
+    }
+
+    public String getUserGrade() {
+        return userGrade;
+    }
+
+    public void setUserGrade(String userGrade) {
+        this.userGrade = userGrade;
+    }
+
+    public String getUser_Uid() {
+        return user_Uid;
+    }
+
+    public void setUser_Uid(String user_Uid) {
+        this.user_Uid = user_Uid;
     }
 
 }

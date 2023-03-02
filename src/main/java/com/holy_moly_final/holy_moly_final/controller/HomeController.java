@@ -64,7 +64,8 @@ public class HomeController {
     @RequestMapping(value = "/reservationForHomeBulkStep3", method = RequestMethod.GET)
     public ModelAndView reservationForHomeBulkStep3(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("home/reservationForHomeBulkStep3");
         return modelAndView;
     }
