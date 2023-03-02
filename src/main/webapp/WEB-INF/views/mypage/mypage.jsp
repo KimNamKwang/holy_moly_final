@@ -80,30 +80,45 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               >등급 회원입니다.
             </h3>
             <hr noshade size="5px" style="width: 450px" />
-            <a href="/mypage/myinfo">
-              <button
-                id="btn-update-myinfo"
-                style="
-                  border-radius: 20px;
-                  background-color: #f2ffd9;
-                  border: 1px solid white;
-                "
-              >
-                <span style="color: rgb(55, 210, 67)"> 내 정보 수정</span>
-              </button></a
-            >
+            <div class="row">
+              <div class="col-auto">
+                <sec:authentication
+                  property="principal"
+                  var="userDetailsBean"
+                />
+                <form action="/mypage/myinfo" method="get">
+                  <input
+                    type="hidden"
+                    value="${userDetailsBean.user_Uid}"
+                    name="USER_UID"
+                  />
+                  <button
+                    id="btn-update-myinfo"
+                    style="
+                      border-radius: 20px;
+                      background-color: #f2ffd9;
+                      border: 1px solid white;
+                    "
+                  >
+                    <span style="color: rgb(55, 210, 67)"> 내 정보 수정</span>
+                  </button>
+                </form>
+              </div>
 
-            <a href="/grade/gradeBenefit">
-              <button
-                style="
-                  border-radius: 20px;
-                  background-color: #f2ffd9;
-                  border: 1px solid white;
-                "
-              >
-                <span style="color: rgb(55, 210, 67)">등급별 혜택</span>
-              </button></a
-            >
+              <div class="col">
+                <a href="/grade/gradeBenefit">
+                  <button
+                    style="
+                      border-radius: 20px;
+                      background-color: #f2ffd9;
+                      border: 1px solid white;
+                    "
+                  >
+                    <span style="color: rgb(55, 210, 67)">등급별 혜택</span>
+                  </button></a
+                >
+              </div>
+            </div>
           </div>
           <!-- 윗부분 -->
           <div

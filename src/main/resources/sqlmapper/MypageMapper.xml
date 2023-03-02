@@ -47,12 +47,18 @@
       </select> 
 
       <select id="selectUserInfoForMyinfo" parameterType="Map" resultType="Map">
-            SELECT NAME, BIRTH_DATE, PASSWORD, PHONE, POSTALCODE, ADDRESS, DETAILADDRESS, EXTRAADDRESS
+            SELECT USER_UID, NAME, BIRTH_DATE, PASSWORD, PHONE, POSTALCODE, ADDRESS, DETAILADDRESS, EXTRAADDRESS
             FROM USERS
-            WHERE USER_UID = 'user3' ;
+            WHERE USER_UID = #{USER_UID} ;
       </select> 
 
-      
+      <select id="updateUserInfo" parameterType="Map" resultType="Map">
+            UPDATE USERS
+            SET PASSWORD = #{PASSWORD}, PHONE = #{PHONE}, POSTALCODE = #{POSTALCODE}, ADDRESS = #{ADDRESS},
+                  DETAILADDRESS = #{DETAILADDRESS}, EXTRAADDRESS = #{EXTRAADDRESS}
+            WHERE USER_UID = #{USER_UID};
+      </select> 
+
 
     
  <insert id="insertUserDataForAdmin" parameterType="Map">

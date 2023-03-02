@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
 taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
 uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib prefix="fn"
+uri="http://java.sun.com/jsp/jstl/functions" %><%@ taglib prefix="fn"
 uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,7 +43,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
     <jsp:include page="../navbar.jsp" />
     <main class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
       <div class="container" style="width: 650px">
-        <form action="/common/login">
+        <form action="/mypage/userUpdate">
           <div class="fs-3 fw-bold mb-5 text-center" style="padding-top: 50px">
             회원정보
           </div>
@@ -53,16 +54,23 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
               style="border-radius: 20px"
             >
               <div>
-                <div class="fs-4 fw-bold">${resultMap.userInfo.NAME}</div>
-                <div class="mb-3">1996.04.11</div>
+                <div class="fs-4 fw-bold">${resultMap.NAME}</div>
+                <div class="mb-3">
+                  ${fn:substring(resultMap.BIRTH_DATE,0,10)}
+                </div>
               </div>
               <div>
+                <input
+                  type="hidden"
+                  value="${resultMap.USER_UID}"
+                  name="USER_UID"
+                />
                 <div class="form-check-label fw-bold pb-2">비밀번호</div>
                 <div>
                   <input
                     class="form-control form-check-input w-100"
                     type="password"
-                    name="userPassword"
+                    name="PASSWORD"
                     id="userPassword"
                     placeholder="PW"
                     onchange="isSame()"
@@ -81,7 +89,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                   <input
                     class="form-control form-check-input w-100"
                     type="password"
-                    name="userPasswordCheck"
+                    name="PASSWORD"
                     id="userPasswordCheck"
                     placeholder="PW"
                     onchange="isSame()"
@@ -101,8 +109,8 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                   <input
                     class="form-control form-check-input w-100"
                     type="text"
-                    name="phone"
-                    value="01050413846"
+                    name="PHONE"
+                    value="${resultMap.PHONE}"
                     style="
                       height: 50px;
                       border-radius: 10px 10px;
@@ -125,9 +133,9 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                     class="form-control form-check-input w-100"
                     type="text"
                     id="sample6_postcode"
-                    name="postcode"
+                    name="POSTALCODE"
                     placeholder="우편번호"
-                    value="14506"
+                    value="${resultMap.POSTALCODE}"
                     style="
                       height: 50px;
                       border-radius: 10px 10px;
@@ -138,9 +146,9 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                     class="form-control form-check-input w-100"
                     type="text"
                     id="sample6_address"
-                    name="address"
+                    name="ADDRESS"
                     placeholder="주소"
-                    value="경기 부천시 상동로 196"
+                    value="${resultMap.ADDRESS}"
                     style="
                       height: 50px;
                       border-radius: 10px 10px;
@@ -151,9 +159,9 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                     class="form-control form-check-input w-100"
                     type="text"
                     id="sample6_detailAddress"
-                    name="addressadd"
+                    name="DETAILADDRESS"
                     placeholder="상세주소"
-                    value="2107동 1004호"
+                    value="${resultMap.DETAILADDRESS}"
                     style="
                       height: 50px;
                       border-radius: 10px 10px;
@@ -164,9 +172,9 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                     class="form-control form-check-input w-100"
                     type="text"
                     id="sample6_extraAddress"
-                    name="extraaddress"
+                    name="EXTRAADDRESS"
                     placeholder="참고항목"
-                    value="(상동, 다정한마을)"
+                    value="${resultMap.EXTRAADDRESS}"
                     style="
                       height: 50px;
                       border-radius: 10px 10px;
