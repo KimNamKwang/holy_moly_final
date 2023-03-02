@@ -12,23 +12,33 @@ public class PrincipalUser implements UserDetails {
     private Map userInfo;
     private String memberName;
     private String totalPoint;
-    private String userGrade;
+    private String grade_Uid;
+    private String grade_Desc;
     private String user_Uid;
+    private String user_Inquirys_Count;
 
     public PrincipalUser(Map userInfo) {
         this.userInfo = userInfo;
         this.memberName = (String) userInfo.get("NAME");
         String Point = (String) userInfo.get("totalPoint");
-        String userGrade = (String) userInfo.get("GRADE_UID");
+        String grade_Uid = (String) userInfo.get("GRADE_UID");
         String user_Uid = (String) userInfo.get("USER_UID");
+        String grade_Desc = (String) userInfo.get("GRADE");
+        String Inquirys_Count = (String) userInfo.get("user_inquiry_count");
         if (Point != null) {
             this.totalPoint = Point;
         } else {
             this.totalPoint = "0";
         }
 
-        this.userGrade = userGrade;
+        this.grade_Uid = grade_Uid;
         this.user_Uid = user_Uid;
+        this.grade_Desc = grade_Desc;
+        if (user_Inquirys_Count != null) {
+            this.user_Inquirys_Count = Inquirys_Count;
+        } else {
+            this.user_Inquirys_Count = "0";
+        }
         int i = 1;
 
     }
@@ -93,12 +103,12 @@ public class PrincipalUser implements UserDetails {
         this.totalPoint = totalPoint;
     }
 
-    public String getUserGrade() {
-        return userGrade;
+    public String getGrade_Uid() {
+        return grade_Uid;
     }
 
-    public void setUserGrade(String userGrade) {
-        this.userGrade = userGrade;
+    public void setGrade_Uid(String grade_Uid) {
+        this.grade_Uid = grade_Uid;
     }
 
     public String getUser_Uid() {
@@ -107,6 +117,22 @@ public class PrincipalUser implements UserDetails {
 
     public void setUser_Uid(String user_Uid) {
         this.user_Uid = user_Uid;
+    }
+
+    public String getGrade_Desc() {
+        return grade_Desc;
+    }
+
+    public void setGrade_Desc(String grade_Desc) {
+        this.grade_Desc = grade_Desc;
+    }
+
+    public String getUser_Inquirys_Count() {
+        return user_Inquirys_Count;
+    }
+
+    public void setUser_Inquirys_Count(String user_Inquirys_Count) {
+        this.user_Inquirys_Count = user_Inquirys_Count;
     }
 
 }

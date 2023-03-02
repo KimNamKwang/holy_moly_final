@@ -24,6 +24,7 @@ public class PrincipalUserService implements UserDetailsService {
         Object usernameObj = username;
         /* Spring에서는 DB에 갔다오는 부분에서 로그인에 username만 요구하고 password는 요구하지 않는다 */
         Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, usernameObj);
+
         Object resultPoint = this.loadUserPointByUsername(usernameObj);
         String totalPoint = null;
         if (resultPoint != null) {
@@ -31,6 +32,13 @@ public class PrincipalUserService implements UserDetailsService {
         }
         resultMap.put("totalPoint", totalPoint);
         // 포인트 넣기
+
+        Object inquirys_Count = this.getInquirysCountForSideBar(usernameObj);
+        String user_inquiry_count = null;
+        if (inquirys_Count != null) {
+            user_inquiry_count = ((Map<String, Object>) inquirys_Count).get("USER_INQUIRYS_COUNT").toString();
+        }
+        resultMap.put("user_inquiry_count", user_inquiry_count);
 
         /* session에 등록 */
         PrincipalUser principalUser = new PrincipalUser(resultMap);
@@ -45,6 +53,14 @@ public class PrincipalUserService implements UserDetailsService {
 
     public Object loadUserPointByUsername(Object usernameObj) {
         String sqlMapId = "Memberwithauthority.selectUserPointByUID";
+        Object dataMap = usernameObj;
+        Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, dataMap);
+
+        return resultMap;
+    }
+
+    public Object getInquirysCountForSideBar(Object usernameObj) {
+        String sqlMapId = "Memberwithauthority.selectInquirysCount";
         Object dataMap = usernameObj;
         Map<String, String> resultMap = (Map<String, String>) sharedDao.getOne(sqlMapId, dataMap);
 

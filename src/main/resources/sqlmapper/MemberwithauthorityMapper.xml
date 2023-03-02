@@ -7,10 +7,10 @@
 		FROM USERS 
 		INNER JOIN AUTHS
 		ON USERS.AUTH_UID = AUTHS.AUTH_UID
+        INNER JOIN USER_GRADES
+        ON USERS.GRADE_UID = USER_GRADES.GRADE_UID
 		where 1 = 1
-		and USER_UID = #{username} 
-		<!-- and PASSWORD = #{password} -->
-		;
+		and USER_UID = #{username};
 	</select>
 	<insert id="insertWithUID" parameterType="Map">
 		insert into MEMBER_WITH_AUTHORITY 
@@ -26,5 +26,11 @@
 		SELECT sum(POINT_CHANGE_VALUE) as 'totalPoint'
 		FROM POINT
 		WHERE USER_UID = #{username};
+	</select>
+
+	<select id="selectInquirysCount" parameterType="String" resultType="Map">
+		SELECT COUNT(*) AS USER_INQUIRYS_COUNT
+		FROM INQUIRYS
+		WHERE USER_UID =  #{username};
 	</select>
 </mapper>
