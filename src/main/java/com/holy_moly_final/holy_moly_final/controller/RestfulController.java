@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
-// @RestController
-// @CrossOrigin
+@RestController
+@CrossOrigin
 public class RestfulController {
 
-    // @Autowired
-    // CustomerService customerService;
+    @Autowired
+    CustomerService customerService;
 
     // @RequestMapping(value = "/api/v1/helloworld", method = RequestMethod.GET)
     // public String helloWorld() {
@@ -28,7 +28,7 @@ public class RestfulController {
     // }
 
     // // params - title:"learn ajax", description:"we learn with ajax" postman에서
-    // 넣어줄것
+    // // 넣어줄것
     // @RequestMapping(value = "/api/v1/requestParams", method = RequestMethod.GET)
     // public Map requestParams(@RequestParam Map<String, Object> params) {
     // Map<String, Object> result = new HashMap<String, Object>();
@@ -37,17 +37,14 @@ public class RestfulController {
     // return result;
     // }
 
-    // currentPage = 1
-    // @RequestMapping(value = "/api/v1/requestParamsWithDB", method =
-    // RequestMethod.POST)
-    // public Map requestParamsWithDB(@RequestParam Map<String, Object> params) {
-    // params.put("currentPage", Integer.parseInt((String)
-    // params.get("currentPage")));
-    // params.put("pageScale", 10);
-    // Map<String, Object> resultMap = new HashMap<>();
-    // resultMap = (Map<String, Object>)
-    // customerService.getFAQListWithPaginations(params);
+    // // currentPage = 1
+    @RequestMapping(value = "/api/v1/requestParamsWithDB", method = RequestMethod.POST)
+    public Map requestParamsWithDB(@RequestParam Map<String, Object> params) {
+        params.put("currentPage", Integer.parseInt((String) params.get("currentPage")));
+        params.put("pageScale", 10);
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap = (Map<String, Object>) customerService.getFAQListWithPaginations(params);
 
-    // return resultMap;
-    // }
+        return resultMap;
+    }
 }

@@ -6,14 +6,10 @@
 
 <!-- 공지사항 고정이라 하드코딩으로 고정. -->
 <select id="selectFAQLists" parameterType="Map" resultType="Map">
-    SELECT * 
-    FROM COMMON_BOARD
-    INNER JOIN MAIN_BOARD
-    ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
-    INNER JOIN FAQ_TYPE
-    ON MAIN_BOARD.BOARD_UID = FAQ_TYPE.BOARD_UID
-    ORDER BY DATE_CREATED DESC
-    ;
+    SELECT * FROM MAIN_BOARD 
+    INNER JOIN COMMON_BOARD
+    ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
+    AND BOARD_TYPE = 'FAQ';
     </select>
 
 <select id="selectFAQListPaginations" parameterType="Map" resultType="Map">
