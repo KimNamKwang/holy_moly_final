@@ -56,7 +56,8 @@ VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
 <select id="selectBoardList" parameterType="Map" resultType="Map">
       SELECT COMMON_BOARD.TITLE, COMMON_BOARD.DATE_CREATED, MAIN_BOARD.BOARD_TYPE_DESCRIPTION
       FROM MAIN_BOARD INNER JOIN COMMON_BOARD
-      ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID;
+      ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
+      ORDER BY COMMON_BOARD.DATE_CREATED;
 </select> 
 
 <select id="selectBoardPaginations" parameterType="Map" resultType="Map">
@@ -74,8 +75,16 @@ VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
  <insert id="insertBoardForAdmin" parameterType="Map">
       INSERT INTO COMMON_BOARD (COMMONBOARD_UID, TITLE, CONTENT, DATE_CREATED, WRITER, VIEWS, USER_UID,
 		BOARD_UID, FAQ_TYPE_UID)
-      VALUES ('BOARD502', #{TITLE}, #{CONTENT}, SYSDATE(), '관리자', 0, 'admin1',
+      VALUES (#{COMMONBOARD_UID}, #{TITLE}, #{CONTENT}, SYSDATE(), '관리자', 0, 'admin1',
 		#{BOARD_UID}, #{FAQ_TYPE_UID});
 </insert>
+
+ <insert id="insertBoardEventDate" parameterType="Map">
+      INSERT INTO EVENT_DATE_BOARD (EVENT_DATE_UID, EVENT_START_DATE, EVENT_END_DATE, COMMONBOARD_UID)
+      VALUES ('EVENT_D1', '2023-02-22', '2023-02-28', 'BOARD23');
+</insert>
+
+
+
 
 </mapper>
