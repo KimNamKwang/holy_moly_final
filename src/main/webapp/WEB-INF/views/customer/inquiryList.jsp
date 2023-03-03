@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib
+uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,42 +79,55 @@
           <div class="border-top pt-3 mt-4">
             <table class="table">
               <tbody>
-                <tr>
-                  <td style="border-bottom: none; width: 100%">
-                    <a
-                      href="/customer/inquiryView"
-                      style="text-decoration: none"
-                    >
-                      <div class="row">
-                        <div class="col text-start">
-                          <div
-                            class="text-secondary pb-2"
-                            style="font-size: 0.9rem"
-                          >
-                            2023.01.10
-                          </div>
-                          <div class="fs-5 text-dark">내가문의한제목</div>
-                        </div>
-                        <div class="col text-end">
-                          <div class="pb-2">
-                            <span
-                              class="p-1"
-                              style="
-                                background-color: rgb(242, 255, 216);
-                                border-radius: 20px;
-                                color: rgb(55, 210, 77);
-                                font-size: 0.9rem;
-                              "
+                <c:if test="${empty resultMap}">
+                  문의하신 내역이 없습니다
+                </c:if>
+                <c:forEach
+                  items="${resultMap}"
+                  var="resultMap"
+                  varStatus="loop"
+                >
+                  <tr>
+                    <td style="border-bottom: none; width: 100%">
+                      <a
+                        href="/customer/inquiryView/${resultMap.INQUIRY_UID}"
+                        style="text-decoration: none"
+                      >
+                        <div class="row">
+                          <div class="col text-start">
+                            <div
+                              class="text-secondary pb-2"
+                              style="font-size: 0.9rem"
                             >
-                              기타/서비스불만
-                            </span>
+                              ${resultMap.INQUIRY_DATE}
+                            </div>
+                            <div class="fs-5 text-dark">
+                              ${resultMap.INQUIRY_TITLE}
+                            </div>
                           </div>
-                          <div class="text-secondary">문의중</div>
+                          <div class="col text-end">
+                            <div class="pb-2">
+                              <span
+                                class="p-1"
+                                style="
+                                  background-color: rgb(242, 255, 216);
+                                  border-radius: 20px;
+                                  color: rgb(55, 210, 77);
+                                  font-size: 0.9rem;
+                                "
+                              >
+                                ${resultMap.INQUIRY_TYPE_DESCRIPTION}
+                              </span>
+                            </div>
+                            <div class="text-secondary">
+                              ${resultMap.PROGRESS_STATUS_DESCRIPTION}
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </a>
-                  </td>
-                </tr>
+                      </a>
+                    </td>
+                  </tr>
+                </c:forEach>
               </tbody>
             </table>
           </div>

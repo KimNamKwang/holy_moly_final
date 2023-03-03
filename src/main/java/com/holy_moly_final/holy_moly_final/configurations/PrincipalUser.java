@@ -21,6 +21,15 @@ public class PrincipalUser implements UserDetails {
     private String address;
     private String detailAddress;
     private String extraAddress;
+    private String e_mail;
+
+    public String getE_mail() {
+        return e_mail;
+    }
+
+    public void setE_mail(String e_mail) {
+        this.e_mail = e_mail;
+    }
 
     public PrincipalUser(Map userInfo) {
         this.userInfo = userInfo;
@@ -35,6 +44,7 @@ public class PrincipalUser implements UserDetails {
         String address = (String) userInfo.get("ADDRESS");
         String detailAddress = (String) userInfo.get("DETAILADDRESS");
         String extraAddress = (String) userInfo.get("EXTRAADDRESS");
+        String e_mail = (String) userInfo.get("E_MAIL");
 
         if (Point != null) {
             this.totalPoint = Point;
@@ -50,6 +60,7 @@ public class PrincipalUser implements UserDetails {
         this.address = address;
         this.detailAddress = detailAddress;
         this.extraAddress = extraAddress;
+        this.e_mail = e_mail;
 
         if (Inquirys_Count != null) {
             this.user_Inquirys_Count = Inquirys_Count;

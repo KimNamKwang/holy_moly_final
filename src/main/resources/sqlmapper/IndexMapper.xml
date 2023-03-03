@@ -6,12 +6,12 @@
 
 <!-- 공지사항 고정이라 하드코딩으로 고정. -->
 <select id="selectNoticeListDESC3" parameterType="Map" resultType="Map">
-     SELECT TITLE, DATE_CREATED 
-      FROM  COMMON_BOARD
-      WHERE BOARD_UID = 'BOARD_NOTICE' 
-      ORDER BY DATE_CREATED DESC
-      LIMIT 3
-      ;
+     SELECT TITLE, DATE_CREATED, COMMONBOARD_UID
+    FROM  COMMON_BOARD
+    WHERE BOARD_UID = 'BOARD_NOTICE' 
+    ORDER BY DATE_CREATED DESC
+    LIMIT 3
+    ;
     </select>
 
 

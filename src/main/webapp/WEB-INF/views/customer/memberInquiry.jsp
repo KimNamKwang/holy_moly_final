@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib
+uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -61,12 +64,13 @@
         </li>
       </ul>
     </div>
+    <sec:authentication property="principal" var="userDetailsBean" />
     <div
       class="container-fluid"
       style="background-color: rgb(249, 249, 249); padding-bottom: 200px"
     >
       <form
-        action="/customer/inquiryList"
+        action="/customer/insertinquiry"
         onsubmit="alertFunction()"
         id="modalToggle"
       >
@@ -76,6 +80,20 @@
               class="border p-4 mt-5"
               style="border-radius: 20px; background-color: white"
             >
+              <%-- hidden으로 넘기는 value들 --%>
+              <input
+                type="hidden"
+                name="USER_UID"
+                value="${userDetailsBean.user_Uid}"
+              />
+              <%-- 일단 등록하면 문의중으로 넣고 추후에 관리자가 답변등록시
+              답변완료로 update되게. --%>
+              <input
+                type="hidden"
+                name="PROGRESS_STATUS_UID"
+                value="INQ_PROG_STAT_IN"
+              />
+              <%-- 여기까지 hidden value --%>
               <table class="table align-middle table-borderless text-start">
                 <tr>
                   <th style="vertical-align: top">이름</th>
@@ -84,9 +102,9 @@
                       type="text"
                       class="w-100 border border-secondary border-opacity-25 p-3"
                       style="border-radius: 10px"
-                      name="userName"
+                      name="NAME"
                       id="userName"
-                      value="홍길동"
+                      value="${userDetailsBean.memberName}"
                       placeholder="이름"
                       required
                       readonly
@@ -100,9 +118,9 @@
                       type="email"
                       class="w-100 border border-secondary border-opacity-25 p-3"
                       style="border-radius: 10px"
-                      name="userEmail"
+                      name="E_MAIL"
                       id="userEmail"
-                      value="honghong@naver.com"
+                      value="${userDetailsBean.e_mail}"
                       placeholder="이메일 주소"
                       required
                       readonly
@@ -119,9 +137,9 @@
                       type="number"
                       class="w-100 border border-secondary border-opacity-25 p-3"
                       style="border-radius: 10px"
-                      name="userPhoneNumber"
+                      name="PHONE"
                       id="userPhoneNumber"
-                      value="01011112222"
+                      value="${userDetailsBean.phone}"
                       placeholder="전화번호"
                       required
                       readonly
@@ -134,15 +152,17 @@
                     <select
                       class="w-100 border border-secondary border-opacity-25 p-3 text-center fw-bold"
                       style="border-radius: 10px"
-                      name=""
+                      name="INQUIRY_TYPE_UID"
                       id=""
                       required
                     >
-                      <option value="" selected disabled>문의 유형</option>
-                      <option value="">배송문의</option>
-                      <option value="">등급문의</option>
-                      <option value="">사고보상처리</option>
-                      <option value="">기타/서비스불만</option>
+                      <option value="" selected disabled required>
+                        문의 유형
+                      </option>
+                      <option value="Q_SHIP">배송문의</option>
+                      <option value="Q_GRADE">등급문의</option>
+                      <option value="Q_COMPEN">사고보상처리</option>
+                      <option value="Q_COMP_ELSE">기타/서비스불만</option>
                     </select>
                   </td>
                 </tr>
@@ -156,8 +176,8 @@
                         type="text"
                         class="w-100 border border-secondary border-opacity-25 p-3"
                         style="border-radius: 10px"
-                        name="inquiryTitle"
-                        id="inquiryTitle"
+                        name="TRACKING_NUMBER_FOR_INQUIRY"
+                        id="TRACKING_NUMBER_FOR_INQUIRY"
                         placeholder="운송장 번호"
                       />
                     </div>
@@ -174,8 +194,8 @@
                       type="text"
                       class="w-100 border border-secondary border-opacity-25 p-3"
                       style="border-radius: 10px"
-                      name="inquiryTitle"
-                      id="inquiryTitle"
+                      name="INQUIRY_TITLE"
+                      id="INQUIRY_TITLE"
                       placeholder="제목"
                       required
                     />
@@ -187,8 +207,8 @@
                     <textarea
                       class="w-100 border border-secondary border-opacity-25 p-3"
                       style="resize: none; height: 200px; border-radius: 10px"
-                      name="inquiryComment"
-                      id="inquiryComment"
+                      name="INQUIRY_CONTENT"
+                      id="INQUIRY_CONTENT"
                       placeholder="내용"
                       required
                     ></textarea>

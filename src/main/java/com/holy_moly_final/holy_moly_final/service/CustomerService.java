@@ -34,6 +34,12 @@ public class CustomerService {
         return result;
     }
 
+    public Object insertInquiry(Object dataMap) {
+        String sqlMapId = "Customer.insertInquiry";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getFAQList(Object dataMap) {
         String sqlMapId = "Customer.selectFAQLists";
         Object result = sharedDao.getList(sqlMapId, dataMap);
@@ -45,4 +51,17 @@ public class CustomerService {
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
+
+    public Object getPersonalInquiry(Object dataMap) {
+        String sqlMapId = "Customer.selectInquiryByUid";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getInquiryView(Object dataMap) {
+        String sqlMapId = "Customer.selectInquiryViewByUid";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
 }

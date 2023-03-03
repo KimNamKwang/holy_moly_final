@@ -274,7 +274,7 @@
                     <div class="h-75 d-inline-block pt-2">
                       <li class="fs-2 fw-bold">공지사항</li>
                       <div class="text-start">
-                        <a href="/cs/noticeList" class="mt-5 btn btn-outline-dark border rounded-pill">
+                        <a href="/cs/noticeList/1" class="mt-5 btn btn-outline-dark border rounded-pill">
                           전체보기
                         </a>
                       </div>
@@ -283,7 +283,7 @@
                     <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                       <div class="d-inline-block col-3" style="height: 150px; border-top: 1px solid rgb(55, 210, 67)">
                         <div class="notice1">
-                          <a href="/cs/noticeView" class="text-decoration-none text-dark">
+                          <a href="/cs/noticeView/${resultData.COMMONBOARD_UID}" class="text-decoration-none text-dark">
                             <li class="text-start p-3">
                               <div style="font-size: 1.1rem">${resultData.TITLE}</div>
                               <div class="mt-4">${resultData.DATE_CREATED}</div>

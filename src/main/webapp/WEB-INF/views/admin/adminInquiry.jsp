@@ -144,7 +144,9 @@
                               id="contents01"
                               cols="30"
                               rows="6"
-                              placeholder="비방, 명예훼손을 포함은 답글의 경우 분쟁의 사유가 될 수 있습니다."
+                              placeholder=" 지영님 여기는 insert가 아니라 기존에 있는애에다가 더해주는거니까 update가 되야 돼요
+                              PROGRESS_STATUS_UID 도 같이 update해줘야만 답변을 입력하면 답변완료상태가 됩니다.
+                              비방, 명예훼손을 포함은 답글의 경우 분쟁의 사유가 될 수 있습니다."
                             ></textarea>
                             <div
                               class="mt-2 text-end d-flex justify-content-end"

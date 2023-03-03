@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib
+uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,7 +65,7 @@
               <div class="text-start">
                 <div class="fs-5 fw-bold pb-4">1:1 문의 상세</div>
                 <div class="row d-flex justify-content-between">
-                  <div class="col fs-6 fw-bold">내가문의한제목</div>
+                  <div class="col fs-6 fw-bold">${resultMap.INQUIRY_TITLE}</div>
                   <div
                     class="col-auto p-1"
                     style="
@@ -72,18 +75,35 @@
                       font-size: 0.9rem;
                     "
                   >
-                    기타/서비스불만
+                    ${resultMap.INQUIRY_TYPE_DESCRIPTION}
                   </div>
                   <div
                     class="mt-1"
                     style="font-size: 0.9rem; color: rgb(165, 165, 165)"
                   >
-                    등록일 | 2023.01.10
+                    등록일 | ${resultMap.INQUIRY_DATE}
                   </div>
-                  <div class="fs-6 pt-3">문의내용문의내용</div>
+                  <div class="fs-6 pt-3">${resultMap.INQUIRY_CONTENT}</div>
+                  <div class="col-auto">
+                    <a class="text-dark" href="#collapseContent" data-bs-toggle="collapse"><span
+                        class="material-symbols-outlined">
+                        expand_more
+                      </span></a>
+                  </div>
+                  <div class="row collapse text-start pt-4" id="collapseContent"
+                    style="color: rgb(108, 110, 108); font-size: 1.1rem">
+                    <div class="col">
+                      <div class="fs-5 fw-bold pb-4">1:1 문의 답글</div>
+                      <div class="pb-5">
+                        ${resultMap.INQUIRY_ANSWER}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+           
+          
             <div class="text-start mt-4">
               <a
                 href="/customer/inquiryList"
@@ -96,7 +116,7 @@
                 >BACK</a
               >
             </div>
-          </div>
+         
         </div>
       </div>
     </div>
