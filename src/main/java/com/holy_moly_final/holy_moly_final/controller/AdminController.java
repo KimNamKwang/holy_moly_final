@@ -50,7 +50,7 @@ public class AdminController {
     @RequestMapping(value = "/boardInsert", method = RequestMethod.GET)
     public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        Object resultMap = adminService.insertUserInfoAndgetListForAdmin(params);
+        Object resultMap = adminService.insertBoardAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
