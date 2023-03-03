@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,14 +19,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.holy_moly_final.holy_moly_final.service.CustomerService;
+
 @Controller
 @RequestMapping(value = "/customer")
 public class CustomerController {
+    @Autowired
+    CustomerService customerService;
 
     @RequestMapping(value = "/faqList", method = RequestMethod.GET)
     public ModelAndView faqList(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = customerService.getFAQListWithPaginations(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("customer/faqList");
         return modelAndView;
     }

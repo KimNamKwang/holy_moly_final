@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.holy_moly_final.holy_moly_final.service.AdminService;
 import com.holy_moly_final.holy_moly_final.service.CommonService;
+import com.holy_moly_final.holy_moly_final.utils.CommonUtils;
 
 @Controller
 @RequestMapping(value = "/admin")
@@ -29,6 +30,9 @@ public class AdminController {
 
     @Autowired
     AdminService adminService;
+
+    @Autowired
+    CommonUtils commonUtils;
 
     @RequestMapping(value = "adminBoard", method = RequestMethod.GET)
     public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
@@ -50,6 +54,7 @@ public class AdminController {
     @RequestMapping(value = "/boardInsert", method = RequestMethod.GET)
     public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        params.put("boarduid", commonUtils.getUniqueSequence());
         Object resultMap = adminService.insertUserInfoAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
@@ -72,7 +77,6 @@ public class AdminController {
         return modelAndView;
     }
 
-
     // Users
 
     @RequestMapping(value = "adminUserCreate", method = RequestMethod.GET)
@@ -86,7 +90,7 @@ public class AdminController {
     @RequestMapping(value = "/adminUsers", method = RequestMethod.GET)
     public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-                Object resultMap = adminService.getListAndPaginationsForUser(params);
+        Object resultMap = adminService.getListAndPaginationsForUser(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
@@ -104,30 +108,29 @@ public class AdminController {
     @RequestMapping(value = "/userUpdate", method = RequestMethod.GET)
     public ModelAndView userUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-                Object resultMap = adminService.updateUserInfoAndgetListForAdmin(params);
-                modelAndView.addObject("resultMap", resultMap);
-                modelAndView.setViewName("admin/adminUsers");
+        Object resultMap = adminService.updateUserInfoAndgetListForAdmin(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
-    
-   }
+
+    }
 
     @RequestMapping(value = "/adminUserUpdate", method = RequestMethod.GET)
     public ModelAndView adminUserUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-                Object resultMap = adminService.getUserInfo(params);
-                modelAndView.addObject("resultMap", resultMap);
-                modelAndView.setViewName("admin/adminUserUpdate");
+        Object resultMap = adminService.getUserInfo(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminUserUpdate");
         return modelAndView;
     }
 
     @RequestMapping(value = "/userDelete", method = RequestMethod.GET)
     public ModelAndView adminUserdelete(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-                Object resultMap = adminService.deleteUserInfoAndgetListForAdmin(params);
-                modelAndView.addObject("resultMap", resultMap);
-                modelAndView.setViewName("admin/adminUsers");
+        Object resultMap = adminService.deleteUserInfoAndgetListForAdmin(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminUsers");
         return modelAndView;
     }
 
 }
-

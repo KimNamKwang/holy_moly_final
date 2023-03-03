@@ -6,15 +6,23 @@
 
 <!-- 공지사항 고정이라 하드코딩으로 고정. -->
 <select id="selectFAQLists" parameterType="Map" resultType="Map">
-     SELECT TITLE, DATE_CREATED 
-      FROM  COMMON_BOARD
-      WHERE BOARD_UID = 'BOARD_NOTICE' 
-      ORDER BY DATE_CREATED DESC
-      LIMIT 3
-      ;
+    SELECT * 
+    FROM COMMON_BOARD
+    INNER JOIN MAIN_BOARD
+    ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
+    INNER JOIN FAQ_TYPE
+    ON MAIN_BOARD.BOARD_UID = FAQ_TYPE.BOARD_UID
+    ORDER BY DATE_CREATED DESC
+    ;
     </select>
 
-
+<select id="selectFAQListPaginations" parameterType="Map" resultType="Map">
+      SELECT *
+      FROM COMMON_BOARD
+	    WHERE BOARD_UID = 'BOARD_FAQ'
+      ORDER BY DATE_CREATED DESC
+      LIMIT 0, 10;
+</select> 
     
 
 </mapper>

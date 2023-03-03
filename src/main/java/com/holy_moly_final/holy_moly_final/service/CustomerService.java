@@ -14,10 +14,22 @@ public class CustomerService {
     @Autowired
     SharedDao sharedDao;
 
-    public Object getFAQList(Object dataMap) {
-        String sqlMapId = "Customer.selectFAQLists";
-        Object resultList = sharedDao.getList(sqlMapId, dataMap);
-        return resultList;
+    public Object getFAQListWithPaginations(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("FAQList", this.getFAQList(dataMap));
+        result.put("paginations", this.paginationsForFAQList(dataMap));
+        return result;
     }
 
+    public Object getFAQList(Object dataMap) {
+        String sqlMapId = "Customer.selectFAQLists";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object paginationsForFAQList(Object dataMap) {
+        String sqlMapId = "Customer.selectFAQListPaginations";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
 }

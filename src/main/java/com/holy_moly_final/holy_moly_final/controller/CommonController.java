@@ -110,7 +110,7 @@ public class CommonController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        // String pass = bcryptPasswordEncoder.encode("pw123");
+        String pass = bcryptPasswordEncoder.encode("pw123");
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = null;
