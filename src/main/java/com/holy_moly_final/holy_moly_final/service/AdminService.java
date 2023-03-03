@@ -13,9 +13,6 @@ public class AdminService {
     @Autowired
     SharedDao sharedDao;
 
-    @Autowired
-    CommonUtils commonUtils;
-
     public Object insertUserInfoAndgetListForAdmin(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("insertUserInfo", this.insertUserInfo(dataMap));
@@ -94,7 +91,7 @@ public class AdminService {
     // Board
     public Object getListAndPaginationsForBoard(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
-        result.put("BoardList", this.getListForBoard(dataMap));
+        result.put("boardList", this.getListForBoard(dataMap));
         result.put("paginations", this.paginationsForBoard(dataMap));
         result.put("totalCount", this.getCountBoard(dataMap));
         return result;
@@ -122,12 +119,13 @@ public class AdminService {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("insertBoard", this.insertBoard(dataMap));
         result.put("boardList", this.getListForBoard(dataMap));
+        result.put("paginations", this.paginationsForBoard(dataMap));
         result.put("totalCount", this.getCountBoard(dataMap));
         return result;
     }
 
     public Object insertBoard(Object dataMap) {
-        String sqlMapId = "Admin.insertUserDataForAdmin";
+        String sqlMapId = "Admin.insertBoardForAdmin";
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
