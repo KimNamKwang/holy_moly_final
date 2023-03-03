@@ -61,26 +61,26 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               </thead>
               <tbody>
               <c:forEach
-                  items="${resultMap.BoardList}"
-                  var="_BoardList"
+                  items="${resultMap.boardList}"
+                  var="_boardList"
                   varStatus="loop"
                 >
                 <tr>
                   <td><c:out value="${loop.count}" /></td>
                   <td>
                     <a href="#" class="text-dark"
-                      >${_BoardList.TITLE}</a
+                      >${_boardList.TITLE}</a
                     >
                   </td>
-                  <td>${_BoardList.BOARD_TYPE_DESCRIPTION}</td>
-                  <td>${_BoardList.DATE_CREATED}</td>
+                  <td>${_boardList.BOARD_TYPE_DESCRIPTION}</td>
+                  <td>${_boardList.DATE_CREATED}</td>
                   <td>
                     <a
-                      href="/admin/adminBoardUpdate?COMMONBOARD_UID=${_BoardList.COMMONBOARD_UID}"
+                      href="/admin/adminBoardUpdate?COMMONBOARD_UID=${_boardList.COMMONBOARD_UID}"
                       class="btn btn btn-outline-dark btn-sm"
                       >수정</a
                     >
-                    <a href="/admin/boardDelete?COMMONBOARD_UID=${_BoardList.COMMONBOARD_UID}"
+                    <a href="/admin/boardDelete?COMMONBOARD_UID=${_boardList.COMMONBOARD_UID}"
                        class="btn btn btn-outline-dark btn-sm">
                       삭제
                     </a>
@@ -111,9 +111,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   </a>
                 </li>
 
-                <div class="text-end pt-2 pb-2">
-                  <a href="#modalCreate" data-bs-toggle="modal" class="btn btn btn-outline-dark btn-sm">게시판추가</a>
-                </div>
                 <div class="mt-2 pb-3">
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
