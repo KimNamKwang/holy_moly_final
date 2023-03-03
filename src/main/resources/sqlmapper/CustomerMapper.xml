@@ -6,10 +6,27 @@
 
 <!-- 공지사항 고정이라 하드코딩으로 고정. -->
 <select id="selectFAQLists" parameterType="Map" resultType="Map">
-    SELECT * FROM MAIN_BOARD 
-    INNER JOIN COMMON_BOARD
+    SELECT FAQ_TYPE.FAQ_TYPE_DESCRIPTION, COMMON_BOARD.TITLE, COMMON_BOARD.CONTENT, COMMON_BOARD.REPLY_FOR_FAQ
+    FROM COMMON_BOARD
+    INNER JOIN FAQ_TYPE
+    ON COMMON_BOARD.FAQ_TYPE_UID = FAQ_TYPE.FAQ_TYPE_UID
+    AND FAQ_TYPE.BOARD_UID = 'BOARD_FAQ'
+    INNER JOIN MAIN_BOARD
     ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
-    AND BOARD_TYPE = 'FAQ';
+    ORDER BY DATE_CREATED DESC
+    ;
+    </select>
+
+<select id="selectFAQRegisterLists" parameterType="Map" resultType="Map">
+    SELECT * 
+    FROM COMMON_BOARD
+    INNER JOIN FAQ_TYPE
+    ON COMMON_BOARD.FAQ_TYPE_UID = FAQ_TYPE.FAQ_TYPE_UID
+    AND FAQ_TYPE.FAQ_TYPE_UID = #{faq_register}
+    INNER JOIN MAIN_BOARD
+    ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
+    ORDER BY DATE_CREATED DESC
+    ;
     </select>
 
 <select id="selectFAQListPaginations" parameterType="Map" resultType="Map">

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
-@CrossOrigin
+// @CrossOrigin
 public class RestfulController {
 
     @Autowired
@@ -38,13 +38,10 @@ public class RestfulController {
     // }
 
     // // currentPage = 1
-    @RequestMapping(value = "/api/v1/requestParamsWithDB", method = RequestMethod.POST)
+    @RequestMapping(value = "/forfaq/faq_type_uid/", method = RequestMethod.GET)
     public Map requestParamsWithDB(@RequestParam Map<String, Object> params) {
-        params.put("currentPage", Integer.parseInt((String) params.get("currentPage")));
-        params.put("pageScale", 10);
         Map<String, Object> resultMap = new HashMap<>();
-        resultMap = (Map<String, Object>) customerService.getFAQListWithPaginations(params);
-
+        resultMap = (Map<String, Object>) customerService.getFAQListByUIDWithPaginations(params);
         return resultMap;
     }
 }

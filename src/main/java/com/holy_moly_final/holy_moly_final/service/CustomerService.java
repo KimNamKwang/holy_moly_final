@@ -21,6 +21,19 @@ public class CustomerService {
         return result;
     }
 
+    public Object getFAQListByUIDWithPaginations(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("FAQ_TYPE_UID", this.getFAQList(dataMap));
+        result.put("paginations", this.paginationsForFAQList(dataMap));
+        return result;
+    }
+
+    public Object getFAQ_ResiterList(Object dataMap) {
+        String sqlMapId = "Customer.selectFAQRegisterLists";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getFAQList(Object dataMap) {
         String sqlMapId = "Customer.selectFAQLists";
         Object result = sharedDao.getList(sqlMapId, dataMap);

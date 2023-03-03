@@ -53,10 +53,10 @@
                     <a href="" class="text-dark" style="text-decoration: none">전체</a>
                   </li>
                   <li style="margin-top: 40px">
-                    <a href="" style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
+                    <a href="" id="faq_register" style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
                   </li>
                   <li style="margin-top: 40px">
-                    <a href="" style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</a>
+                    <a href="#" style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</a>
                   </li>
                   <li style="margin-top: 40px">
                     <a href="" style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</a>
@@ -81,7 +81,7 @@
                     <ul class="list-unstyled">
 
                       <c:forEach items="${resultMap.FAQList}" var="_FAQList" varStatus="loop">
-                        <li class="row">
+                        <li class="row mb-3">
                           <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
                             <span class="p-1 me-1" style="
                           background-color: rgb(242, 255, 216);
@@ -89,18 +89,17 @@
                           color: rgb(55, 210, 77);
                           font-size: 0.9rem;
                         ">
-                              택배서비스
                               ${_FAQList.FAQ_TYPE_DESCRIPTION}
                             </span>
                             ${_FAQList.TITLE}
                           </div>
                           <div class="col-auto">
-                            <a class="text-dark" href="#collapseContent01" data-bs-toggle="collapse"><span
+                            <a class="text-dark" href="#collapseContent${loop.count}" data-bs-toggle="collapse"><span
                                 class="material-symbols-outlined">
                                 expand_more
                               </span></a>
                           </div>
-                          <div class="row collapse text-start pt-4" id="collapseContent01"
+                          <div class="row collapse text-start pt-4" id="collapseContent${loop.count}"
                             style="color: rgb(108, 110, 108); font-size: 1.1rem">
                             <div class="col-2">&nbsp;</div>
                             <div class="col">
@@ -111,6 +110,9 @@
                           </div>
                         </li>
                       </c:forEach>
+                      <div id="dataID">
+
+                      </div>
                       <div class="mt-2 pb-3">
                         <ul class="pagination justify-content-center">
                           <li class="page-item">
@@ -139,110 +141,17 @@
                           </li>
                         </ul>
                       </div>
-                      <%-- <li class="row pt-4">
-                        <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
-                          <span class="p-1 me-1" style="
-                          background-color: rgb(242, 255, 216);
-                          border-radius: 20px;
-                          color: rgb(55, 210, 77);
-                          font-size: 0.9rem;
-                        ">
-                            택배서비스
-                          </span>
-                          홈택배 예약정보를 수정하고 싶어요
-                        </div>
-                        <div class="col-auto">
-                          <a class="text-dark" href="#collapseContent02" data-bs-toggle="collapse"><span
-                              class="material-symbols-outlined">
-                              expand_more
-                            </span></a>
-                        </div>
-                        <div class="row collapse text-start pt-4" id="collapseContent02"
-                          style="color: rgb(108, 110, 108); font-size: 1.1rem">
-                          <div class="col-2">&nbsp;</div>
-                          <div class="col">
-                            <div>예약정보 수정은 불가합니다.</div>
-                            <div class="pb-5">
-                              예약 취소 후 재접수로 이용 가능하며, 취소 불가한 경우
-                              고객센터(1566-1025)로 연락바랍니다.
-                            </div>
-                          </div>
-                        </div>
-                        </li>
-                        <li class="row pt-4">
-                          <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
-                            <span class="p-1 me-1" style="
-                          background-color: rgb(242, 255, 216);
-                          border-radius: 20px;
-                          color: rgb(55, 210, 77);
-                          font-size: 0.9rem;
-                        ">
-                              위치서비스
-                            </span>
-                            인터넷 지도 위치가 잘못 되어 있는데요?
-                          </div>
-                          <div class="col-auto">
-                            <a class="text-dark" href="#collapseContent03" data-bs-toggle="collapse"><span
-                                class="material-symbols-outlined">
-                                expand_more
-                              </span></a>
-                          </div>
-                          <div class="row collapse text-start pt-4" id="collapseContent03"
-                            style="color: rgb(108, 110, 108); font-size: 1.1rem">
-                            <div class="col-2">&nbsp;</div>
-                            <div class="col">
-                              <div class="pb-5">
-                                현재 지도 상 위치가 정확하게 파악이 되지 않았습니다.
-                                빠른 시일 내에 수정하여 반영하겠습니다.
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="row pt-4">
-                          <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
-                            <span class="p-1 me-1" style="
-                          background-color: rgb(242, 255, 216);
-                          border-radius: 20px;
-                          color: rgb(55, 210, 77);
-                          font-size: 0.9rem;
-                        ">
-                              택배서비스
-                            </span>
-                            화물이 분실(파손)되면 어떻게 해야 하죠?
-                          </div>
-                          <div class="col-auto">
-                            <a class="text-dark" href="#collapseContent04" data-bs-toggle="collapse"><span
-                                class="material-symbols-outlined">
-                                expand_more
-                              </span></a>
-                          </div>
-                          <div class="row collapse text-start pt-4" id="collapseContent04"
-                            style="color: rgb(108, 110, 108); font-size: 1.1rem">
-                            <div class="col-2">&nbsp;</div>
-                            <div class="col">
-                              <div>
-                                화물이 분실 혹은 파손 되었을 경우에는 고객센터로
-                                문의로 문의 부탁 드리겠습니다.
-                              </div>
-                              <div>
-                                특히, 파손 시에는 화물의 포장상태와 파손내용을
-                                택배사에서 확인할 수 있도록 그대로 유지한 상태에서
-                                연락을 주시면, 사진이나 방문확인 등을 통해서
-                                택배표준약관의 기준에 준하여 신속히 처리하여 드립니다.
-                              </div>
-                              <div class="pb-5">
-                                단, 품목과 물품가액 고객 정보 등을 거짓 기재한 경우와
-                                파손면책 동의 건, 포장이 충분하지 않은 건은 고객님
-                                귀책이 있는 사안으로 빠른 처리가 어려울 수 있습니다.
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        --%>
                     </ul>
                   </div>
                 </div>
               </div>
+            </div>
+            <div id="error_status">
+
+            </div>
+
+            <div id="complete_status">
+
             </div>
           </div>
         </div>
@@ -251,6 +160,49 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
           crossorigin="anonymous"></script>
+
+        <script>
+
+          $(document).ready(function () {
+            $("#faq_register").click(function () {
+              $.ajax({
+                //request
+                url: "/forfaq/faq_type_uid/",
+                type: "GET",
+                data: { currentPage: 1, pageScale: 10, faq_register: 'FAQ_REGISTER' },
+                success: function (data, status) {
+                  alert("hi");
+                  // $("#status").append(status);
+                  // $("#dataID").append(typeof data);
+                  /** 
+                   * 하나하나 확인 표시
+                   // $("#dataID").append(data.paginations.blockScale);
+                   // $("#dataID").append(", ");
+                   // $("#dataID").append(data.resultList[1].NAME);
+                   // $("#dataID").append(", ");
+                  */
+                  //Each문, data와 callback
+                  $.each(data.resultList, function (index, item /*item은Map*/) {
+                    $("#dataID").append(
+                      "<div>" + index + "," + item.TITLE + "</div>"
+                    );
+                  });
+                },
+                error: function (xhr, status, error) {
+                  $("#error_status").append(status);
+                  // $("#error_xhr").append(typeof xhr);
+                  // $("#error_error").append(error);
+                },
+                complete: function () {
+                  //success, error 어떤것이든 상관없이 complete가 이루어진다.
+                  // remove progress bar
+                  $("#complete_status").append("Done.");
+                },
+              });
+            });
+          });
+        </script>
+
       </body>
 
       </html>
