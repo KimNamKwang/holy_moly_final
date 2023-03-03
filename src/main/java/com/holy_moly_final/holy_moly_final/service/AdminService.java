@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.holy_moly_final.holy_moly_final.dao.SharedDao;
+import com.holy_moly_final.holy_moly_final.utils.CommonUtils;
 
 @Service
 public class AdminService {
     @Autowired
     SharedDao sharedDao;
+
+    @Autowired
+    CommonUtils commonUtils;
 
     public Object insertUserInfoAndgetListForAdmin(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
@@ -117,8 +121,8 @@ public class AdminService {
     public Object insertBoardAndgetListForAdmin(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("insertBoard", this.insertBoard(dataMap));
-        result.put("userList", this.getListForBoard(dataMap));
-        result.put("totalCount", this.getCountUsers(dataMap));
+        result.put("boardList", this.getListForBoard(dataMap));
+        result.put("totalCount", this.getCountBoard(dataMap));
         return result;
     }
 
