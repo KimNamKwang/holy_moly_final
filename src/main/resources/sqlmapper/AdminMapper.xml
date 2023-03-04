@@ -84,7 +84,30 @@ VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
       VALUES ('EVENT_D1', '2023-02-22', '2023-02-28', 'BOARD23');
 </insert>
 
+<select id="selectInquirysCount" parameterType="Map" resultType="int">
+     SELECT COUNT(*) AS TOTAL_INQUIRYS
+      FROM INQUIRYS
+</select> 
 
+<select id="selectInquirysListByUID" parameterType="Map" resultType="Map">         
+  
+            SELECT INQUIRYS.INQUIRY_UID, INQUIRY_TITLE, INQUIRY_DATE, INQUIRY_CONTENT, INQUIRY_ANSWER, TRACKING_NUMBER_FOR_INQUIRY,
+            INQUIRYS.USER_UID, INQUIRYS.INQUIRY_TYPE_UID, INQUIRY_TYPE_DESCRIPTION, PROGRESS_STATUS_UID, USERS.NAME, USERS.E_MAIL
+            FROM INQUIRYS
+            INNER JOIN INQUIRY_TYPES
+            ON INQUIRYS.INQUIRY_TYPE_UID = INQUIRY_TYPES.INQUIRY_TYPE_UID
+            INNER JOIN USERS
+            ON INQUIRYS.USER_UID = USERS.USER_UID
+               <if test="pageScale != null">
+            ORDER BY INQUIRY_DATE DESC
+            LIMIT #{pageBegin}, #{pageScale}
+            </if>
 
+    </select>
+
+<update id="updateInquiryAnswer" parameterType="Map">
+     UPDATE INQUIRYS SET INQUIRY_ANSWER = #{INQUIRY_ANSWER}, PROGRESS_STATUS_UID = 'INQ_PROG_STAT_DONE' WHERE INQUIRY_UID = #{INQUIRY_UID};
+
+</update>
 
 </mapper>

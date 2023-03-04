@@ -1,12 +1,14 @@
 package com.holy_moly_final.holy_moly_final.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.holy_moly_final.holy_moly_final.dao.SharedDao;
 import com.holy_moly_final.holy_moly_final.utils.CommonUtils;
+import com.holy_moly_final.holy_moly_final.utils.Paginations;
 
 @Service
 public class AdminService {
@@ -87,7 +89,6 @@ public class AdminService {
         return result;
     }
 
-
     // Board
     public Object getListAndPaginationsForBoard(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
@@ -127,6 +128,36 @@ public class AdminService {
     public Object insertBoard(Object dataMap) {
         String sqlMapId = "Admin.insertBoardForAdmin";
         Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    // Inquiry
+    public Object getInquiryListWithPagination(Object dataMap) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        int InquirysCount = (int) this.getInquirysCount(dataMap);
+        int currentPage = (int) ((HashMap<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(InquirysCount, currentPage);
+        result.put("paginations", paginations);
+        ((HashMap<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        result.put("resultList", this.getInqurysList(dataMap));
+        return result;
+    }
+
+    public Object getInquirysCount(Object dataMap) {
+        String sqlMapId = "Admin.selectInquirysCount";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getInqurysList(Object dataMap) {
+        String sqlMapId = "Admin.selectInquirysListByUID";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object updateInquiryAnswers(Object dataMap) {
+        String sqlMapId = "Admin.updateInquiryAnswer";
+        Object result = sharedDao.update(sqlMapId, dataMap);
         return result;
     }
 }

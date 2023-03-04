@@ -14,6 +14,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,10 +70,13 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminInquiry", method = RequestMethod.GET)
-    public ModelAndView adminInquiry(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "adminInquiry/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView adminInquiry(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
             ModelAndView modelAndView) {
-
+        params.put("pageScale", 10);
+        params.put("currentPage", Integer.parseInt(currentPage));
+        Object resultMap = adminService.getInquiryListWithPagination(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminInquiry");
         return modelAndView;
     }
@@ -102,6 +106,15 @@ public class AdminController {
         Object resultMap = adminService.insertUserInfoAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/updateInquiryAnswer", method = RequestMethod.GET)
+    public ModelAndView insertInquiryAnswer(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = adminService.updateInquiryAnswers(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminInquiry");
         return modelAndView;
     }
 
