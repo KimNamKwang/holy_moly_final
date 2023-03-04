@@ -40,10 +40,6 @@ public class HomeController {
         params.put("MYPAGE_UID", commonUtils.getUniqueSequence());
         homeService.insertMulti(params);
 
-        Object resultMap = params;
-
-        // DB로 간다
-
         modelAndView.setViewName("home/payment_completed");
         return modelAndView;
     }
