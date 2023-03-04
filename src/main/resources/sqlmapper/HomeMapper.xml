@@ -17,38 +17,32 @@
         #{SHIPMENT_TYPE_UID}, #{REQUEST_UID}, #{ITEM_TYPE_UID})
 	</insert>
 
-    <!--call Home.selectNoticeListByBoardType  -->
-    <select id="selectNoticeListByBoardType" parameterType="Map" resultType="Map">
-        SELECT COMMONBOARD_UID,TITLE, DATE_CREATED
-        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
-        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
-        WHERE MAIN_BOARD.BOARD_TYPE = 'NOTICE'
-        ORDER BY DATE_CREATED DESC;
-         <if test = "pageScale != null">
-         LIMIT #{pageBegin}, #{pageScale}
-        </if>
-    </select>
+    <!--call Home.insertProGressStatusTypeByTrackingNumber  -->
+    <insert id="insertProGressStatusTypeByTrackingNumber" parameterType="Map">
+        <!-- 최초 입력 PROGRESS_STATUS_TYPE, PROGRESS_STATUS_DESCRIPTION, PROGRESS_STATUS_TIME 고정 -->
+        INSERT INTO PROGRESS_STATUS_TYPE
+        (PROGRESS_STATUS_UID, PROGRESS_STATUS_TYPE, PROGRESS_STATUS_DESCRIPTION, PROGRESS_STATUS_TIME, TRACKING_NUMBER)
+        VALUES
+        (#{PROGRESS_STATUS_UID},'REGISTER','접수완료',sysdate(),#{TRACKING_NUMBER});
+    </insert>
 
-    <!--call Cs.selectNoticeViewByCommonBoard_UID  -->
-    <select id="selectNoticeViewByCommonBoard_UID" parameterType="Map" resultType="Map">
-        SELECT COMMON_BOARD.COMMONBOARD_UID, TITLE,VIEWS , CONTENT, DATE_CREATED, FILE_FOLDER_NAME, ORIGINALFILE_NAME
-        FROM COMMON_BOARD LEFT JOIN ATTACHED_FILES
-        ON COMMON_BOARD.COMMONBOARD_UID = ATTACHED_FILES.COMMONBOARD_UID
-        WHERE BOARD_UID = 'BOARD_NOTICE' AND COMMON_BOARD.COMMONBOARD_UID = #{COMMONBOARD_UID};
-    </select>
+    <!--call Home.insertPointByUser_UID  -->
+    <insert id="insertPointByUser_UID" parameterType="Map">
+        <!-- 최초 입력 PROGRESS_STATUS_TYPE, PROGRESS_STATUS_DESCRIPTION, PROGRESS_STATUS_TIME 고정 -->
+        INSERT INTO POINT
+        (POINT_UID, POINT_CHANGE_VALUE, POINT_CHANGE_DATE, USER_UID)
+        VALUES
+        (#{POINT_UID},-#{usePoint},sysdate(),#{USER_UID})
+    </insert>
 
-    <!--call Cs.updateViewsByCommonBoard_UID  -->
-    <update id="updateViewsByCommonBoard_UID" parameterType="Map">
-        UPDATE COMMON_BOARD
-        SET VIEWS = VIEWS + 1
-        WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
-    </update>
+    <!--call Home.insertMypageByUser_UID  -->
+    <insert id="insertMypageByUser_UID" parameterType="Map">
+        <!-- 최초 입력 PROGRESS_STATUS_TYPE, PROGRESS_STATUS_DESCRIPTION, PROGRESS_STATUS_TIME 고정 -->
+        INSERT INTO MYPAGE
+        (MYPAGE_UID, TRACKING_NUMBER, USER_UID, INQUIRY_UID)
+        VALUES
+        (#{MYPAGE_UID}, #{TRACKING_NUMBER}, #{USER_UID}, null);
+    </insert>
 
-    <!--call Home.selectNoticeListByBoardType  -->
-    <select id="selectTotal" parameterType="Map" resultType="int">
-        SELECT COUNT(*) AS TOTAL_NOTICE
-        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
-        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
-        WHERE MAIN_BOARD.BOARD_TYPE = 'NOTICE';
-    </select>
+    
 </mapper>

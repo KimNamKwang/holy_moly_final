@@ -68,6 +68,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
       <c:set var="_setBalance" value="${prc.totalPoint}" />
       <c:set var="USER_UID" value="${prc.user_Uid}" />
     </sec:authorize>
+    <fmt:parseNumber value="${resultMap.TOTAL_PRICE}" integerOnly="true" var="int_Total_price" />
     <jsp:include page="../navbar.jsp" />
     <main
       style="
@@ -175,7 +176,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <input
             type="hidden"
             name="TOTAL_PRICE"
-            value=""
+            value="${int_Total_price}"
             id="total_price"
           />
           <input
@@ -236,6 +237,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                     name="usePoint"
                     id="usePoint"
                     class="form-control"
+                    value="0"
                   />
                   <a
                     href="#"

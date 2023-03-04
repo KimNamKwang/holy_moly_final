@@ -35,7 +35,11 @@ public class HomeController {
     @RequestMapping(value = "/payment_completed", method = RequestMethod.GET)
     public ModelAndView payment_completed(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-        homeService.insertshipment(params);
+        params.put("POINT_UID", commonUtils.getUniqueSequence());
+        params.put("PROGRESS_STATUS_UID", commonUtils.getUniqueSequence());
+        params.put("MYPAGE_UID", commonUtils.getUniqueSequence());
+        homeService.insertMulti(params);
+
         Object resultMap = params;
 
         // DB로 간다
