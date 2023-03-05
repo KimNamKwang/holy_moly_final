@@ -160,4 +160,16 @@ public class AdminService {
         Object result = sharedDao.update(sqlMapId, dataMap);
         return result;
     }
+
+    public Object getBoard(Object dataMap) {
+        String sqlMapId = "Admin.selectBoardByUid";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object updateBoards(Object dataMap) {
+        String sqlMapId = "Admin.updateBoards";
+        Object result = sharedDao.update(sqlMapId, dataMap);
+        return result;
+    }
 }

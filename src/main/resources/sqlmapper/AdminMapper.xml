@@ -110,4 +110,14 @@ VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
 
 </update>
 
+<select id="selectBoardByUid" parameterType="Map" resultType="int">
+     
+     
+</select> 
+
+<update id="updateBoards" parameterType="Map">
+     UPDATE INQUIRYS SET INQUIRY_ANSWER = #{INQUIRY_ANSWER}, PROGRESS_STATUS_UID = 'INQ_PROG_STAT_DONE' WHERE INQUIRY_UID = #{INQUIRY_UID};
+
+</update>
+
 </mapper>

@@ -68,7 +68,7 @@
 
             <div class="col-auto btn-step mb20">
               <a
-                href="/common/login"
+                href="/common/PwSearch"
                 class="btn text-light fw-bold text-nowrap"
                 style="background-color: rgb(55, 210, 67)"
               >

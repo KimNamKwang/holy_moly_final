@@ -65,7 +65,8 @@ public class AdminController {
     @RequestMapping(value = "adminBoardUpdate", method = RequestMethod.GET)
     public ModelAndView adminBoardUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        // Object resultMap = adminService.getBoard(params);
+        // modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminBoardUpdate");
         return modelAndView;
     }

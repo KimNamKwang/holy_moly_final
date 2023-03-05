@@ -122,7 +122,7 @@
                           <div class="fs-4 mt-2 fw-bold">다량접수</div>
                           <div class="mt-2 text-center" style="font-size: 0.8rem; color: rgb(147, 149, 143)">
                             <div>방문일 선택 가능</div>
-                            <div>당일방문</div>
+                           
                           </div>
                         </div>
                       </a>
