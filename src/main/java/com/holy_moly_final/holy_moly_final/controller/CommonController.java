@@ -107,6 +107,30 @@ public class CommonController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/PwReset", method = RequestMethod.GET)
+    public ModelAndView PwReset(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = commonService.getUsersDataByIdAndPhone(params);
+        if (resultMap == null) {
+            modelAndView.setViewName("common/IdResult_fa");
+        } else {
+            modelAndView.addObject("resultMap", resultMap);
+            modelAndView.setViewName("common/PwReset");
+        }
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.GET)
+    public ModelAndView updatePassword(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        String PASSWORD = bcryptPasswordEncoder.encode((String) params.get("PASSWORD_NOT_ENCODED"));
+        params.put("PASSWORD", PASSWORD);
+        Object resultMap = commonService.updateUsersPassword(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("common/login");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {

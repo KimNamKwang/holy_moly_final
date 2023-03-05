@@ -45,43 +45,13 @@
       class="container text-nowrap mb-5 mt-5"
       style="font-family: 'Noto Sans KR', sans-serif"
     >
-      <div
-        class="row mb-5 d-flex align-items-center text-startr"
-        style="padding-top: 150px"
-      >
-        <div class="col-3 d-flex align-items-center">
-          <a href="/index" class="navbar-brand">
-            <div
-              style="font-family: 'Zen Dots', cursive; color: rgb(76, 183, 86)"
-            >
-              <span class="fst-italic fw-bold ms-2 fs-4">POST</span>
-              <span class="material-symbols-outlined fw-bold align-middle">
-                local_shipping
-              </span>
-            </div>
-          </a>
-        </div>
-        <div
-          class="col-2 text-green text-nowrap fs-5 fw-bold d-flex align-items-center"
-        >
-          비밀번호 찾기
-        </div>
-        &nbsp; &nbsp; &nbsp; &nbsp;
-        <div class="col">
-          <span style="text-decoration: line-through; color: rgb(55, 210, 67)">
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp;
-          </span>
-        </div>
-      </div>
       <div class="d-flex row justify-content-center text-center text-nowrap">
         <div class="d-flex row justify-content-center text-center">
           <div
             class="border p-5"
             style="border-radius: 20px; background-color: white; width: 50%"
           >
+            <!-- 그림삽입 저작권침해임 -->
             <div>
               <span class="tracking-list-icon">
                 <img src="/resources/images/돋보기.png" alt="" width="40%" />

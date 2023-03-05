@@ -16,6 +16,10 @@
       WHERE USER_UID = #{USER_UID} ;
     </select>
 
+    <select id="selectUsersDataByIdAndPhone" parameterType="Map" resultType="Map">
+     SELECT * from USERS WHERE USER_UID = #{USER_UID} AND PHONE = #{PHONE} ;
+    </select>
+
 
 <insert id="insertUserDataForJoin" parameterType="Map">
     INSERT INTO USERS (USER_UID, NAME, PASSWORD, E_MAIL, BIRTH_DATE, POSTALCODE, ADDRESS, DETAILADDRESS,
@@ -34,5 +38,10 @@ VALUE ( #{USER_UID}, #{Name}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
 
  </insert>
 
+
+<update id="updateUsersPassword" parameterType="Map" >
+      
+UPDATE USERS SET PASSWORD = #{PASSWORD} WHERE NAME = #{NAME}  AND PHONE = #{PHONE};
+</update>
 
 </mapper>

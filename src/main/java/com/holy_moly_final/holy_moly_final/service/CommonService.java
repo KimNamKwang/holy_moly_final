@@ -52,15 +52,23 @@ public class CommonService {
 
     // }
 
-    public Object getOne(Object dataMap) {
-        String sqlMapId = "CommonCodeOur.selectByUID";
-        Object result = sharedDao.getOne(sqlMapId, dataMap);
-        return result;
-    }
-
     public Object insertUserDataAndGet(Object dataMap) {
         Object result = this.insertUserData(dataMap);
         result = this.getUserData(dataMap);
+        return result;
+
+    }
+
+    public Object getUsersDataByIdAndPhone(Object dataMap) {
+        String sqlMapId = "Common.selectUsersDataByIdAndPhone";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+
+    }
+
+    public Object updateUsersPassword(Object dataMap) {
+        String sqlMapId = "Common.updateUsersPassword";
+        Object result = sharedDao.update(sqlMapId, dataMap);
         return result;
 
     }

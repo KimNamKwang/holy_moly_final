@@ -52,12 +52,12 @@
             WHERE USER_UID = #{USER_UID} ;
       </select> 
 
-      <select id="updateUserInfo" parameterType="Map" resultType="Map">
+      <update id="updateUserInfo" parameterType="Map" >
             UPDATE USERS
             SET PASSWORD = #{PASSWORD}, PHONE = #{PHONE}, POSTALCODE = #{POSTALCODE}, ADDRESS = #{ADDRESS},
                   DETAILADDRESS = #{DETAILADDRESS}, EXTRAADDRESS = #{EXTRAADDRESS}
             WHERE USER_UID = #{USER_UID};
-      </select> 
+      </update> 
 
 
     

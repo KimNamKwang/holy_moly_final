@@ -23,7 +23,7 @@
     </select>
 
     <!--call Cs.updateViewsByCommonBoard_UID  -->
-    <update id="updateViewsByCommonBoard_UID" parameterType="Map">
+    <update id="updateViewsByCommonBoard_UID" parameterType="Map" >
         UPDATE COMMON_BOARD
         SET VIEWS = VIEWS + 1
         WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};

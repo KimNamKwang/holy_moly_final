@@ -58,7 +58,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
         <div
           class="col-2 text-green text-nowrap fs-5 fw-bold d-flex align-items-center"
         >
-          비밀번호 찾기
+          비밀번호 재설정
         </div>
         &nbsp; &nbsp; &nbsp; &nbsp;
         <div class="col">
@@ -70,7 +70,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           </span>
         </div>
       </div>
-      <form action="/common/PwReset">
+      <form action="/common/updatePassword">
         <div class="d-flex justify-content-center">
           <div
             class="bg-white border text-start w-100"
@@ -78,40 +78,23 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           >
             <div>
               <div class="form-check-label pb-2" style="font-size: 1.15rem">
-                회원님의 소중한 개인정보 보호를 위하여<br />
-                <span style="color: rgb(55, 210, 67)">본인확인</span>이
-                필요합니다.
+                ${resultMap.NAME} 회원님의 비밀번호를<br />
+                <span style="color: rgb(55, 210, 67)">재설정</span>합니다.
               </div>
               <br />
-              <div class="form-check-label fw-bold pb-2">아이디</div>
+              <div class="form-check-label fw-bold pb-2">재설정할 비밀번호</div>
               <div>
+                <input type="hidden" name="NAME" value="${resultMap.NAME}" />
+                <input type="hidden" name="PHONE" value="${resultMap.PHONE}" />
                 <div class="input-group">
                   <input
                     style="height: 50px; border-color: rgb(242, 242, 242)"
-                    id="user_uid"
-                    name="USER_UID"
+                    id="password"
                     type="text"
+                    name="PASSWORD_NOT_ENCODED"
                     class="form-control"
-                    placeholder="아이디"
+                    placeholder="비밀번호"
                   />
-                </div>
-              </div>
-
-              <div class="form-check-label fw-bold mb-2">휴대폰 번호</div>
-
-              <div class="form-input form-input-ph ph-length6 mb0">
-                <div class="auth">
-                  <div class="input-group">
-                    <input
-                      style="height: 50px; border-color: rgb(242, 242, 242)"
-                      id="phone"
-                      name="PHONE"
-                      type="text"
-                      class="form-control"
-                      placeholder="휴대폰 번호"
-                    />
-                  </div>
-                  <br />
                 </div>
               </div>
             </div>
@@ -135,6 +118,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <div class="col text-end mt-3">
             <button
               type="submit"
+              onclick="doAction()"
               class="btn btn-lg text-light fw-bold"
               style="
                 background-color: rgb(55, 210, 67);
@@ -152,14 +136,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
     <script>
       function doAction() {
-        if (confirm("등록된 이메일주소에 비밀번호를 보내겠습니까?")) {
-          alert("전송하였습니다.");
-
-          location.href = "/common/login";
-        } else {
-          alert("취소하였습니다.");
-          location.href = "/common/login";
-        }
+        alert("비밀번호가 재설정 되었습니다.");
       }
     </script>
   </body>
