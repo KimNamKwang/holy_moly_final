@@ -36,14 +36,14 @@
       <select id="selectUserPointBreakdown" parameterType="Map" resultType="Map">
             SELECT POINT_CHANGE_VALUE, POINT_CHANGE_DATE
             FROM POINT
-            WHERE USER_UID = 'user2'
+            WHERE USER_UID = #{USER_UID}
             ORDER BY POINT_CHANGE_DATE DESC;
       </select> 
 
       <select id="selectUserTotalPoint" parameterType="Map" resultType="Map">
             SELECT SUM(POINT_CHANGE_VALUE) AS TOTAL_POINT
             FROM POINT
-            WHERE USER_UID = 'user1';
+            WHERE USER_UID = #{USER_UID}
       </select> 
 
       <select id="selectUserInfoForMyinfo" parameterType="Map" resultType="Map">

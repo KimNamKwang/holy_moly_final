@@ -129,15 +129,23 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               <div id="menu_div">
                 <ul>
                   <li>
-                    <a href="/mypage/myPoint" class="d-flex align-items-center">
-                      <img src="/resources/images/쿠폰함.png" alt="" />
-                      <b class="ms-1 pe-5">포인트</b>
-                      <b class="ms-3"
-                        ><span style="color: rgb(55, 210, 67); font-size: 150%"
-                          >${resultMap.userInfo.POINT}</span
-                        >
-                      </b>
-                    </a>
+                    <form action="/mypage/myPoint" method="get">
+                      <input
+                        type="hidden"
+                        name="USER_UID"
+                        value="${userDetailsBean.user_Uid}"
+                      />
+                      <button class="btn d-flex align-items-center">
+                        <img src="/resources/images/쿠폰함.png" alt="" />
+                        <b class="ms-1 pe-5">포인트</b>
+                        <b class="ms-3"
+                          ><span
+                            style="color: rgb(55, 210, 67); font-size: 150%"
+                            >${resultMap.userInfo.POINT}</span
+                          >
+                        </b>
+                      </button>
+                    </form>
                   </li>
                 </ul>
               </div>
@@ -145,18 +153,22 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               <div id="menu_div">
                 <ul id="link_ul">
                   <li>
-                    <a
-                      href="/customer/inquiryList"
-                      class="d-flex align-items-center"
-                    >
-                      <img src="/resources/images/내문의현황.png" alt="" />
-                      <b class="ms-1 pe-5">내 문의 현황</b>
-                      <b class="ms-3">
-                        <span style="font-size: 1.5rem"
-                          >${resultMap.inquiryTotalCount.TOTAL_USER_INQUIRYS}</span
-                        >건
-                      </b>
-                    </a>
+                    <form action="/customer/inquiryList" method="get">
+                      <input
+                        type="hidden"
+                        name="USER_UID"
+                        value="${userDetailsBean.user_Uid}"
+                      />
+                      <button class="btn d-flex align-items-center">
+                        <img src="/resources/images/내문의현황.png" alt="" />
+                        <b class="ms-1 pe-5">내 문의 현황</b>
+                        <b class="ms-3">
+                          <span style="font-size: 1.5rem"
+                            >${resultMap.inquiryTotalCount.TOTAL_USER_INQUIRYS}</span
+                          >건
+                        </b>
+                      </button>
+                    </form>
                   </li>
                 </ul>
               </div>

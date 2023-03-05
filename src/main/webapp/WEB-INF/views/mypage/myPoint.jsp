@@ -16,10 +16,8 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
       crossorigin="anonymous"
     />
 
-    <!-- 23.02.06추가 -->
     <link rel="stylesheet" href="/resources/css/mypage.css" />
 
-    <!-- 23.02.04추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <link
       rel="stylesheet"
@@ -241,15 +239,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
 
         <!--23.02.15 추가-->
 
-        <div
-          class=""
-          style="
-            padding: 0px 0px 0px 300px;
-            width: 1000px;
-            height: 200px;
-            font-size: 1.2rem;
-          "
-        >
+        <div class="" style="height: 200px; font-size: 1.2rem">
           <div
             class="text-center p-5"
             style="border-radius: 20px; background-color: #0cb68a"
