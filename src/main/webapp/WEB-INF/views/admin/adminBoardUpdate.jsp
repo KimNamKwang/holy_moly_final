@@ -1,5 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><%@
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -43,7 +44,7 @@
         <div class="container" style="width: 650px">
           <!-- 이용방법 -->
           <div class="fs-3 fw-bold pb-3">게시글 수정</div>
-          <form action="/admin/adminBoard" method="post">
+          <form action="/admin/adminBoard" method="get">
             <div
               class="shadow-sm p-4 mb-4"
               style="border-radius: 10px 10px; background-color: white"
@@ -58,7 +59,7 @@
                       style="border-radius: 10px"
                       name="boradTitle"
                       placeholder="제목"
-                      value="TITLE"
+                      value="${resultMap.TITLE}"
                     />
                   </td>
                 </tr>
@@ -104,7 +105,7 @@
                       placeholder="내용"
                       required
                     >
-                    CONTENT CONTENT
+                    ${resultMap.CONTENT}
                     </textarea>
                   </td>
                 </tr>
