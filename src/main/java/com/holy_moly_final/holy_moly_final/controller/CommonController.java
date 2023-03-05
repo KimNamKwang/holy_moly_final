@@ -92,6 +92,7 @@ public class CommonController {
             ModelAndView modelAndView) {
         String PASSWORD = bcryptPasswordEncoder.encode((String) params.get("PASSWORD_NOT_ENCODED"));
         params.put("PASSWORD", PASSWORD);
+
         Object resultMap = commonService.insertUserDataAndGet(params);
 
         modelAndView.addObject("resultMap", resultMap);
