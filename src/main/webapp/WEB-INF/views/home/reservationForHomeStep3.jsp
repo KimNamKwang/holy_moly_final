@@ -106,16 +106,17 @@
                       <td class="font07">
                         <sec:authorize access="isAnonymous()">
                           <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%> 
-                          0
+                          <c:set var="TOTAL_PRICE" value="${(resultMap.NUMBER_OF_ITEMS * 6990)}" />
                         </sec:authorize>
                        
-                        <sec:authentication property="principal" var="userDetailsBean" />
-                        <%-- <c:set var="USER_GRADE_UID" value="${userDetailsBean.userGrade}" />                     --%>
+            
                        
 
                         <%-- 로그인이 되어있을때 --%>                        
                           <sec:authorize access="isAuthenticated()">
-                          <c:set var="ITEM_COUNT" value=" ${resultMap.NUMBER_OF_ITEMS}" />
+                          <sec:authentication property="principal" var="userDetailsBean" />
+                          <c:set var="USER_GRADE_UID" value="${userDetailsBean.grade_Uid}" />        
+                            <c:set var="ITEM_COUNT" value=" ${resultMap.NUMBER_OF_ITEMS}" />
                           
                             <c:choose>
                               <c:when test="${USER_GRADE_UID == 'GRADE_F'}">

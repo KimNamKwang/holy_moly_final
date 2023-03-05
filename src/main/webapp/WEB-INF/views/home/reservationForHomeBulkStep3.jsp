@@ -189,19 +189,21 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 <td class="font07">${resultMap.NUMBER_OF_ITEMS * 3290}원</td>
                 <td class="font07">
                   <sec:authorize access="isAnonymous()">
-                    <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%> 0
+                    <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%>
+                    <c:set var="TOTAL_PRICE" value="${(resultMap.NUMBER_OF_ITEMS * 6990)}" />
                   </sec:authorize>
+
+
+                  <%-- 로그인이 되어있을때 --%>
+                  <sec:authorize access="isAuthenticated()">
                   <sec:authentication
                     property="principal"
                     var="userDetailsBean"
                   />
                   <c:set
                     var="USER_GRADE_UID"
-                    value="${userDetailsBean.userGrade}"
+                    value="${userDetailsBean.grade_Uid}"
                   />
-
-                  <%-- 로그인이 되어있을때 --%>
-                  <sec:authorize access="isAuthenticated()">
                     <c:choose>
                       <c:when test="${USER_GRADE_UID == 'GRADE_F'}">
                         ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.02}
