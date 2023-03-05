@@ -45,14 +45,42 @@ public class AdminService {
 
     public Object deleteUserInfoAndgetListForAdmin(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
-        result.put("deleteUserInfo", this.deleteUserInfo(dataMap));
+        result.put("deleteUserInfo", this.deleteUserInfoStep1(dataMap));
+        result.put("deleteUserInfo", this.deleteUserInfoStep2(dataMap));
+        result.put("deleteUserInfo", this.deleteUserInfoStep3(dataMap));
+        result.put("deleteUserInfo", this.deleteUserInfoStep4(dataMap));
+        result.put("deleteUserInfo", this.deleteUserInfoStep5(dataMap));
         result.put("userList", this.getListForUser(dataMap));
         result.put("totalCount", this.getCountUsers(dataMap));
         return result;
     }
 
-    public Object deleteUserInfo(Object dataMap) {
-        String sqlMapId = "Admin.deleteUserDataForAdmin";
+    public Object deleteUserInfoStep1(Object dataMap) {
+        String sqlMapId = "Admin.deleteUserDataForAdminStep1";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteUserInfoStep2(Object dataMap) {
+        String sqlMapId = "Admin.deleteUserDataForAdminStep2";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteUserInfoStep3(Object dataMap) {
+        String sqlMapId = "Admin.deleteUserDataForAdminStep3";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteUserInfoStep4(Object dataMap) {
+        String sqlMapId = "Admin.deleteUserDataForAdminStep4";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteUserInfoStep5(Object dataMap) {
+        String sqlMapId = "Admin.deleteUserDataForAdminStep5";
         Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }

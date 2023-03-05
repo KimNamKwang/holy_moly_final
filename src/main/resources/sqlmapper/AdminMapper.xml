@@ -20,19 +20,20 @@ VALUE ( #{USER_UID}, #{NAME}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
       WHERE USER_UID = #{USER_UID};
 </update>
 
-<delete id="deleteUserDataForAdmin" parameterType="Map">
-      
-      DELETE from C, P, I, M, U
-      USING COMMON_BOARD AS C 
-      LEFT JOIN POINT AS P 
-      ON C.USER_UID = P.USER_UID 
-      LEFT JOIN INQUIRYS AS I
-      ON C.USER_UID = I.USER_UID
-      LEFT JOIN MYPAGE AS M
-      ON C.USER_UID = M.USER_UID
-      LEFT JOIN USERS AS U
-      ON C.USER_UID = U.USER_UID
-      where C.USER_UID =  #{USER_UID};
+<delete id="deleteUserDataForAdminStep1" parameterType="Map">
+     DELETE FROM COMMON_BOARD WHERE USER_UID = #{USER_UID};
+</delete>
+<delete id="deleteUserDataForAdminStep2" parameterType="Map">
+     DELETE FROM POINT WHERE USER_UID = #{USER_UID};
+</delete>
+<delete id="deleteUserDataForAdminStep3" parameterType="Map">
+     DELETE FROM INQUIRYS WHERE USER_UID = #{USER_UID};
+</delete>
+<delete id="deleteUserDataForAdminStep4" parameterType="Map">
+DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
+</delete>
+<delete id="deleteUserDataForAdminStep5" parameterType="Map">
+     DELETE FROM USERS WHERE USER_UID  = #{USER_UID};
 </delete>
 
 <select id="selectUserInfo" parameterType="Map" resultType="Map">

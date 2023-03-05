@@ -35,20 +35,34 @@ public class CommonController {
     @Autowired
     BCryptPasswordEncoder bcryptPasswordEncoder;
 
-    @RequestMapping(value = "/IdResult_fa", method = RequestMethod.GET)
-    public ModelAndView IdResult_fa(@RequestParam Map<String, Object> params,
-            ModelAndView modelAndView) {
+    // @RequestMapping(value = "/IdResult_fa", method = RequestMethod.GET)
+    // public ModelAndView IdResult_fa(@RequestParam Map<String, Object> params,
+    // ModelAndView modelAndView) {
 
-        modelAndView.setViewName("common/IdResult_fa");
-        return modelAndView;
-    }
+    // modelAndView.setViewName("common/IdResult_fa");
+    // return modelAndView;
+    // }
 
-    @RequestMapping(value = "/IdResult_su", method = RequestMethod.GET)
-    public ModelAndView IdResult_su(@RequestParam Map<String, Object> params,
+    // @RequestMapping(value = "/IdResult_su", method = RequestMethod.GET)
+    // public ModelAndView IdResult_su(@RequestParam Map<String, Object> params,
+    // ModelAndView modelAndView) {
+    // Object resultMap = commonService.getUserUIDByNameAndPhone(params);
+    // modelAndView.addObject("resultMap", resultMap);
+    // modelAndView.setViewName("common/IdResult_su");
+    // return modelAndView;
+    // }
+
+    @RequestMapping(value = "/IdSearchResult", method = RequestMethod.GET)
+    public ModelAndView IdSearchResult(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         Object resultMap = commonService.getUserUIDByNameAndPhone(params);
-        modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("common/IdResult_su");
+
+        if (resultMap == null) {
+            modelAndView.setViewName("common/IdResult_fa");
+        } else {
+            modelAndView.addObject("resultMap", resultMap);
+            modelAndView.setViewName("common/IdResult_su");
+        }
         return modelAndView;
     }
 
