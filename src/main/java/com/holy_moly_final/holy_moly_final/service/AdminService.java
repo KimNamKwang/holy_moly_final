@@ -148,22 +148,17 @@ public class AdminService {
     public Object insertBoardAndgetListForAdmin(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
         String BOARD_UID = (String) ((HashMap<String, Object>) dataMap).get("BOARD_UID");
+        result.put("insertBoard", this.insertBoard(dataMap));
         // 조건에 따라 들어가야하는 DB가 다르다.(board_uid에 따라 구분)
         if ("BOARD_EVENT".equals(BOARD_UID)) {
             // 게시판 타입이 BOARD_EVENT
+            result.put("insertEventDateBoard", this.insertEventDateBoard(dataMap));
 
-        } else if ("BOARD_FAQ".equals(BOARD_UID)) {
-            // 게시판 타입이 BOARD_FAQ
-
-        } else if ("BOARD_NOTICE".equals(BOARD_UID)) {
-            // 게시판 타입이 BOARD_NOTICE
         } else {
             // 게시판을 선택하지 않으면
         }
 
         // 아래는 무조건 돌아야한 구문 (Paginations, list를 불러오는 것, totalCount 등)
-        result.put("insertBoard", this.insertBoard(dataMap));
-        result.put("insertEventDateBoard", this.insertEventDateBoard(dataMap));
         result.put("boardList", this.getListForBoard(dataMap));
         result.put("paginations", this.paginationsForBoard(dataMap));
         result.put("totalCount", this.getCountBoard(dataMap));
