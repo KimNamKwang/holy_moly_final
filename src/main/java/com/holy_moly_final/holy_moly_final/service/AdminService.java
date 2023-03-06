@@ -149,7 +149,6 @@ public class AdminService {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("insertBoard", this.insertBoard(dataMap));
         result.put("insertEventDateBoard", this.insertEventDateBoard(dataMap));
-        result.put("insertFaqType", this.insertFaqType(dataMap));
         result.put("boardList", this.getListForBoard(dataMap));
         result.put("paginations", this.paginationsForBoard(dataMap));
         result.put("totalCount", this.getCountBoard(dataMap));

@@ -85,34 +85,14 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
 
  <insert id="insertBoardForAdmin" parameterType="Map">
       INSERT INTO COMMON_BOARD (COMMONBOARD_UID, TITLE, CONTENT, DATE_CREATED, WRITER, VIEWS, USER_UID,
-		BOARD_UID, FAQ_TYPE_UID)
+		BOARD_UID, FAQ_TYPE_UID, EVENT_DATE_UID)
       VALUES (#{COMMONBOARD_UID}, #{TITLE}, #{CONTENT}, SYSDATE(), '관리자', 0, 'admin1',
-		#{BOARD_UID}, #{FAQ_TYPE_UID});
+		#{BOARD_UID}, #{FAQ_TYPE_UID}, #{FAQ_TYPE_UID});
 </insert>
 
  <insert id="insertEventDateBoardForAdmin" parameterType="Map">
       INSERT INTO EVENT_DATE_BOARD (EVENT_DATE_UID, EVENT_START_DATE, EVENT_END_DATE, COMMONBOARD_UID)
       VALUES (#{EVENT_DATE_UID}, #{EVENT_START_DATE}, #{EVENT_END_DATE}, #{COMMONBOARD_UID});
-</insert>
-
- <insert id="insertFaqTypeForAdmin" parameterType="Map">
-      INSERT INTO FAQ_TYPE (FAQ_TYPE_UID, FAQ_TYPE, FAQ_TYPE_DESCRIPTION, BOARD_UID)
-      VALUES (#{FAQ_TYPE_UID}, #{FAQ_TYPE}, 
-      <choose>
-            <when test="#{FAQ_TYPE} == 'REGISTER'">
-            'FAQ 접수문의'
-            </when>
-            <when test="#{FAQ_TYPE} == 'SHIPPING'">
-            'FAQ 배송문의'
-            </when>
-            <when test="#{FAQ_TYPE} == 'MAP'">
-            'FAQ 지도문의'
-            </when>
-            <otherwise>
-            'FAQ 사고문의'
-            </otherwise>
-      </choose>
-      , 'BOARD_FAQ');
 </insert>
 
 <delete id="deleteBoardForAdminStep1" parameterType="Map">
