@@ -105,13 +105,13 @@
                     <select
                       class="w-100 border border-secondary border-opacity-25 p-2 text-center"
                       style="border-radius: 10px"
-                      name="FAQ_TYPE_UID"
+                      name="FAQ_TYPE"
                     >
                       <option value="" selected disabled>선택</option>
-                      <option value="FAQ_REGISTER">접수문의</option>
-                      <option value="FAQ_SHIPPING">배송문의</option>
-                      <option value="FAQ_MAP">지도문의</option>
-                      <option value="FAQ_ACCIDENT">사고문의</option>
+                      <option value="REGISTER">접수문의</option>
+                      <option value="SHIPPING">배송문의</option>
+                      <option value="MAP">지도문의</option>
+                      <option value="ACCIDENT">사고문의</option>
                     </select>
                   </td>
                 </tr>
