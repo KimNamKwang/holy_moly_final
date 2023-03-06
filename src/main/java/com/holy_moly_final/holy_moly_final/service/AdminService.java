@@ -33,6 +33,7 @@ public class AdminService {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("updateUserInfo", this.updateUserInfo(dataMap));
         result.put("userList", this.getListForUser(dataMap));
+        result.put("paginations", this.paginationsForUser(dataMap));
         result.put("totalCount", this.getCountUsers(dataMap));
         return result;
     }
@@ -147,6 +148,8 @@ public class AdminService {
     public Object insertBoardAndgetListForAdmin(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("insertBoard", this.insertBoard(dataMap));
+        result.put("insertEventDateBoard", this.insertEventDateBoard(dataMap));
+        result.put("insertFaqType", this.insertFaqType(dataMap));
         result.put("boardList", this.getListForBoard(dataMap));
         result.put("paginations", this.paginationsForBoard(dataMap));
         result.put("totalCount", this.getCountBoard(dataMap));
@@ -156,6 +159,40 @@ public class AdminService {
     public Object insertBoard(Object dataMap) {
         String sqlMapId = "Admin.insertBoardForAdmin";
         Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertEventDateBoard(Object dataMap) {
+        String sqlMapId = "Admin.insertEventDateBoardForAdmin";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertFaqType(Object dataMap) {
+        String sqlMapId = "Admin.insertFaqTypeForAdmin";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteBoardAndgetListForAdmin(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("deleteBoard", this.deleteBoardStep1(dataMap));
+        result.put("deleteBoard", this.deleteBoardStep2(dataMap));        result.put("boardList", this.getListForBoard(dataMap));
+        result.put("paginations", this.paginationsForBoard(dataMap));
+        result.put("boardList", this.getListForBoard(dataMap));
+        result.put("totalCount", this.getCountBoard(dataMap));
+        return result;
+    }
+
+    public Object deleteBoardStep1(Object dataMap) {
+        String sqlMapId = "Admin.deleteBoardForAdminStep1";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteBoardStep2(Object dataMap) {
+        String sqlMapId = "Admin.deleteBoardForAdminStep2";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 
