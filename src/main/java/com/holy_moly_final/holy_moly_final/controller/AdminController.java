@@ -56,6 +56,8 @@ public class AdminController {
     public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         params.put("COMMONBOARD_UID", commonUtils.getUniqueSequence());
+        params.put("EVENT_DATE_UID", commonUtils.getUniqueSequence());
+        params.put("FAQ_TYPE_UID", commonUtils.getUniqueSequence());
         Object resultMap = adminService.insertBoardAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminBoard");
@@ -68,6 +70,15 @@ public class AdminController {
         Object resultMap = adminService.getBoard(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminBoardUpdate");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/boardDelete", method = RequestMethod.GET)
+    public ModelAndView adminBoarddelete(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = adminService.deleteBoardAndgetListForAdmin(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminBoard");
         return modelAndView;
     }
 
