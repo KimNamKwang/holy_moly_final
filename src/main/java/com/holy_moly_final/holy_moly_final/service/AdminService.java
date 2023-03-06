@@ -150,7 +150,7 @@ public class AdminService {
         String BOARD_UID = (String) ((HashMap<String, Object>) dataMap).get("BOARD_UID");
         result.put("insertBoard", this.insertBoard(dataMap));
         // 조건에 따라 들어가야하는 DB가 다르다.(board_uid에 따라 구분)
-        if ("BOARD_EVENT".equals(BOARD_UID)) {
+        if (BOARD_UID.equals("BOARD_EVENT")) {
             // 게시판 타입이 BOARD_EVENT
             result.put("insertEventDateBoard", this.insertEventDateBoard(dataMap));
 
@@ -187,6 +187,7 @@ public class AdminService {
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put("deleteBoard", this.deleteBoardStep1(dataMap));
         result.put("deleteBoard", this.deleteBoardStep2(dataMap));
+        result.put("deleteBoard", this.deleteBoardStep3(dataMap));
         result.put("boardList", this.getListForBoard(dataMap));
         result.put("paginations", this.paginationsForBoard(dataMap));
         result.put("boardList", this.getListForBoard(dataMap));
@@ -202,6 +203,12 @@ public class AdminService {
 
     public Object deleteBoardStep2(Object dataMap) {
         String sqlMapId = "Admin.deleteBoardForAdminStep2";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object deleteBoardStep3(Object dataMap) {
+        String sqlMapId = "Admin.deleteBoardForAdminStep3";
         Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }

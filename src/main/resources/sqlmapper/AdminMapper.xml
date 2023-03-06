@@ -85,7 +85,7 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
 
  <insert id="insertBoardForAdmin" parameterType="Map">
           INSERT INTO COMMON_BOARD (COMMONBOARD_UID, TITLE, CONTENT, DATE_CREATED, WRITER, VIEWS, REPLY_FOR_FAQ, USER_UID,
-		BOARD_UID)
+		BOARD_UID, FAQ_TYPE_UID)
           VALUES (#{COMMONBOARD_UID}, #{TITLE}, #{CONTENT}, SYSDATE(), '관리자', 0,
           <choose>
           <when test="#{REPLY_FOR_FAQ}=='NULL'">
@@ -95,7 +95,7 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
           #{REPLY_FOR_FAQ}
           </otherwise>
           </choose>
-          ,'admin1', #{BOARD_UID});
+          ,'admin1', #{BOARD_UID}, #{FAQ_TYPE_UID});
 </insert>
 
  <insert id="insertEventDateBoardForAdmin" parameterType="Map">
@@ -107,6 +107,9 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
      DELETE FROM ATTACHED_FILES WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
 </delete>
 <delete id="deleteBoardForAdminStep2" parameterType="Map">
+     DELETE FROM EVENT_DATE_BOARD WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
+</delete>
+<delete id="deleteBoardForAdminStep3" parameterType="Map">
      DELETE FROM COMMON_BOARD WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
 </delete>
 

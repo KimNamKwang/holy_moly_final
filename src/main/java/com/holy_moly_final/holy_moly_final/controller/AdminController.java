@@ -56,7 +56,10 @@ public class AdminController {
     public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         params.put("COMMONBOARD_UID", commonUtils.getUniqueSequence());
-        params.put("EVENT_DATE_UID", commonUtils.getUniqueSequence());
+        
+        if(params.get("BOARD_UID") == "BOARD_EVENT") {
+            params.put("EVENT_DATE_UID", commonUtils.getUniqueSequence());
+        }
         Object resultMap = adminService.insertBoardAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminBoard");
