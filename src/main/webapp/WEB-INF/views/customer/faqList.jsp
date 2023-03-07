@@ -50,19 +50,20 @@
               <div class="col-2">
                 <ul class="list-unstyled pt-5" style="font-size: 1.2rem">
                   <li class="fw-bold">
-                    <a href="" class="text-dark" style="text-decoration: none">전체</a>
+                    <button class="btn fs-3 text-dark" style="text-decoration: none">전체</button>
                   </li>
                   <li style="margin-top: 40px">
-                    <a href="" id="faq_register" style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
+                    <button class="btn fs-4" id="faq_register"
+                      style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
                   </li>
                   <li style="margin-top: 40px">
-                    <a href="#" style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</a>
+                    <button class="btn fs-4" style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</button>
                   </li>
                   <li style="margin-top: 40px">
-                    <a href="" style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</a>
+                    <button class="btn fs-4" style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</button>
                   </li>
                   <li style="margin-top: 40px">
-                    <a href="" style="text-decoration: none; color: rgb(80, 83, 80)">사고문의</a>
+                    <button class="btn fs-4" style="text-decoration: none; color: rgb(80, 83, 80)">사고문의</button>
                   </li>
                 </ul>
               </div>

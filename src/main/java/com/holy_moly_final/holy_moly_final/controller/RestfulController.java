@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
-// @CrossOrigin
+@CrossOrigin
 public class RestfulController {
 
     @Autowired
