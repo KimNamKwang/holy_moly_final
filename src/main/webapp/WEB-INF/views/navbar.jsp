@@ -45,7 +45,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
         <div class="col" style="font-family: 'Noto Sans KR', sans-serif">
           <div class="color">
             <sec:authorize access="isAuthenticated()">
-              <form action="/mypage" method="post">
+              <form action="/mypage/myinfoPass" method="post">
                 <input
                   type="hidden"
                   value="${userDetailsBean.user_Uid}"

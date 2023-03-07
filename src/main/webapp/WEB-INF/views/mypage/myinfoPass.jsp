@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +43,13 @@
   <body>
     <jsp:include page="../navbar.jsp" />
     <main class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
+      <c:if test="${not empty resultMap.msg}">
+        <script type="text/javascript">
+          alert("${resultMap.msg}");
+        </script>
+      </c:if>
       <div class="container" style="width: 600px">
-        <form action="/mypage/myinfo">
+        <form action="/mypage/mypage" method="post">
           <div class="fs-3 fw-bold mb-5 text-center" style="padding-top: 150px">
             비밀번호 재확인
           </div>
@@ -61,8 +70,8 @@
                   <input
                     class="form-control form-check-input w-100 mb-2"
                     type="text"
-                    name="userId"
-                    value="userId123"
+                    name="USER_UID"
+                    value="${resultMap.USER_UID}"
                     readonly
                     style="
                       height: 50px;
@@ -78,7 +87,7 @@
                   <input
                     class="form-control form-check-input w-100"
                     type="password"
-                    name="userPassword"
+                    name="checkPassword"
                     placeholder="PW"
                     required
                     style="

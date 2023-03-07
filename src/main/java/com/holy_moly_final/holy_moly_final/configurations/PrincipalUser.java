@@ -22,6 +22,11 @@ public class PrincipalUser implements UserDetails {
     private String detailAddress;
     private String extraAddress;
     private String e_mail;
+    private String password;
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getE_mail() {
         return e_mail;
@@ -45,6 +50,7 @@ public class PrincipalUser implements UserDetails {
         String detailAddress = (String) userInfo.get("DETAILADDRESS");
         String extraAddress = (String) userInfo.get("EXTRAADDRESS");
         String e_mail = (String) userInfo.get("E_MAIL");
+        String password = (String) userInfo.get("PASSWORD");
 
         if (Point != null) {
             this.totalPoint = Point;
@@ -61,6 +67,7 @@ public class PrincipalUser implements UserDetails {
         this.detailAddress = detailAddress;
         this.extraAddress = extraAddress;
         this.e_mail = e_mail;
+        this.password = password;
 
         if (Inquirys_Count != null) {
             this.user_Inquirys_Count = Inquirys_Count;
@@ -202,5 +209,13 @@ public class PrincipalUser implements UserDetails {
 
     public void setExtraAddress(String extraAddress) {
         this.extraAddress = extraAddress;
+    }
+
+    public Map getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(Map userInfo) {
+        this.userInfo = userInfo;
     }
 }
