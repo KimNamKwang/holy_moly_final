@@ -51,10 +51,11 @@
                 <div class="col-2">
                   <ul class="list-unstyled pt-5" style="font-size: 1.2rem">
                     <li class="fw-bold">
-                      <button class="btn fs-3 text-dark" style="text-decoration: none">전체</button>
+                      <button class="btn fs-3 text-dark" style="text-decoration: none" onclick="ShowAllFAQs()"
+                      >전체</button>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_register" onclick="ShowFAQRegisters()"
+                      <button class="btn fs-4" id="faq_register" onclick="ShowFAQRegister()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
                     </li>
                     <li style="margin-top: 40px">
@@ -62,20 +63,20 @@
                         style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</button>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_map"
+                      <button class="btn fs-4" id="faq_map" onclick="ShowFAQMaps()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</button>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_accident"
+                      <button class="btn fs-4" id="faq_accident" onclick="ShowFAQAccidents()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">사고문의</button>
                     </li>
                   </ul>
                 </div>
 
 
-                <span id="showAllFAQs">
+                <div class="col-10" id="showAllFAQs">
                   <%-- 전체 문의 화면 --%>
-                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                    <div class="d-flex row justify-content-center text-center p-0">
                       <div class="border p-4 mt-5" style="
                 border-radius: 20px;
                 background-color: white;
@@ -153,19 +154,18 @@
                         </div>
                       </div>
                     </div>
-                </span>
+                  </div>
 
-                <div class="col-2"></div>
-                <div id="boxForFAQRegisters" style="display: none;">
+                
+                <div id="boxForFAQRegisters" class="col-10" style="display: none;">
                   <%-- 접수문의 화면 --%>
-                    <div class="col-2"></div>
-                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                    <div class="d-flex row justify-content-center text-center p-0">
                       <div class="border p-4 mt-5" style="
-                border-radius: 20px;
-                background-color: white;
-                width: 710px;
-                margin: 0px 310px 0px 130px;
-              ">
+                          border-radius: 20px;
+                          background-color: white;
+                          width: 710px;
+                          margin: 0px 310px 0px 130px;
+                        ">
                         <div class="pt-3 mt-4">
                           <ul class="list-unstyled" id="for_faq_registers">
 
@@ -175,16 +175,15 @@
                     </div>
                 </div>
 
-                <div id="boxForFAQShippings" style="display: none;">
+                <div id="boxForFAQShippings" class="col-10" style="display: none;">
                   <%-- 배송문의 화면 --%>
-                    <div class="col-2"></div>
-                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                    <div class="d-flex row justify-content-center text-center p-0">
                       <div class="border p-4 mt-5" style="
-                border-radius: 20px;
-                background-color: white;
-                width: 710px;
-                margin: 0px 310px 0px 130px;
-              ">
+                        border-radius: 20px;
+                        background-color: white;
+                        width: 710px;
+                        margin: 0px 310px 0px 130px;
+                      ">
                         <div class="pt-3 mt-4">
                           <ul class="list-unstyled" id="for_faq_shipping">
 
@@ -194,10 +193,9 @@
                     </div>
                 </div>
 
-                <div id="boxForFAQMaps" style="display: none;">
+                <div id="boxForFAQMaps" class="col-10" style="display: none;">
                   <%-- 지도문의 화면 --%>
-                    <div class="col-2"></div>
-                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                    <div class="d-flex row justify-content-center text-center p-0">
                       <div class="border p-4 mt-5" style="
                   border-radius: 20px;
                   background-color: white;
@@ -213,10 +211,10 @@
                     </div>
                 </div>
 
-                <div id="boxForFAQAccidents" style="display: none;">
+                <div id="boxForFAQAccidents" class="col-10" style="display: none;">
                   <%-- 사고문의 화면 --%>
-                    <div class="col-2"></div>
-                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+            
+                    <div class="d-flex row justify-content-center text-center p-0">
                       <div class="border p-4 mt-5" style="
                   border-radius: 20px;
                   background-color: white;
@@ -245,15 +243,41 @@
           crossorigin="anonymous"></script>
 
         <script>
-          function ShowFAQRegisters() {
+          function ShowAllFAQs() {
+            document.getElementById("showAllFAQs").style.display =
+              "block";
+          }
+          function ShowFAQRegister() {
             document.getElementById("boxForFAQRegisters").style.display =
               "block";
             document.getElementById("showAllFAQs").style.display = "none";
+            document.getElementById("boxForFAQShippings").style.display = "none";
+            document.getElementById("boxForFAQMaps").style.display = "none";
+            document.getElementById("boxForFAQAccidents").style.display = "none";
           }
           function ShowFAQShippings() {
             document.getElementById("boxForFAQShippings").style.display =
               "block";
+            document.getElementById("boxForFAQRegisters").style.display = "none";
+            document.getElementById("boxForFAQMaps").style.display = "none";
+            document.getElementById("boxForFAQAccidents").style.display = "none";
             document.getElementById("showAllFAQs").style.display = "none";
+          }
+          function ShowFAQMaps() {
+            document.getElementById("boxForFAQMaps").style.display =
+              "block";
+            document.getElementById("showAllFAQs").style.display = "none";
+            document.getElementById("boxForFAQRegisters").style.display = "none";
+            document.getElementById("boxForFAQShippings").style.display = "none";
+            document.getElementById("boxForFAQAccidents").style.display = "none";
+          }
+          function ShowFAQAccidents() {
+            document.getElementById("boxForFAQAccidents").style.display =
+              "block";
+            document.getElementById("showAllFAQs").style.display = "none";
+            document.getElementById("boxForFAQRegisters").style.display = "none";
+            document.getElementById("boxForFAQShippings").style.display = "none";
+            document.getElementById("boxForFAQMaps").style.display = "none";
           }
         </script>
 
