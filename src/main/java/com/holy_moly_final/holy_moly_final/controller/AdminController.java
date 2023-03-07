@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,9 @@ public class AdminController {
     @Autowired
     CommonUtils commonUtils;
 
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
+
     @RequestMapping(value = "adminBoard", method = RequestMethod.GET)
     public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -52,7 +56,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/boardInsert", method = RequestMethod.GET)
+    @RequestMapping(value = "/boardInsert", method = RequestMethod.POST)
     public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         params.put("COMMONBOARD_UID", commonUtils.getUniqueSequence());
@@ -114,9 +118,11 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/userInsert", method = RequestMethod.GET)
+    @RequestMapping(value = "/userInsert", method = RequestMethod.POST)
     public ModelAndView userInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        String PASSWORD = bcryptPasswordEncoder.encode((String) params.get("PASSWORD_NOT_ENCODED"));
+        params.put("PASSWORD", PASSWORD);
         Object resultMap = adminService.insertUserInfoAndgetListForAdmin(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");

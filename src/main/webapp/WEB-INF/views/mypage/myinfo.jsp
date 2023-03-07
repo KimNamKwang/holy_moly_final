@@ -70,7 +70,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %><!DOCTYPE html>
                   <input
                     class="form-control form-check-input w-100"
                     type="password"
-                    name="PASSWORD"
+                    name="PASSWORD_NOT_ENCODED"
                     id="userPassword"
                     placeholder="PW"
                     onchange="isSame()"

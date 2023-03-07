@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,7 +29,10 @@ public class MypageController {
     @Autowired
     MypageService mypageService;
 
-    @RequestMapping(value = {"mypage", "/", ""}, method = RequestMethod.GET)
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
+
+    @RequestMapping(value = {"mypage", "/", ""}, method = RequestMethod.POST)
     public ModelAndView mypage(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
             Object resultMap = mypageService.selectUserAndShipmentAndInquiryCount(params);
@@ -61,6 +65,8 @@ public class MypageController {
     @RequestMapping(value = "/userUpdate", method = RequestMethod.GET)
     public ModelAndView userUpdate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+                String PASSWORD = bcryptPasswordEncoder.encode((String) params.get("PASSWORD_NOT_ENCODED"));
+                params.put("PASSWORD", PASSWORD);
                 Object resultMap = mypageService.updateAndGetUserAndShipment(params);
                 modelAndView.addObject("resultMap", resultMap);
                 modelAndView.setViewName("mypage/mypage");

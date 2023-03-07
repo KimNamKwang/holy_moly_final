@@ -31,6 +31,13 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
+        <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
   </head>
 
   <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
@@ -43,7 +50,7 @@
         <div class="container" style="width: 650px">
           <!-- 이용방법 -->
           <div class="fs-3 fw-bold pb-3">사용자 신규 등록</div>
-          <form action="/admin/userInsert" method="get">
+          <form action="/admin/userInsert" method="post">
             <div
               class="shadow-sm p-4 mb-4"
               style="border-radius: 10px 10px; background-color: white"
@@ -79,7 +86,7 @@
                     <input
                       type="password"
                       class="form-control w-50"
-                      name="PASSWORD"
+                      name="PASSWORD_NOT_ENCODED"
                       placeholder="비밀번호"
                       required
                     />
@@ -136,7 +143,7 @@
                     <div class="col-auto">-</div>
                     <div class="col">
                       <input
-                        type="text"
+                        type="number"
                         class="form-control text-center"
                         name="phoneSecond"
                         required
@@ -145,7 +152,7 @@
                     <div class="col-auto">-</div>
                     <div class="col">
                       <input
-                        type="text"
+                        type="number"
                         class="form-control text-center"
                         name="phoneThird"
                         required
@@ -168,6 +175,7 @@
                       name="POSTALCODE"
                       id="sample6_postcode"
                       placeholder="우편번호"
+                      required
                     />
                     <input
                       class="form-control mt-2"
@@ -176,6 +184,7 @@
                       class="col-6"
                       id="sample6_address"
                       placeholder="주소"
+                      required
                     />
                     <input
                       class="form-control mt-2"
