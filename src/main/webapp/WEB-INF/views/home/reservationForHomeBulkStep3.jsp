@@ -244,10 +244,11 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                   </sec:authorize>
                   원
                 </td>
-                <td class="font07">${TOTAL_PRICE}원</td>
+                <fmt:parseNumber value="${TOTAL_PRICE}" integerOnly="true" var="int_Total_price" />
+                <td class="font07">${int_Total_price}원</td>
                 <input
                   type="hidden"
-                  value="${TOTAL_PRICE}"
+                  value="${int_Total_price}"
                   name="TOTAL_PRICE"
                 />
               </tr>
