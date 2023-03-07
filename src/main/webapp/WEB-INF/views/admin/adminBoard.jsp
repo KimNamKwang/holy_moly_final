@@ -94,7 +94,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <a
                 href="/admin/adminBoardCreate"
                 class="btn btn btn-outline-dark btn-sm"
-                >게시판추가</a
+                >게시글추가</a
               >
             </div>
             <div class="mt-2 pb-3">
