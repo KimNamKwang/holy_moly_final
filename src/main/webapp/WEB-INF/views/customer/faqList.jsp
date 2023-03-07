@@ -47,113 +47,195 @@
         <div class="container-fluid" style="background-color: rgb(249, 249, 249); padding-bottom: 200px">
           <div class="container d-flex justify-content-center">
             <div class="row">
-              <div class="col-2">
-                <ul class="list-unstyled pt-5" style="font-size: 1.2rem">
-                  <li class="fw-bold">
-                    <button class="btn fs-3 text-dark" style="text-decoration: none">전체</button>
-                  </li>
-                  <li style="margin-top: 40px">
-                    <button class="btn fs-4" id="faq_register"
-                      style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
-                  </li>
-                  <li style="margin-top: 40px">
-                    <button class="btn fs-4" style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</button>
-                  </li>
-                  <li style="margin-top: 40px">
-                    <button class="btn fs-4" style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</button>
-                  </li>
-                  <li style="margin-top: 40px">
-                    <button class="btn fs-4" style="text-decoration: none; color: rgb(80, 83, 80)">사고문의</button>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-10 d-flex row justify-content-center text-center p-0">
-                <div class="border p-4 mt-5" style="
+              <%-- 왼쪽 내브 바 --%>
+                <div class="col-2">
+                  <ul class="list-unstyled pt-5" style="font-size: 1.2rem">
+                    <li class="fw-bold">
+                      <button class="btn fs-3 text-dark" style="text-decoration: none">전체</button>
+                    </li>
+                    <li style="margin-top: 40px">
+                      <button class="btn fs-4" id="faq_register" onclick="ShowFAQRegisters()"
+                        style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
+                    </li>
+                    <li style="margin-top: 40px">
+                      <button class="btn fs-4" id="faq_shipping" onclick="ShowFAQShippings()"
+                        style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</button>
+                    </li>
+                    <li style="margin-top: 40px">
+                      <button class="btn fs-4" id="faq_map"
+                        style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</button>
+                    </li>
+                    <li style="margin-top: 40px">
+                      <button class="btn fs-4" id="faq_accident"
+                        style="text-decoration: none; color: rgb(80, 83, 80)">사고문의</button>
+                    </li>
+                  </ul>
+                </div>
+
+
+                <span id="showAllFAQs">
+                  <%-- 전체 문의 화면 --%>
+                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                      <div class="border p-4 mt-5" style="
                 border-radius: 20px;
                 background-color: white;
                 width: 710px;
                 margin: 0px 310px 0px 130px;
               ">
-                  <div>
-                    <input type="text" xn class="w-100 border border-secondary border-opacity-10 p-3"
-                      style="height: 50px; border-radius: 10px" name="search" placeholder="검색어" />
-                  </div>
-                  <div class="pt-3 mt-4">
-                    <ul class="list-unstyled">
+                        <div>
+                          <input type="text" xn class="w-100 border border-secondary border-opacity-10 p-3"
+                            style="height: 50px; border-radius: 10px" name="search" placeholder="검색어" />
+                        </div>
+                        <div class="pt-3 mt-4">
+                          <ul class="list-unstyled">
 
-                      <c:forEach items="${resultMap.FAQList}" var="_FAQList" varStatus="loop">
-                        <li class="row mb-3">
-                          <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
-                            <span class="p-1 me-1" style="
+                            <c:forEach items="${resultMap.FAQList}" var="_FAQList" varStatus="loop">
+                              <li class="row mb-3">
+                                <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
+                                  <span class="p-1 me-1" style="
                           background-color: rgb(242, 255, 216);
                           border-radius: 20px;
                           color: rgb(55, 210, 77);
                           font-size: 0.9rem;
                         ">
-                              ${_FAQList.FAQ_TYPE_DESCRIPTION}
-                            </span>
-                            ${_FAQList.TITLE}
-                          </div>
-                          <div class="col-auto">
-                            <a class="text-dark" href="#collapseContent${loop.count}" data-bs-toggle="collapse"><span
-                                class="material-symbols-outlined">
-                                expand_more
-                              </span></a>
-                          </div>
-                          <div class="row collapse text-start pt-4" id="collapseContent${loop.count}"
-                            style="color: rgb(108, 110, 108); font-size: 1.1rem">
-                            <div class="col-2">&nbsp;</div>
-                            <div class="col">
-                              <div class="pb-5">
-                                ${_FAQList.REPLY_FOR_FAQ}
-                              </div>
+                                    ${_FAQList.FAQ_TYPE_DESCRIPTION}
+                                  </span>
+                                  ${_FAQList.TITLE}
+                                </div>
+                                <div class="col-auto">
+                                  <a class="text-dark" href="#collapseContent${loop.count}"
+                                    data-bs-toggle="collapse"><span class="material-symbols-outlined">
+                                      expand_more
+                                    </span></a>
+                                </div>
+                                <div class="row collapse text-start pt-4" id="collapseContent${loop.count}"
+                                  style="color: rgb(108, 110, 108); font-size: 1.1rem">
+                                  <div class="col-2">&nbsp;</div>
+                                  <div class="col">
+                                    <div class="pb-5">
+                                      ${_FAQList.REPLY_FOR_FAQ}
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </c:forEach>
+
+                            <div class="mt-2 pb-3">
+                              <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                  <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#"
+                                    aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only"></span>
+                                  </a>
+                                </li>
+
+                                <li class="page-item">
+                                  <a class="page-link text-dark border-0" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                  <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                  <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">3</a>
+                                </li>
+
+                                <li class="page-item">
+                                  <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#"
+                                    aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only"></span>
+                                  </a>
+                                </li>
+                              </ul>
                             </div>
-                          </div>
-                        </li>
-                      </c:forEach>
-                      <div id="dataID">
-
+                          </ul>
+                        </div>
                       </div>
-                      <div class="mt-2 pb-3">
-                        <ul class="pagination justify-content-center">
-                          <li class="page-item">
-                            <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#"
-                              aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                              <span class="sr-only"></span>
-                            </a>
-                          </li>
+                    </div>
+                </span>
 
-                          <li class="page-item">
-                            <a class="page-link text-dark border-0" href="#">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">2</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">3</a>
-                          </li>
+                <div class="col-2"></div>
+                <div id="boxForFAQRegisters" style="display: none;">
+                  <%-- 접수문의 화면 --%>
+                    <div class="col-2"></div>
+                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                      <div class="border p-4 mt-5" style="
+                border-radius: 20px;
+                background-color: white;
+                width: 710px;
+                margin: 0px 310px 0px 130px;
+              ">
+                        <div class="pt-3 mt-4">
+                          <ul class="list-unstyled" id="for_faq_registers">
 
-                          <li class="page-item">
-                            <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                              <span class="sr-only"></span>
-                            </a>
-                          </li>
-                        </ul>
+                          </ul>
+                        </div>
                       </div>
-                    </ul>
-                  </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div id="error_status">
 
+                <div id="boxForFAQShippings" style="display: none;">
+                  <%-- 배송문의 화면 --%>
+                    <div class="col-2"></div>
+                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                      <div class="border p-4 mt-5" style="
+                border-radius: 20px;
+                background-color: white;
+                width: 710px;
+                margin: 0px 310px 0px 130px;
+              ">
+                        <div class="pt-3 mt-4">
+                          <ul class="list-unstyled" id="for_faq_shipping">
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div id="boxForFAQMaps" style="display: none;">
+                  <%-- 지도문의 화면 --%>
+                    <div class="col-2"></div>
+                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                      <div class="border p-4 mt-5" style="
+                  border-radius: 20px;
+                  background-color: white;
+                  width: 710px;
+                  margin: 0px 310px 0px 130px;
+                ">
+                        <div class="pt-3 mt-4">
+                          <ul class="list-unstyled" id="for_faq_map">
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div id="boxForFAQAccidents" style="display: none;">
+                  <%-- 사고문의 화면 --%>
+                    <div class="col-2"></div>
+                    <div class="col-10 d-flex row justify-content-center text-center p-0">
+                      <div class="border p-4 mt-5" style="
+                  border-radius: 20px;
+                  background-color: white;
+                  width: 710px;
+                  margin: 0px 310px 0px 130px;
+                ">
+                        <div class="pt-3 mt-4">
+                          <ul class="list-unstyled" id="for_faq_accident">
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="complete_status">
 
-            </div>
+
+
           </div>
         </div>
         <jsp:include page="../footer.jsp" />
@@ -163,16 +245,38 @@
           crossorigin="anonymous"></script>
 
         <script>
+          function ShowFAQRegisters() {
+            document.getElementById("boxForFAQRegisters").style.display =
+              "block";
+            document.getElementById("showAllFAQs").style.display = "none";
+          }
+          function ShowFAQShippings() {
+            document.getElementById("boxForFAQShippings").style.display =
+              "block";
+            document.getElementById("showAllFAQs").style.display = "none";
+          }
+        </script>
+
+
+
+
+
+
+
+
+        <script>
 
           $(document).ready(function () {
+
+            // 접수문의
             $("#faq_register").click(function () {
               $.ajax({
                 //request
                 url: "/forfaq/faq_type_uid/",
                 type: "GET",
-                data: { currentPage: 1, pageScale: 10, faq_register: 'FAQ_REGISTER' },
+                data: { faq_type_uid: 'FAQ_REGISTER' },
                 success: function (data, status) {
-                  alert("hi");
+                  // alert()
                   // $("#status").append(status);
                   // $("#dataID").append(typeof data);
                   /** 
@@ -183,10 +287,25 @@
                    // $("#dataID").append(", ");
                   */
                   //Each문, data와 callback
-                  $.each(data.resultList, function (index, item /*item은Map*/) {
-                    $("#dataID").append(
-                      "<div>" + index + "," + item.TITLE + "</div>"
+                  // $.each(data.resultList, function (index, item /*item은Map*/) {
+                  //   $("#faq_type").append(
+                  //     "<div>" + index + "," + item.TITLE + "</div>"
+                  //   );
+                  // });
+                  // $("#faq_type").append(data.registerList);
+
+                  $.each(data.registerList, function (index, item /*item은Map*/) {
+
+
+                    $("#for_faq_registers").append(
+                      "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
+                      " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
                     );
+
                   });
                 },
                 error: function (xhr, status, error) {
@@ -197,10 +316,99 @@
                 complete: function () {
                   //success, error 어떤것이든 상관없이 complete가 이루어진다.
                   // remove progress bar
-                  $("#complete_status").append("Done.");
+                  // $("#complete_status").append("Done.");
                 },
               });
             });
+
+            // 배송문의
+            $("#faq_shipping").click(function () {
+              $.ajax({
+                //request
+                url: "/forfaq/faq_type_uid/",
+                type: "GET",
+                data: { faq_type_uid: 'FAQ_SHIPPING' },
+                success: function (data, status) {
+                  $.each(data.registerList, function (index, item /*item은Map*/) {
+                    $("#for_faq_shipping").append(
+                      "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
+                      " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
+                    );
+                  });
+                },
+                error: function (xhr, status, error) {
+                  $("#error_status").append(status);
+
+                },
+                complete: function () {
+                  //success, error 어떤것이든 상관없이 complete가 이루어진다.               
+                },
+              });
+            });
+
+            //지도 문의
+            $("#faq_map").click(function () {
+              $.ajax({
+                //request
+                url: "/forfaq/faq_type_uid/",
+                type: "GET",
+                data: { faq_type_uid: 'FAQ_MAP' },
+                success: function (data, status) {
+                  $.each(data.registerList, function (index, item /*item은Map*/) {
+                    $("#for_faq_map").append(
+                      "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
+                      " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
+                    );
+                  });
+                },
+                error: function (xhr, status, error) {
+                  $("#error_status").append(status);
+
+                },
+                complete: function () {
+                  //success, error 어떤것이든 상관없이 complete가 이루어진다.               
+                },
+              });
+            });
+
+
+            // 사고 문의
+            $("#faq_accident").click(function () {
+              $.ajax({
+                //request
+                url: "/forfaq/faq_type_uid/",
+                type: "GET",
+                data: { faq_type_uid: 'FAQ_ACCIDENT' },
+                success: function (data, status) {
+                  $.each(data.registerList, function (index, item /*item은Map*/) {
+                    $("#for_faq_accident").append(
+                      "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
+                      " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
+                    );
+                  });
+                },
+                error: function (xhr, status, error) {
+                  $("#error_status").append(status);
+
+                },
+                complete: function () {
+                  //success, error 어떤것이든 상관없이 complete가 이루어진다.               
+                },
+              });
+            });
+
           });
         </script>
 

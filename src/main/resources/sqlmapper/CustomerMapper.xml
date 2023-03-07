@@ -17,12 +17,12 @@
     ;
     </select>
 
-<select id="selectFAQRegisterLists" parameterType="Map" resultType="Map">
+<select id="selectFAQFAQListByUid" parameterType="Map" resultType="Map">
     SELECT * 
     FROM COMMON_BOARD
     INNER JOIN FAQ_TYPE
     ON COMMON_BOARD.FAQ_TYPE_UID = FAQ_TYPE.FAQ_TYPE_UID
-    AND FAQ_TYPE.FAQ_TYPE_UID = #{faq_register}
+    AND FAQ_TYPE.FAQ_TYPE_UID = #{faq_type_uid}
     INNER JOIN MAIN_BOARD
     ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
     ORDER BY DATE_CREATED DESC
@@ -36,6 +36,14 @@
       ORDER BY DATE_CREATED DESC
       LIMIT 0, 10;
 </select> 
+
+<select id="selectFAQTypeListPaginations" parameterType="Map" resultType="Map">
+    SELECT *
+    FROM COMMON_BOARD
+	WHERE FAQ_TYPE_UID = #{faq_type_uid}
+    ORDER BY DATE_CREATED DESC
+    LIMIT 0, 10;
+</select>
 
     <insert id="insertInquiry" parameterType="Map">
 		INSERT INTO INQUIRYS
