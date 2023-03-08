@@ -37,6 +37,12 @@ public class CommonService {
 
     }
 
+    public Object idDuplicateCheck(Object dataMap) {
+        String sqlMapId = "Common.selectUsersUIDForDuplicateCheck";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object insertMulti(Object dataMap) {
         String sqlMapId = "AttachFile.insertMulti";
         Object result = sharedDao.insert(sqlMapId, dataMap);

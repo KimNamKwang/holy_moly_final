@@ -55,4 +55,9 @@ function selectAll(selectAll) {
   checkboxes.forEach((checkbox) => {
     checkbox.checked = selectAll.checked;
   });
+  document.getElementsByName("MARKETING_RECEIVE_ACCEPTION").checked;
 }
+
+document.getElementById("check_evt5").addEventListener("click", function () {
+  document.getElementsByName("MARKETING_RECEIVE_ACCEPTION").checked;
+});

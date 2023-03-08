@@ -44,4 +44,11 @@ VALUE ( #{USER_UID}, #{Name}, #{PASSWORD}, #{E_MAIL}, #{BIRTH_DATE}, #{POSTALCOD
 UPDATE USERS SET PASSWORD = #{PASSWORD} WHERE NAME = #{NAME}  AND PHONE = #{PHONE};
 </update>
 
+
+<select id="selectUsersUIDForDuplicateCheck" parameterType="Map" resultType="Map">
+      SELECT USER_UID
+      FROM USERS
+      WHERE USER_UID =  #{rawID}
+    </select>
+
 </mapper>
