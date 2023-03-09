@@ -41,6 +41,8 @@
                       <th>배송유형</th>
                       <th>보내는 사람</th>
                       <th>받는 사람</th>
+                      <th>관리</th>
+
                     </tr>
                   </thead>
                   <tbody>
@@ -51,16 +53,15 @@
                             class="text-dark">${_shipmentsList.TRACKING_NUMBER}</a>
                         </td>
                         <td>${_shipmentsList.RESERVATION_DATE}</td>
+                        <td>${_shipmentsList.SHIPMENT_TYPE_DESCRIPTION}</td>
                         <!-- 가입일 날짜와 시간 사이에 'T' 문자 추후 제거 요망 -->
                         <td>${_shipmentsList.SENDER_NAME}</td>
                         <td>${_shipmentsList.RECIPIENT_NAME}</td>
                         <td>
-                          <a href="/admin/adminUserUpdate?USER_UID=${_shipmentsList.TRACKING_NUMBER}"
-                            class="btn btn btn-outline-dark btn-sm">수정</a>
-                          <form action="/admin/userDelete" method="get">
-                            <input type="hidden" name="USER_UID" value="${_shipmentsList.TRACKING_NUMBER}">
+                          <form action="/admin/adminShipmentInfo" method="get">
+                            <input type="hidden" name="TRACKING_NUMBER" value="${_shipmentsList.TRACKING_NUMBER}">
                             <button class="btn btn btn-outline-dark btn-sm">
-                              탈퇴
+                              배송관리
                             </button>
                           </form>
                         </td>

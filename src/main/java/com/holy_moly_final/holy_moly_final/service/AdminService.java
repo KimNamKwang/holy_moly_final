@@ -108,6 +108,12 @@ public class AdminService {
         return result;
     }
 
+    public Object getShipmentInfo(Object dataMap) {
+        String sqlMapId = "Admin.selectShipmentInfo";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getListForUser(Object dataMap) {
         String sqlMapId = "Admin.selectUserList";
         Object result = sharedDao.getList(sqlMapId, dataMap);
