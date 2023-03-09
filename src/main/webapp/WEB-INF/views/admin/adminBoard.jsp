@@ -44,9 +44,10 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         style="background-color: rgb(249, 249, 249); padding-bottom: 200px"
       >
         <div class="container">
+          <c:set var="_pagination" value="${resultMap.paginations}" />
           <div class="fs-2 fw-bold pb-3">게시판 관리</div>
           <div class="text-secondary">
-            총 게시판수 : <span class="fw-bold">${resultMap.totalCount.TOTAL_BOARD}</span>
+            총 게시판수 : <span class="fw-bold">${_pagination.totalCount}</span>
           </div>
           <div class="ps-4 pe-4 mt-2 shadow-sm" style="background-color: white">
             <table class="table text-center border-none mb-0">
@@ -119,16 +120,12 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         <span class="sr-only"></span>
                       </a>
                     </li>
+                    <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
 
                     <li class="page-item">
-                      <a class="page-link text-dark border-0" href="#">1</a>
+                      <a class="page-link text-dark border-0" href="/admin/adminBoard/${i}">${i}</a>
                     </li>
-                    <li class="page-item">
-                      <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">3</a>
-                    </li>
+                 </c:forEach>
 
                     <li class="page-item">
                       <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#" aria-label="Next">

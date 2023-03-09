@@ -80,7 +80,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               >
                 <div class="color">
                   <a
-                    href="/admin/adminBoard"
+                    href="/admin/adminBoard/1"
                     class="nav-link fw-bold text-nowrap"
                     style="font-size: 1.2rem"
                     >게시판 관리</a

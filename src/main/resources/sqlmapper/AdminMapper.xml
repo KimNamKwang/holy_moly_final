@@ -72,7 +72,11 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
       SELECT COMMON_BOARD.COMMONBOARD_UID, COMMON_BOARD.TITLE, COMMON_BOARD.DATE_CREATED, MAIN_BOARD.BOARD_TYPE_DESCRIPTION
       FROM MAIN_BOARD INNER JOIN COMMON_BOARD
       ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
-      ORDER BY COMMON_BOARD.DATE_CREATED;
+       <if test="pageScale != null">
+      ORDER BY COMMON_BOARD.DATE_CREATED
+       LIMIT #{pageBegin}, #{pageScale}
+      </if>
+
 </select> 
 
 <select id="selectBoardPaginations" parameterType="Map" resultType="Map">
@@ -82,7 +86,7 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
       LIMIT 0, 10;
 </select> 
 
-<select id="selectBoardCount" parameterType="Map" resultType="Map">
+<select id="selectBoardCount" parameterType="Map" resultType="int">
       SELECT COUNT(*) AS TOTAL_BOARD
       FROM COMMON_BOARD;
 </select> 
