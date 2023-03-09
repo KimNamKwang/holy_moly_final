@@ -140,7 +140,7 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/reservationSender", method = RequestMethod.GET)
+    @RequestMapping(value = "/reservationSender", method = RequestMethod.POST)
     public ModelAndView reservationSender(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         Object resultMap = homeService.getUserInfo(params);
