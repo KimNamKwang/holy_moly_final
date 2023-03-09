@@ -69,25 +69,30 @@
           </form>
         </div>
         <div
-          class="container bg-white w-75 mt-4 align-items-center shadow-sm p-3"
-          style="border-radius: 15px 15px"
+          class="container bg-white w-75 mt-4 align-items-center shadow-sm" 
+          style="border-radius: 15px 15px; padding: 10px 30px 15px 30px"
         >
           <c:set var="_pagination" value="${resultMap.paginations}" />
-          <div class="mt-3" style="font-size: 0.9rem">
+          <div class="mt-3 mb-4 border-bottom border-dark" style="font-size: 0.9rem;">
             전체<span class="fw-bold fs-5"> ${_pagination.totalCount} </span>건
           </div>
-          <hr class="mt-1" />
           <c:forEach items="${resultMap.resultList}" var="resultData" varStatus="loop">
                     <!-- 내용 (title, date) -->
+          <a href="/cs/noticeView/${resultData.COMMONBOARD_UID}" class="text-decoration-none text-dark"
+              style="font-size:1.2rem"
+              >
           <div>
             <div class="text-secondary" style="font-size: small">
               ${fn:substring(resultData.DATE_CREATED,0,10)}
             </div>
-            <a href="/cs/noticeView/${resultData.COMMONBOARD_UID}" class="mt-2 text-decoration-none text-dark"
-              >${resultData.TITLE}</a
-            >
+            <div class="pt-2">
+            ${resultData.TITLE}
+
+            </div>
             <hr />
           </div>
+          </a
+            >
           </c:forEach>
 
           <div class="mb-3 pt-3">

@@ -21,6 +21,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      
+      <style>
+      input:focus{
+        outline: 1px solid rgb(55, 210, 67);
+      }
+      </style>
   </head>
 
   <body>
@@ -81,7 +87,7 @@
             <div class="p-3">로그인 시 더욱 편리하게 이용하실 수 있습니다.</div>
 
             <div class="row">
-              <div class="col">
+              <div class="col  text-end">
                 <a href="/common/login" class="btn text-light fw-bold" style="
                     background-color: rgb(55, 210, 67);
                     color: rgb(55, 210, 67);
@@ -89,13 +95,16 @@
                   ">
                   로그인 하기
                 </a>
-                <a href="/delivery/searchTrackingNumber" class="btn text-light fw-bold" style="
+              </div>
+              <div class="col text-start">
+                <a href="/delivery/searchTrackingNumber" class="btn text-light fw-bold " style="
                     background-color: rgb(55, 210, 67);
                     color: rgb(55, 210, 67);
                     width: 150px;
                   ">
                   운송장 조회
                 </a>
+              
               </div>
             </div>
           </div>

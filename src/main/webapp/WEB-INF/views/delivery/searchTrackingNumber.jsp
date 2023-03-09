@@ -21,6 +21,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      <style>
+      input:focus{
+        outline: 1px solid rgb(55, 210, 67);
+      }
+      </style>
   </head>
 
   <body>
@@ -40,7 +45,7 @@
                   border-radius: 10px;
                   border: 2px solid rgb(240, 240, 240);
                   width: 80%;
-                  margin-right: 46px;
+                  margin: 0px 46px 5px 0px;
                 " />
               <input type="text" name="SHIPMENT_PASSWORD" placeholder="배송 비밀번호" maxlength="20" style="
               padding: 10px;

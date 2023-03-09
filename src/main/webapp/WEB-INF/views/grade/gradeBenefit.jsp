@@ -213,7 +213,7 @@
         </div>
         <div class="text-center">
           <a
-            href="/join/join_step1"
+            href="/common/join_step1"
             class="btn text-light fw-bold"
             style="
               background-color: rgb(55, 210, 67);
