@@ -125,7 +125,7 @@
                                   ">
                                         / 400(최소15자)
                                       </span>
-                                      <div id="updatearea">
+                                      <div id="updatearea${index}">
                                         <button id="sendBtn" class="btn ms-1" style="
                                       background-color: rgb(204, 204, 204);
                                       color: white;
@@ -140,7 +140,7 @@
                                 </a>
                               </div>
                             </div>
-                            <div class="mt-2 text-end" id="editarea" style="display: none">
+                            <div class="mt-2 text-end" id="editarea${index}" style="display: none">
                               <button id="editBtn" class="btn ms-1" style="
                                     background-color: rgb(55, 210, 67);
                                     color: white;
@@ -228,7 +228,7 @@
             if (value != "") {
               $("#editarea").css("display", "block");
               $("#updatearea").css("display", "none");
-              $("#collapseTarget${index}").removeClass("collapse");
+              $("#collapseTarget").removeClass("collapse");
               // $("#replybtn").hide();
             }
           });

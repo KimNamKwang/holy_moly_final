@@ -66,6 +66,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           class="border p-4 mt-5"
           style="border-radius: 20px; background-color: white; width: 710px"
         >
+          <%--
           <div>
             <input
               type="text"
@@ -76,6 +77,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               placeholder="검색어"
             />
           </div>
+          --%>
           <div class="border-top pt-3 mt-4">
             <table class="table">
               <tbody>

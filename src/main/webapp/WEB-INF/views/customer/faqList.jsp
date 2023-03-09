@@ -83,11 +83,13 @@
                 width: 710px;
                 margin: 0px 310px 0px 130px;
               ">
+              <%--
                         <div>
                         <!-- 검색 기능 추후 구현 -->
                           <input type="text" xn class="w-100 border border-secondary border-opacity-10 p-3"
                             style="height: 50px; border-radius: 10px" name="search" placeholder="검색어" />
                         </div>
+                        --%>
                         <div class="pt-3 mt-4">
                           <ul class="list-unstyled">
 
