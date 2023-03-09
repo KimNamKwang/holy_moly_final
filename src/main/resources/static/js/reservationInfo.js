@@ -28,6 +28,7 @@ for (let i = 1; i <= 3; i++) {
 
 // i -> row, j -> col
 // #visit-time_i_j
+
 // #visit-time_1_1
 // #visit-time_1_2
 // #visit-time_1_3
@@ -35,7 +36,7 @@ for (let i = 1; i <= 3; i++) {
 // #visit-time_2_2
 for (let i = 1; i <= 4; i++) {
   for (let j = 1; j <= 3; j++) {
-    fullDate = new Date(today.setDate(today.getDate() + 1)); //내일 날짜 -> Sat Mar 11 2023 00:17:44 GMT+0900 (한국 표준시)
+    fullDate = new Date(today.setDate(today.getDate() + 1)); //내일 날짜 => Sat Mar 11 2023 00:17:44 GMT+0900 (한국 표준시)
     yymmdd = fullDate.toISOString().replace("T", " ").substring(0, 11);
     // toISOString -> 날짜 형식을 YYYY-MM-DDTHH:mm:ss.sssZ 으로 바꿈
     // replace -> 가운데 T를 공백 한 칸으로
