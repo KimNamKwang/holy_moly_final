@@ -137,14 +137,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 <tr>
                   <th class="text-nowrap">연락처</th>
                   <td>
-                    <input
-                    type="number"
-                    class="form-control w-50"
-                    id="phone"
-                    name="PHONE"
-                    value="${resultMap.PHONE}"
-                    required
-                  />
+                  <input type="tel" class="form-control w-50"" id="phone" name="PHONE" value="${resultMap.PHONE}" maxlength="11"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required />
                   </td>
                 </tr>
                 <tr>

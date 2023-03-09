@@ -31,7 +31,7 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
-        <style>
+    <style>
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -143,18 +143,24 @@
                     <div class="col-auto">-</div>
                     <div class="col">
                       <input
-                        type="number"
+                        type="tel"
                         class="form-control text-center"
+                        id="phoneThird"
                         name="phoneSecond"
+                        maxlength="4"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         required
                       />
                     </div>
                     <div class="col-auto">-</div>
                     <div class="col">
                       <input
-                        type="number"
+                        type="tel"
                         class="form-control text-center"
+                        id="phoneThird"
                         name="phoneThird"
+                        maxlength="4"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         required
                       />
                     </div>

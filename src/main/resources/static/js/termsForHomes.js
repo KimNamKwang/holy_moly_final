@@ -56,3 +56,7 @@ function selectAll(selectAll) {
     checkbox.checked = selectAll.checked;
   });
 }
+
+document.getElementById("check_evt5").addEventListener("click", function () {
+  document.getElementsByName("MARKETING_RECEIVE_ACCEPTION").values = "on";
+});

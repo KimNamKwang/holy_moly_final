@@ -60,6 +60,13 @@ public class DeliveryController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/searchTrackingNumber", method = RequestMethod.GET)
+    public ModelAndView searchTrackingNumber(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        modelAndView.setViewName("delivery/searchTrackingNumber");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/trackingNumberInquiry", method = RequestMethod.GET)
     public ModelAndView trackingNumberInquiry(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {

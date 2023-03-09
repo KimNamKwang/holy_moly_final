@@ -59,6 +59,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
   <body>
     <jsp:include page="../navbar.jsp" />
     <!--바디바디 시작-->
+    <sec:authentication property="principal" var="userDetailsBean" />
     <div
       class="container mt-5"
       style="font-family: 'Noto Sans KR', sans-serif; margin-bottom: 200px"
@@ -71,21 +72,18 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
         <div class="row">
           <!-- 1박스 -->
           <div class="col-auto pe-5">
-            <h3><b>${resultMap.userInfo.NAME}</b>님은</h3>
+            <h3><b>${userDetailsBean.memberName}</b>님은</h3>
             <h3>
               <b
                 ><span style="color: rgb(55, 210, 67)"
-                  >${resultMap.userInfo.GRADE}</span
+                  >${userDetailsBean.grade_Desc}</span
                 ></b
               >등급 회원입니다.
             </h3>
             <hr noshade size="5px" style="width: 450px" />
             <div class="row">
               <div class="col-auto">
-                <sec:authentication
-                  property="principal"
-                  var="userDetailsBean"
-                />
+                
                 <form action="/mypage/myinfo" method="get">
                   <input
                     type="hidden"
@@ -141,7 +139,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                         <b class="ms-3"
                           ><span
                             style="color: rgb(55, 210, 67); font-size: 150%"
-                            >${resultMap.userInfo.POINT}</span
+                            >${userDetailsBean.totalPoint}</span
                           >
                         </b>
                       </button>

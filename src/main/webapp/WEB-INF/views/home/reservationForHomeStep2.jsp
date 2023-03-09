@@ -120,26 +120,28 @@
                       <td>
                         <select name="ITEM_TYPE_UID" class="form-select w-25" required>
                           <option value="">물품선택</option>
-                          <option value="item_f_01">농축산물류 ↓</option>
-                          <option value="item_f_02">건어물</option>
-                          <option value="item_f_03">과일류</option>
-                          <option value="item_f_04">쌀</option>
-                          <option value="item_f_05">채소류</option>
-                          <option value="item_f_06">기타 농축산물류</option>
-                          <option value="item_b_01">서적류 ↓</option>
-                          <option value="item_b_02">서류</option>
-                          <option value="item_b_03">서적</option>
-                          <option value="item_b_04">인쇄물</option>
-                          <option value="item_b_05">기타 서적류</option>
-                          <option value="item_m_01">약품류 ↓</option>
-                          <option value="item_m_02">의약품</option>
-                          <option value="item_m_03">한약</option>
-                          <option value="item_m_04">건강보조제품</option>
-                          <option value="item_c_01">의류/잡화 ↓</option>
-                          <option value="item_c_02">의류</option>
-                          <option value="item_c_03">신발</option>
-                          <option value="item_c_04">가방/지갑</option>
-                          <option value="item_c_05">액세서리</option>
+                          <option value="" disabled>농축산물류 ↓</option>
+                          <option value="item_f_01">건어물</option>
+                          <option value="item_f_02">과일류</option>
+                          <option value="item_f_03">쌀</option>
+                          <option value="item_f_04">채소류</option>
+                          <option value="item_f_05">기타 농축산물류</option>
+                          <option value="" disabled>서적류 ↓</option>
+                          <option value="item_b_01">서류</option>
+                          <option value="item_b_02">서적</option>
+                          <option value="item_b_03">인쇄물</option>
+                          <option value="item_b_04">기타 서적류</option>
+                          <option value="" disabled>약품류 ↓</option>
+                          <option value="item_m_01">의약품</option>
+                          <option value="item_m_02">한약</option>
+                          <option value="item_m_03">건강보조제품</option>
+                          <option value="item_m_04">기타 약품류</option>
+                          <option value="" disabled>의류/잡화 ↓</option>
+                          <option value="item_c_01">의류</option>
+                          <option value="item_c_02">신발</option>
+                          <option value="item_c_03">가방/지갑</option>
+                          <option value="item_c_04">액세서리</option>
+                          <option value="item_c_05">기타 의류/잡화류</option>
                         </select>
 
                         <div class="select_type11">

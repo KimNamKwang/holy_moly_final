@@ -1,176 +1,99 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>약관동의</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9홀몰G65"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9홀몰G65" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/resources/css/join.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   </head>
+
   <body class="bg-light" style="font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
     <div class="container" style="width: 600px; padding-bottom: 200px">
-  
-        <div
-          class="row mb-5 d-flex align-items-center text-start"
-          style="padding-top: 150px"
-        >
-          <div class="col-3 d-flex align-items-center">
-            <a href="/index" class="navbar-brand">
-              <div
-                style="
+
+      <div class="row mb-5 d-flex align-items-center text-start" style="padding-top: 150px">
+        <div class="col-3 d-flex align-items-center">
+          <a href="/index" class="navbar-brand">
+            <div style="
                   font-family: 'Zen Dots', 홀몰rsive;
                   color: rgb(76, 183, 86);
-                "
-              >
-                <span class="fst-italic fw-bold ms-2 fs-4">POST</span>
-                <span class="material-symbols-outlined fw-bold align-middle">
-                  local_shipping
-                </span>
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-2 text-green text-nowrap fs-5 fw-bold d-flex align-items-center"
-          >
-            회원가입
-          </div>
-          <div class="col">
-            <span
-              style="text-decoration: line-through; color: rgb(55, 210, 67)"
-            >
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </span>
-            <span
-              style="text-decoration: line-through; color: rgb(210, 241, 212)"
-            >
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </span>
-          </div>
+                ">
+              <span class="fst-italic fw-bold ms-2 fs-4">POST</span>
+              <span class="material-symbols-outlined fw-bold align-middle">
+                local_shipping
+              </span>
+            </div>
+          </a>
         </div>
-
+        <div class="col-2 text-green text-nowrap fs-5 fw-bold d-flex align-items-center">
+          회원가입
+        </div>
+        <div class="col">
+          <span style="text-decoration: line-through; color: rgb(55, 210, 67)">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          </span>
+          <span style="text-decoration: line-through; color: rgb(210, 241, 212)">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          </span>
+        </div>
+      </div>
+      <form action="/common/join_step2" method="get">
         <div class="d-flex justify-content-center">
-          <div
-            class="bg-white border text-start p-4 w-100"
-            style="border-radius: 20px"
-          >
+          <div class="bg-white border text-start p-4 w-100" style="border-radius: 20px">
             <div>
-              <input
-                type="checkbox"
-                class="form-check-input me-1"
-                name="agree"
-                id="agree_all"
-                style="zoom: 1.5; border-radius: 50%"
-                onclick="selectAll(this)"
-              />
-              <label
-                for="agree_all"
-                class="form-check-label fw-bold"
-                style="font-size: 1.2rem"
-                >회원 약관에 모두 동의합니다.</label
-              >
+              <input type="checkbox" class="form-check-input me-1" name="agree" id="agree_all"
+                style="zoom: 1.5; border-radius: 50%" onclick="selectAll(this)" />
+              <label for="agree_all" class="form-check-label fw-bold" style="font-size: 1.2rem">회원 약관에 모두 동의합니다.</label>
             </div>
             <div class="text-green fw-bold pb-3">POST 회원약관</div>
             <div>
-              <input
-                type="checkbox"
-                class="form-check-input me-1 mb-2"
-                style="zoom: 1.3; border-radius: 50%"
-                name="agree"
-                id="check_evt2"
-                required
-              />
+              <input type="checkbox" class="form-check-input me-1 mb-2" style="zoom: 1.3; border-radius: 50%"
+                name="agree" id="check_evt2" required />
               <label for="check_evt2" class="form-check-label">
-                <a
-                  href="#modalTermsForUse"
-                  class="text-decoration-none text-dark"
-                  data-bs-toggle="modal"
-                >
+                <a href="#modalTermsForUse" class="text-decoration-none text-dark" data-bs-toggle="modal">
                   [필수] 이용약관 동의
                 </a>
               </label>
             </div>
             <div>
-              <input
-                type="checkbox"
-                class="form-check-input me-1 mb-2"
-                style="zoom: 1.3; border-radius: 50%"
-                name="agree"
-                id="check_evt3"
-                required
-              />
+              <input type="checkbox" class="form-check-input me-1 mb-2" style="zoom: 1.3; border-radius: 50%"
+                name="agree" id="check_evt3" required />
               <label for="check_evt3" class="form-check-label">
-                <a
-                  href="#modalTermsForPersonalInfo"
-                  class="text-decoration-none text-dark"
-                  data-bs-toggle="modal"
-                >
+                <a href="#modalTermsForPersonalInfo" class="text-decoration-none text-dark" data-bs-toggle="modal">
                   [필수] 개인정보 처리방침
                 </a>
               </label>
             </div>
+
             <div>
-              <input
-                type="checkbox"
-                class="form-check-input me-1 mb-2"
-                style="zoom: 1.3; border-radius: 50%"
-                name="agree"
-                id="check_evt4"
-                required
-              />
+              <input type="checkbox" class="form-check-input me-1 mb-2" style="zoom: 1.3; border-radius: 50%"
+                name="agree" id="check_evt4" required />
               <label for="check_evt4" class="form-check-label">
-                <a
-                  href="#modalTermsForPersonalInfoSec"
-                  class="text-decoration-none text-dark"
-                  data-bs-toggle="modal"
-                >
+                <a href="#modalTermsForPersonalInfoSec" class="text-decoration-none text-dark" data-bs-toggle="modal">
                   [필수] 개인정보 수집∙이용 동의
                 </a>
               </label>
             </div>
-            <form action="/common/join_step2">
             <div>
-              <input
-                type="checkbox"
-                class="form-check-input me-1 mb-2"
-                style="zoom: 1.3; border-radius: 50%"
-                name="agree"
-                id="check_evt5"
-              />
+              <input type="checkbox" class="form-check-input me-1 mb-2" style="zoom: 1.3; border-radius: 50%"
+                name="MARKETING_RECEIVE_ACCEPTION" id="check_evt5" />
               <label for="check_evt5" class="form-check-label">
-                <a
-                  href="#modalTermsForMarketing"
-                  class="text-decoration-none text-dark"
-                  data-bs-toggle="modal"
-                >
+                <a href="#modalTermsForMarketing" class="text-decoration-none text-dark" data-bs-toggle="modal">
                   [선택] 마케팅 정보 수신 동의
                 </a>
               </label>
@@ -178,14 +101,11 @@
           </div>
         </div>
         <div class="col text-end mt-2">
-          <button
-            class="btn btn-lg text-light fw-bold"
-            style="
+          <button type="submit" class="btn btn-lg text-light fw-bold" style="
               background-color: rgb(55, 210, 67);
               border-radius: 50%;
               font-size: 1.3rem;
-            "
-          >
+            ">
             >
           </button>
         </div>
@@ -425,10 +345,9 @@
     </div>
     <jsp:include page="../footer.jsp" />
     <script src="/resources/js/termsForHomes.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
-</html>
+
+  </html>

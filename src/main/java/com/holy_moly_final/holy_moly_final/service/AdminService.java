@@ -100,8 +100,34 @@ public class AdminService {
         return result;
     }
 
+    public Object getListAndPaginationsForShipment(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        result.put("shipmentsList", this.getListForShipment(dataMap));
+        result.put("paginations", this.paginationsForShipment(dataMap));
+        result.put("shipmentCount", this.getCountShipments(dataMap));
+        return result;
+    }
+
+    public Object getShipmentInfo(Object dataMap) {
+        String sqlMapId = "Admin.selectShipmentInfo";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getListForUser(Object dataMap) {
         String sqlMapId = "Admin.selectUserList";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getListForShipment(Object dataMap) {
+        String sqlMapId = "Admin.selectShipmentsList";
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object paginationsForShipment(Object dataMap) {
+        String sqlMapId = "Admin.selectShipmentsPaginations";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
@@ -114,6 +140,12 @@ public class AdminService {
 
     public Object getCountUsers(Object dataMap) {
         String sqlMapId = "Admin.selectUsersCount";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getCountShipments(Object dataMap) {
+        String sqlMapId = "Admin.selectShipmentsCount";
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }

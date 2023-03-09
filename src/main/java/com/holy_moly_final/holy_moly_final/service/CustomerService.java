@@ -28,8 +28,23 @@ public class CustomerService {
         return result;
     }
 
-    public Object getFAQ_ResiterList(Object dataMap) {
-        String sqlMapId = "Customer.selectFAQRegisterLists";
+    // public Object getFAQRegisterListByUIDWithPaginations(Object dataMap) {
+    // HashMap<String, Object> result = new HashMap<String, Object>();
+    // result.put("FAQ_TYPE_UID", this.getFAQ_RegisterList(dataMap));
+    // result.put("paginations", this.paginationsForFAQList(dataMap));
+    // return result;
+    // }
+
+    public Object getFAQLists(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        String faq_uid = (String) ((HashMap<String, Object>) dataMap).get("faq_type_uid");
+        result.put("registerList", this.getFAQListByUid(dataMap));
+        return result;
+
+    }
+
+    public Object getFAQListByUid(Object dataMap) {
+        String sqlMapId = "Customer.selectFAQFAQListByUid";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }
