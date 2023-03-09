@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,9 +43,9 @@
       <div class="container">
         <div class="p-4" style="background-color: white">
           <div class="fs-4 border-bottom border-dark pb-3">
-            다량접수 할인 홈택배 2023년 2월 할인 이벤트!
+            ${resultMap.TITLE}
           </div>
-          <div class="pt-3" style="color: rgb(148, 148, 151)">2022.11.30</div>
+          <div class="pt-3" style="color: rgb(148, 148, 151)">${fn:substring(resultMap.DATE_CREATED,0,10)}</div>
           <div class="p-5 m-3">
             <a href="">
               <img src="/resources/images/이벤트뷰.PNG" class="w-100" alt="" />
@@ -51,7 +54,7 @@
         </div>
         <div class="d-flex justify-content-center mt-4">
           <a
-            href="/event/eventList"
+            href="/event/eventList/1"
             class="btn text-light fw-bold d-flex align-items-center justify-content-center"
             style="
               background-color: rgb(55, 210, 67);
