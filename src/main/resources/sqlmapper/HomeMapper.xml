@@ -44,5 +44,11 @@
         (#{MYPAGE_UID}, #{TRACKING_NUMBER}, #{USER_UID}, null);
     </insert>
 
+    <select id="selectUserInfo" parameterType="Map" resultType="Map">
+        SELECT USER_UID, NAME, PHONE, POSTALCODE, ADDRESS, DETAILADDRESS, EXTRAADDRESS
+        FROM USERS
+        WHERE USER_UID = #{USER_UID};
+    </select> 
+
     
 </mapper>

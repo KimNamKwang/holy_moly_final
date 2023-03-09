@@ -55,4 +55,11 @@ public class HomeService {
         return result;
     }
 
+    public Object getUserInfo(Object dataMap) {
+        String sqlMapId = "Home.selectUserInfo";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+
 }

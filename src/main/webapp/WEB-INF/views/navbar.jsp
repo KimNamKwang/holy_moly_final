@@ -238,12 +238,21 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                               style="text-decoration: none"
                               >다량접수</a
                             >
-                            <a
-                              href=""
-                              class="text-dark"
-                              style="text-decoration: none"
-                              >프리미엄</a
-                            >
+                            <sec:authorize access="isAuthenticated()">
+                              <form action="/mypage/myinfoPass" method="post">
+                                <input
+                                  type="hidden"
+                                  value="${userDetailsBean.user_Uid}"
+                                  name="USER_UID"
+                                />
+                                <button
+                                  class="text-dark"
+                                  style="font-size: 1.2rem"
+                                >
+                                  프리미엄
+                                </button>
+                              </form>
+                            </sec:authorize>
                           </div>
                         </span>
 
