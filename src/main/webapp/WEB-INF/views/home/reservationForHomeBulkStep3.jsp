@@ -190,20 +190,22 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 <td class="font07">
                   <sec:authorize access="isAnonymous()">
                     <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%>
-                    <c:set var="TOTAL_PRICE" value="${(resultMap.NUMBER_OF_ITEMS * 6990)}" />
+                    <c:set
+                      var="TOTAL_PRICE"
+                      value="${(resultMap.NUMBER_OF_ITEMS * 6990)}"
+                    />
                   </sec:authorize>
-
 
                   <%-- 로그인이 되어있을때 --%>
                   <sec:authorize access="isAuthenticated()">
-                  <sec:authentication
-                    property="principal"
-                    var="userDetailsBean"
-                  />
-                  <c:set
-                    var="USER_GRADE_UID"
-                    value="${userDetailsBean.grade_Uid}"
-                  />
+                    <sec:authentication
+                      property="principal"
+                      var="userDetailsBean"
+                    />
+                    <c:set
+                      var="USER_GRADE_UID"
+                      value="${userDetailsBean.grade_Uid}"
+                    />
                     <c:choose>
                       <c:when test="${USER_GRADE_UID == 'GRADE_F'}">
                         ${resultMap.NUMBER_OF_ITEMS * 3290 * 0.02}
@@ -244,7 +246,11 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                   </sec:authorize>
                   원
                 </td>
-                <fmt:parseNumber value="${TOTAL_PRICE}" integerOnly="true" var="int_Total_price" />
+                <fmt:parseNumber
+                  value="${TOTAL_PRICE}"
+                  integerOnly="true"
+                  var="int_Total_price"
+                />
                 <td class="font07">${int_Total_price}원</td>
                 <input
                   type="hidden"
@@ -266,7 +272,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <div class="fs-5 fw-bold pb-2">받는 사람</div>
           <div class="border border-1 p-2">
             <div>
-              ${resultMap.RECIPIENT_NAME}(H.P:${resultMap.RECIPIENT_PHONE})
+              ${resultMap.RECIPIENT_NAME}(H.P:${resultMap.phoneFirst}-${resultMap.phoneSecond}-${resultMap.phoneThird})
             </div>
             <div>
               ${resultMap.DESTINATION_ADDRESS}

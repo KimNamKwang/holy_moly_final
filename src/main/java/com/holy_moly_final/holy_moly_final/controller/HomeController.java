@@ -35,6 +35,7 @@ public class HomeController {
     @RequestMapping(value = "/payment_completed", method = RequestMethod.GET)
     public ModelAndView payment_completed(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        Object resultMap = params;
         if ("".equals(params.get("REQUEST_UID"))) {
             params.put("REQUEST_UID", "REQ_10");
         }
@@ -42,7 +43,7 @@ public class HomeController {
         params.put("PROGRESS_STATUS_UID", commonUtils.getUniqueSequence());
         params.put("MYPAGE_UID", commonUtils.getUniqueSequence());
         homeService.insertMulti(params);
-
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("home/payment_completed");
         return modelAndView;
     }

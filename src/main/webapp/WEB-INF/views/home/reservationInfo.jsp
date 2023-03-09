@@ -404,20 +404,22 @@
                       id=""
                       required
                     >
-                      <option selected disabled>품목 전달방식 선택</option>
-                      <option value="msg1">
+                      <option name="REQUEST_UID" selected disabled>
+                        품목 전달방식 선택
+                      </option>
+                      <option value="REQ_08">
                         집하기사님께 직접 전달하겠습니다.
                       </option>
-                      <option value="msg2">
+                      <option value="REQ_02">
                         부재중으로 현관문 앞에 두겠습니다.
                       </option>
-                      <option value="msg3">
+                      <option value="REQ_03">
                         부재중으로 아파트 경비실에 맡겨 놓겠습니다.
                       </option>
-                      <option value="msg4">
+                      <option value="REQ_09">
                         부재중으로 무인택배함에 맡겨 놓겠습니다.
                       </option>
-                      <option value="msg5">
+                      <option value="REQ_01">
                         부재중으로 기사님 도착하시면 전화주세요.
                       </option>
                     </select>

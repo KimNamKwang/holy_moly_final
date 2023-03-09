@@ -164,7 +164,7 @@
                 </div>
                 <div class="fs-5 fw-bold pb-2">받는 사람</div>
                 <div class="border border-1 p-2">
-                  <div>${resultMap.RECIPIENT_NAME}(H.P:010-1324-2321)</div>
+                  <div>${resultMap.RECIPIENT_NAME}(H.P:${resultMap.phoneFirst}-${resultMap.phoneSecond}-${resultMap.phoneThird})</div>
                   <div>
                     ${resultMap.DESTINATION_ADDRESS}
                     ${resultMap.DESTINATION_DETAILADDRESS}

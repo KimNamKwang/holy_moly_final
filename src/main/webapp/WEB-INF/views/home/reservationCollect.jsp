@@ -104,14 +104,28 @@
                           required
                         >
                           <option value="" selected disabled>품목 선택</option>
-                          <option value="01">의상</option>
-                          <option value="02">서신/서류</option>
-                          <option value="03">가전제품류</option>
-                          <option value="04">과일류</option>
-                          <option value="05">곡물류</option>
-                          <option value="06">한약류</option>
-                          <option value="07">식품류</option>
-                          <option value="08">잡화/서적류</option>
+                          <option value="" disabled>농축산물류 ↓</option>
+                          <option value="item_f_01">건어물</option>
+                          <option value="item_f_02">과일류</option>
+                          <option value="item_f_03">쌀</option>
+                          <option value="item_f_04">채소류</option>
+                          <option value="item_f_05">기타 농축산물류</option>
+                          <option value="" disabled>서적류 ↓</option>
+                          <option value="item_b_01">서류</option>
+                          <option value="item_b_02">서적</option>
+                          <option value="item_b_03">인쇄물</option>
+                          <option value="item_b_04">기타 서적류</option>
+                          <option value="" disabled>약품류 ↓</option>
+                          <option value="item_m_01">의약품</option>
+                          <option value="item_m_02">한약</option>
+                          <option value="item_m_03">건강보조제품</option>
+                          <option value="item_m_04">기타 약품류</option>
+                          <option value="" disabled>의류/잡화 ↓</option>
+                          <option value="item_c_01">의류</option>
+                          <option value="item_c_02">신발</option>
+                          <option value="item_c_03">가방/지갑</option>
+                          <option value="item_c_04">액세서리</option>
+                          <option value="item_c_05">기타 의류/잡화류</option>
                         </select>
                       </div>
                       <div class="mt-1" id="agreeCheck"  style="display: none">
@@ -231,7 +245,7 @@
                       <input
                         type="hidden"
                         id="total_count_items"
-                        name="NUMBER_OF_ITEMS" min="1"
+                        name="NUMBER_OF_ITEMS" 
                       />
                     </div>
                   </div>
@@ -270,7 +284,7 @@
       </form> 
     </main>
     <jsp:include page="../footer.jsp" />
-    <script src="./js/reservationForHomeStep2.js"></script>
+    <script src="/resources/js/reservationForHomeStep2.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
       // 품목선택 select에서 옵션 선택하면 파손 면택 동의 div 노출

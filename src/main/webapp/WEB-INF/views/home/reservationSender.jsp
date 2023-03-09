@@ -239,12 +239,12 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
       // 회원정보 주소 선택하면 다시 input value에 회원정보 들어감
       $("#user_addr").click(function () {
-        $("#userName").val("홍길동");
-        $("#userPhoneNumber").val("01011112222");
-        $("#sample6_postcode").val("01234");
-        $("#sample6_address").val("서울특별시 강남구 헤테란로 23");
-        $("#sample6_detailAddress").val("202호");
-        $("#sample6_extraAddress").val("(머머동)");
+        $("#userName").val("");
+        $("#userPhoneNumber").val("");
+        $("#sample6_postcode").val("");
+        $("#sample6_address").val("");
+        $("#sample6_detailAddress").val("");
+        $("#sample6_extraAddress").val("");
       });
 
       function sample6_execDaumPostcode() {
