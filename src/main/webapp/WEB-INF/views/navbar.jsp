@@ -2,7 +2,7 @@
 taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
 uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!-- 여기부터 navbar -->
-<header class="">
+<header style="background-color: whigt">
   <nav class="navbar navbar-dark navbar-expand-sm pb-0">
     <div
       class="container-fluid border-bottom d-flex justify-content-between pt-3 pb-3"
@@ -22,7 +22,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           </a>
         </div>
 
-        <div class="col">
+        <div class="col ps-5">
           <div class="row">
             <sec:authentication property="principal" var="userDetailsBean" />
             <div
@@ -139,18 +139,27 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 <sec:authorize access="isAnonymous()">
                   <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%> <%--
                   로그인이 안되있으므로 로그인 링크 띄움 --%>
-                  <a
+                  <div class="row">
+                  <div class="col pe-0">
+<a
                     href="/common/login"
                     class="nav-link text-nowrap fw-bold"
                     style="font-size: 1.1rem; color: rgb(171, 171, 171)"
                     >로그인</a
                   >
-                  <a
+                  </div>
+                  <div class="col-auto">
+<a
                     href="/common/join_step1"
                     class="nav-link text-nowrap fw-bold"
                     style="font-size: 1.1rem; color: rgb(171, 171, 171)"
                     >회원가입</a
                   >
+                  </div>
+
+                  </div>
+                  
+                  
                 </sec:authorize>
                 <%-- 로그인이 되어있을때 --%>
                 <sec:authorize access="isAuthenticated()">
@@ -358,7 +367,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                         >
                         <div class="pt-3">&nbsp;</div>
 
-                        <a href="/event/eventList" class="dropdown-item fw-bold"
+                        <a href="/event/eventList/1" class="dropdown-item fw-bold"
                           >이벤트</a
                         >
                       </ul>

@@ -40,7 +40,7 @@
                   <span>조회수 ${resultMap.VIEWS}</span>
                 </div>
                 <div class="p-5 m-3">
-                  <div>${resultMap.CONTENT}</div>
+                  <div class="pb-3">${resultMap.CONTENT}</div>
                   <img src="/resources/images/공지.PNG" class="w-100" alt="" />
                 </div>
               </div>

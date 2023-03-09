@@ -74,7 +74,7 @@
         >
           <c:set var="_pagination" value="${resultMap.paginations}" />
           <div class="mt-3" style="font-size: 0.9rem">
-            전체<span class="fw-bold">${_pagination.totalCount}건</span>
+            전체<span class="fw-bold fs-5"> ${_pagination.totalCount} </span>건
           </div>
           <hr class="mt-1" />
           <c:forEach items="${resultMap.resultList}" var="resultData" varStatus="loop">
