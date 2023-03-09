@@ -41,7 +41,7 @@ for (let i = 1; i <= 4; i++) {
     // toISOString -> 형식을 YYYY-MM-DDTHH:mm:ss.sssZ 으로 바꿈
     // replace -> 가운데 T를 공백 한 칸으로
     // substring -> 'YYYY-MM-DD ' 까지 자름. 뒤에 공백 한 칸 포함
-    let visitDateInputId = document.querySelector("#visit-time_" + i + "_" + j); // 각각의 input
+    let visitDateInputId = document.querySelector("#visit-time_" + i + "_" + j); // 각각의 input id
     let hh; // HH:mm:ss 중 HH. 09 처럼 앞에 0을 붙이면 9로 값이 들어가서 0까지 붙게 문자열로 사용할 거임
     if (i == 1) {
       // 첫번째 열
