@@ -38,10 +38,13 @@ public class EventController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/eventView", method = RequestMethod.GET)
-    public ModelAndView eventView(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/eventView/{COMMONBOARD_UID}", method = RequestMethod.GET)
+    public ModelAndView eventView(@RequestParam Map<String, Object> params, @PathVariable String COMMONBOARD_UID,
             ModelAndView modelAndView) {
 
+        params.put("COMMONBOARD_UID", COMMONBOARD_UID);
+        Object resultMap = eventService.getOneWithAppendViews(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("event/eventView");
         return modelAndView;
     }

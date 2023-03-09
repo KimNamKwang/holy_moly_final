@@ -14,6 +14,13 @@ public class EventService {
     @Autowired
     SharedDao sharedDao;
 
+    public Object getOneWithAppendViews(Object dataMap) {
+        Object result = this.updateView(dataMap);
+        result = this.getOne(dataMap);
+
+        return result;
+    }
+
     public Object getListWithPagination(Object dataMap) {
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);
@@ -43,6 +50,13 @@ public class EventService {
     public Object getList(Object dataMap) {
         String sqlMapId = "Event.selectEventListWithPagenation";
         Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getOne(Object dataMap) {
+        String sqlMapId = "Event.selectEventViewByCommonBoard_UID";
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+
         return result;
     }
 }

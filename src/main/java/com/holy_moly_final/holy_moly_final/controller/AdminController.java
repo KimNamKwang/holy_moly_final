@@ -127,6 +127,15 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/adminShipmentInfo", method = RequestMethod.GET)
+    public ModelAndView adminShipmentUpdate(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = adminService.getShipmentInfo(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminShipmentInfo");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/userInsert", method = RequestMethod.POST)
     public ModelAndView userInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
