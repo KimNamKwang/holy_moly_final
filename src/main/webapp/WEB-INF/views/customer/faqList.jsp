@@ -322,9 +322,9 @@
                     $("#for_faq_registers").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
                       " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
-                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent" + index + "'" + "" +
                       "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
-                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent" + index + "'" + "" + "style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
                       "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
                     );
                   });
@@ -355,9 +355,9 @@
                     $("#for_faq_shipping").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
                       " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
-                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent" + index + "'" + "" +
                       "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
-                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent" + index + "'" + "" + "style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
                       "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
                     );
                   });
@@ -385,9 +385,9 @@
                     $("#for_faq_map").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
                       " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
-                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent" + index + "'" + "" +
                       "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
-                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent" + index + "'" + "" + "style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
                       "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
                     );
                   });
@@ -416,9 +416,9 @@
                     $("#for_faq_accident").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
                       " <span class='p-1 me-1' style=' background-color: rgb(242, 255, 216); border-radius: 20px;color: rgb(55, 210, 77);font-size: 0.9rem;'> " +
-                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent'" +
+                      item.FAQ_TYPE_DESCRIPTION + "</span> " + item.TITLE + "</div> <div class='col-auto'><a class='text-dark' href='#collapseContent" + index + "'" + "" +
                       "data-bs-toggle='collapse'><span class='material-symbols-outlined'> expand_more </span></a> </div>" +
-                      "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
+                      "<div class='row collapse text-start pt-4' id='collapseContent" + index + "'" + "" + "style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
                       "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
                     );
                   });

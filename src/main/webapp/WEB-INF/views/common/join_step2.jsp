@@ -53,7 +53,7 @@
           <table class="table align-middle table-borderless">
             <tr>
               <input type="hidden" name="MARKETING_RECEIVE_ACCEPTION"
-                value=" ${resultMap.MARKETING_RECEIVE_ACCEPTION}" />
+                value="${resultMap.MARKETING_RECEIVE_ACCEPTION}" />
               <th style="vertical-align: top">이름</th>
               <td>
                 <input type="text" class="form-control" name="Name" id="Name" placeholder="이름" required />

@@ -27,21 +27,28 @@
     <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
       <div class="fs-3 fw-bold d-flex align-items-center justify-content-center" style="height: 6rem">
-        배송조회
+        운송장조회
       </div>
 
       <!-- 큰상자 -->
       <div class="container">
         <div class="d-flex row justify-content-center text-center">
           <div class="border p-4" style="border-radius: 20px; background-color: white; width: 50%">
-            <form action="./trackShipInquiry" method="get">
-              <input type="text" name="TRACKING_NUMBER" placeholder="운송장번호" title="운송장 번호" style="
+            <form action="/delivery/trackingNumberInquiry" method="get">
+              <input type="text" name="SENDER_PHONE" placeholder="보내시는 분 전화번호" maxlength="20" style="
                   padding: 10px;
                   border-radius: 10px;
                   border: 2px solid rgb(240, 240, 240);
                   width: 80%;
+                  margin-right: 46px;
                 " />
-
+              <input type="text" name="SHIPMENT_PASSWORD" placeholder="배송 비밀번호" maxlength="20" style="
+              padding: 10px;
+              border-radius: 10px;
+              border: 2px solid rgb(240, 240, 240);
+              width: 80%;
+             
+              " />
               <!-- 버튼 -->
               <button type="submit" style="
                   border-radius: 5px;
@@ -65,8 +72,8 @@
         </div>
 
         <div class="d-flex row justify-content-center text-center pt-3 pb-3">
-          <div style="color: rgb(55, 210, 67)">
-            *비회원으로 이용 하실 시 최근 배송내역 목록은 노출되지 않습니다.
+          <div style="color: red">
+            *보내시는 분 전화번호와 배송 비밀번호를 정확하게 입력해주세요!
           </div>
         </div>
 
@@ -88,13 +95,6 @@
                     width: 150px;
                   ">
                   로그인 하기
-                </a>
-                <a href="/delivery/searchTrackingNumber" class="btn text-light fw-bold" style="
-                    background-color: rgb(55, 210, 67);
-                    color: rgb(55, 210, 67);
-                    width: 150px;
-                  ">
-                  운송장 조회
                 </a>
               </div>
             </div>
