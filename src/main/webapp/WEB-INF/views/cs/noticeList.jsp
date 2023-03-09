@@ -54,7 +54,8 @@
             class="d-flex justify-content-between w-75 container"
             role="search"
           >
-            <div class="fs-3 fw-bold">공지사항</div>
+            <div class="fs-2 fw-bold">공지사항</div>
+            <!-- 검색 기능 추후 구현
             <div class="d-flex">
               <input
                 class="form-control me-2"
@@ -66,10 +67,11 @@
                 Search
               </button>
             </div>
+            -->
           </form>
         </div>
         <div
-          class="container bg-white w-75 mt-4 align-items-center shadow-sm" 
+          class="container bg-white w-75 mt-5 align-items-center shadow-sm" 
           style="border-radius: 15px 15px; padding: 10px 30px 15px 30px"
         >
           <c:set var="_pagination" value="${resultMap.paginations}" />
