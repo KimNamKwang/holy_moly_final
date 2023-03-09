@@ -111,6 +111,7 @@
                         name="userPhoneNumber"
                         id="userPhoneNumber"
                         placeholder="휴대폰번호"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         required
                       />
                     </td>

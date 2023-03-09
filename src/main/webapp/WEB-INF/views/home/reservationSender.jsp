@@ -146,6 +146,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                         id="userPhoneNumber"
                         value="${userDetailsBean.phone}"
                         placeholder="휴대폰번호"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                         required
                       />
                     </td>

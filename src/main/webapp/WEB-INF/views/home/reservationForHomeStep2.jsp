@@ -127,6 +127,7 @@
                         maxlength="7"
                         value=""
                         placeholder="성명/상호명 입력"
+                        required
                       />
                     </td>
                   </tr>
@@ -154,10 +155,11 @@
                       <div class="col">
                         <input
                           type="tel"
-                          class="inp17 form-control text-center"
+                          class="form-control text-center"
                           id="phoneSecond"
                           name="phoneSecond"
-                          onblur="onlyNumber(this);"
+                          maxlength="4"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                           required
                         />
                       </div>
@@ -165,10 +167,11 @@
                       <div class="col">
                         <input
                           type="tel"
-                          class="inp17 form-control text-center"
+                          class="form-control text-center"
                           id="phoneThird"
                           name="phoneThird"
-                          onblur="onlyNumber(this);"
+                          maxlength="4"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                           required
                         />
                       </div>
@@ -195,6 +198,7 @@
                           name="DESTINATION_POSTALCODE"
                           id="sample6_postcode"
                           placeholder="우편번호"
+                          required
                         />
                         <input
                           class="form-control mt-2"
@@ -203,6 +207,7 @@
                           class="col-6"
                           id="sample6_address"
                           placeholder="주소"
+                          required
                         />
                         <input
                           class="form-control mt-2"
@@ -211,6 +216,7 @@
                           class="col-10"
                           id="sample6_detailAddress"
                           placeholder="상세주소"
+                          required
                         />
                         <input
                           class="form-control mt-2"
@@ -289,6 +295,8 @@
                             name="ITEM_PRICE"
                             value=""
                             maxlength="2"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                            required
                           />
                         </div>
                         <div class="col">만원 (수량 : 1개)</div>
