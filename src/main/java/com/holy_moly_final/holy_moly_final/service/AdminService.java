@@ -94,17 +94,32 @@ public class AdminService {
 
     public Object getListAndPaginationsForUser(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
+
+        int totalCount = (int) this.getCountUsers(dataMap);
+        int currentPage = (int) ((HashMap<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((HashMap<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
         result.put("userList", this.getListForUser(dataMap));
-        result.put("paginations", this.paginationsForUser(dataMap));
-        result.put("totalCount", this.getCountUsers(dataMap));
+
+        // result.put("userList", this.getListForUser(dataMap));
+        // result.put("paginations", this.paginationsForUser(dataMap));
         return result;
     }
 
     public Object getListAndPaginationsForShipment(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
+
+        int shipmentCount = (int) this.getCountShipments(dataMap);
+        int currentPage = (int) ((HashMap<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(shipmentCount, currentPage);
+        result.put("paginations", paginations);
+        ((HashMap<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
         result.put("shipmentsList", this.getListForShipment(dataMap));
-        result.put("paginations", this.paginationsForShipment(dataMap));
-        result.put("shipmentCount", this.getCountShipments(dataMap));
+
+        // result.put("shipmentsList", this.getListForShipment(dataMap));
+        // result.put("paginations", this.paginationsForShipment(dataMap));
+        // result.put("shipmentCount", this.getCountShipments(dataMap));
         return result;
     }
 

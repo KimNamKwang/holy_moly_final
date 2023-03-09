@@ -93,7 +93,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               >
                 <div class="color">
                   <a
-                    href="/admin/adminUsers"
+                    href="/admin/adminUsers/1"
                     class="nav-link fw-bold text-nowrap"
                     style="font-size: 1.2rem"
                     >사용자 관리</a
@@ -119,7 +119,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
               >
                 <div class="color">
                   <a
-                    href="/admin/adminManagementShipment/"
+                    href="/admin/adminManagementShipment/1"
                     class="nav-link fw-bold text-nowrap"
                     style="font-size: 1.2rem"
                     >배송관리</a
@@ -140,26 +140,23 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                   <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%> <%--
                   로그인이 안되있으므로 로그인 링크 띄움 --%>
                   <div class="row">
-                  <div class="col pe-0">
-<a
-                    href="/common/login"
-                    class="nav-link text-nowrap fw-bold"
-                    style="font-size: 1.1rem; color: rgb(171, 171, 171)"
-                    >로그인</a
-                  >
+                    <div class="col pe-0">
+                      <a
+                        href="/common/login"
+                        class="nav-link text-nowrap fw-bold"
+                        style="font-size: 1.1rem; color: rgb(171, 171, 171)"
+                        >로그인</a
+                      >
+                    </div>
+                    <div class="col-auto">
+                      <a
+                        href="/common/join_step1"
+                        class="nav-link text-nowrap fw-bold"
+                        style="font-size: 1.1rem; color: rgb(171, 171, 171)"
+                        >회원가입</a
+                      >
+                    </div>
                   </div>
-                  <div class="col-auto">
-<a
-                    href="/common/join_step1"
-                    class="nav-link text-nowrap fw-bold"
-                    style="font-size: 1.1rem; color: rgb(171, 171, 171)"
-                    >회원가입</a
-                  >
-                  </div>
-
-                  </div>
-                  
-                  
                 </sec:authorize>
                 <%-- 로그인이 되어있을때 --%>
                 <sec:authorize access="isAuthenticated()">
@@ -367,7 +364,9 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                         >
                         <div class="pt-3">&nbsp;</div>
 
-                        <a href="/event/eventList/1" class="dropdown-item fw-bold"
+                        <a
+                          href="/event/eventList/1"
+                          class="dropdown-item fw-bold"
                           >이벤트</a
                         >
                       </ul>

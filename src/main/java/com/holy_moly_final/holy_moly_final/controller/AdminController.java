@@ -88,7 +88,7 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "adminInquiry/{currentPage}", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminInquiry/{currentPage}", method = RequestMethod.GET)
     public ModelAndView adminInquiry(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
             ModelAndView modelAndView) {
         params.put("pageScale", 10);
@@ -101,7 +101,7 @@ public class AdminController {
 
     // Users
 
-    @RequestMapping(value = "adminUserCreate", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminUserCreate", method = RequestMethod.GET)
     public ModelAndView adminUserCreate(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
 
@@ -109,9 +109,11 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/adminUsers", method = RequestMethod.GET)
-    public ModelAndView adminUsers(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "/adminUsers/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView adminUsers(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
             ModelAndView modelAndView) {
+        params.put("pageScale", 10);
+        params.put("currentPage", Integer.parseInt(currentPage));
         Object resultMap = adminService.getListAndPaginationsForUser(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
@@ -135,9 +137,12 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/adminManagementShipment", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminManagementShipment/{currentPage}", method = RequestMethod.GET)
     public ModelAndView adminManagementShipment(@RequestParam Map<String, Object> params,
+            @PathVariable String currentPage,
             ModelAndView modelAndView) {
+        params.put("pageScale", 10);
+        params.put("currentPage", Integer.parseInt(currentPage));
         Object resultMap = adminService.getListAndPaginationsForShipment(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminManagementShipment");
