@@ -44,6 +44,7 @@
   </head>
 
   <body>
+    <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
       <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
         <div class="container d-flex justify-content-center">
@@ -457,7 +458,7 @@
         </div>
       </div>
     </main>
-
+    <jsp:include page="../footer.jsp" />
     <script src="/resources/js/reservationInfo.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
