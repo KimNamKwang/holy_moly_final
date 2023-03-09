@@ -235,7 +235,7 @@
                           </div>
                           <div class="fs-4 fw-bold">고객센터</div>
                           <div class="mt-2 text-center" style="font-size: 0.8rem; color: rgb(147, 149, 143)">
-                            <div>1:1 문의</div>
+                            <div>FAQ, 1:1 문의</div>
                             <div>&nbsp;</div>
                           </div>
                         </div>
