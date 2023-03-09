@@ -234,20 +234,20 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                             >
                             <a
                               href="/home/termsForHomeBulk"
-                              class="text-dark pe-2"
+                              class="text-dark"
                               style="text-decoration: none"
                               >다량접수</a
                             >
                             <sec:authorize access="isAuthenticated()">
-                              <form action="/mypage/myinfoPass" method="post">
+                              <form action="/home/reservationSender" method="post">
                                 <input
                                   type="hidden"
                                   value="${userDetailsBean.user_Uid}"
                                   name="USER_UID"
                                 />
                                 <button
-                                  class="text-dark"
-                                  style="font-size: 1.2rem"
+                                  class="text-dark border-0"
+                                  style="font-size: 0.8rem;  background-color: rgba( 255, 255, 255, 0 );"
                                 >
                                   프리미엄
                                 </button>
