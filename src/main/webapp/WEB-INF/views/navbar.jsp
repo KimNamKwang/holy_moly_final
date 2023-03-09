@@ -66,7 +66,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                       class="btn nav-link fw-bold text-nowrap"
                       style="font-size: 1.2rem"
                     >
-                      MY1
+                      MY
                     </button>
                   </form>
                 </sec:authorize>
