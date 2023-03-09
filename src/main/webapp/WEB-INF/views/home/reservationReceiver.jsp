@@ -42,7 +42,7 @@
   <body>
     <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
-      <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
+      <div class="container-fluid" style="background-color: rgb(249, 249, 249);  padding-bottom:200px">
         <div class="container d-flex justify-content-center">
           <div class="mt-5" style="width: 650px">
             <h2 class="fw-bold text-center">프리미엄 홈택배 예약</h2>
