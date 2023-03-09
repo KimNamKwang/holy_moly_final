@@ -240,12 +240,12 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
       // 회원정보 주소 선택하면 다시 input value에 회원정보 들어감
       $("#user_addr").click(function () {
-        $("#userName").val("");
-        $("#userPhoneNumber").val("");
-        $("#sample6_postcode").val("");
-        $("#sample6_address").val("");
-        $("#sample6_detailAddress").val("");
-        $("#sample6_extraAddress").val("");
+        $("#userName").val("${userDetailsBean.memberName}");
+        $("#userPhoneNumber").val("${userDetailsBean.phone}");
+        $("#sample6_postcode").val("${userDetailsBean.postalCode}");
+        $("#sample6_address").val("${userDetailsBean.address}");
+        $("#sample6_detailAddress").val("${userDetailsBean.detailAddress}");
+        $("#sample6_extraAddress").val("${userDetailsBean.extraAddress}");
       });
 
       function sample6_execDaumPostcode() {
