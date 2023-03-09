@@ -25,6 +25,17 @@ public class Paginations {
         this.setBlockRange();
     }
 
+    // 페이지 스케일 지정 (생성자를 하나 더 만듬)
+    public Paginations(int totalCount, int currentPage, int pageScale) {
+        this.totalCount = totalCount;
+        this.currentPage = currentPage;
+        this.pageScale = pageScale;
+        this.setTotalPage(totalCount);
+        this.setPageRange();
+        this.setTotalBlock();
+        this.setBlockRange();
+    }
+
     // 전체 페이지 블록 갯수 계산
     public void setTotalBlock() {
         totalBlock = (int) Math.ceil(totalPage / blockScale);
@@ -53,7 +64,7 @@ public class Paginations {
     }
 
     public void setPageRange() {
-        pageBegin = (this.currentPage - 1) * this.pageScale + 1;
+        pageBegin = (this.currentPage - 1) * this.pageScale;
         pageEnd = this.pageBegin + pageScale - 1;
     }
 
