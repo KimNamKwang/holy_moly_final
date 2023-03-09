@@ -80,18 +80,22 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     <!-- 가입일 날짜와 시간 사이에 'T' 문자 추후 제거 요망 -->
                     <td>${_userList.JOINDATE}</td>
                     <td>${_userList.GRADE}</td>
-                    <td>
-                      <a
-                        href="/admin/adminUserUpdate?USER_UID=${_userList.USER_UID}"
-                        class="btn btn btn-outline-dark btn-sm"
-                        >수정</a
-                      >
-                      <form action="/admin/userDelete" method="get">
-                        <input type="hidden" name="USER_UID" value="${_userList.USER_UID}">
-                      <button class="btn btn btn-outline-dark btn-sm">
-                        탈퇴
-                      </button>
-                    </form>
+                    <td class="row d-flex justify-content-center">
+                      <div class="col-auto">
+                        <a
+                          href="/admin/adminUserUpdate?USER_UID=${_userList.USER_UID}"
+                          class="btn btn btn-outline-dark btn-sm"
+                          >수정</a
+                        >
+                      </div>
+                      <div class="col-auto">
+                        <form action="/admin/userDelete" method="get">
+                          <input type="hidden" name="USER_UID" value="${_userList.USER_UID}">
+                        <button class="btn btn btn-outline-dark btn-sm">
+                          탈퇴
+                        </button>
+                        </form>
+                      </div>
                     </td>
                   </tr>
                 </c:forEach>
