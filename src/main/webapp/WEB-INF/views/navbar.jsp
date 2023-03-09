@@ -62,6 +62,12 @@
                           style="font-size: 1.2rem">1대1 문의 관리</a>
                       </div>
                     </div>
+                    <div class="col-xl-2 col-md-4 col-sm-6" style="font-family: 'Noto Sans KR', sans-serif">
+                      <div class="color">
+                        <a href="/admin/adminManagementShipment/" class="nav-link fw-bold text-nowrap"
+                          style="font-size: 1.2rem">배송관리</a>
+                      </div>
+                    </div>
                   </sec:authorize>
                 </div>
               </div>
