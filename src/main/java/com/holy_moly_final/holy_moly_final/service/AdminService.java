@@ -183,9 +183,15 @@ public class AdminService {
     // Board
     public Object getListAndPaginationsForBoard(Object dataMap) {
         HashMap<String, Object> result = new HashMap<String, Object>();
+        int boardCount = (int) this.getCountBoard(dataMap);
+        int currentPage = (int) ((HashMap<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations(boardCount, currentPage);
+        result.put("paginations", paginations);
+        ((HashMap<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
         result.put("boardList", this.getListForBoard(dataMap));
-        result.put("paginations", this.paginationsForBoard(dataMap));
-        result.put("totalCount", this.getCountBoard(dataMap));
+        // result.put("boardList", this.getListForBoard(dataMap));
+        // result.put("paginations", this.paginationsForBoard(dataMap));
+        // result.put("totalCount", this.getCountBoard(dataMap));
         return result;
     }
 

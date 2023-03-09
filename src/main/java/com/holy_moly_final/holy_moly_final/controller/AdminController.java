@@ -39,9 +39,11 @@ public class AdminController {
     @Autowired
     BCryptPasswordEncoder bcryptPasswordEncoder;
 
-    @RequestMapping(value = "adminBoard", method = RequestMethod.GET)
-    public ModelAndView adminBoard(@RequestParam Map<String, Object> params,
+    @RequestMapping(value = "adminBoard/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView adminBoard(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
             ModelAndView modelAndView) {
+        params.put("pageScale", 10);
+        params.put("currentPage", Integer.parseInt(currentPage));
         Object resultMap = adminService.getListAndPaginationsForBoard(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminBoard");
