@@ -46,7 +46,10 @@
   <body>
     <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
-      <div class="container-fluid" style="background-color: rgb(249, 249, 249); padding-bottom:200px">
+      <div
+        class="container-fluid"
+        style="background-color: rgb(249, 249, 249); padding-bottom: 200px"
+      >
         <div class="container d-flex justify-content-center">
           <form action="./reservationCollect" method="get">
             <div class="mt-5" style="width: 650px">
@@ -121,13 +124,14 @@
                     border-right: none;
                   "
                 >
-                  <thead>
+                  <!-- <thead>
                     <tr id="visit_date">
                       <th>방문시간</th>
                     </tr>
-                  </thead>
+                  </thead> -->
                   <tbody>
-                    <tr>
+                    <input type="datetime-local" name="VISITING_DATE" />
+                    <!-- <tr>
                       <th>09:00~11:00</th>
                       <td>
                         <input
@@ -283,7 +287,7 @@
                           >신청</label
                         >
                       </td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
                 <div class="fs-5 fw-bold pt-3 pb-3">홈택배 운임표</div>
