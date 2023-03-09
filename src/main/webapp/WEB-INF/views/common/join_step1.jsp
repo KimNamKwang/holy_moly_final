@@ -91,13 +91,12 @@
             </div>
             <div>
               <input type="checkbox" class="form-check-input me-1 mb-2" style="zoom: 1.3; border-radius: 50%"
-                name="agree" id="check_evt5" />
+                name="MARKETING_RECEIVE_ACCEPTION" id="check_evt5" />
               <label for="check_evt5" class="form-check-label">
                 <a href="#modalTermsForMarketing" class="text-decoration-none text-dark" data-bs-toggle="modal">
                   [선택] 마케팅 정보 수신 동의
                 </a>
               </label>
-              <input type="hidden" name="MARKETING_RECEIVE_ACCEPTION" value="" />
             </div>
           </div>
         </div>

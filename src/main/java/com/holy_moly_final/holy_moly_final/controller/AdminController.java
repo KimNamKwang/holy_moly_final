@@ -60,8 +60,8 @@ public class AdminController {
     public ModelAndView boardInsert(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         params.put("COMMONBOARD_UID", commonUtils.getUniqueSequence());
-        
-        if(params.get("BOARD_UID") == "BOARD_EVENT") {
+
+        if (params.get("BOARD_UID") == "BOARD_EVENT") {
             params.put("EVENT_DATE_UID", commonUtils.getUniqueSequence());
         }
         Object resultMap = adminService.insertBoardAndgetListForAdmin(params);
@@ -115,6 +115,15 @@ public class AdminController {
         Object resultMap = adminService.getListAndPaginationsForUser(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/adminUsers");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/adminManagementShipment", method = RequestMethod.GET)
+    public ModelAndView adminManagementShipment(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = adminService.getListAndPaginationsForShipment(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminManagementShipment");
         return modelAndView;
     }
 
