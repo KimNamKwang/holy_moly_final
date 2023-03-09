@@ -49,25 +49,25 @@
             <div class="row">
               <%-- 왼쪽 내브 바 --%>
                 <div class="col-2">
-                  <ul class="list-unstyled pt-5" style="font-size: 1.2rem">
-                    <li class="fw-bold">
-                      <button class="btn fs-3 text-dark" style="text-decoration: none"
+                  <ul class="list-unstyled pt-5">
+                    <li>
+                      <button class="btn fs-5 text-dark " id="faq_total" style="text-decoration: none; font-weight: 900;"
                         onclick="ShowAllFAQs()">전체</button>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_register" onclick="ShowFAQRegister()"
+                      <button class="btn fs-5" id="faq_register" onclick="ShowFAQRegister()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">접수문의</a>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_shipping" onclick="ShowFAQShippings()"
+                      <button class="btn fs-5" id="faq_shipping" onclick="ShowFAQShippings()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">배송문의</button>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_map" onclick="ShowFAQMaps()"
+                      <button class="btn fs-5" id="faq_map" onclick="ShowFAQMaps()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">지도문의</button>
                     </li>
                     <li style="margin-top: 40px">
-                      <button class="btn fs-4" id="faq_accident" onclick="ShowFAQAccidents()"
+                      <button class="btn fs-5" id="faq_accident" onclick="ShowFAQAccidents()"
                         style="text-decoration: none; color: rgb(80, 83, 80)">사고문의</button>
                     </li>
                   </ul>
@@ -84,6 +84,7 @@
                 margin: 0px 310px 0px 130px;
               ">
                         <div>
+                        <!-- 검색 기능 추후 구현 -->
                           <input type="text" xn class="w-100 border border-secondary border-opacity-10 p-3"
                             style="height: 50px; border-radius: 10px" name="search" placeholder="검색어" />
                         </div>
@@ -91,7 +92,7 @@
                           <ul class="list-unstyled">
 
                             <c:forEach items="${resultMap.FAQList}" var="_FAQList" varStatus="loop">
-                              <li class="row mb-3">
+                              <li class="row mb-4">
                                 <div class="col text-start" style="color: rgb(81, 84, 81); font-size: 1.1rem">
                                   <span class="p-1 me-1" style="
                           background-color: rgb(242, 255, 216);
@@ -132,7 +133,7 @@
                                 </li>
 
                                 <li class="page-item">
-                                  <a class="page-link text-dark border-0" href="#">1</a>
+                                  <a class="page-link border-0" style="color: rgb(55, 210, 67)" href="#">1</a>
                                 </li>
                                 <li class="page-item">
                                   <a class="page-link border-0" style="color: rgb(180, 180, 180)" href="#">2</a>
@@ -250,7 +251,15 @@
             document.getElementById("boxForFAQShippings").style.display = "none";
             document.getElementById("boxForFAQMaps").style.display = "none";
             document.getElementById("boxForFAQAccidents").style.display = "none";
+
+            // 선택된 메뉴 글자 굵게
+            document.getElementById("faq_total").style.fontWeight = "900";
+            document.getElementById("faq_register").style.fontWeight = "100";
+            document.getElementById("faq_shipping").style.fontWeight = "100";
+            document.getElementById("faq_map").style.fontWeight = "100";
+            document.getElementById("faq_accident").style.fontWeight = "100";
           }
+
           function ShowFAQRegister() {
             document.getElementById("boxForFAQRegisters").style.display =
               "block";
@@ -258,7 +267,15 @@
             document.getElementById("boxForFAQShippings").style.display = "none";
             document.getElementById("boxForFAQMaps").style.display = "none";
             document.getElementById("boxForFAQAccidents").style.display = "none";
+
+            // 선택된 메뉴 글자 굵게
+            document.getElementById("faq_total").style.fontWeight = "100";
+            document.getElementById("faq_register").style.fontWeight = "900";
+            document.getElementById("faq_shipping").style.fontWeight = "100";
+            document.getElementById("faq_map").style.fontWeight = "100";
+            document.getElementById("faq_accident").style.fontWeight = "100";
           }
+
           function ShowFAQShippings() {
             document.getElementById("boxForFAQShippings").style.display =
               "block";
@@ -266,7 +283,15 @@
             document.getElementById("boxForFAQMaps").style.display = "none";
             document.getElementById("boxForFAQAccidents").style.display = "none";
             document.getElementById("showAllFAQs").style.display = "none";
+
+            // 선택된 메뉴 글자 굵게
+            document.getElementById("faq_total").style.fontWeight = "100";
+            document.getElementById("faq_register").style.fontWeight = "100";
+            document.getElementById("faq_shipping").style.fontWeight = "900";
+            document.getElementById("faq_map").style.fontWeight = "100";
+            document.getElementById("faq_accident").style.fontWeight = "100";
           }
+
           function ShowFAQMaps() {
             document.getElementById("boxForFAQMaps").style.display =
               "block";
@@ -274,7 +299,15 @@
             document.getElementById("boxForFAQRegisters").style.display = "none";
             document.getElementById("boxForFAQShippings").style.display = "none";
             document.getElementById("boxForFAQAccidents").style.display = "none";
+
+            // 선택된 메뉴 글자 굵게
+            document.getElementById("faq_total").style.fontWeight = "100";
+            document.getElementById("faq_register").style.fontWeight = "100";
+            document.getElementById("faq_shipping").style.fontWeight = "100";
+            document.getElementById("faq_map").style.fontWeight = "900";
+            document.getElementById("faq_accident").style.fontWeight = "100";
           }
+
           function ShowFAQAccidents() {
             document.getElementById("boxForFAQAccidents").style.display =
               "block";
@@ -282,7 +315,15 @@
             document.getElementById("boxForFAQRegisters").style.display = "none";
             document.getElementById("boxForFAQShippings").style.display = "none";
             document.getElementById("boxForFAQMaps").style.display = "none";
+            
+            // 선택된 메뉴 글자 굵게
+            document.getElementById("faq_total").style.fontWeight = "100";
+            document.getElementById("faq_register").style.fontWeight = "100";
+            document.getElementById("faq_shipping").style.fontWeight = "100";
+            document.getElementById("faq_map").style.fontWeight = "100";
+            document.getElementById("faq_accident").style.fontWeight = "900";
           }
+          
         </script>
 
 
