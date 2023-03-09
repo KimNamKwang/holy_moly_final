@@ -17,7 +17,7 @@
     ;
     </select>
 
-<select id="selectFAQFAQListByUid" parameterType="Map" resultType="Map">
+<select id="selectFAQListByUid" parameterType="Map" resultType="Map">
     SELECT * 
     FROM COMMON_BOARD
     INNER JOIN FAQ_TYPE
@@ -25,8 +25,10 @@
     AND FAQ_TYPE.FAQ_TYPE_UID = #{faq_type_uid}
     INNER JOIN MAIN_BOARD
     ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
+    <if test="pageScale != null">
     ORDER BY DATE_CREATED DESC
-    ;
+    LIMIT #{pageBegin}, #{pageScale}
+      </if>
     </select>
 
 <select id="selectFAQListPaginations" parameterType="Map" resultType="Map">
@@ -76,4 +78,7 @@
         WHERE INQUIRY_UID = #{INQUIRY_UID};
 </select> 
 
+<select id="selectFAQCount" parameterType="Map" resultType="int">
+        SELECT COUNT(*) AS FAQ_COUNT from COMMON_BOARD where FAQ_TYPE_UID = #{faq_type_uid}
+</select> 
 </mapper>
