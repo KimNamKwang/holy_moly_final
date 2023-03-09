@@ -119,7 +119,6 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <div class="row">
             <div class="col">
               <div
-                class="navbar-nav d-flex justify-content-end"
                 style="
                   font-family: 'Noto Sans KR', sans-serif;
                   font-size: 0.8rem;
@@ -164,7 +163,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
             </div>
           </div>
           <div style="font-family: 'Noto Sans KR', sans-serif">
-            <div class="dropdown dropstart text-end">
+            <div class="dropdown dropstart">
               <a
                 href=""
                 class="text-dark dropdown-toggle"

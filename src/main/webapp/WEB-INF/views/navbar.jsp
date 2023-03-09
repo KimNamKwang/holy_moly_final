@@ -134,10 +134,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
             class="navbar-nav d-flex justify-content-end"
             style="font-family: 'Noto Sans KR', sans-serif; font-size: 0.8rem"
           >
-            <div
-              class="navbar d-flex justify-content-end flex-column text-end"
-              id=""
-            >
+            <div class="navbar flex-column text-end" id="">
               <div>
                 <sec:authorize access="isAnonymous()">
                   <%-- anonymous인지 확인(로그인이 안 되어 있는지) --%> <%--
@@ -157,23 +154,32 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 </sec:authorize>
                 <%-- 로그인이 되어있을때 --%>
                 <sec:authorize access="isAuthenticated()">
-                  <span>
-                    <span class="fw-bold" style="font-size: 1.1rem"
-                      >${userDetailsBean.memberName}</span
-                    >
-                    <span style="font-size: 1rem"> 님 반갑습니다 </span>
-                  </span>
-                  <form method="post" action="/logout">
-                    <button
-                      class="btn text-nowrap fw-bold pe-0"
-                      style="font-size: 1.1rem; color: rgb(171, 171, 171)"
-                    >
-                      Logout
-                    </button>
-                  </form>
+                  <div class="row d-flex align-items-center">
+                    <div class="col">
+                      <span>
+                        <span class="fw-bold" style="font-size: 1.1rem"
+                          >${userDetailsBean.memberName}</span
+                        >
+                        <span style="font-size: 1rem"> 님 반갑습니다 </span>
+                      </span>
+                    </div>
+                    <div class="col-auto">
+                      <form method="post" action="/logout">
+                        <button
+                          class="btn text-nowrap fw-bold pe-0"
+                          style="font-size: 1.1rem; color: rgb(171, 171, 171)"
+                        >
+                          Logout
+                        </button>
+                      </form>
+                    </div>
+                  </div>
                 </sec:authorize>
               </div>
-              <div style="font-family: 'Noto Sans KR', sans-serif">
+              <div
+                style="font-family: 'Noto Sans KR', sans-serif"
+                class="w-100"
+              >
                 <div class="dropdown dropstart">
                   <a
                     href=""

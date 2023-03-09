@@ -38,7 +38,10 @@
       <div class="container" style="font-family: 'Noto Sans KR', sans-serif">
         <div class="fs-1 fw-bold mt-5 mb-5">회사소개</div>
         <div class="d-flex">
-          <div class="border rounded-4 p-4" style="width: 50rem">
+          <div
+            class="border rounded-4 p-4"
+            style="width: 50rem; margin-bottom: 130px"
+          >
             <div class="d-flex align-items-center">
               <div>
                 <img src="/resources/images/로고(투명).png" width="150" />
