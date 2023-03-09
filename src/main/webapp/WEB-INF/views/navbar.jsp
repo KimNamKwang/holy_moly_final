@@ -239,7 +239,10 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                               >다량접수</a
                             >
                             <sec:authorize access="isAuthenticated()">
-                              <form action="/home/reservationSender" method="post">
+                              <form
+                                action="/home/reservationSender"
+                                method="get"
+                              >
                                 <input
                                   type="hidden"
                                   value="${userDetailsBean.user_Uid}"
@@ -247,7 +250,10 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                                 />
                                 <button
                                   class="text-dark border-0"
-                                  style="font-size: 0.8rem;  background-color: rgba( 255, 255, 255, 0 );"
+                                  style="
+                                    font-size: 0.8rem;
+                                    background-color: rgba(255, 255, 255, 0);
+                                  "
                                 >
                                   프리미엄
                                 </button>

@@ -53,7 +53,7 @@
                   <th>아이디</th>
                   <th>가입일</th>
                   <th>등급</th>
-                  <th>관리</th>
+                  <th>관리1</th>
                 </tr>
               </thead>
               <tbody class="">

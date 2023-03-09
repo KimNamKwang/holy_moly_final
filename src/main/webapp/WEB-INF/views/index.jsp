@@ -131,24 +131,15 @@
                       <sec:authorize access="isAnonymous()">
                         <a href="#" onclick="doAlert()" class="text-dark" style="text-decoration: none">
                       </sec:authorize>
-                              
+                      <sec:authorize access="isAuthenticated()">
+                      <a href="/home/reservationSender" class="text-dark" style="text-decoration: none">
+                      </sec:authorize>
                       <div class="hover rounded-circle d-flex flex-column align-items-center justify-content-center"
                         style="
                         width: 200px;
                         height: 200px;
                         background-color: rgb(247, 247, 247);
-                        " id="home3">
-                      <sec:authorize access="isAuthenticated()">
-                          <form action="/home/reservationSender" method="post">
-                            <input
-                              type="hidden"
-                              value="${userDetailsBean.user_Uid}"
-                              name="USER_UID"
-                              />
-                                <button
-                                  class="text-dark border-0"
-                                  style="font-size: 1.2rem; background-color: rgba( 255, 255, 255, 0 );"
-                                >
+                        " id="home3">    
                                   <div>
                                     <img src="/resources/images/왕관.png" style="width: 60px; height: 60px" alt="" />
                                   </div>
@@ -156,11 +147,9 @@
                                   <div class="mt-2 text-center" style="font-size: 0.8rem; color: rgb(147, 149, 143)">
                                     <div>방문시간, 일자 선택 가능</div>
                                     <div>당일방문</div>
-                                  </div>
-                                </button>
-                        </form>
-                      </sec:authorize>
+                                  </div>                               
                       </div>
+                      </a>
                     </div>
                   </div>
 
