@@ -20,7 +20,7 @@ public class HomeService {
             result = this.insertMypage(dataMap);
             Object usePoint = (((Map<String, Object>) dataMap).get("usePoint"));
             System.out.print(usePoint);
-            if (Integer.parseInt((String) usePoint)  != 0) {
+            if (Integer.parseInt((String) usePoint) != 0) {
                 result = this.insertPoint(dataMap);
             }
         }
@@ -32,7 +32,6 @@ public class HomeService {
         Object TOTAL_PRICE = (((Map<String, Object>) dataMap).get("TOTAL_PRICE"));
         TOTAL_PRICE = Integer.parseInt((String) TOTAL_PRICE);
         ((Map<String, Object>) dataMap).put("TOTAL_PRICE", TOTAL_PRICE);
-
         String sqlMapId = "Home.insertShipment";
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;

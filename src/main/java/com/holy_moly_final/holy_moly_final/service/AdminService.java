@@ -114,6 +114,21 @@ public class AdminService {
         return result;
     }
 
+    public Object updateShipmentprogAndGetListForShipment(Object dataMap) {
+        HashMap<String, Object> result = new HashMap<String, Object>();
+        this.updateShipmentProgress(dataMap);
+        result.put("shipmentsList", this.getListForShipment(dataMap));
+        result.put("paginations", this.paginationsForShipment(dataMap));
+        result.put("shipmentCount", this.getCountShipments(dataMap));
+        return result;
+    }
+
+    public Object updateShipmentProgress(Object dataMap) {
+        String sqlMapId = "Admin.insertShipmentProgress";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getListForUser(Object dataMap) {
         String sqlMapId = "Admin.selectUserList";
         Object result = sharedDao.getList(sqlMapId, dataMap);

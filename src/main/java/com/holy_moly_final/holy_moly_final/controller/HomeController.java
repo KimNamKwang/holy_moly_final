@@ -35,6 +35,9 @@ public class HomeController {
     @RequestMapping(value = "/payment_completed", method = RequestMethod.GET)
     public ModelAndView payment_completed(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
+        if ("".equals(params.get("REQUEST_UID"))) {
+            params.put("REQUEST_UID", "REQ_10");
+        }
         params.put("POINT_UID", commonUtils.getUniqueSequence());
         params.put("PROGRESS_STATUS_UID", commonUtils.getUniqueSequence());
         params.put("MYPAGE_UID", commonUtils.getUniqueSequence());

@@ -11,7 +11,7 @@ document.getElementById("minus").addEventListener("click", function () {
 });
 
 function minusOne(event) {
-  if (i > 0) {
+  if (i > 1) {
     i--;
     total_count_items.value = i;
     result.textContent = i;

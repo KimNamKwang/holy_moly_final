@@ -42,6 +42,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
   </head>
 
   <body>
+    <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
       <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
         <div class="container d-flex justify-content-center">
@@ -226,7 +227,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
         </div>
       </div>
     </main>
-
+    <jsp:include page="../footer.jsp" />
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
       // 새로운 주소 선택하면 input 값 초기화

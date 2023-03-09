@@ -51,8 +51,9 @@
   </head>
 
   <body>
+    <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
-      <form action="/home/reservationInfo" method="post">
+      <form action="/home/reservationInfo" method="get">
         <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
           <div class="container d-flex justify-content-center">
             <div class="mt-5" style="width: 650px">
@@ -230,7 +231,7 @@
                       <input
                         type="hidden"
                         id="total_count_items"
-                        name="total_count_items"
+                        name="NUMBER_OF_ITEMS" min="1"
                       />
                     </div>
                   </div>
@@ -268,7 +269,7 @@
         </div>
       </form> 
     </main>
-
+    <jsp:include page="../footer.jsp" />
     <script src="./js/reservationForHomeStep2.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>

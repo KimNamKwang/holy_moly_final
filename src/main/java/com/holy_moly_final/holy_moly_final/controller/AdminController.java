@@ -118,6 +118,23 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/adminUpdateShipmentProgress", method = RequestMethod.GET)
+    public ModelAndView adminUpdateShipmentProgress(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        if ("PICKUP".equals(params.get("PROGRESS_STATUS_TYPE"))) {
+            params.put("PROGRESS_STATUS_DESCRIPTION", "수거완료");
+        } else if ("IN_PROGRESS".equals(params.get("PROGRESS_STATUS_TYPE"))) {
+            params.put("PROGRESS_STATUS_DESCRIPTION", "배송중");
+        } else if ("COMPLETE".equals(params.get("PROGRESS_STATUS_TYPE"))) {
+            params.put("PROGRESS_STATUS_DESCRIPTION", "배송완료");
+        }
+        params.put("PROGRESS_STATUS_UID", commonUtils.getUniqueSequence());
+        Object resultMap = adminService.updateShipmentprogAndGetListForShipment(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/adminManagementShipment");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/adminManagementShipment", method = RequestMethod.GET)
     public ModelAndView adminManagementShipment(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
@@ -128,7 +145,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/adminShipmentInfo", method = RequestMethod.GET)
-    public ModelAndView adminShipmentUpdate(@RequestParam Map<String, Object> params,
+    public ModelAndView adminShipmentInfo(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
         Object resultMap = adminService.getShipmentInfo(params);
         modelAndView.addObject("resultMap", resultMap);

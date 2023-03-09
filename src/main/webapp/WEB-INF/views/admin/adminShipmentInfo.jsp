@@ -39,7 +39,7 @@
               <div class="container" style="width: 650px">
                 <!-- 이용방법 -->
                 <div class="fs-3 fw-bold pb-3">배송 수정</div>
-                <form action="/admin/userUpdate" method="get">
+                <form action="/admin/adminUpdateShipmentProgress" method="get">
                   <div class="shadow-sm p-4 mb-4" style="border-radius: 10px 10px; background-color: white">
                     <table class="table align-middle mb-0">
                       <tr>
@@ -48,6 +48,7 @@
                           ${resultMap.TRACKING_NUMBER}
                         </td>
                       </tr>
+                      <input type="hidden" name="TRACKING_NUMBER" value="${resultMap.TRACKING_NUMBER}">
                       <tr>
                         <th>배송진행상태</th>
                         <td>
@@ -57,18 +58,10 @@
 
                           <%-- uid는 새로 랜덤생성해서 넣어줘야 함 --%>
                             <select name="PROGRESS_STATUS_TYPE">
-                              <c:if test="${PROGRESS_STATUS == '접수완료'}">
                                 <option value="PICKUP">수거완료</option>
                                 <option value="IN_PROGRESS">배송중</option>
                                 <option value="COMPLETE">배송완료</option>
-                              </c:if>
-                              <c:if test="${PROGRESS_STATUS == '수거완료'}">
-                                <option value="IN_PROGRESS">배송중</option>
-                                <option value="COMPLETE">배송완료</option>
-                              </c:if>
-                              <c:if test="${PROGRESS_STATUS == '배송중'}">
-                                <option value="COMPLETE">배송완료</option>
-                              </c:if>
+                             
                             </select>
                         </td>
                       </tr>
@@ -168,10 +161,7 @@
                       </tr>
                     </table>
                   </div>
-                  <div>
-                    배송상태 수정 :
-                    ${resultMap.PROGRESS_STATUS_DESCRIPTION}
-                  </div>
+                  
                   <div class="text-center">
                     <a onClick="history.go(-1)" class="btn btn-secondary me-2" style="width: 150px">이전</a>
                     <button class="btn btn-outline-secondary ms-2" style="width: 150px">

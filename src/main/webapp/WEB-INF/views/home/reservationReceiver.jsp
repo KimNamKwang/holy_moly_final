@@ -1,22 +1,36 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <!DOCTYPE html>
-  <html lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
-      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.slim.js"
+      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+      crossorigin="anonymous"
+    ></script>
     <style>
       input:focus,
       select:focus {
@@ -26,6 +40,7 @@
   </head>
 
   <body>
+    <jsp:include page="../navbar.jsp" />
     <main style="font-family: 'Noto Sans KR', sans-serif">
       <div class="container-fluid" style="background-color: rgb(249, 249, 249)">
         <div class="container d-flex justify-content-center">
@@ -33,67 +48,132 @@
             <h2 class="fw-bold text-center">프리미엄 홈택배 예약</h2>
             <form action="/home/reservationCollect" method="get">
               <div class="row">
-                <div class="col fs-4 fw-bold pb-2 mb-4 pt-3" style="
+                <div
+                  class="col fs-4 fw-bold pb-2 mb-4 pt-3"
+                  style="
                     color: rgb(55, 210, 67);
                     border-bottom: 1px solid rgb(55, 210, 67);
-                  ">
+                  "
+                >
                   받는 분
                 </div>
-                <div class="col pb-2 mb-4 pt-3" style="border-bottom: 1px solid rgb(55, 210, 67)">
+                <div
+                  class="col pb-2 mb-4 pt-3"
+                  style="border-bottom: 1px solid rgb(55, 210, 67)"
+                >
                   &nbsp;
                 </div>
-                <div class="col pb-2 mb-4 pt-3" style="border-bottom: 1px solid rgb(210, 241, 212)">
+                <div
+                  class="col pb-2 mb-4 pt-3"
+                  style="border-bottom: 1px solid rgb(210, 241, 212)"
+                >
                   &nbsp;
                 </div>
-                <div class="col pb-2 mb-4 pt-3" style="border-bottom: 1px solid rgb(210, 241, 212)">
+                <div
+                  class="col pb-2 mb-4 pt-3"
+                  style="border-bottom: 1px solid rgb(210, 241, 212)"
+                >
                   &nbsp;
                 </div>
-                <div class="col pb-2 mb-4 pt-3" style="border-bottom: 1px solid rgb(210, 241, 212)">
+                <div
+                  class="col pb-2 mb-4 pt-3"
+                  style="border-bottom: 1px solid rgb(210, 241, 212)"
+                >
                   &nbsp;
                 </div>
               </div>
-              <div class="shadow-sm p-3" style="border-radius: 15px 15px; background-color: white">
+              <div
+                class="shadow-sm p-3"
+                style="border-radius: 15px 15px; background-color: white"
+              >
                 <table class="table table-borderless">
                   <tr>
                     <th>이름</th>
                     <td class="ps-5">
-                      <input type="text" class="w-100 border border-secondary border-opacity-10 p-3"
-                        style="border-radius: 10px" name="userName" id="userName" placeholder="이름" required />
+                      <input
+                        type="text"
+                        class="w-100 border border-secondary border-opacity-10 p-3"
+                        style="border-radius: 10px"
+                        name="userName"
+                        id="userName"
+                        placeholder="이름"
+                        required
+                      />
                     </td>
                   </tr>
                   <tr>
                     <th class="text-nowrap">휴대폰번호</th>
                     <td class="ps-5">
-                      <input type="text" class="w-100 border border-secondary border-opacity-10 p-3"
-                        style="border-radius: 10px" name="userPhoneNumber" id="userPhoneNumber" placeholder="휴대폰번호"
-                        required />
+                      <input
+                        type="text"
+                        class="w-100 border border-secondary border-opacity-10 p-3"
+                        style="border-radius: 10px"
+                        name="userPhoneNumber"
+                        id="userPhoneNumber"
+                        placeholder="휴대폰번호"
+                        required
+                      />
                     </td>
                   </tr>
                   <tr>
                     <th>주소</th>
                     <td class="ps-5">
-                      <input class="border border-secondary border-opacity-10 p-2 mb-2" style="
+                      <input
+                        class="border border-secondary border-opacity-10 p-2 mb-2"
+                        style="
                           width: 150px;
                           background-color: white;
                           border-radius: 10px;
-                        " type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" />
-                      <input class="w-100 border border-secondary border-opacity-10 p-3 mb-2"
-                        style="border-radius: 10px" type="text" id="sample6_postcode" name="postcode"
-                        onclick="sample6_execDaumPostcode()" placeholder="우편번호" />
-                      <input class="w-100 border border-secondary border-opacity-10 p-3 mb-2"
-                        style="border-radius: 10px" type="text" id="sample6_address" name="address" placeholder="주소" />
-                      <input class="w-100 border border-secondary border-opacity-10 p-3 mb-2"
-                        style="border-radius: 10px" type="text" class="col-10" id="sample6_detailAddress"
-                        name="addressadd" placeholder="상세주소" />
-                      <input class="w-100 border border-secondary border-opacity-10 p-3" style="border-radius: 10px"
-                        type="text" id="sample6_extraAddress" name="extraaddress" placeholder="참고항목" />
+                        "
+                        type="button"
+                        onclick="sample6_execDaumPostcode()"
+                        value="우편번호 찾기"
+                      />
+                      <input
+                        class="w-100 border border-secondary border-opacity-10 p-3 mb-2"
+                        style="border-radius: 10px"
+                        type="text"
+                        id="sample6_postcode"
+                        name="postcode"
+                        onclick="sample6_execDaumPostcode()"
+                        placeholder="우편번호"
+                      />
+                      <input
+                        class="w-100 border border-secondary border-opacity-10 p-3 mb-2"
+                        style="border-radius: 10px"
+                        type="text"
+                        id="sample6_address"
+                        name="address"
+                        placeholder="주소"
+                      />
+                      <input
+                        class="w-100 border border-secondary border-opacity-10 p-3 mb-2"
+                        style="border-radius: 10px"
+                        type="text"
+                        class="col-10"
+                        id="sample6_detailAddress"
+                        name="addressadd"
+                        placeholder="상세주소"
+                      />
+                      <input
+                        class="w-100 border border-secondary border-opacity-10 p-3"
+                        style="border-radius: 10px"
+                        type="text"
+                        id="sample6_extraAddress"
+                        name="extraaddress"
+                        placeholder="참고항목"
+                      />
                     </td>
                   </tr>
                   <tr>
                     <th class="text-nowrap">배송 요청사항</th>
                     <td class="ps-5">
-                      <select class="w-100 border border-secondary border-opacity-10 p-3 text-center fw-bold"
-                        style="border-radius: 10px" name="selectMsg" id="">
+                      <select
+                        class="w-100 border border-secondary border-opacity-10 p-3 text-center fw-bold"
+                        style="border-radius: 10px"
+                        name="selectMsg"
+                        id=""
+                      >
                         <option value="msg1">선택</option>
                         <option value="msg2">
                           배송 시 경비실에 맡겨주세요.
@@ -108,18 +188,27 @@
               </div>
               <div class="row">
                 <div class="col mt-3">
-                  <a href="./reservationSender.html" class="btn btn-sm" style="
+                  <a
+                    href="./reservationSender.html"
+                    class="btn btn-sm"
+                    style="
                       border-radius: 50px;
                       background-color: rgb(165, 165, 165);
                       color: white;
-                    ">BACK</a>
+                    "
+                    >BACK</a
+                  >
                 </div>
                 <div class="col text-end mt-3">
-                  <button class="btn btn-lg text-light fw-bold" id="nextBtn" style="
+                  <button
+                    class="btn btn-lg text-light fw-bold"
+                    id="nextBtn"
+                    style="
                       background-color: rgb(230, 230, 230);
                       border-radius: 50%;
                       font-size: 1.3rem;
-                    ">
+                    "
+                  >
                     >
                   </button>
                 </div>
@@ -129,7 +218,7 @@
         </div>
       </div>
     </main>
-
+    <jsp:include page="../footer.jsp" />
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
       // 하다가 실패함...
@@ -194,9 +283,10 @@
       }
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
   </body>
-
-  </html>
+</html>
