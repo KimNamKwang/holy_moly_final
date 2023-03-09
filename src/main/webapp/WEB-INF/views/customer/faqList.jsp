@@ -51,8 +51,8 @@
                 <div class="col-2">
                   <ul class="list-unstyled pt-5" style="font-size: 1.2rem">
                     <li class="fw-bold">
-                      <button class="btn fs-3 text-dark" style="text-decoration: none" onclick="ShowAllFAQs()"
-                      >전체</button>
+                      <button class="btn fs-3 text-dark" style="text-decoration: none"
+                        onclick="ShowAllFAQs()">전체</button>
                     </li>
                     <li style="margin-top: 40px">
                       <button class="btn fs-4" id="faq_register" onclick="ShowFAQRegister()"
@@ -154,9 +154,9 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
 
-                
+
                 <div id="boxForFAQRegisters" class="col-10" style="display: none;">
                   <%-- 접수문의 화면 --%>
                     <div class="d-flex row justify-content-center text-center p-0">
@@ -213,7 +213,7 @@
 
                 <div id="boxForFAQAccidents" class="col-10" style="display: none;">
                   <%-- 사고문의 화면 --%>
-            
+
                     <div class="d-flex row justify-content-center text-center p-0">
                       <div class="border p-4 mt-5" style="
                   border-radius: 20px;
@@ -246,6 +246,10 @@
           function ShowAllFAQs() {
             document.getElementById("showAllFAQs").style.display =
               "block";
+            document.getElementById("boxForFAQRegisters").style.display = "none";
+            document.getElementById("boxForFAQShippings").style.display = "none";
+            document.getElementById("boxForFAQMaps").style.display = "none";
+            document.getElementById("boxForFAQAccidents").style.display = "none";
           }
           function ShowFAQRegister() {
             document.getElementById("boxForFAQRegisters").style.display =
@@ -282,24 +286,20 @@
         </script>
 
 
-
-
-
-
-
-
         <script>
 
           $(document).ready(function () {
 
             // 접수문의
             $("#faq_register").click(function () {
+
               $.ajax({
                 //request
                 url: "/forfaq/faq_type_uid/",
                 type: "GET",
                 data: { faq_type_uid: 'FAQ_REGISTER' },
                 success: function (data, status) {
+                  document.getElementById("for_faq_registers").innerHTML = "";
                   // alert()
                   // $("#status").append(status);
                   // $("#dataID").append(typeof data);
@@ -317,9 +317,7 @@
                   //   );
                   // });
                   // $("#faq_type").append(data.registerList);
-
                   $.each(data.registerList, function (index, item /*item은Map*/) {
-
 
                     $("#for_faq_registers").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
@@ -329,7 +327,6 @@
                       "<div class='row collapse text-start pt-4' id='collapseContent'style='color: rgb(108, 110, 108); font-size: 1.1rem'>" +
                       "<div class='col-2'>&nbsp;</div><div class='col'><div class='pb-5'>" + item.REPLY_FOR_FAQ + "</div></div></div> </li>"
                     );
-
                   });
                 },
                 error: function (xhr, status, error) {
@@ -353,6 +350,7 @@
                 type: "GET",
                 data: { faq_type_uid: 'FAQ_SHIPPING' },
                 success: function (data, status) {
+                  document.getElementById("for_faq_shipping").innerHTML = "";
                   $.each(data.registerList, function (index, item /*item은Map*/) {
                     $("#for_faq_shipping").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
@@ -382,6 +380,7 @@
                 type: "GET",
                 data: { faq_type_uid: 'FAQ_MAP' },
                 success: function (data, status) {
+                  document.getElementById("for_faq_map").innerHTML = "";
                   $.each(data.registerList, function (index, item /*item은Map*/) {
                     $("#for_faq_map").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
@@ -412,6 +411,7 @@
                 type: "GET",
                 data: { faq_type_uid: 'FAQ_ACCIDENT' },
                 success: function (data, status) {
+                  document.getElementById("for_faq_accident").innerHTML = "";
                   $.each(data.registerList, function (index, item /*item은Map*/) {
                     $("#for_faq_accident").append(
                       "<li class='row mb-3'><div class='col text-start' style='color: rgb(81, 84, 81); font-size: 1.1rem'>" +
