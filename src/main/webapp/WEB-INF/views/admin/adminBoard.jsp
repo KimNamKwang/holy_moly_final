@@ -34,7 +34,12 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         outline: 1px solid rgb(55, 210, 67);
       }
       </style>
-      </head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
   <body style="z-index: 1; font-family: 'Noto Sans KR', sans-serif">
     <jsp:include page="../navbar.jsp" />
