@@ -91,7 +91,7 @@
                                 <a class="btn d-flex align-items-center" href="#collapseTarget${index}"
                                   data-bs-toggle="collapse" style="
                                 border: 1px solid rgb(233, 236, 239);
-                                width: 150px;
+                                width: 110px;
                               ">
                                   <span class="material-symbols-outlined" style="font-size: 1rem">
                                     drive_file_rename_outline
@@ -100,7 +100,7 @@
                                     <div class="ps-1">답글달기</div>
                                   </c:if>
                                   <c:if test="${resultData.PROGRESS_STATUS_UID == 'INQ_PROG_STAT_DONE'}">
-                                    <div class="ps-1">답변이 완료된 건입니다. 수정하시겠습니까?</div>
+                                    <div class="ps-1">수정하기</div>
                                   </c:if>
                                 </a>
                               </div>
