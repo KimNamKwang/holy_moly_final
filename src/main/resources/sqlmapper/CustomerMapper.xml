@@ -25,10 +25,7 @@
     AND FAQ_TYPE.FAQ_TYPE_UID = #{faq_type_uid}
     INNER JOIN MAIN_BOARD
     ON MAIN_BOARD.BOARD_UID = COMMON_BOARD.BOARD_UID
-    <if test="pageScale != null">
     ORDER BY DATE_CREATED DESC
-    LIMIT #{pageBegin}, #{pageScale}
-      </if>
     </select>
 
 <select id="selectFAQListPaginations" parameterType="Map" resultType="Map">
