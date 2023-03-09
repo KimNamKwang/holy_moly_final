@@ -166,84 +166,105 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
             >
               <div class="row">
                 <ul class="col">
-                  <a href="" class="dropdown-item dropdown-submenu01 fw-bold">
-                    예약하기
-                  </a>
-                  <!-- 예약하기 상세 메뉴 -->
-                  <div
-                    class="dropdown-menu ps-2 pe-2"
-                    style="font-size: 0.8rem"
-                  >
+                  <span id="submenu01_span">
                     <a
-                      href="/home/termsForHome"
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >방문택배접수</a
+                      href=""
+                      id="submenu01"
+                      class="dropdown-item dropdown-submenu01 fw-bold"
                     >
-                    <a
-                      href="/home/termsForHomeBulk"
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >다량접수</a
+                      예약하기
+                    </a>
+                    <!-- 예약하기 상세 메뉴 -->
+                    <div
+                      id="dropdown_submenu01"
+                      class="dropdown-menu ps-2 pe-2"
+                      style="font-size: 0.8rem"
                     >
-                    <a href="" class="text-dark" style="text-decoration: none"
-                      >프리미엄</a
-                    >
-                  </div>
+                      <a
+                        href="/home/termsForHome"
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >방문택배접수</a
+                      >
+                      <a
+                        href="/home/termsForHomeBulk"
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >다량접수</a
+                      >
+                      <a href="" class="text-dark" style="text-decoration: none"
+                        >프리미엄</a
+                      >
+                    </div>
+                  </span>
 
                   <div class="pt-3">&nbsp;</div>
 
-                  <a href="" class="dropdown-item dropdown-submenu02 fw-bold">
-                    예약내역 조회
-                  </a>
-                  <!-- 예약내역 조회 상세 메뉴 -->
-                  <div
-                    class="dropdown-menu ps-2 pe-2"
-                    style="font-size: 0.8rem"
-                  >
+                  <span id="submenu02_span">
                     <a
                       href=""
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >홈 프리미엄</a
+                      id="submenu02"
+                      class="dropdown-item dropdown-submenu02 fw-bold"
                     >
-                    <a
-                      href=""
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >홈 일반</a
+                      예약내역 조회
+                    </a>
+                    <!-- 예약내역 조회 상세 메뉴 -->
+                    <div
+                      id="dropdown_submenu02"
+                      class="dropdown-menu ps-2 pe-2"
+                      style="font-size: 0.8rem"
                     >
-                  </div>
+                      <a
+                        href=""
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >홈 프리미엄</a
+                      >
+                      <a
+                        href=""
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >홈 일반</a
+                      >
+                    </div>
+                  </span>
 
                   <div class="pt-3">&nbsp;</div>
 
-                  <a href="" class="dropdown-item dropdown-submenu03 fw-bold">
-                    이용안내
-                  </a>
-                  <!-- 이용안내 상세 메뉴 -->
-                  <div
-                    class="dropdown-menu ps-2 pe-2"
-                    style="font-size: 0.8rem"
-                  >
+                  <span id="submenu03_span">
                     <a
-                      href="/guide/guideHome"
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >택배 이용안내</a
+                      href=""
+                      id="submenu03"
+                      class="dropdown-item dropdown-submenu03 fw-bold"
                     >
-                    <a
-                      href="/guide/guidePackaging"
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >포장안내</a
+                      이용안내
+                    </a>
+                    <!-- 이용안내 상세 메뉴 -->
+                    <div
+                      id="dropdown_submenu03"
+                      class="dropdown-menu ps-2 pe-2"
+                      style="font-size: 0.8rem"
                     >
-                    <a
-                      href="/guide/guideImpossible"
-                      class="text-dark"
-                      style="text-decoration: none"
-                      >이용불가 상품</a
-                    >
-                  </div>
+                      <a
+                        href="/guide/guideHome"
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >택배 이용안내</a
+                      >
+                      <a
+                        href="/guide/guidePackaging"
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >포장안내</a
+                      >
+                      <a
+                        href="/guide/guideImpossible"
+                        class="text-dark"
+                        style="text-decoration: none"
+                        >이용불가 상품</a
+                      >
+                    </div>
+                  </span>
 
                   <div class="pt-3">&nbsp;</div>
 
@@ -255,21 +276,28 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
                   <div class="pt-3">&nbsp;</div>
 
-                  <a href="" class="dropdown-item dropdown-submenu04 fw-bold">
-                    회원 혜택
-                  </a>
-                  <!-- 회원 혜택 상세 메뉴 -->
-                  <div
-                    class="dropdown-menu ps-2 pe-2"
-                    style="font-size: 0.8rem"
-                  >
+                  <span id="submenu04_span">
                     <a
-                      href="/grade/gradeBenefit"
-                      class="text-dark pe-2"
-                      style="text-decoration: none"
-                      >등급별 혜택</a
+                      href=""
+                      id="submenu04"
+                      class="dropdown-item dropdown-submenu04 fw-bold"
                     >
-                  </div>
+                      회원 혜택
+                    </a>
+                    <!-- 회원 혜택 상세 메뉴 -->
+                    <div
+                      id="dropdown_submenu04"
+                      class="dropdown-menu ps-2 pe-2"
+                      style="font-size: 0.8rem"
+                    >
+                      <a
+                        href="/grade/gradeBenefit"
+                        class="text-dark pe-2"
+                        style="text-decoration: none"
+                        >등급별 혜택</a
+                      >
+                    </div>
+                  </span>
                 </ul>
                 <ul class="col">
                   <a href="/cs/noticeList/1" class="dropdown-item fw-bold"
@@ -297,20 +325,31 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
     </div>
   </nav>
 </header>
-<!-- 여기까지 navbar -->
 <script>
   $(document).ready(function () {
-    $(".dropdown-submenu01").on("mouseover", function (e) {
-      $(this).next("div").toggle();
+    $("#submenu01").mouseover(function () {
+      $(this).next("div").css("display", "block");
     });
-    $(".dropdown-submenu02").on("mouseover", function (e) {
-      $(this).next("div").toggle();
+    $("#submenu01_span").mouseleave(function () {
+      $("#dropdown_submenu01").css("display", "none");
     });
-    $(".dropdown-submenu03").on("mouseover", function (e) {
-      $(this).next("div").toggle();
+    $("#submenu02").mouseover(function () {
+      $(this).next("div").css("display", "block");
     });
-    $(".dropdown-submenu04").on("mouseover", function (e) {
-      $(this).next("div").toggle();
+    $("#submenu02_span").mouseleave(function () {
+      $("#dropdown_submenu02").css("display", "none");
+    });
+    $("#submenu03").mouseover(function () {
+      $(this).next("div").css("display", "block");
+    });
+    $("#submenu03_span").mouseleave(function () {
+      $("#dropdown_submenu03").css("display", "none");
+    });
+    $("#submenu04").mouseover(function () {
+      $(this).next("div").css("display", "block");
+    });
+    $("#submenu04_span").mouseleave(function () {
+      $("#dropdown_submenu04").css("display", "none");
     });
   });
 </script>
