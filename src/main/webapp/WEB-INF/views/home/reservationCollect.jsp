@@ -92,6 +92,72 @@
                 style="border-radius: 15px 15px; background-color: white"
               >
                 <table class="table table-borderless">
+                <input
+                    type="hidden"
+                    name="SENDER_NAME"
+                    value="${resultMap.SENDER_NAME}"
+                />
+                <input
+                    type="hidden"
+                    name="SENDER_PHONE"
+                    value="${resultMap.SENDER_PHONE}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_POSTALCODE"
+                    value="${resultMap.DEPARTURE_POSTALCODE}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_ADDRESS"
+                    value="${resultMap.DEPARTURE_ADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_DETAILADDRESS"
+                    value="${resultMap.DEPARTURE_DETAILADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_EXTRAADDRESS"
+                    value="${resultMap.DEPARTURE_EXTRAADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="RECIPIENT_NAME"
+                    value="${resultMap.RECIPIENT_NAME}"
+                />
+                <input
+                  type="hidden"
+                  name="RECIPIENT_PHONE"
+                  value="${resultMap.RECIPIENT_PHONE}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_POSTALCODE"
+                  value="${resultMap.DESTINATION_POSTALCODE}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_ADDRESS"
+                  value="${resultMap.DESTINATION_ADDRESS}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_DETAILADDRESS"
+                  value="${resultMap.DESTINATION_DETAILADDRESS}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_EXTRAADDRESS"
+                  value="${resultMap.DESTINATION_EXTRAADDRESS}"
+                />
+                <input
+                  type="hidden"
+                  name="REQUEST_UID"
+                  value="${resultMap.REQUEST_UID}"
+                />
+                
                   <tr>
                     <th class="text-nowrap">품목선택</th>
                     <td class="ps-5">
@@ -99,7 +165,7 @@
                         <select
                           class="w-100 border border-secondary border-opacity-10 p-3 text-center fw-bold"
                           style="border-radius: 10px"
-                          name="itemType"
+                          name="ITEM_TYPE_UID"
                           id="itemType"
                           required
                         >
@@ -191,7 +257,7 @@
                         type="number"
                         class="w-100 border border-secondary border-opacity-10 p-3"
                         style="border-radius: 10px"
-                        name="item_price"
+                        name="ITEM_PRICE"
                         placeholder="만원(단위)"
                         required
                       />
@@ -225,7 +291,7 @@
                     <li class="pt-2" style="color: rgb(202,202,202);">
                       물품 가액이 50만원을 초과 시 접수 불가합니다. (서신/서류 -
                       10만원 초과시)
-                    </li class="pt-2" style="color: rgb(202,202,202);">
+                    </li>
                     <li class="pt-2" style="color: rgb(202,202,202);">예약을 식별할 수 있는 명칭을 설정하세요. 예) 선물발송</li>
                     <li class="pt-2" style="color: rgb(202,202,202);">
                       물품가액은 배송 사고 시 보상의 기준이 되오며, 허위 기재 시
@@ -256,7 +322,7 @@
             <div class="row">
               <div class="col mt-3">
                 <a
-                  href="./reservationReceiver.html"
+                  href="javascript:window.history.back();"
                   class="btn btn-sm"
                   style="
                     border-radius: 50px;

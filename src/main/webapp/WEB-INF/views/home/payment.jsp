@@ -199,9 +199,9 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <input
             type="hidden"
             name="SHIPMENT_TYPE_DESCRIPTION"
-            value="일반 택배"
+            value="프리미엄 택배"
           />
-          <input type="hidden" name="SHIPMENT_TYPE_UID" value="SHIP_GEN" />
+          <input type="hidden" name="SHIPMENT_TYPE_UID" value="SHIP_PRE" />
           <input
             type="hidden"
             name="REQUEST_UID"
@@ -419,7 +419,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
           <div class="row mb-5">
             <div class="col mt-3">
               <a
-                href="/home/reservationForHomeStep3"
+                href="javascript:window.history.back();"
                 class="btn btn-sm btn-secondary"
                 style="border-radius: 50px"
                 >BACK</a

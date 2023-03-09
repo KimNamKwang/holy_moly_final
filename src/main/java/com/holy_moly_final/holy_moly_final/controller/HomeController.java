@@ -119,7 +119,8 @@ public class HomeController {
     @RequestMapping(value = "/reservationCollect", method = RequestMethod.GET)
     public ModelAndView reservationCollect(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("home/reservationCollect");
         return modelAndView;
     }
@@ -127,15 +128,26 @@ public class HomeController {
     @RequestMapping(value = "/reservationInfo", method = RequestMethod.GET)
     public ModelAndView reservationInfo(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("home/reservationInfo");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/reservationinfoStep2", method = RequestMethod.GET)
+    public ModelAndView reservationinfoStep2(@RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("home/reservationinfoStep2");
         return modelAndView;
     }
 
     @RequestMapping(value = "/reservationReceiver", method = RequestMethod.GET)
     public ModelAndView reservationReceiver(@RequestParam Map<String, Object> params,
             ModelAndView modelAndView) {
-
+        Object resultMap = params;
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("home/reservationReceiver");
         return modelAndView;
     }

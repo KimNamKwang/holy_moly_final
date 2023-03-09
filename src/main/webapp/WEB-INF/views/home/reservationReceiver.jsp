@@ -86,6 +86,36 @@
                 class="shadow-sm p-3"
                 style="border-radius: 15px 15px; background-color: white"
               >
+                <input
+                    type="hidden"
+                    name="SENDER_NAME"
+                    value="${resultMap.SENDER_NAME}"
+                />
+                <input
+                    type="hidden"
+                    name="SENDER_PHONE"
+                    value="${resultMap.SENDER_PHONE}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_POSTALCODE"
+                    value="${resultMap.DEPARTURE_POSTALCODE}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_ADDRESS"
+                    value="${resultMap.DEPARTURE_ADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_DETAILADDRESS"
+                    value="${resultMap.DEPARTURE_DETAILADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_EXTRAADDRESS"
+                    value="${resultMap.DEPARTURE_EXTRAADDRESS}"
+                />
                 <table class="table table-borderless">
                   <tr>
                     <th>이름</th>
@@ -94,7 +124,7 @@
                         type="text"
                         class="w-100 border border-secondary border-opacity-10 p-3"
                         style="border-radius: 10px"
-                        name="userName"
+                        name="RECIPIENT_NAME"
                         id="userName"
                         placeholder="이름"
                         required
@@ -108,7 +138,7 @@
                         type="text"
                         class="w-100 border border-secondary border-opacity-10 p-3"
                         style="border-radius: 10px"
-                        name="userPhoneNumber"
+                        name="RECIPIENT_PHONE"
                         id="userPhoneNumber"
                         placeholder="휴대폰번호"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
@@ -135,7 +165,7 @@
                         style="border-radius: 10px"
                         type="text"
                         id="sample6_postcode"
-                        name="postcode"
+                        name="DESTINATION_POSTALCODE"
                         onclick="sample6_execDaumPostcode()"
                         placeholder="우편번호"
                       />
@@ -144,7 +174,7 @@
                         style="border-radius: 10px"
                         type="text"
                         id="sample6_address"
-                        name="address"
+                        name="DESTINATION_ADDRESS"
                         placeholder="주소"
                       />
                       <input
@@ -153,7 +183,7 @@
                         type="text"
                         class="col-10"
                         id="sample6_detailAddress"
-                        name="addressadd"
+                        name="DESTINATION_DETAILADDRESS"
                         placeholder="상세주소"
                       />
                       <input
@@ -161,7 +191,7 @@
                         style="border-radius: 10px"
                         type="text"
                         id="sample6_extraAddress"
-                        name="extraaddress"
+                        name="DESTINATION_EXTRAADDRESS"
                         placeholder="참고항목"
                       />
                     </td>
@@ -172,16 +202,31 @@
                       <select
                         class="w-100 border border-secondary border-opacity-10 p-3 text-center fw-bold"
                         style="border-radius: 10px"
-                        name="selectMsg"
+                        name="REQUEST_UID"
                         id=""
                       >
-                        <option value="msg1">선택</option>
-                        <option value="msg2">
-                          배송 시 경비실에 맡겨주세요.
+                        <option value="">선택</option>
+
+                        <option value="REQ_01">
+                          기사님 방문 전 연락주세요
                         </option>
-                        <option value="msg3">배송 시 택배함에 놔주세요.</option>
-                        <option value="msg4">방문전 전화주세요.</option>
-                        <option value="msg5">파손에 주의해 주세요.</option>
+                        <option value="REQ_02">
+                          보낼 물품을 문 앞에 놓아 두겠습니다
+                        </option>
+                        <option value="REQ_03">
+                          보낼 물품을 경비실에 맡겨두겠습니다
+                        </option>
+
+                        <option value="REQ_04">파손에 주의해 주세요</option>
+                        <option value="REQ_05">
+                          배송 시 경비실에 맡겨 주세요
+                        </option>
+                        <option value="REQ_06">
+                          배송 시 택배함에 넣어 주세요
+                        </option>
+                        <option value="REQ_07">
+                          배송 시 문앞에 놓아 주세요.
+                        </option>
                       </select>
                     </td>
                   </tr>
@@ -190,7 +235,7 @@
               <div class="row">
                 <div class="col mt-3">
                   <a
-                    href="./reservationSender.html"
+                    href="javascript:window.history.back();"
                     class="btn btn-sm"
                     style="
                       border-radius: 50px;

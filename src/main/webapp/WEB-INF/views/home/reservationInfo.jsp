@@ -51,7 +51,7 @@
         style="background-color: rgb(249, 249, 249); padding-bottom: 200px"
       >
         <div class="container d-flex justify-content-center">
-          <form action="./reservationCollect" method="get">
+          <form action="/home/reservationinfoStep2" method="get">
             <div class="mt-5" style="width: 650px">
               <h2 class="fw-bold text-center">프리미엄 홈택배 예약</h2>
               <div class="row">
@@ -124,13 +124,98 @@
                     border-right: none;
                   "
                 >
+                <input
+                    type="hidden"
+                    name="SENDER_NAME"
+                    value="${resultMap.SENDER_NAME}"
+                />
+                <input
+                    type="hidden"
+                    name="SENDER_PHONE"
+                    value="${resultMap.SENDER_PHONE}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_POSTALCODE"
+                    value="${resultMap.DEPARTURE_POSTALCODE}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_ADDRESS"
+                    value="${resultMap.DEPARTURE_ADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_DETAILADDRESS"
+                    value="${resultMap.DEPARTURE_DETAILADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="DEPARTURE_EXTRAADDRESS"
+                    value="${resultMap.DEPARTURE_EXTRAADDRESS}"
+                />
+                <input
+                    type="hidden"
+                    name="RECIPIENT_NAME"
+                    value="${resultMap.RECIPIENT_NAME}"
+                />
+                <input
+                  type="hidden"
+                  name="RECIPIENT_PHONE"
+                  value="${resultMap.RECIPIENT_PHONE}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_POSTALCODE"
+                  value="${resultMap.DESTINATION_POSTALCODE}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_ADDRESS"
+                  value="${resultMap.DESTINATION_ADDRESS}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_DETAILADDRESS"
+                  value="${resultMap.DESTINATION_DETAILADDRESS}"
+                />
+                <input
+                  type="hidden"
+                  name="DESTINATION_EXTRAADDRESS"
+                  value="${resultMap.DESTINATION_EXTRAADDRESS}"
+                />
+                <input
+                type="hidden"
+                name="SHIPMENT_TYPE_DESCRIPTION"
+                value="프리미엄 택배"
+                />
+                <input
+                  type="hidden"
+                  name="REQUEST_UID"
+                  value="${resultMap.REQUEST_UID}"
+                />
+                <input
+                type="hidden"
+                name="ITEM_TYPE_UID"
+                value="${resultMap.ITEM_TYPE_UID}"
+                />
+                <input
+                type="hidden"
+                name="ITEM_PRICE"
+                value="${resultMap.ITEM_PRICE}"
+                />
+                <input
+                type="hidden"
+                name="NUMBER_OF_ITEMS"
+                value="${resultMap.NUMBER_OF_ITEMS}"
+                />
                   <!-- <thead>
                     <tr id="visit_date">
                       <th>방문시간</th>
                     </tr>
                   </thead> -->
                   <tbody>
-                    <input type="datetime-local" name="VISITING_DATE" />
+                    <input type="date" name="VISITING_DATE" />
                     <!-- <tr>
                       <th>09:00~11:00</th>
                       <td>
@@ -430,12 +515,34 @@
                     </select>
                   </div>
                 </div>
+                <div class="row">
+                <div class="col-2 fw-bold">비밀번호</div>
+                <div class="col">
+                  <input
+                    class="form-control w-50"
+                    name="SHIPMENT_PASSWORD"
+                    type="password"
+                    value=""
+                    maxlength="4"
+                    placeholder="숫자 4자리를 입력해 주세요."
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    required
+                  />
+
+                  <p
+                    class="c_red pdt_10"
+                    style="color: rgb(255, 80, 123); font-size: 0.9rem"
+                  >
+                    * 비밀번호 분실 시 예약조회 불가, 꼭 기억해주세요.
+                  </p>
+                </div>
+                </div>
               </div>
             </div>
             <div class="row">
               <div class="col mt-3">
                 <a
-                  href="./reservationReceiver.html"
+                  href="javascript:window.history.back();"
                   class="btn btn-sm"
                   style="
                     border-radius: 50px;
