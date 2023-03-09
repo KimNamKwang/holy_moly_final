@@ -44,7 +44,7 @@ public class CustomerService {
     }
 
     public Object getFAQListByUid(Object dataMap) {
-        String sqlMapId = "Customer.selectFAQFAQListByUid";
+        String sqlMapId = "Customer.selectFAQListByUid";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
     }

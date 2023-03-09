@@ -44,10 +44,11 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       >
         <div class="container">
           <div class="fs-2 fw-bold pb-3">사용자 관리</div>
+          <c:set var="_pagination" value="${resultMap.paginations}" />
           <div class="text-secondary">
             총 인원수 :
             <span class="fw-bold"
-              >${resultMap.totalCount.TOTAL_USER}</span
+              >${_pagination.totalCount}</span
             >
           </div>
           <div class="ps-4 pe-4 mt-2 shadow-sm" style="background-color: white">
@@ -66,15 +67,16 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   items="${resultMap.userList}"
                   var="_userList"
                   varStatus="loop"
-                >
+                 >
                   <tr>
                     <td>
-                      <a
+                     <%-- <a
                         href="#modalRead"
                         data-bs-toggle="modal"
                         class="text-dark"
                         >${_userList.NAME}</a
-                      >
+                      > --%>
+                      ${_userList.NAME}
                     </td>
                     <td>${_userList.USER_UID}</td>
                     <!-- 가입일 날짜와 시간 사이에 'T' 문자 추후 제거 요망 -->
@@ -122,27 +124,11 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     <span class="sr-only"></span>
                   </a>
                 </li>
-
+                <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
                 <li class="page-item">
-                  <a class="page-link text-dark border-0" href="#">1</a>
+                  <a class="page-link text-dark border-0" href="/admin/adminUsers/${i}">${i}</a>
                 </li>
-                <li class="page-item">
-                  <a
-                    class="page-link border-0"
-                    style="color: rgb(180, 180, 180)"
-                    href="#"
-                    >2</a
-                  >
-                </li>
-                <li class="page-item">
-                  <a
-                    class="page-link border-0"
-                    style="color: rgb(180, 180, 180)"
-                    href="#"
-                    >3</a
-                  >
-                </li>
-
+                </c:forEach>
                 <li class="page-item">
                   <a
                     class="page-link border-0"
