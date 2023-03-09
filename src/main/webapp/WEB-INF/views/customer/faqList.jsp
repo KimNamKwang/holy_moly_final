@@ -246,6 +246,10 @@
           function ShowAllFAQs() {
             document.getElementById("showAllFAQs").style.display =
               "block";
+            document.getElementById("boxForFAQRegisters").style.display = "none";
+            document.getElementById("boxForFAQShippings").style.display = "none";
+            document.getElementById("boxForFAQMaps").style.display = "none";
+            document.getElementById("boxForFAQAccidents").style.display = "none";
           }
           function ShowFAQRegister() {
             document.getElementById("boxForFAQRegisters").style.display =
