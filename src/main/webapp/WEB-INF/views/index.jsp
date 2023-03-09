@@ -250,12 +250,12 @@
                       <!-- carousel inner-->
                       <div class="carousel-inner text-center">
                         <div class="carousel-item active" data-bs-interval="4000">
-                          <a href="/event/eventView" class="text-decoration-none text-light">
+                          <a href="/event/eventView/EVT_20230216_1" class="text-decoration-none text-light">
                             <img class="h-50" src="/resources/images/캐러셀1.png" alt="dhl" />
                           </a>
                         </div>
                         <div class="carousel-item" data-bs-interval="4000">
-                          <a href="/event/eventView" class="text-decoration-none text-light">
+                          <a href="/event/eventView/EVT_20230216_2" class="text-decoration-none text-light">
                             <img class="h-50" src="/resources/images/캐러셀2.png" alt="dock" />
                           </a>
                         </div>
