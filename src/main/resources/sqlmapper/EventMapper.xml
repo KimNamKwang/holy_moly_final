@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Event">
+    <!--call Event.selectEventListWithPagenation  -->
+    <select id="selectEventListWithPagenation" parameterType="Map" resultType="Map">
+        SELECT COMMON_BOARD.COMMONBOARD_UID, COMMON_BOARD.TITLE, COMMON_BOARD.CONTENT, COMMON_BOARD.DATE_CREATED, ATTACHED_FILES.FILE_FOLDER_NAME,
+		ATTACHED_FILES.ORIGINALFILE_NAME, EVENT_DATE_BOARD.EVENT_START_DATE, EVENT_DATE_BOARD.EVENT_END_DATE
+        FROM COMMON_BOARD LEFT JOIN ATTACHED_FILES
+        ON COMMON_BOARD.COMMONBOARD_UID = ATTACHED_FILES.COMMONBOARD_UID
+        JOIN EVENT_DATE_BOARD
+        ON COMMON_BOARD.COMMONBOARD_UID = EVENT_DATE_BOARD.COMMONBOARD_UID
+         <if test = "pageScale != null">
+         LIMIT #{pageBegin}, #{pageScale}
+        </if>
+    </select>
+
+    <!--call Cs.selectNoticeViewByCommonBoard_UID  -->
+    <select id="selectNoticeViewByCommonBoard_UID" parameterType="Map" resultType="Map">
+        SELECT COMMON_BOARD.COMMONBOARD_UID, TITLE,VIEWS , CONTENT, DATE_CREATED, FILE_FOLDER_NAME, ORIGINALFILE_NAME
+        FROM COMMON_BOARD LEFT JOIN ATTACHED_FILES
+        ON COMMON_BOARD.COMMONBOARD_UID = ATTACHED_FILES.COMMONBOARD_UID
+        WHERE BOARD_UID = 'BOARD_NOTICE' AND COMMON_BOARD.COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </select>
+
+    <!--call Event.updateViewsByCommonBoard_UID  -->
+    <update id="updateViewsByCommonBoard_UID" parameterType="Map" >
+        UPDATE COMMON_BOARD
+        SET VIEWS = VIEWS + 1
+        WHERE COMMONBOARD_UID = #{COMMONBOARD_UID};
+    </update>
+
+    <!--call Event.selectTotal  -->
+    <select id="selectTotal" parameterType="Map" resultType="int">
+        SELECT COUNT(*) AS TOTAL_EVENT
+        FROM COMMON_BOARD INNER JOIN MAIN_BOARD
+        ON COMMON_BOARD.BOARD_UID = MAIN_BOARD.BOARD_UID
+        WHERE MAIN_BOARD.BOARD_TYPE = 'EVENT';
+    </select>
+
+</mapper>

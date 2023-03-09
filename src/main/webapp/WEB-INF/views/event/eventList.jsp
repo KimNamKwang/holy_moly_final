@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,12 +37,15 @@
         <div class="fs-4 fw-bold pt-5 pb-3">진행중인 이벤트</div>
       </div>
     </div>
+    
     <div class="pt-5 pb-5" style="background-color: rgb(249, 249, 249)">
       <div class="container">
+      <c:set var="_pagination" value="${resultMap.paginations}" />
         <div class="row mb-5">
+          <c:forEach items="${resultMap.resultList}" var="resultData" varStatus="loop">
           <div class="col">
             <a
-              href="/event/eventView"
+              href="/event/eventView/${resultData.COMMONBOARD_UID}"
               class="text-dark"
               style="text-decoration: none"
             >
@@ -51,12 +57,14 @@
                 />
               </div>
               <div class="fs-4 pt-3 pb-3">
-                다량접수 할인 홈택배 2023년 2월 할인 이벤트!
+                ${resultData.TITLE}
               </div>
-              <div>2022.11.30 ~ 2023.02.28</div>
+              ${fn:substring(resultMap.DATE_CREATED,0,10)}
+              <div>${fn:substring(resultData.EVENT_START_DATE,0,10)} ~ ${fn:substring(resultData.EVENT_END_DATE,0,10)} </div>
             </a>
           </div>
-          <div class="col">
+          </c:forEach>
+          <%-- <div class="col">
             <a
               href="/event/eventView"
               class="text-dark"
@@ -74,7 +82,7 @@
               </div>
               <div>2022.11.30 ~ 2023.02.28</div>
             </a>
-          </div>
+          </div> --%>
         </div>
         <div class="pt-3" style="margin-bottom: 80px">
           <nav aria-label="Page navigation example">
@@ -86,7 +94,7 @@
                     color: rgb(180, 180, 180);
                     background-color: rgb(249, 249, 249);
                   "
-                  href="#"
+                  href="/event/eventList/${_pagination.previousPage}"
                   aria-label="Previous"
                 >
                   <span aria-hidden="true">&laquo;</span>
@@ -94,6 +102,7 @@
                 </a>
               </li>
 
+              <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
               <li class="page-item">
                 <a
                   class="page-link border-0"
@@ -101,10 +110,11 @@
                     color: rgb(55, 210, 67);
                     background-color: rgb(249, 249, 249);
                   "
-                  href="#"
-                  >1</a
+                  href="/event/eventList/${i}"
+                  >${i}</a
                 >
               </li>
+              </c:forEach>
               <li class="page-item">
                 <a
                   class="page-link border-0"
@@ -112,30 +122,7 @@
                     color: rgb(180, 180, 180);
                     background-color: rgb(249, 249, 249);
                   "
-                  href="#"
-                  >2</a
-                >
-              </li>
-              <li class="page-item">
-                <a
-                  class="page-link border-0"
-                  style="
-                    color: rgb(180, 180, 180);
-                    background-color: rgb(249, 249, 249);
-                  "
-                  href="#"
-                  >3</a
-                >
-              </li>
-
-              <li class="page-item">
-                <a
-                  class="page-link border-0"
-                  style="
-                    color: rgb(180, 180, 180);
-                    background-color: rgb(249, 249, 249);
-                  "
-                  href="#"
+                  href="/event/eventList/${_pagination.nextPage}"
                   aria-label="Next"
                 >
                   <span aria-hidden="true">&raquo;</span>
