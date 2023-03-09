@@ -120,8 +120,11 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 </sec:authorize>
                 <%-- 로그인이 되어있을때 --%>
                 <sec:authorize access="isAuthenticated()">
-                  <span style="font-size: 1.1rem">
-                    ${userDetailsBean.memberName} 님 반갑습니다
+                  <span>
+                    <span class="fw-bold" style="font-size: 1.1rem"
+                      >${userDetailsBean.memberName}</span
+                    >
+                    <span style="font-size: 1rem"> 님 반갑습니다 </span>
                   </span>
                   <form method="post" action="/logout">
                     <button
