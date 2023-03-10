@@ -43,7 +43,7 @@ Our website supports the following component.
 메인 페이지|예약 페이지|
 ---|---|
 ![image](https://user-images.githubusercontent.com/109323666/224203281-2acf75cd-d972-415d-97ac-4f85631e039d.png)|![image](https://user-images.githubusercontent.com/109323666/224203983-d9db226b-4b01-4439-95e8-235c00bacdb8.png)
-배송조회 페이지|문의 페이지|
+배송조회 페이지|1:1 문의 페이지|
 ![image](https://user-images.githubusercontent.com/109323666/224204377-d0136d8f-a261-4766-8c3f-02ba3225621c.png)|![image](https://user-images.githubusercontent.com/109323666/224204676-4f7c984d-d7bb-434c-b1d0-5120fd9ba74d.png)
 관리자 - 사용자 관리 페이지|관리자 - 1:1 문의 관리 페이지|
 ![image](https://user-images.githubusercontent.com/109323666/224205061-30e2b542-f652-4928-afa8-005ca89871ba.png)|![image](https://user-images.githubusercontent.com/109323666/224205119-92416c7a-98f7-44a9-8555-02686e453e69.png)
