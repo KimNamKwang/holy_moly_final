@@ -22,7 +22,9 @@ Our website supports the following component.
 
 ## Stacks
 ### Environment
-<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white">
+<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
+
+### Development
 
 #### Index
 ![image](https://user-images.githubusercontent.com/109323666/224193039-65b1f018-19e4-4cac-a458-86583ff4e310.png)
