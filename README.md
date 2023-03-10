@@ -12,7 +12,7 @@
 
 김남광|김석진|안지영|이재현|
 ---|---|---|---|
-![image](https://user-images.githubusercontent.com/109323666/224196633-94224d01-214c-4c87-a813-fa0c84334b5d.png)|![image](https://user-images.githubusercontent.com/109323666/224196675-159375e6-2236-4525-a001-8ec009a636ff.png)|![image](https://user-images.githubusercontent.com/109323666/224196718-2b698f59-275a-476e-b8ae-747b5865e7db.png)|![image](https://user-images.githubusercontent.com/109323666/224196742-2d7e3d91-3c43-4b2b-83e2-b0823fe991fe.png)|
+![image](https://user-images.githubusercontent.com/109323666/224231375-b0100558-e101-48ae-9712-8f8cefdbd2f1.png)|![image](https://user-images.githubusercontent.com/109323666/224196675-159375e6-2236-4525-a001-8ec009a636ff.png)|![image](https://user-images.githubusercontent.com/109323666/224196718-2b698f59-275a-476e-b8ae-747b5865e7db.png)|![image](https://user-images.githubusercontent.com/109323666/224196742-2d7e3d91-3c43-4b2b-83e2-b0823fe991fe.png)|
 [@KimNamKwang](https://github.com/KimNamKwang)|[@tjrwls234](https://github.com/tjrwls234)|[@AnJiYeong](https://github.com/AnJiYeong)|[@dwogus6893](https://github.com/dwogus6893)|
 KH정보교육원 수료생|KH정보교육원 수료생|KH정보교육원 수료생|KH정보교육원 수료생|
 
