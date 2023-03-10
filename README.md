@@ -95,3 +95,24 @@ public class RestfulController {
 
 }
 ```
+
+#### 특정 url에 접근할때 권한 확인 후 접근여부 결정
+```JAVA
+@Configuration 
+public class SecurityConfiguration {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.csrf().disable();
+        httpSecurity.authorizeRequests()
+                .antMatchers("/admin/*").access("hasRole('ROLE_ADMIN')")              
+                .anyRequest().permitAll();
+
+        httpSecurity.formLogin().loginPage("/common/login") // 로그인 
+                .failureUrl("/common/login?fail=true")               
+                .loginProcessingUrl("/login")             
+                .defaultSuccessUrl("/");
+
+        return httpSecurity.build();
+    }
+}
+```
