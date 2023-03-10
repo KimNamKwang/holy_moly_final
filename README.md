@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=slice&color=gradient&height=200&section=footer&text=Final%20Project&fontSize=100)
+![header](https://capsule-render.vercel.app/api?type=slice&color=gradient&height=150&section=footer&text=Final%20Project&fontSize=80)
 # Post Web Page
 **자바 기반 양성과정 교육 과정 파이널 프로젝트**
 
