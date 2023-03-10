@@ -234,9 +234,15 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                             >
                             <a
                               href="/home/termsForHomeBulk"
-                              class="text-dark"
+                              class="text-dark pe-2"
                               style="text-decoration: none"
                               >다량접수</a
+                            >
+                            <a
+                              href="/home/reservationSender"
+                              class="text-dark"
+                              style="text-decoration: none"
+                              >프리미엄접수</a
                             >
                             <sec:authorize access="isAuthenticated()">
                               <form
