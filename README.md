@@ -22,7 +22,7 @@ Our website supports the following component.
 
 </hr>
 
-## Stacks
+## Stacks 🔧
 ### Environment
 <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
 
@@ -32,17 +32,39 @@ Our website supports the following component.
 </hr>
 
 ## 화면 구성 🖥
+### 페이지 영상
+* [POST Web Page](https://www.youtube.com/watch?v=SDOiq77q_7Q)
+
 메인 페이지|예약 페이지|
 ---|---|
 ![image](https://user-images.githubusercontent.com/109323666/224203281-2acf75cd-d972-415d-97ac-4f85631e039d.png)|![image](https://user-images.githubusercontent.com/109323666/224203983-d9db226b-4b01-4439-95e8-235c00bacdb8.png)
 배송조회 페이지|문의 페이지|
 ![image](https://user-images.githubusercontent.com/109323666/224204377-d0136d8f-a261-4766-8c3f-02ba3225621c.png)|![image](https://user-images.githubusercontent.com/109323666/224204676-4f7c984d-d7bb-434c-b1d0-5120fd9ba74d.png)
+관리자-사용자 페이지|관리자-문의 페이지|
+![image](https://user-images.githubusercontent.com/109323666/224205061-30e2b542-f652-4928-afa8-005ca89871ba.png)|![image](https://user-images.githubusercontent.com/109323666/224205119-92416c7a-98f7-44a9-8555-02686e453e69.png)
 
+</hr>
 
+## 주요 기능 ⛓️
+### 사용자 페이지
+#### ⭐ 택배 접수 기능
+* 발송인 정보 -> 수령입 정보 -> 입력 내역 확인 -> 결제 -> 결제 완료 순서
+* 프리미엄은 익일~+2일 중으로 시간까지 선택 예약 가능
+* 등급 별 할인금액 적용
+* 결제 시 보유 포인트 사용 가능
 
-#### Index
-![image](https://user-images.githubusercontent.com/109323666/224193039-65b1f018-19e4-4cac-a458-86583ff4e310.png)
-![image](https://user-images.githubusercontent.com/109323666/224193080-f20afea7-2ff5-48f8-a2ca-87e1d3faec2a.png)
+#### ⭐ 배송조회 기능
+* 운송장번호를 통해 조회
+* 예약일자, 발송인 이름, 수령인 이름, 물품 종류, 배송 상태(날짜 및 시간) 확인 가능
+* 예약 직후 바로 조회 가능
 
+### 관리자 페이지
+#### ⭐ 배송 관리
+* 배송진행상태 변경
 
+</hr>
 
+### ⭐ 구현 코드 일부
+```java
+
+```
