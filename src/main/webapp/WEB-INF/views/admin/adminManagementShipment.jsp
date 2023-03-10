@@ -61,7 +61,7 @@
                         <td>
                           <form action="/admin/adminShipmentInfo" method="get">
                             <input type="hidden" name="TRACKING_NUMBER" value="${_shipmentsList.TRACKING_NUMBER}">
-                            <button class="btn btn btn-outline-dark btn-sm">
+                            <button class="btn btn btn-outline-dark btn-sm text-nowrap">
                               배송관리
                             </button>
                           </form>
