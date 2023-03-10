@@ -70,7 +70,7 @@ Our website supports the following component.
 ***
 
 ## ERD
-![image](https://user-images.githubusercontent.com/109323666/224228778-17e37728-5640-4a88-9ba5-781c2e1cef95.png)
+![image](https://user-images.githubusercontent.com/109323666/224228867-a110bd5e-14cf-49db-858c-3a3d55c3b838.png)
 
 ***
 
