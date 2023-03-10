@@ -37,8 +37,6 @@ Our website supports the following component.
 ## 페이지 영상
 * [POST Web Page](https://www.youtube.com/watch?v=SDOiq77q_7Q)
 
-***
-
 ## ERD
 * [POST ERD](https://github.com/KimNamKwang/Holy_moly_Final_view/blob/master/Databases/merge_ERD.png)
 
