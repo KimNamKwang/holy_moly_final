@@ -37,9 +37,6 @@ Our website supports the following component.
 ## 페이지 영상
 * [POST Web Page](https://www.youtube.com/watch?v=SDOiq77q_7Q)
 
-## ERD
-* [POST ERD](https://github.com/KimNamKwang/Holy_moly_Final_view/blob/master/Databases/merge_ERD.png)
-
 ***
 
 ## 화면 구성 🖥
@@ -71,6 +68,10 @@ Our website supports the following component.
 * 배송진행상태 변경
 
 ***
+
+## ERD
+* [POST ERD](https://github.com/KimNamKwang/Holy_moly_Final_view/blob/master/Databases/merge_ERD.png)
+
 
 ## 구현 코드 일부
 #### ajax와 연동되는 restFul 컨트롤러
