@@ -65,6 +65,30 @@ Our website supports the following component.
 </hr>
 
 ### ⭐ 구현 코드 일부
+#### ajax와 연동되는 restFul 컨트롤러
 ```java
+@RestController
+@CrossOrigin
+public class RestfulController {
 
+    @Autowired
+    CustomerService customerService;
+    @Autowired
+    CommonService commonService;
+
+    @RequestMapping(value = "/forfaq/faq_type_uid/", method = RequestMethod.GET)
+    public Map callFAQList(@RequestParam Map<String, Object> params) {
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap = (Map<String, Object>) customerService.getFAQLists(params);
+        return resultMap;
+    }
+
+    @RequestMapping(value = "/forJoinStep2/id_check/", method = RequestMethod.GET)
+    public Map idDuplicatedCheck(@RequestParam Map<String, Object> params) {
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap = (Map<String, Object>) commonService.idDuplicateCheck(params);
+        return resultMap;
+    }
+
+}
 ```
