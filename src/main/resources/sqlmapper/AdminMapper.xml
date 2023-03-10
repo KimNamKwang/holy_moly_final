@@ -165,7 +165,7 @@ DELETE FROM MYPAGE WHERE USER_UID  = #{USER_UID};
 
 <select id="selectShipmentsCount" parameterType="Map" resultType="int">
       SELECT COUNT(*) AS SHIPMENTS_COUNT
-      FROM shipment
+      FROM SHIPMENT
 
 </select> 
 
