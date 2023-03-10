@@ -7,6 +7,7 @@
 
 **의뢰팀의 의뢰서와 요구사항정의서를 기반하여 **
 
+
 ## 웹개발팀 소개
 
 김남광|김석진|안지영|이재현|
@@ -14,6 +15,7 @@
 ![image](https://user-images.githubusercontent.com/109323666/224196633-94224d01-214c-4c87-a813-fa0c84334b5d.png)|![image](https://user-images.githubusercontent.com/109323666/224196675-159375e6-2236-4525-a001-8ec009a636ff.png)|![image](https://user-images.githubusercontent.com/109323666/224196718-2b698f59-275a-476e-b8ae-747b5865e7db.png)|![image](https://user-images.githubusercontent.com/109323666/224196742-2d7e3d91-3c43-4b2b-83e2-b0823fe991fe.png)|
 [@KimNamKwang](https://github.com/KimNamKwang)|[@tjrwls234](https://github.com/tjrwls234)|[@AnJiYeong](https://github.com/AnJiYeong)|[@dwogus6893](https://github.com/dwogus6893)|
 KH정보교육원 수료생|KH정보교육원 수료생|KH정보교육원 수료생|KH정보교육원 수료생|
+
 
 ## 프로젝트 소개
 
@@ -28,7 +30,9 @@ Our website supports the following component.
 2. Section of 1:1 Enquiry Free to Inquire
 3. Tracking available up to time
 
+
 ---
+
 
 ## Stacks 🔧
 
@@ -44,13 +48,17 @@ Our website supports the following component.
 
 <img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white">
 
+
 ---
+
 
 ## 페이지 영상
 
 - [POST Web Page](https://www.youtube.com/watch?v=SDOiq77q_7Q)
 
+
 ---
+
 
 ## 화면 구성 🖥
 
@@ -62,7 +70,9 @@ Our website supports the following component.
 | 관리자 - 사용자 관리 페이지                                                                                      | 관리자 - 1:1 문의 관리 페이지                                                                                    |
 | ![image](https://user-images.githubusercontent.com/109323666/224205061-30e2b542-f652-4928-afa8-005ca89871ba.png) | ![image](https://user-images.githubusercontent.com/109323666/224205119-92416c7a-98f7-44a9-8555-02686e453e69.png) |
 
+
 ---
+
 
 ## 주요 기능 ⛓️
 
@@ -87,13 +97,17 @@ Our website supports the following component.
 
 - 배송진행상태 변경
 
+
 ---
+
 
 ## ERD
 
 ![image](https://user-images.githubusercontent.com/109323666/224228867-a110bd5e-14cf-49db-858c-3a3d55c3b838.png)
 
+
 ---
+
 
 ## 구현 코드 일부
 
