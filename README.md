@@ -1,6 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=slice&color=gradient&height=150&section=footer&text=Final%20Project&fontSize=80)
 # Post Web Page
 **자바 기반 양성과정 교육 과정 파이널 프로젝트**
+**의뢰팀의 의뢰서와 요구사항정의서를 기반하여 **
 
 ## 웹개발팀 소개
 김남광|김석진|안지영|이재현
