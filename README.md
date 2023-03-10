@@ -11,7 +11,7 @@
 ## 웹개발팀 소개
 
 김남광|김석진|안지영|이재현|
----|---|---|---|
+---|---|---|:---:|
 ![image](https://user-images.githubusercontent.com/109323666/224231457-eea6852d-d0a4-4b96-b9f6-21f4295c6f64.png)|![image](https://user-images.githubusercontent.com/109323666/224196675-159375e6-2236-4525-a001-8ec009a636ff.png)|![image](https://user-images.githubusercontent.com/109323666/224196718-2b698f59-275a-476e-b8ae-747b5865e7db.png)|![image](https://user-images.githubusercontent.com/109323666/224196742-2d7e3d91-3c43-4b2b-83e2-b0823fe991fe.png)|
 [@KimNamKwang](https://github.com/KimNamKwang)|[@tjrwls234](https://github.com/tjrwls234)|[@AnJiYeong](https://github.com/AnJiYeong)|[@dwogus6893](https://github.com/dwogus6893)|
 KH정보교육원 수료생|KH정보교육원 수료생|KH정보교육원 수료생|KH정보교육원 수료생|
