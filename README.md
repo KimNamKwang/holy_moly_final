@@ -70,7 +70,7 @@ Our website supports the following component.
 ***
 
 ## ERD
-* [POST ERD](https://github.com/KimNamKwang/Holy_moly_Final_view/blob/master/Databases/merge_ERD.png)
+![image](https://user-images.githubusercontent.com/109323666/224228778-17e37728-5640-4a88-9ba5-781c2e1cef95.png)
 
 ***
 
