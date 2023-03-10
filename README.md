@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=slice&color=auto&height=50&section=header&text=capsule&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=soft&color=auto&height=50&section=header&text=capsule&fontSize=90)
 # 📦 택배 사이트
 ### Project Team : Holy Moly
 
