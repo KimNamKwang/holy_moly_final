@@ -34,11 +34,10 @@ Our website supports the following component.
 <img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"> 
 
 ***
-
-## 화면 구성 🖥
-### 페이지 영상
+## 페이지 영상
 * [POST Web Page](https://www.youtube.com/watch?v=SDOiq77q_7Q)
 
+## 화면 구성 🖥
 메인 페이지|예약 페이지|
 ---|---|
 ![image](https://user-images.githubusercontent.com/109323666/224203281-2acf75cd-d972-415d-97ac-4f85631e039d.png)|![image](https://user-images.githubusercontent.com/109323666/224203983-d9db226b-4b01-4439-95e8-235c00bacdb8.png)
