@@ -39,6 +39,11 @@ Our website supports the following component.
 
 ***
 
+## ERD
+* [POST ERD](https://github.com/KimNamKwang/Holy_moly_Final_view/blob/master/Databases/merge_ERD.png)
+
+***
+
 ## 화면 구성 🖥
 메인 페이지|예약 페이지|
 ---|---|
@@ -48,7 +53,7 @@ Our website supports the following component.
 관리자 - 사용자 관리 페이지|관리자 - 1:1 문의 관리 페이지|
 ![image](https://user-images.githubusercontent.com/109323666/224205061-30e2b542-f652-4928-afa8-005ca89871ba.png)|![image](https://user-images.githubusercontent.com/109323666/224205119-92416c7a-98f7-44a9-8555-02686e453e69.png)
 
-</hr>
+***
 
 ## 주요 기능 ⛓️
 ### 사용자 페이지
