@@ -68,7 +68,7 @@ Our website supports the following component.
 
 ***
 
-### ⭐ 구현 코드 일부
+### 구현 코드 일부
 #### ajax와 연동되는 restFul 컨트롤러
 ```java
 @RestController
