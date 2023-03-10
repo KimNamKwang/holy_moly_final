@@ -181,7 +181,7 @@ uri="http://www.springframework.org/security/tags" prefix="sec" %>
                 *회원가입이나 로그인 없이 비회원 예약이 가능합니다.
               </div>
             </div>
-            <div class="pt-3">
+            <div class="pt-3 text-center">
               <div class="bg-secondary bg-opacity-50">
                 일반 사용자 - id : user1 / password : pw123
               </div>
