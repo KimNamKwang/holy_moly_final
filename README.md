@@ -37,6 +37,8 @@ Our website supports the following component.
 ## 페이지 영상
 * [POST Web Page](https://www.youtube.com/watch?v=SDOiq77q_7Q)
 
+***
+
 ## 화면 구성 🖥
 메인 페이지|예약 페이지|
 ---|---|
