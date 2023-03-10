@@ -20,7 +20,7 @@ Our website supports the following component.
 2. Section of 1:1 Enquiry Free to Inquire
 3. Tracking available up to time
 
-</hr>
+***
 
 ## Stacks 🔧
 ### Environment
@@ -29,7 +29,7 @@ Our website supports the following component.
 ### Development
 <img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"> 
 
-</hr>
+***
 
 ## 화면 구성 🖥
 ### 페이지 영상
@@ -62,7 +62,7 @@ Our website supports the following component.
 #### ⭐ 배송 관리
 * 배송진행상태 변경
 
-</hr>
+***
 
 ### ⭐ 구현 코드 일부
 #### ajax와 연동되는 restFul 컨트롤러
