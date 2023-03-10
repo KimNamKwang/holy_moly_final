@@ -20,11 +20,25 @@ Our website supports the following component.
 2. Section of 1:1 Enquiry Free to Inquire
 3. Tracking available up to time
 
+</hr>
+
 ## Stacks
 ### Environment
-<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
+<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
 
 ### Development
+<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML&logoColor=white"> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white"> 
+
+</hr>
+
+## 화면 구성 🖥
+메인 페이지|예약 페이지|
+---|---|
+![image](https://user-images.githubusercontent.com/109323666/224203281-2acf75cd-d972-415d-97ac-4f85631e039d.png)|![image](https://user-images.githubusercontent.com/109323666/224203983-d9db226b-4b01-4439-95e8-235c00bacdb8.png)
+배송조회 페이지|문의 페이지|
+![image](https://user-images.githubusercontent.com/109323666/224204377-d0136d8f-a261-4766-8c3f-02ba3225621c.png)|![image](https://user-images.githubusercontent.com/109323666/224204676-4f7c984d-d7bb-434c-b1d0-5120fd9ba74d.png)
+
+
 
 #### Index
 ![image](https://user-images.githubusercontent.com/109323666/224193039-65b1f018-19e4-4cac-a458-86583ff4e310.png)
